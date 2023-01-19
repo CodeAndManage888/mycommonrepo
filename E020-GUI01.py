@@ -1,6 +1,7 @@
 #**************************************************************
 # Date: 101922                                                *
 # Title: Ideal Gas Law                                        *
+# Status: Working (In Progress / Testing / Working)           *
 # Programmer: BoredManager                                    *
 # The ideal gas law is a mathematical approximation of the    *
 # behavior of gasses as pressure, volume and temperature      *
@@ -51,6 +52,7 @@ def close_app():
 def retain_app():
     outputdata1.delete(0.0, END)
     inputentry1.delete(0, END)
+    inputentry2.delete(0, END)
 
 w = Tk()
 w.title("My Ideal Gas Law App")
@@ -83,4 +85,4 @@ w.mainloop()
 #   window:
 #   a.) How do you get the square root without using math function?
 #       The commented line is causing an issue when mathematically
-#       speaking the formula is correct.
+#       speaking the formula should be correct.

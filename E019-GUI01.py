@@ -1,6 +1,7 @@
 #**************************************************************
 # Date: 101322                                                *
 # Title: Free Fall                                            *
+# Status: Working (In Progress / Testing / Working)           *
 # Programmer: BoredManager                                    *
 # Create a program that determines how quickly an object is   *
 # traveling when it hits the ground. The user will enter the  *

@@ -1,6 +1,7 @@
 #**************************************************************
 # Date: 080122                                                *
 # Title: Heat Capacity                                        *
+# Status: Working (In Progress / Testing / Working)           *
 # Programmer: BoredManager                                    *
 # The amount of energy required to increase the temperature   *
 # of one gram of a material by one degree Celsius is the      *
