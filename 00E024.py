@@ -1,7 +1,7 @@
 #**************************************************************
-# Date: 012923                                                *
+# Date: 012923 / 013123                                       *
 # Title: Units of Time                                        *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Create a program that reads a duration from the user as a   *
 # number of days, hours, minutes, and seconds. Compute and    *
 # display the total number of seconds representedby this      *
@@ -14,6 +14,7 @@ import math
 
 computed_value = 0
 icheck = -1
+print("Convert the input data to total seconds!")
 while icheck == -1:
   iDays = input("Please provide the number of days ==> ")
   iHours = input("Please provde the number of hours ==> ")
@@ -32,7 +33,7 @@ computed_value = (ciSeconds + (ciMinutes*60) + (ciHours*60*60) + (ciDays*24*60*6
 fcomputed_value = format(computed_value, '2f')
 final_value = str(fcomputed_value)
 #--------------------------------------------------------------
-print("The area of the polygon is", final_value, "sq. units.")
+print("The converted total is", final_value, " seconds.")
 print("Thank you for using this app.")
 #**************************************************************
 # Lessons Learned:
