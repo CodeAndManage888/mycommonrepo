@@ -1,7 +1,7 @@
 #**************************************************************
-# Date: 01312023                                              *
+# Date: 01312023 / 0201/2023                                  *
 # Title: Units of Time (Again)                                *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # In this exercise you will reverse the process described in  *
 # the previous exercise.Develop a program that begins by      *
 # reading a number of seconds from the user.Then your program *
