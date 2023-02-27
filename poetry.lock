@@ -277,6 +277,26 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "pandas"
+version = "1.5.3"
+description = "Powerful data structures for data analysis, time series, and statistics"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+numpy = [
+    {version = ">=1.20.3", markers = "python_version < \"3.10\""},
+    {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
+    {version = ">=1.23.2", markers = "python_version >= \"3.11\""},
+]
+python-dateutil = ">=2.8.1"
+pytz = ">=2020.1"
+
+[package.extras]
+test = ["hypothesis (>=5.5.3)", "pytest (>=6.0)", "pytest-xdist (>=1.31)"]
+
+[[package]]
 name = "pillow"
 version = "9.4.0"
 description = "Python Imaging Library (Fork)"
@@ -2401,6 +2421,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "pytz"
+version = "2022.7.1"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pyusb"
 version = "1.2.1"
 description = "Python USB access module"
@@ -2508,7 +2536,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "adc776af0bb506dbe8b26c6215134e43941533ff2cea5390f1e8e4d268e348ca"
+content-hash = "b36df21b4da5fdb5b62991cbe331c226231991101af37675c5d54d39a601f987"
 
 [metadata.files]
 adafruit-blinka = []
@@ -2534,6 +2562,7 @@ matplotlib = []
 mouseinfo = []
 numpy = []
 packaging = []
+pandas = []
 pillow = []
 pyautogui = []
 pydantic = []
@@ -2698,6 +2727,7 @@ python-dateutil = []
 python3-xlib = []
 pytube = []
 pytweening = []
+pytz = []
 pyusb = []
 requests = []
 rubicon-objc = []
