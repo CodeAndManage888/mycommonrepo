@@ -1,19 +1,7 @@
 #**************************************************************
-# Date: 011823 / 012623                                       *
-# Title: Area of a Regular Polygon                            *
-# Status: Working (In Progress / Testing / Working)           *
-# Programmer: BoredManager                                    *
-# A polygon is regular if its sides are all the same length   *
-# and the angles between all ofthe adjacent sides are equal.  *
-# The area of a regular polygon can be computed usingthe      *
-# following formula, where s is the length of a side and n is *
-# the number of sides:                                        *
-#                          n x s^2                            *
-#              Area = ----------------                        *
-#                      4 x tan (pi/n)                         *
-# Write a program that reads s and n from the user and then   *
-# displays the area of aregular polygon constructed from these*
-# values.                                                     *
+# Date:                                                       *
+# Title:                                                      *
+# Status: In Progress (In Progress / Testing / Working)       *
 #                                                             *
 # Computed Result Validated:                                  *
 #                                                             *

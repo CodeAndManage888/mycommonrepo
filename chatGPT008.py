@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 # define the URL of the web page
 url = 'https://www.lottopcso.com/'
+#url = 'https://www.pcso.gov.ph/SearchLottoResult.aspx'
 
 # retrieve the HTML content of the web page
 response = requests.get(url)
