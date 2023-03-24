@@ -1,4 +1,16 @@
 #--------------------------------------------------------------
+class tester: 
+  def __init__(self,id):
+    self.id = str(id)
+    id="224"
+temp = tester(12)
+print(temp.id)
+
+#--------------------------------------------------------------
+for i in range(3):
+  print(i,end='')
+print("")
+#--------------------------------------------------------------
 def f(x):
   return x + 1
 
@@ -17,7 +29,6 @@ def hello_python(func):
 
   return wrapped
 
-
 def hello_decorator(func):
 
   def wrapped():
@@ -25,12 +36,10 @@ def hello_decorator(func):
 
   return wrapped
 
-
 @hello_python
 @hello_decorator
 def hello():
   return "Hello!"
-
 
 print(hello())
 
@@ -43,7 +52,3 @@ def fun(n,res=1):
   return fun(n-1,n*res)
 
 print(fun(5))
-
-  
-
-
