@@ -30,6 +30,7 @@ icheck = -1
 global ciWeight1, ciHeight1, ciWeight2, ciHeight2
 ciWeight1, ciHeight1, ciWeight2, ciHeight2 = (0, 0, 0, 0)
 #--------------------------------------------------------------
+#--------------------------------------------------------------
 def data_check(UserIn,cUserIn):
   global icheck
   try:
