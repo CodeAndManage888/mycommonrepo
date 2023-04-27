@@ -27,24 +27,43 @@ import math
 
 computed_value = 0
 icheck = -1
+global ciWeight1, ciHeight1, ciWeight2, ciHeight2
+ciWeight1, ciHeight1, ciWeight2, ciHeight2 = (0, 0, 0, 0)
 #--------------------------------------------------------------
-def data_check(UserIn):
+def data_check(UserIn,cUserIn):
+  global icheck
   try:
+    print ("Before check ")
+    print (UserIn, cUserIn)
     cUserIn = float(UserIn)
+    print ("After check ")
     icheck = 0
+    print ("After update to zero ")
+    print (UserIn, cUserIn)
+    print (icheck)
+    return UserIn, cUserIn
   except:
     print("Invalid Data Type. Please input valid data type.")
 #--------------------------------------------------------------
 while icheck == -1:
-  print("Please use one(1) if the data is not available")
+  print("Please use zero if the data is not available")
   iWeight1 = input("Please enter your weight in lbs: " )
-  data_check(iWeight1)
+#  ciWeight1 = 0
+  data_check(iWeight1, ciWeight1)
+  print(iWeight1, ciWeight1)
   iHeight1 = input("Please enter your height in inches: ")
-  data_check(iHeight1)
+#  ciHeight1 = 0
+  data_check(iHeight1, ciHeight1)
+  print(iHeight1, ciHeight1)
   iWeight2 = input("Please enter your weight in kg: " )
-  data_check(iWeight2)
+#  ciWeight2 = 0
+  data_check(iWeight2, ciWeight2)
+  print(iWeight2, ciWeight2)
   iHeight2 = input("Please enter your height in meter: ")
-  data_check(iHeight2)
+#  ciHeight2 = 0
+  data_check(iHeight2, ciHeight2)
+  print(iHeight2, ciHeight2)
+  print ("After all input " + str(icheck))
 #--------------------------------------------------------------
 computed_value2 = (ciWeight2 / ciHeight2**2)
 computed_value1 = (ciWeight1 / ciHeight1**2)*703
