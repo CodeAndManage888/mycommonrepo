@@ -50,19 +50,19 @@ while icheck == -1:
   print("Please use zero if the data is not available")
   iWeight1 = input("Please enter your weight in lbs: " )
 #  ciWeight1 = 0
-  data_check(iWeight1, ciWeight1)
+  iWeight1, ciWeight1 = data_check(iWeight1, ciWeight1)
   print(iWeight1, ciWeight1)
   iHeight1 = input("Please enter your height in inches: ")
 #  ciHeight1 = 0
-  data_check(iHeight1, ciHeight1)
+  iHeight1, ciHeight1 = data_check(iHeight1, ciHeight1)
   print(iHeight1, ciHeight1)
   iWeight2 = input("Please enter your weight in kg: " )
 #  ciWeight2 = 0
-  data_check(iWeight2, ciWeight2)
+  iWeight2, ciWeight2 = data_check(iWeight2, ciWeight2)
   print(iWeight2, ciWeight2)
   iHeight2 = input("Please enter your height in meter: ")
 #  ciHeight2 = 0
-  data_check(iHeight2, ciHeight2)
+  iHeight2, ciHeight2 = data_check(iHeight2, ciHeight2)
   print(iHeight2, ciHeight2)
   print ("After all input " + str(icheck))
 #--------------------------------------------------------------
