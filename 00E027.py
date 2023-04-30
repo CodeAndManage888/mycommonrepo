@@ -40,26 +40,35 @@ def data_check(UserIn,cUserIn):
     print("Invalid Data Type. Please input valid data type.")
 #--------------------------------------------------------------
 while icheck == -1:
-  print("Please use zero if the data is not available")
+  print("Please use space if the data is not available")
   iWeight1 = input("Please enter your weight in lbs: " )
   iWeight1, ciWeight1 = data_check(iWeight1, ciWeight1)
   iHeight1 = input("Please enter your height in inches: ")
   iHeight1, ciHeight1 = data_check(iHeight1, ciHeight1)
+  if ciWeight1 != 0 and ciHeight1 != 0:
+    computed_value1 = (ciWeight1 / ciHeight1**2)*703
+    fcomputed_value1 = format(computed_value1, '2f')
+    final_value1 = str(fcomputed_value1)
+    print("Your computed BMI using formula 1 is "+final_value1+".")
+    break
+#  else:
+#    print("Both fields must be zeroes or not zeroes at the same time.")
+#    continue
+#--------------------------------------------------------------
   iWeight2 = input("Please enter your weight in kg: " )
   iWeight2, ciWeight2 = data_check(iWeight2, ciWeight2)
   iHeight2 = input("Please enter your height in meter: ")
   iHeight2, ciHeight2 = data_check(iHeight2, ciHeight2)
+  if ciWeight2 != 0 and ciHeight1 != 0:
+    computed_value2 = (ciWeight2 / ciHeight2**2)
+    fcomputed_value2 = format(computed_value2, '2f')
+    final_value2 = str(fcomputed_value2)
+    print("Your computed BMI using formula 2 is "+final_value2+".")
+    break
+#  else:
+#    print("Both fields must be zeroes or not zeroes at the same time.")
+#    continue
 #--------------------------------------------------------------
-computed_value2 = (ciWeight2 / ciHeight2**2)
-computed_value1 = (ciWeight1 / ciHeight1**2)*703
-
-fcomputed_value1 = format(computed_value1, '2f')
-fcomputed_value2 = format(computed_value2, '2f')
-final_value1 = str(fcomputed_value1)
-final_value2 = str(fcomputed_value2)
-#--------------------------------------------------------------
-print("Your computed BMI using formula 1 is "+final_value1+".")
-print("Your computed BMI using formula 2 is "+final_value2+".")
 print("Thank you for using this app.")
 #**************************************************************
 # Open Items:
@@ -69,5 +78,7 @@ print("Thank you for using this app.")
 #     error.
 # 3.) Code needs to be simplified. Unable to remove unnecessary 
 #     computation if not needed.
-# 4.) Need to remove the first message of requiring to input 1 the
+# 4.) Need to remove the first message of requiring to input 0 the
 #     programs should be able to handle any input combination.
+# 5.) When zeros are entered first computation is halted. It needs 
+#     to continue the process for the other units.
