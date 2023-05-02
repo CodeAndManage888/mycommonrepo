@@ -1,7 +1,7 @@
 #**************************************************************
-# Date: 020323 / 020523                                       *
+# Date: 020323 / 020523 / 050223                              *
 # Title: Body Mass Index                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing     (In Progress / Testing / Working)       *
 # Write a program that computes the body mass index (BMI) of  *
 # an individual. Your program should begin by reading a height*
 # and weight from the user. Then it should use one of the     *
@@ -23,7 +23,6 @@
 # Computed Result Validated:                                  *
 #                                                             *
 #**************************************************************
-#**************************************************************
 computed_value = 0
 icheck = -1
 ciWeight1, ciHeight1, ciWeight2, ciHeight2 = (0, 0, 0, 0)
@@ -43,14 +42,7 @@ while icheck == -1:
   iWeight1, ciWeight1 = data_check(iWeight1, ciWeight1)
   iHeight1 = input("Please enter your height in inches: ")
   iHeight1, ciHeight1 = data_check(iHeight1, ciHeight1)
-  if ciWeight1 != 0 and ciHeight1 != 0:
-    computed_value1 = (ciWeight1 / ciHeight1**2) * 703
-    fcomputed_value1 = format(computed_value1, '2f')
-    final_value1 = str(fcomputed_value1)
-    print("Your computed BMI using formula 1 is " + final_value1 + ".")
-    break
-#--------------------------------------------------------------
-  else:
+  if ciWeight1 == 0 and ciHeight1 == 0:
     iWeight2 = input("Please enter your weight in kg: ")
     iWeight2, ciWeight2 = data_check(iWeight2, ciWeight2)
     iHeight2 = input("Please enter your height in meter: ")
@@ -61,6 +53,22 @@ while icheck == -1:
       final_value2 = str(fcomputed_value2)
       print("Your computed BMI using formula 2 is " + final_value2 + ".")
       break
+    else:
+      if ciWeight2 == 0 and ciHeight2 == 0:
+        break
+      else:
+        print("Invalid input combination: both should be non zeroes or both are zeroes only")
+        icheck = -1
+  else:
+    if ciWeight1 != 0 and ciHeight1 != 0:
+      computed_value1 = (ciWeight1 / ciHeight1**2) * 703
+      fcomputed_value1 = format(computed_value1, '2f')
+      final_value1 = str(fcomputed_value1)
+      print("Your computed BMI using formula 1 is " + final_value1 + ".")
+      break
+    else:
+      print("Invalid input combination: both should be non zeroes or both are zeroes only")
+      icheck = -1
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
@@ -77,3 +85,4 @@ print("Thank you for using this app.")
 #     to continue the process for the other units.
 # 6.) When the last 2 fields were used no computation is done.
 # 7.) Still can't handle invalid combination of the user input.
+# 8.) Can't handle decimal point input value.
