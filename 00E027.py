@@ -23,6 +23,7 @@
 # Computed Result Validated:                                  *
 #                                                             *
 #**************************************************************
+#**************************************************************
 computed_value = 0
 icheck = -1
 ciWeight1, ciHeight1, ciWeight2, ciHeight2 = (0, 0, 0, 0)
