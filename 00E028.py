@@ -3,14 +3,14 @@
 # Title: Wind Chill                                           *
 # Status: In Progress (In Progress / Testing / Working)       *
 # When the wind blows in cold weather, the air feels even     *
-# colder thatn it actually is because the movement of the air *
-# increase the rate of coolin for warm objects, like people.  *
+# colder than it actually is because the movement of the air  *
+# increase the rate of cooling for warm objects, like people. *
 # This effect is known as wind chill.                         *
 # In 2001, Canada, the United Kindom and the United States    *
 # adopted the following formula for computing the wind chill  *
 # index. Within the formula Ta is the air temperature in      *
 # degrees Celsius and V is the wind speed in kilometers per   *
-# hour. A similar fomula with different constant values can   *
+# hour. A similar formula with different constant values can   *
 # be used with temperatures in degrees Fahrenheit and wind    *
 # speeds in miles per hour.                                   *
 #                                                             *
@@ -32,37 +32,36 @@ import math
 
 computed_value = 0
 icheck = -1
-
-while icheck == -1:
-
-#--------------------------------------------------------------
-
-
-
-#--------------------------------------------------------------
-
-
-
-#--------------------------------------------------------------
-
-
-while icheck == -1:
-  iLength = input("What is the length of the sides? ==> ")
-  iSides = input("How many sides does the polygon have? ==> ")
+iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed = (0, 0, 0, 0)
+def data_check(UserIn1,UserIn2,cUserIn1,cUserIn2,):
   try:
-    ciLength = float(iLength)
-    ciSides = float(iSides)
+    cUserIn1=float(UserIn1)
+    cUserIn2=float(UserIn2)
     icheck = 0
+    return UserIn1, UserIn2, cUserIn1, cUserIn2
   except:
-    print("Please input number data only.")
+    print("Invalid input data!")
 
-computed_value = (ciSides * ciLength**2) / (4 * math.tan(math.pi/ciSides))
-fcomputed_value = format(computed_value, '2f')
-final_value = str(fcomputed_value)
-
-print("The area of the polygon is", final_value, "sq. units.")
+while icheck == -1:
+  print("Please provide the air temperature and wind speed.")
+  iAirTemp=input("Please enter the Air Temperature in *C: ")
+  iWindSpeed=input("Please enter the Wind Speed in KPH: ")
+  iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed = data_check(iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed)
+  if ciAirTemp <= 10 or ciWindSpeed > 4.8:
+    computed_value = 13.12 + 0.6215*ciAirTemp - 11.37*(ciWindSpeed**0.16) + 0.3965*ciAirTemp*(ciWindSpeed**0.16)
+    fcomputed_value = format(computed_value, '2f')
+    final_value = str(fcomputed_value)
+    print("Your computed WCI is " + final_value + ".")
+    break
+  else:
+    print("Invalid Data: Air Temp must be LT 10 *C or Wind Speed must be GT 4.8 KPH")
+    icheck = -1
+#--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
-# Lessons Learned:
+# Open Items:
+# 1.) The program will start with *C and KPH. Still need to check
+#     the exact formula for WCI if the data is for *F and MPH.
+# 2.) Still need to validate the final computed value.
 # 
 # 
