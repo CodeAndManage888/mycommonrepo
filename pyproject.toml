@@ -19,6 +19,7 @@ numpy = "^1.24.1"
 Adafruit-Blinka = "^8.11.0"
 fastapi = "^0.89.1"
 pytube = "^12.1.2"
+pandas = "^1.5.3"
 
 [tool.poetry.dev-dependencies]
 
