@@ -4,3 +4,8 @@ venv/
 # Ignore Replit-specific files
 .replit
 .breakpoints
+replit.nix
+pyproject.toml
+
+# Ignore Other files
+poetry.lock
