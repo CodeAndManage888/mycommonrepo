@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050223                                                *
 # Title: Wind Chill                                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # When the wind blows in cold weather, the air feels even     *
 # colder than it actually is because the movement of the air  *
 # increase the rate of cooling for warm objects, like people. *
@@ -58,7 +58,7 @@ while icheck == -1:
     icheck = -1
     continue
 #--------------------------------------------------------------
-  if iOptionData in myYesList
+  if iOptionData in myYesList:
     if ciAirTemp <= 10 or ciWindSpeed > 4.8:
       computed_value = 13.12 + 0.6215*ciAirTemp - 11.37*(ciWindSpeed**0.16) + 0.3965*ciAirTemp*(ciWindSpeed**0.16)
       fcomputed_value = format(computed_value, '2f')
@@ -86,5 +86,9 @@ print("Thank you for using this app.")
 # 1.) The program will start with *C and KPH. Still need to check
 #     the exact formula for WCI if the data is for *F and MPH.
 # 2.) Still need to validate the final computed value.
+#     The following formula is for *F & MPH:
 #     WCI = 35.74 + 0.6215Ta * (0.4275Ta - 35.75) * V^0.16
+# 3.) Validation of of the input data in terms of accepted value 
+#     is erratic. This needs to be tested further. 
+#
 # 
