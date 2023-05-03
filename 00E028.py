@@ -15,6 +15,7 @@
 # speeds in miles per hour.                                   *
 #                                                             *
 #    WCI = 13.12 + 0.6215Ta - 11.37V^0.16 + 0.3965TaV^0.16    *
+#    WCI = 35.74 + 0.6215Ta * (0.4275Ta - 35.75) * V^0.16     *
 #                                                             *
 # Write a program that begins by reading the air temperature  *
 # and wind speed from the user. Once these values have been   *
@@ -29,33 +30,55 @@
 #                                                             *
 #**************************************************************
 import math
-
+#--------------------------------------------------------------
 computed_value = 0
 icheck = -1
 iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed = (0, 0, 0, 0)
-def data_check(UserIn1,UserIn2,cUserIn1,cUserIn2,):
+myInOptList = ["Y", "N", "y", "n"]
+myYesList = ["Y", "y"]
+#--------------------------------------------------------------
+def data_check(UserIn1,UserIn2,cUserIn1,cUserIn2):
   try:
     cUserIn1=float(UserIn1)
     cUserIn2=float(UserIn2)
     icheck = 0
     return UserIn1, UserIn2, cUserIn1, cUserIn2
   except:
-    print("Invalid input data!")
-
+    print("Invalid input data! Numeric input data only.")
+#--------------------------------------------------------------    
 while icheck == -1:
-  print("Please provide the air temperature and wind speed.")
-  iAirTemp=input("Please enter the Air Temperature in *C: ")
-  iWindSpeed=input("Please enter the Wind Speed in KPH: ")
+  print("Please provide the air temperature and wind speed (*C/KPH or *F/MPH).")
+  iAirTemp=input("Please enter the Air Temperature: ")
+  iWindSpeed=input("Please enter the Wind Speed: ")
   iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed = data_check(iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed)
-  if ciAirTemp <= 10 or ciWindSpeed > 4.8:
-    computed_value = 13.12 + 0.6215*ciAirTemp - 11.37*(ciWindSpeed**0.16) + 0.3965*ciAirTemp*(ciWindSpeed**0.16)
-    fcomputed_value = format(computed_value, '2f')
-    final_value = str(fcomputed_value)
-    print("Your computed WCI is " + final_value + ".")
-    break
-  else:
-    print("Invalid Data: Air Temp must be LT 10 *C or Wind Speed must be GT 4.8 KPH")
+  iOptionData=input("Are the input data in *C & KPH (Y or N only): ")
+#--------------------------------------------------------------
+  if iOptionData not in myInOptList:
+    print("Invalid Option! Try again please")
     icheck = -1
+    continue
+#--------------------------------------------------------------
+  if iOptionData in myYesList
+    if ciAirTemp <= 10 or ciWindSpeed > 4.8:
+      computed_value = 13.12 + 0.6215*ciAirTemp - 11.37*(ciWindSpeed**0.16) + 0.3965*ciAirTemp*(ciWindSpeed**0.16)
+      fcomputed_value = format(computed_value, '2f')
+      final_value = str(fcomputed_value)
+      print("Your computed WCI is " + final_value + ".")
+      break
+    else:
+      print("Invalid Data: Air Temp must be LT 10 *C or Wind Speed must be GT 4.8 KPH")
+      
+      icheck = -1
+  else:
+    if ciAirTemp <= 50 or ciWindSpeed > 2.98:
+      computed_value = 35.74 + (0.6215*ciAirTemp) * ((0.4275*ciAirTemp) - 35.75) * (ciWindSpeed**0.16)
+      fcomputed_value = format(computed_value, '2f')
+      final_value = str(fcomputed_value)
+      print("Your computed WCI is " + final_value + ".")
+      break
+    else:
+      print("Invalid Data: Air Temp must be LT 50 *F or Wind Speed must be GT 2.98 MPH")
+      icheck = -1
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
@@ -63,5 +86,5 @@ print("Thank you for using this app.")
 # 1.) The program will start with *C and KPH. Still need to check
 #     the exact formula for WCI if the data is for *F and MPH.
 # 2.) Still need to validate the final computed value.
-# 
+#     WCI = 35.74 + 0.6215Ta * (0.4275Ta - 35.75) * V^0.16
 # 
