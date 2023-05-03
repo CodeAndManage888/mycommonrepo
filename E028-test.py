@@ -67,10 +67,9 @@ while icheck == -1:
       break
     else:
       print("Invalid Data: Air Temp must be LT 10 *C or Wind Speed must be GT 4.8 KPH")
-      
       icheck = -1
   else:
-    if ciAirTemp <= 50 or ciWindSpeed > 2.98:
+    if ciAirTemp <= 50.0 or ciWindSpeed > 2.98:
       computed_value = 35.74 + (0.6215*ciAirTemp) * ((0.4275*ciAirTemp) - 35.75) * (ciWindSpeed**0.16)
       fcomputed_value = format(computed_value, '2f')
       final_value = str(fcomputed_value)
