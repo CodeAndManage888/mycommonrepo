@@ -90,4 +90,3 @@ print("Thank you for using this app.")
 # 3.) Validation of of the input data in terms of accepted value 
 #     is erratic. This needs to be tested further. 
 #
-# 

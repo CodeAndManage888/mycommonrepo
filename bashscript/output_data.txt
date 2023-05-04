@@ -147,3 +147,33 @@ Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
 Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -572.723934.
 Thank you for using this app.
 -----------------------------------
+Executing Test Case 1:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 554.117633.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 2:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -491.304250.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 3:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -572.723934.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 1:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 554.117633.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 2:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -491.304250.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 3:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -572.723934.
+Thank you for using this app.
+-----------------------------------
