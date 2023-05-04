@@ -10,7 +10,7 @@
 # adopted the following formula for computing the wind chill  *
 # index. Within the formula Ta is the air temperature in      *
 # degrees Celsius and V is the wind speed in kilometers per   *
-# hour. A similar formula with different constant values can   *
+# hour. A similar formula with different constant values can  *
 # be used with temperatures in degrees Fahrenheit and wind    *
 # speeds in miles per hour.                                   *
 #                                                             *
@@ -33,7 +33,7 @@ import math
 #--------------------------------------------------------------
 computed_value = 0
 icheck = -1
-iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed = (0, 0, 0, 0)
+iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed, iOptionData = (0, 0, 0, 0, "X")
 myInOptList = ["Y", "N", "y", "n"]
 myYesList = ["Y", "y"]
 #--------------------------------------------------------------
@@ -44,7 +44,7 @@ def data_check(UserIn1,UserIn2,cUserIn1,cUserIn2):
     icheck = 0
     return UserIn1, UserIn2, cUserIn1, cUserIn2
   except:
-    print("Invalid input data! Numeric input data only.")
+    print("Invalid input data! Numeric input data only.\n")
 #--------------------------------------------------------------    
 while icheck == -1:
   print("Please provide the air temperature and wind speed (*C/KPH or *F/MPH).")
@@ -52,9 +52,10 @@ while icheck == -1:
   iWindSpeed=input("Please enter the Wind Speed: ")
   iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed = data_check(iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed)
   iOptionData=input("Are the input data in *C & KPH (Y or N only): ")
+  print("Data fetched from the file==>", iAirTemp, iWindSpeed, iOptionData, ciAirTemp, ciWindSpeed)
 #--------------------------------------------------------------
   if iOptionData not in myInOptList:
-    print("Invalid Option! Try again please")
+    print("Invalid Option! Try again please\n")
     icheck = -1
     continue
 #--------------------------------------------------------------
@@ -66,7 +67,7 @@ while icheck == -1:
       print("Your computed WCI is " + final_value + ".")
       break
     else:
-      print("Invalid Data: Air Temp must be LT 10 *C or Wind Speed must be GT 4.8 KPH")
+      print("Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH\n")
       icheck = -1
   else:
     if ciAirTemp <= 50.0 or ciWindSpeed > 2.98:
@@ -76,7 +77,7 @@ while icheck == -1:
       print("Your computed WCI is " + final_value + ".")
       break
     else:
-      print("Invalid Data: Air Temp must be LT 50 *F or Wind Speed must be GT 2.98 MPH")
+      print("Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH\n")
       icheck = -1
 #--------------------------------------------------------------
 print("Thank you for using this app.")
