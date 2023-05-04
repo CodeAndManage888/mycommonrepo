@@ -1,72 +1,96 @@
+- 9 F Y EO: *C/KPH computed
 9
 5
 Y
+- 9.0 5.0 Y EO: *C/KPH computed
 9.0
 5.0
 Y
+- 9.999999 4.999999 Y EO: *C/KPH computed
 9.999999
 4.999999
 Y
+- 9.00000 5.00000 Y EO: *C/KPH computed
 9.00000
 5.00000
 Y
+- 10 4.8 Y EO: Invalid data ciWindSpeed is not GT 4.8 KPH
 10
 4.8
 Y
+- 10.00000 4.80000 Y EO: Invalid data ciWindSpeed is not GT 4.8 KPH
 10.00000
 4.80000
 Y
+- 49 3 N EO: *F/MPH computed
 49
 3
 N
+- 49.0 3.0 N EO: *F/MPH computed
 49.0
 3.0
 N
+- 49.99999 2.99999 N EO: *F/MPH computed
 49.99999
 2.99999
 N
+- 50 3 N EO: *F/MPH computed
 50
 3
 N
+- 50.00000 2.98000 N EO: Invalid data ciWindSpeed is not GT 2.98 MPH
 50.00000
 2.98000
 N
+- 49.00000 2.98000 N EO: Invalid data ciWindSpeed is not GT 2.98 MPH
 49.00000
 2.98000
 N
+- A B Y EO: Invalid input data! Numeric input data only
 A
 B
 Y
+- 9.00 5.00 y EO: *C/KPH computed
 9.00
 5.00
 y
+- 9.00 5.00 u EO: Invalid Option! Try again please
 9.00
 5.00
 u
+- 49.0 3.00 n EO: *C/KPH computed
 49.0
 3.00
 n
+- " " 3.00 N EO: Invalid input data! Numeric input data only
 
 3.00
 N
+- 11.00 5.00 Y EO: Invalid data ciAirTemp is not LET 10 *C
 11.00
 5.00
 Y
+- 51.00 3.00 N EO: Invalid data ciAirTemp is not LET 50 *F
 51.00
 3.00
 N
+- 10.00006 5.00000 Y EO: Invalid data ciAirTemp is not LET 10 *C
 10.00006
 5.00000
 Y
+- 50.00 2.97 N EO: Invalid data ciWindSpeed is not GT 2.98 MPH
 50.00
 2.97
 N
+- 50.00000 2.97999 N EO: Invalid data ciWindSpeed is not GT 2.98 MPH
 50.00000
 2.97999
 N
-10.00
+- 10.00 4.799 Y EO: Invalid data ciWindSpeed is not GT 4.8 KPH
+10.000
 4.799
 Y
+- 10.00000 4.79999 Y EO: Invalid data ciWindSpeed is not GT 4.8 KPH
 10.00000
 4.79999
 Y
