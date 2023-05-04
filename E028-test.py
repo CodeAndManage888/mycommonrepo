@@ -10,7 +10,7 @@
 # adopted the following formula for computing the wind chill  *
 # index. Within the formula Ta is the air temperature in      *
 # degrees Celsius and V is the wind speed in kilometers per   *
-# hour. A similar formula with different constant values can   *
+# hour. A similar formula with different constant values can  *
 # be used with temperatures in degrees Fahrenheit and wind    *
 # speeds in miles per hour.                                   *
 #                                                             *
@@ -66,7 +66,7 @@ while icheck == -1:
       print("Your computed WCI is " + final_value + ".")
       break
     else:
-      print("Invalid Data: Air Temp must be LT 10 *C or Wind Speed must be GT 4.8 KPH")
+      print("Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH")
       icheck = -1
   else:
     if ciAirTemp <= 50.0 or ciWindSpeed > 2.98:
@@ -76,7 +76,7 @@ while icheck == -1:
       print("Your computed WCI is " + final_value + ".")
       break
     else:
-      print("Invalid Data: Air Temp must be LT 50 *F or Wind Speed must be GT 2.98 MPH")
+      print("Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH")
       icheck = -1
 #--------------------------------------------------------------
 print("Thank you for using this app.")

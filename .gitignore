@@ -10,4 +10,3 @@ pyproject.toml
 # Ignore Other files
 poetry.lock
 settings.json
-*.txt

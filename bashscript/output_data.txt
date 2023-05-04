@@ -177,3 +177,170 @@ Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
 Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -572.723934.
 Thank you for using this app.
 -----------------------------------
+Executing Test Case 1:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 2:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 3:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 1:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 2:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 3:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 1:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 554.117633.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 2:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 3:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 1:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 2:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 3:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 1:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 8.620662.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 2:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 8.620662.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 3:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 9.755115.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 4:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 8.620662.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 5:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 9.817483.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 6:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 9.817483.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 7:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -501.677351.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 8:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -501.677351.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 9:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -496.807318.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 10:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -496.807550.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 11:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -496.237903.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 12:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -501.102494.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 13:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 14:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 8.620662.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 15:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Invalid Option! Try again please
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: -----------------------------------
+Executing Test Case 16:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -501.677351.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 17:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+Executing Test Case 18:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 10.889570.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 19:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -491.304250.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 20:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 9.755184.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 21:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -495.951874.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 22:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is -496.237617.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 23:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 9.817800.
+Thank you for using this app.
+-----------------------------------
+Executing Test Case 24:
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Your computed WCI is 9.817486.
+Thank you for using this app.
+-----------------------------------
