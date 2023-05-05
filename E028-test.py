@@ -56,14 +56,13 @@ while icheck == -1:
 #--------------------------------------------------------------
   if iOptionData not in myInOptList:
     print("Invalid Option! Try again please")
-    icheck = -1
     continue
 #--------------------------------------------------------------
   if iOptionData in myYesList:
     if ciAirTemp <= 10 and ciWindSpeed > 4.8:
       computed_value = 13.12 + 0.6215*ciAirTemp - 11.37*(ciWindSpeed**0.16) + 0.3965*ciAirTemp*(ciWindSpeed**0.16)
       rounded_value = round(computed_value, 4)
-      fcomputed_value = format(rounded_value, '4f')
+      fcomputed_value = format(rounded_value, '0.4f')
       final_value = str(fcomputed_value)
       print("Your computed WCI is " + final_value + ".")
       break
@@ -73,7 +72,7 @@ while icheck == -1:
     if ciAirTemp <= 50.0 and ciWindSpeed > 2.98:
       computed_value = 35.74 + (0.6215*ciAirTemp) * ((0.4275*ciAirTemp) - 35.75) * (ciWindSpeed**0.16)
       rounded_value = round(computed_value, 4)
-      fcomputed_value = format(rounded_value, '4f')
+      fcomputed_value = format(rounded_value, '0.4f')
       final_value = str(fcomputed_value)
       print("Your computed WCI is " + final_value + ".")
       break
@@ -97,3 +96,7 @@ print("Thank you for using this app.")
 # - remove all new line for all messages
 # - remove the math import syntax
 # - fix the data value validation "or" instead of "and"
+# C0505231812:
+# - remove all the remaining icheck = -1 any error message will 
+#   halt the process.
+# - modified the formatting to just diplay/write 4 decimal places.
