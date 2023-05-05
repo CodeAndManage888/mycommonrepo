@@ -1,0 +1,8 @@
+- All 0 only with Y
+0
+0
+Y
+- All valid data only with Y
+9
+6
+Y

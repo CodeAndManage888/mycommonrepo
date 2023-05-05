@@ -44,7 +44,7 @@ def data_check(UserIn1,UserIn2,cUserIn1,cUserIn2):
     icheck = 0
     return UserIn1, UserIn2, cUserIn1, cUserIn2
   except:
-    print("Invalid input data! Numeric input data only.\n")
+    print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------    
 while icheck == -1:
   print("Please provide the air temperature and wind speed (*C/KPH or *F/MPH).")
@@ -55,30 +55,30 @@ while icheck == -1:
   print("Data fetched from the file==>", iAirTemp, iWindSpeed, iOptionData, ciAirTemp, ciWindSpeed)
 #--------------------------------------------------------------
   if iOptionData not in myInOptList:
-    print("Invalid Option! Try again please\n")
+    print("Invalid Option! Try again please")
     icheck = -1
     continue
 #--------------------------------------------------------------
   if iOptionData in myYesList:
-    if ciAirTemp <= 10 or ciWindSpeed > 4.8:
+    if ciAirTemp <= 10 and ciWindSpeed > 4.8:
       computed_value = 13.12 + 0.6215*ciAirTemp - 11.37*(ciWindSpeed**0.16) + 0.3965*ciAirTemp*(ciWindSpeed**0.16)
-      fcomputed_value = format(computed_value, '2f')
+      rounded_value = round(computed_value, 4)
+      fcomputed_value = format(rounded_value, '4f')
       final_value = str(fcomputed_value)
       print("Your computed WCI is " + final_value + ".")
       break
     else:
-      print("Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH\n")
-      icheck = -1
+      print("Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.")
   else:
-    if ciAirTemp <= 50.0 or ciWindSpeed > 2.98:
+    if ciAirTemp <= 50.0 and ciWindSpeed > 2.98:
       computed_value = 35.74 + (0.6215*ciAirTemp) * ((0.4275*ciAirTemp) - 35.75) * (ciWindSpeed**0.16)
-      fcomputed_value = format(computed_value, '2f')
+      rounded_value = round(computed_value, 4)
+      fcomputed_value = format(rounded_value, '4f')
       final_value = str(fcomputed_value)
       print("Your computed WCI is " + final_value + ".")
       break
     else:
-      print("Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH\n")
-      icheck = -1
+      print("Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.")
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
@@ -90,4 +90,10 @@ print("Thank you for using this app.")
 #     WCI = 35.74 + 0.6215Ta * (0.4275Ta - 35.75) * V^0.16
 # 3.) Validation of of the input data in terms of accepted value 
 #     is erratic. This needs to be tested further. 
-#
+# C0505231400:
+# - remove the icheck = -1 after ever error message
+# - set the format to 4 decimal place with round syntax
+# - remove test print line of codes
+# - remove all new line for all messages
+# - remove the math import syntax
+# - fix the data value validation "or" instead of "and"

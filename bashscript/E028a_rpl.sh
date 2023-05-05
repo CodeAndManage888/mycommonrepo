@@ -1,7 +1,7 @@
 #!/bin/bash
 
-input_file="/home/runner/mycommonrepo/bashscript/input_data_rpl.txt"
-output_file="/home/runner/mycommonrepo/bashscript/output_data.txt"
+input_file="/home/runner/mycommonrepo/bashscript/inE028a_rpl.txt"
+output_file="/home/runner/mycommonrepo/bashscript/outE028a.txt"
 
 total_lines=$(wc -l < "$input_file")
 test_case=1

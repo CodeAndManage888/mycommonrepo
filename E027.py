@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 020323 / 020523 / 050223                              *
 # Title: Body Mass Index                                      *
-# Status: Testing     (In Progress / Testing / Working)       *
+# Status: Working     (In Progress / Testing / Working)       *
 # Write a program that computes the body mass index (BMI) of  *
 # an individual. Your program should begin by reading a height*
 # and weight from the user. Then it should use one of the     *
@@ -57,8 +57,7 @@ while icheck == -1:
       if ciWeight2 == 0 and ciHeight2 == 0:
         break
       else:
-        print("Invalid input combination: both should be non zeroes or both are zeroes only")
-        icheck = -1
+        print("Invalid input combination: non zeroes for both fields or all zeroes only")
   else:
     if ciWeight1 != 0 and ciHeight1 != 0:
       computed_value1 = (ciWeight1 / ciHeight1**2) * 703
@@ -67,12 +66,11 @@ while icheck == -1:
       print("Your computed BMI using formula 1 is " + final_value1 + ".")
       break
     else:
-      print("Invalid input combination: both should be non zeroes or both are zeroes only")
-      icheck = -1
+      print("Invalid input combination: non zeroes for both fields or all zeroes only")
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
+# Closed Items:
 # 1.) Unable to code a way to determine which formula must be used
 #     depending on the input data only.
 # 2.) Uable to check the value of zero to prevent division of zero
