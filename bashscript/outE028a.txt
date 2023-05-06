@@ -1,40 +1,276 @@
-Executing Test Case 1 - All 0 only with Y:
+Executing Test Case 1 - All 0 only with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 0 0 Y 0.0 0.0
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
 -----------------------------------
 
+Executing Test Case 2 - All 0.00 only with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 0.00 0.00 Y 0.0 0.0
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
 -----------------------------------
 
-Executing Test Case 1 - All 0 only with Y:
+Executing Test Case 3 - All 0.0000 only with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 0.0000 0.0000 Y 0.0 0.0
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
 -----------------------------------
 
+Executing Test Case 4 - All 0 only with N EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 0 0 N 0.0 0.0
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
 -----------------------------------
 
-Executing Test Case 1 - All 0 only with Y:
+Executing Test Case 5 - All 0.00 only with N EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 0.00 0.00 N 0.0 0.0
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
 -----------------------------------
 
+Executing Test Case 6 - All 0.0000 only with N EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 0.0000 0.0000 N 0.0 0.0
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
 -----------------------------------
 
-Executing Test Case 2 - All valid data only with Y:
+Executing Test Case 7 - Input data extreme of limit 10/4.8 with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 10.00000000001 5.0 Y 10.00000000001 5.0
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
 -----------------------------------
 
+Executing Test Case 8 - Input data extreme of limit 10/4.8 with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9 4.799999999999 Y 9.0 4.799999999999
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
 -----------------------------------
 
-Executing Test Case 1 - All 0 only with Y:
+Executing Test Case 9 - Input data extreme of limit 50/2.98 with N EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 50.00000000001 5.0 N 50.00000000001 5.0
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
 -----------------------------------
 
+Executing Test Case 10 - Input data extreme of limit 50/2.98 with N EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 49 2.9799999999999 N 49.0 2.9799999999999
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
 -----------------------------------
 
-Executing Test Case 2 - All valid data only with Y:
+Executing Test Case 11 - Input data equal to limit 10/4.8 with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 10 4.8 Y 10.0 4.8
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
 -----------------------------------
 
+Executing Test Case 12 - Input data high end 9.99/4.79 with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.99 4.79 Y 9.99 4.79
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
 -----------------------------------
 
-Executing Test Case 1 - All 0 only with Y:
+Executing Test Case 13 - Input data high end 9.9999/4.7999 with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.9999 4.7999 Y 9.9999 4.7999
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
 -----------------------------------
 
+Executing Test Case 14 - Input data equal to limit 50/2.98 with N EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 50 2.98 N 50.0 2.98
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
 -----------------------------------
 
-Executing Test Case 2 - All valid data only with Y:
+Executing Test Case 15 - Input data high end 49.99/2.979 with N EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 49.99 2.979 N 49.99 2.979
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
 -----------------------------------
 
+Executing Test Case 16 - Input data high end 49.9999/2.9799 with N EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.9999 2.9799 N 9.9999 2.9799
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 17 - Input data equal to No Yes to limit of 10/4.8 with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 11 4.9 Y 11.0 4.9
+Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 18 - Input data equal to No Yes to limit of 50/2.98 with Y EM: Invalid Data:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 51 2.99 N 51.0 2.99
+Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 19 - Invalid data non numeric Y EM: Invalid input data! Numeric input data only:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+
+Executing Test Case 20 - Invalid data non numeric Y EM: Invalid input data! Numeric input data only:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Invalid input data! Numeric input data only.
+-----------------------------------
+
+Executing Test Case 21 - Invalid Option EM: Invalid Option! Try again please:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.99 4.81 x 9.99 4.81
+Invalid Option! Try again please
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 22 - Invalid Option EM: Invalid Option! Try again please:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.99 4.81  9.99 4.81
+Invalid Option! Try again please
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 23 - Invalid Option EM: Invalid Option! Try again please:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.99 4.81 % 9.99 4.81
+Invalid Option! Try again please
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 24 - All valid data integer only with Y EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9 6 Y 9.0 6.0
+Your computed WCI is 8.3219.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 25 - All valid data XX.00 only with Y EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.00 6.00 Y 9.0 6.0
+Your computed WCI is 8.3219.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 26 - All valid data XX.0000 only with Y EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.0000 6.0000 Y 9.0 6.0
+Your computed WCI is 8.3219.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 27 - All valid data integer only with N EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 45 4 N 45.0 4.0
+Your computed WCI is -540.7557.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 28 - All valid data XX.00 only with N EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 45.00 4.00 N 45.0 4.0
+Your computed WCI is -540.7557.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 29 - All valid data XX.0000 only with N EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 45.0000 4.0000 N 45.0 4.0
+Your computed WCI is -540.7557.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 30 - Input data equal to limit 9/4.9 with Y EM: Your computed WCI is :
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9 4.9 Y 9.0 4.9
+Your computed WCI is 8.6532.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 31 - Input data high end 9.99/4.79 with Y EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.99 4.81 y 9.99 4.81
+Your computed WCI is 9.8030.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 32 - Input data high end 9.9999/4.8001 with Y EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 9.9999 4.8001 Y 9.9999 4.8001
+Your computed WCI is 9.8173.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 33 - Input data equal to limit 49/2.99 with N EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 49 2.99 n 49.0 2.99
+Your computed WCI is -501.3903.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 34 - Input data high end 49.99/2.979 with N EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 49.99 2.981 N 49.99 2.981
+Your computed WCI is -496.3182.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 35 - Input data high end 49.9999/2.9799 with N EM: Your computed WCI is:
+-----------------------------------
+Please provide the air temperature and wind speed (*C/KPH or *F/MPH).
+Please enter the Air Temperature: Please enter the Wind Speed: Are the input data in *C & KPH (Y or N only): Data fetched from the file==> 49.9999 2.9801 N 49.9999 2.9801
+Your computed WCI is -496.2413.
+Thank you for using this app.
 -----------------------------------
 

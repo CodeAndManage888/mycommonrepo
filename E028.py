@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050223                                                *
 # Title: Wind Chill                                           *
-# Status: Testing (In Progress / Testing / Working)           *
+# Status: Working (In Progress / Testing / Working)           *
 # When the wind blows in cold weather, the air feels even     *
 # colder than it actually is because the movement of the air  *
 # increase the rate of cooling for warm objects, like people. *
@@ -27,7 +27,6 @@
 # wind speeds excceding 4.8 kilometers per hour               *
 #                                                             *
 # Computed Result Validated:                                  *
-#                                                             *
 #**************************************************************
 import math
 #--------------------------------------------------------------
@@ -52,10 +51,11 @@ while icheck == -1:
   iWindSpeed=input("Please enter the Wind Speed: ")
   iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed = data_check(iAirTemp, iWindSpeed, ciAirTemp, ciWindSpeed)
   iOptionData=input("Are the input data in *C & KPH (Y or N only): ")
-  print("Data fetched from the file==>", iAirTemp, iWindSpeed, iOptionData, ciAirTemp, ciWindSpeed)
+  print("Data fetched from the file==>", iAirTemp, iWindSpeed, iOptionData, ciAirTemp, ciWindSpeed) #For testing only
 #--------------------------------------------------------------
   if iOptionData not in myInOptList:
     print("Invalid Option! Try again please")
+    icheck = 0
     continue
 #--------------------------------------------------------------
   if iOptionData in myYesList:
@@ -68,6 +68,7 @@ while icheck == -1:
       break
     else:
       print("Invalid Data: Air Temp must be LET 10 *C or Wind Speed must be GT 4.8 KPH.")
+      icheck = 0
   else:
     if ciAirTemp <= 50.0 and ciWindSpeed > 2.98:
       computed_value = 35.74 + (0.6215*ciAirTemp) * ((0.4275*ciAirTemp) - 35.75) * (ciWindSpeed**0.16)
@@ -78,10 +79,11 @@ while icheck == -1:
       break
     else:
       print("Invalid Data: Air Temp must be LET 50 *F or Wind Speed must be GT 2.98 MPH.")
+      icheck = 0
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
+# Closed Items:
 # 1.) The program will start with *C and KPH. Still need to check
 #     the exact formula for WCI if the data is for *F and MPH.
 # 2.) Still need to validate the final computed value.
@@ -100,3 +102,8 @@ print("Thank you for using this app.")
 # - remove all the remaining icheck = -1 any error message will 
 #   halt the process.
 # - modified the formatting to just diplay/write 4 decimal places.
+# C0506231000:
+# - updated the test script to use python3 and remove newline codes.
+# - added icheck = 0 to remove restarting the process
+# - fix the input file to cover all the invalid data computation
+# - updated the status of E028.py this is now tagged as working
