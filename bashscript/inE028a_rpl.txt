@@ -1,8 +1,140 @@
-- All 0 only with Y
+- All 0 only with Y EM: Invalid Data
 0
 0
 Y
-- All valid data only with Y
+- All 0.00 only with Y EM: Invalid Data
+0.00
+0.00
+Y
+- All 0.0000 only with Y EM: Invalid Data
+0.0000
+0.0000
+Y
+- All 0 only with N EM: Invalid Data
+0
+0
+N
+- All 0.00 only with N EM: Invalid Data
+0.00
+0.00
+N
+- All 0.0000 only with N EM: Invalid Data
+0.0000
+0.0000
+N
+- Input data extreme of limit 10/4.8 with Y EM: Invalid Data
+10.00000000001
+5.0
+Y
+- Input data extreme of limit 10/4.8 with Y EM: Invalid Data
+9
+4.799999999999
+Y
+- Input data extreme of limit 50/2.98 with N EM: Invalid Data
+50.00000000001
+5.0
+N
+- Input data extreme of limit 50/2.98 with N EM: Invalid Data
+49
+2.9799999999999
+N
+- Input data equal to limit 10/4.8 with Y EM: Invalid Data
+10
+4.8
+Y
+- Input data high end 9.99/4.79 with Y EM: Invalid Data
+9.99
+4.79
+Y
+- Input data high end 9.9999/4.7999 with Y EM: Invalid Data
+9.9999
+4.7999
+Y
+- Input data equal to limit 50/2.98 with N EM: Invalid Data
+50
+2.98
+N
+- Input data high end 49.99/2.979 with N EM: Invalid Data
+49.99
+2.979
+N
+- Input data high end 49.9999/2.9799 with N EM: Invalid Data
+9.9999
+2.9799
+N
+- Input data equal to No Yes to limit of 10/4.8 with Y EM: Invalid Data
+11
+4.9
+Y
+- Input data equal to No Yes to limit of 50/2.98 with Y EM: Invalid Data
+51
+2.99
+N
+- Invalid data non numeric Y EM: Invalid input data! Numeric input data only
+xA
+4.99
+Y
+- Invalid data non numeric Y EM: Invalid input data! Numeric input data only
+9.99
+Abc
+Y
+- Invalid Option EM: Invalid Option! Try again please
+9.99
+4.81
+x
+- Invalid Option EM: Invalid Option! Try again please
+9.99
+4.81
+
+- Invalid Option EM: Invalid Option! Try again please
+9.99
+4.81
+%
+- All valid data integer only with Y EM: Your computed WCI is
 9
 6
 Y
+- All valid data XX.00 only with Y EM: Your computed WCI is
+9.00
+6.00
+Y
+- All valid data XX.0000 only with Y EM: Your computed WCI is
+9.0000
+6.0000
+Y
+- All valid data integer only with N EM: Your computed WCI is
+45
+4
+N
+- All valid data XX.00 only with N EM: Your computed WCI is
+45.00
+4.00
+N
+- All valid data XX.0000 only with N EM: Your computed WCI is
+45.0000
+4.0000
+N
+- Input data equal to limit 9/4.9 with Y EM: Your computed WCI is 
+9
+4.9
+Y
+- Input data high end 9.99/4.79 with Y EM: Your computed WCI is
+9.99
+4.81
+y
+- Input data high end 9.9999/4.8001 with Y EM: Your computed WCI is
+9.9999
+4.8001
+Y
+- Input data equal to limit 49/2.99 with N EM: Your computed WCI is
+49
+2.99
+n
+- Input data high end 49.99/2.979 with N EM: Your computed WCI is
+49.99
+2.981
+N
+- Input data high end 49.9999/2.9799 with N EM: Your computed WCI is
+49.9999
+2.9801
+N
