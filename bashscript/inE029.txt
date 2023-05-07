@@ -1,0 +1,10 @@
+- Minimum value
+0
+- Minimum value
+0.00
+- Negative value
+-40
+- Temp with decimal value
+36.6
+- Temp with 4 decimal value
+36.9876
