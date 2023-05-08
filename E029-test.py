@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050423                                                *
 # Title: Celsius to Fahrenheit and Kelvin                     *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Write a program that begins by reading a temperature from   *
 # the user in degrees Celsius. Then your program should       *
 # display the equivalent temperature in degrees Fahrenheit    *
@@ -44,4 +44,6 @@ print("Thank you for using this app.")
 # Open Items:
 # 1.) Why did icheck resets to 0 in E028 without declaring it 
 #     as a global variable?
-#
+# C0508231900:
+# - complete the initial draft of the exercise 31
+# - updated status of the completed programs

@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050623                                                *
 # Title: Units of Pressure                                    *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # In this exercise you will create a program that reads a     *
 # pressure from the user in kilo-pascals. Once the pressure   *
 # has been read your program should report the equivalent     *
@@ -55,3 +55,6 @@ print("Thank you for using this app.")
 # C0506231230:
 # - initial draft for exercise 30.
 # - cleans up the templates for the next exercises
+# C0508231900:
+# - complete the initial draft of the exercise 31
+# - updated status of the completed programs
