@@ -13,6 +13,8 @@
 # when reasonable values are entered by the users.            *
 # Computed Result Validated:                                  *
 #**************************************************************
+regPrice = 3.49
+dayOldPrice = regPrice * .4
 #--------------------------------------------------------------
 #--------------------------------------------------------------
 #**************************************************************
@@ -22,4 +24,7 @@
 # C0508231900:
 # - initial draft for exercise 33
 # C0508231700:
-# - 
+# - need to move all intro code to another 
+# folder 
+# C0509232230:
+# - started coding exercise 33.
