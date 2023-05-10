@@ -10,7 +10,7 @@ for ((i = 1; i <= total_lines; i += 5)); do
     description=$(sed -n "${i}p" "$input_file")
     echo "Executing Test Case ${test_case} ${description}:" | tee -a "$output_file"
     
-    sed -n "$((i+1)),$((i+4))p" "$input_file" | python /home/pi/Desktop/localrepo/mycommonrepo/E027-test.py 2>/dev/null | tee -a "$output_file"
+    sed -n "$((i+1)),$((i+4))p" "$input_file" | python /home/pi/Desktop/localrepo/mycommonrepo/pythonwb_intro/E027-test.py 2>/dev/null | tee -a "$output_file"
     
     echo "-----------------------------------" | tee -a "$output_file"
     echo | tee -a "$output_file"

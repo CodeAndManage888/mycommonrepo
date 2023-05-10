@@ -11,7 +11,7 @@ for ((i = 1; i <= total_lines; i += 4)); do
     echo "Executing Test Case ${test_case} ${description}:" | tee -a "$output_file"
     echo "-----------------------------------" | tee -a "$output_file"
     
-    sed -n "$((i+1)),$((i+3))p" "$input_file" | python3 home/pi/Desktop/localrepo/mycommonrepo/E028-test.py 2>/dev/null | tee -a "$output_file"
+    sed -n "$((i+1)),$((i+3))p" "$input_file" | python3 home/pi/Desktop/localrepo/mycommonrepo/pythonwb_intro/E028-test.py 2>/dev/null | tee -a "$output_file"
     
     echo "-----------------------------------" | tee -a "$output_file"
     echo | tee -a "$output_file"
