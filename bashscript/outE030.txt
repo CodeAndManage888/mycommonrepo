@@ -1,0 +1,35 @@
+Executing Test Case 1 - Minimum value:
+-----------------------------------
+Please provide the pressure in kPa.
+What is the pressure in kPa? ==> The pressure in pounds per square inch, millimeters of mercury and atmosphere are 0.000000 psi, 0.000000 mmHg,  and 0.000000 atm.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 2 - Minimum value:
+-----------------------------------
+Please provide the pressure in kPa.
+What is the pressure in kPa? ==> The pressure in pounds per square inch, millimeters of mercury and atmosphere are 0.000000 psi, 0.000000 mmHg,  and 0.000000 atm.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 3 - Negative value:
+-----------------------------------
+Please provide the pressure in kPa.
+What is the pressure in kPa? ==> The pressure in pounds per square inch, millimeters of mercury and atmosphere are -5.801510 psi, -300.024673 mmHg,  and -0.394769 atm.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 4 - Value with decimal value:
+-----------------------------------
+Please provide the pressure in kPa.
+What is the pressure in kPa? ==> The pressure in pounds per square inch, millimeters of mercury and atmosphere are 19.812155 psi, 1024.584259 mmHg,  and 1.348137 atm.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 5 - Value with 4 decimal value:
+-----------------------------------
+Please provide the pressure in kPa.
+What is the pressure in kPa? ==> The pressure in pounds per square inch, millimeters of mercury and atmosphere are 8.410390 psi, 434.942768 mmHg,  and 0.572293 atm.
+Thank you for using this app.
+-----------------------------------
+
