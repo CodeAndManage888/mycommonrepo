@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050823 / 051023                                       *
 # Title: Day Old Bread                                        *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # A bakery sells loaves of bread for $3.49 each. Day old      *
 # bread is discounted by 60 percent. Write a program that     *
 # begins by reading the number of loaves of day old bread     *

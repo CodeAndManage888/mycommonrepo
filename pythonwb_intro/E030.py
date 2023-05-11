@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050623                                                *
 # Title: Units of Pressure                                    *
-# Status: Testing (In Progress / Testing / Working)           *
+# Status: Working (In Progress / Testing / Working)           *
 # In this exercise you will create a program that reads a     *
 # pressure from the user in kilo-pascals. Once the pressure   *
 # has been read your program should report the equivalent     *
