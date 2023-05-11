@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050423                                                *
 # Title: Celsius to Fahrenheit and Kelvin                     *
-# Status: Testing (In Progress / Testing / Working)           *
+# Status: Working (In Progress / Testing / Working)           *
 # Write a program that begins by reading a temperature from   *
 # the user in degrees Celsius. Then your program should       *
 # display the equivalent temperature in degrees Fahrenheit    *
