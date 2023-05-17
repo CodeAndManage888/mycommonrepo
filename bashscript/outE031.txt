@@ -1,0 +1,63 @@
+Executing Test Case 1 - Minimum value:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> Please input four-digit integer only!
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 2 - Minimum value:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> Please input four-digit integer only!
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 3 - Negative value:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> 0 + 0 + 0 + 0 = 0
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 4 - Value with decimal value:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> Please input four-digit integer only!
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 5 - Value with 4 decimal value:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> Please input four-digit integer only!
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 6 - Value only:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> 9 + 9 + 9 + 9 = 36
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 7 - Value only:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> 1 + 1 + 1 + 1 = 4
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 8 - Value only:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> 5 + 5 + 5 + 5 = 20
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 9 - Value only:
+-----------------------------------
+Please provide a four-digit integer only.
+What is the four-digit integer? ==> 9 + 8 + 7 + 6 = 30
+Thank you for using this app.
+-----------------------------------
+
