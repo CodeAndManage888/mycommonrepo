@@ -1,13 +1,13 @@
 #**************************************************************
 # Date: 050823                                                *
 # Title: Sort 3 Integers                                      *
-# Status: Testing (In Progress / Testing / Working)           *
-# Create a program that read three integers from the user and *
-# displays them in sorted order (from smallest to largest).   *
-# Use the min and max functions to find the smalles and       *
-# largest values. The middle value can be found by computing  *
-# the sum of all three values, and then subtracting the       *
-# minimum value and the miximum value.                        *
+# Status: Working (In Progress / Testing / Working)           *
+# Create a program that read three digit integers from the    *
+# user and displays them in sorted order (from smallest to    *
+# largest). Use the min and max functions to find the smalles *
+# and largest values. The middle value can be found by        *
+# computing the sum of all three values, and then subtracting *
+# the minimum value and the miximum value.                    *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
