@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050723 / 050823                                       *
 # Title: Sum of the Digits in an Integer                      *
-# Status: Testing (In Progress / Testing / Working)           *
+# Status: Working (In Progress / Testing / Working)           *
 # Develop a program that reads a four-digit integer from the  *
 # user and displays the sum of the digits in the number. For  *
 # example, if the user enters 3141 then your program should   *
