@@ -54,13 +54,3 @@ while icheck == -1:
 #**************************************************************
 # Open Items:
 #
-# CHistory:
-# C0508231900:
-# - initial draft for exercise 33
-# C0508231700:
-# - need to move all intro code to another 
-# folder 
-# C0509232230:
-# - started coding exercise 33.
-# C0510232130:
-# - completed the draft of exercise 33.
