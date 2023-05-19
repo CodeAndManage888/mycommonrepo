@@ -28,6 +28,7 @@ def data_check(UserIn1, cUserIn1):
   except:
     print("Invalid input data! Numeric input data only.")
     icheck = 0
+    return UserIn1, cUserIn1
 #--------------------------------------------------------------    
 while icheck == -1:
   iNumBread=input("Please enter the number of bread: ")
@@ -54,3 +55,13 @@ while icheck == -1:
 #**************************************************************
 # Open Items:
 #
+# CHistory:
+# C0508231900:
+# - initial draft for exercise 33
+# C0508231700:
+# - need to move all intro code to another 
+# folder 
+# C0509232230:
+# - started coding exercise 33.
+# C0510232130:
+# - completed the draft of exercise 33.
