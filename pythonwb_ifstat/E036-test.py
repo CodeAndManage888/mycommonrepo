@@ -20,14 +20,7 @@ consonant_list = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
                   "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", 
                   "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z"]
 iOneCharOnly = " "
-#--------------------------------------------------------------
-def data_check(UserIn1):
-  try:
-    cUserIn1=int(UserIn1)
-    return cUserIn1
-  except:
-    print("Invalid input data! Integer input data only.")
-#--------------------------------------------------------------    
+#-------------------------------------------------------------- 
 iOneCharOnly = input("What character is in your mind (One Character Only)?==> ")
 if len(iOneCharOnly) > 1:
   print("Invalid input data! One charater data only.")
