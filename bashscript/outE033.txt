@@ -1,0 +1,201 @@
+Executing Test Case 1 - Minimum value:
+-----------------------------------
+Please enter the number of bread: Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 2 - Minimum value:
+-----------------------------------
+Please enter the number of bread: Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 3 - Negative value:
+-----------------------------------
+Please enter the number of bread: Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 4 - Value with decimal value:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 13.01 bread(s) is 18.16
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+ 18.16
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 5 - Value with 4 decimal value:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 85.1234 bread(s) is 118.83
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+118.83
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 6 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 99 bread(s) is 138.20
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+138.20
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 7 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 11 bread(s) is 15.36
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+ 15.36
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 8 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 55 bread(s) is 76.78
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+ 76.78
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 9 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 98 bread(s) is 136.81
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+136.81
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 10 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 57 bread(s) is 79.57
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+ 79.57
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 11 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 78 bread(s) is 108.89
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+108.89
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 12 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 62 bread(s) is 86.55
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+ 86.55
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 13 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 91 bread(s) is 127.04
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+127.04
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 14 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 69 bread(s) is 96.32
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+ 96.32
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 15 - Value only:
+-----------------------------------
+Please enter the number of bread: Your computed prices are the following: 
+Regular price for bread is 3.49
+Discounted price for a day old bread is 1.40
+Total price for 99999999999 bread(s) is 139599999998.60
+<--------------------------------------------------->
+Your computed prices are the following: 
+  3.49
+  1.40
+139599999998.60
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 16 - Error value:
+-----------------------------------
+Please enter the number of bread: Invalid input data! Numeric input data only.
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 17 - Error value:
+-----------------------------------
+Please enter the number of bread: Invalid input data! Numeric input data only.
+Thank you for using this app!
+-----------------------------------
+
+Executing Test Case 18 - Error value:
+-----------------------------------
+Please enter the number of bread: Invalid input data! Numeric input data only.
+Thank you for using this app!
+-----------------------------------
+

@@ -27,4 +27,10 @@
 - Value only
 69
 - Value only
-30
+99999999999
+- Error value
+abc
+- Error value
+123.a
+- Error value
+1b3

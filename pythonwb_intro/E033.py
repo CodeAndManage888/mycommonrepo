@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 050823 / 051023                                       *
 # Title: Day Old Bread                                        *
-# Status: Testing (In Progress / Testing / Working)           *
+# Status: Working (In Progress / Testing / Working)           *
 # A bakery sells loaves of bread for $3.49 each. Day old      *
 # bread is discounted by 60 percent. Write a program that     *
 # begins by reading the number of loaves of day old bread     *
@@ -28,6 +28,7 @@ def data_check(UserIn1, cUserIn1):
   except:
     print("Invalid input data! Numeric input data only.")
     icheck = 0
+    return UserIn1, cUserIn1
 #--------------------------------------------------------------    
 while icheck == -1:
   iNumBread=input("Please enter the number of bread: ")
@@ -64,3 +65,7 @@ while icheck == -1:
 # - started coding exercise 33.
 # C0510232130:
 # - completed the draft of exercise 33.
+# C0519230800:
+# - updated the code to fix the issue if the input is string
+# - fully tested code for exercise 33
+# - updated bash script input data and permission for the bash script
