@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 052323   (Expected Solution with 20 Lines of Code)    *
 # Title: Name that Triangle                                   *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # A triangle can be classified based on the lengths of its    *
 # sides as equilateral, isosceles, or scalene. All 3 side of  *
 # an equilateral triangle have the same length. An isosceles  *
@@ -61,4 +61,4 @@ print("Thank you for using this app.")
 # C0523231000
 # - started coding for exercise 40
 # C0524231800
-# -
+# - completed the code and ready for testing
