@@ -69,7 +69,7 @@ if (ciSoundLvl > 130) and (icheck == 0):
   pDiffDec = ciSoundLvl - 130
   pFinalPercent = (pDiffDec / 130) * 100
   fv_Percent = format(round(pFinalPercent, 2), '0.2f')
-  print("Sound level is %s percent louder than a Jackhammer." % fv_Percent )
+  print("Sound level is %s percent louder than a Jackhammer." % fv_Percent)
 if (ciSoundLvl < 40) and (icheck == 0):
   if ciSoundLvl != 0:
     pDiffDec = 40 - ciSoundLvl
