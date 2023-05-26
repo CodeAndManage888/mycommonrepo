@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 052623   (Expected Solution with 31 Lines of Code)    *
 # Title: Faces on Money                                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # It is common for images of a country's previous leaders, or *
 # other individual of historical significance, to appear on   *
 # its money. The individuals that appear on banknotes in the  *
@@ -47,19 +47,22 @@ icheck = -1
 def data_check(UserIn1):
   global icheck
   try:
-    cUserIn1=float(UserIn1)
+    cUserIn1=int(UserIn1)
     icheck = 0
     return cUserIn1
   except:
     print("Invalid input data! Integer input data only.")
+    cUserIn1 = 0
     return cUserIn1
 #--------------------------------------------------------------
 iMoneyValue = input("Enter the denomination(Numeric only): ")
 ciMoneyValue = data_check(iMoneyValue)
 if icheck == 0:
-  fin_data = face_money_dict.get(ciMoneyValue,"Invalid data! No equivalent note found.")
-  if fin_data == " ":
+  fin_data = face_money_dict.get(ciMoneyValue,"Not Found")
+  if fin_data != "Not Found":
     print("The individual in the note is %s." % fin_data)
+  else:
+    print("Invalid data! No equivalent note found.")
   print("Thank you for using this app.")
 else:
   print("Thank you for using this app.")
@@ -69,3 +72,4 @@ else:
 # CHistory:
 # C0526231800
 # - started working on the code for exercise 43
+# - completed the code for exercise 43 and now ready for testing
