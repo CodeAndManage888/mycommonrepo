@@ -1,63 +1,75 @@
 #**************************************************************
-# Date: 052523   (Expected Solution with 40 Lines of Code)    *
-# Title: Frequency to Note                                    *
+# Date: 052623   (Expected Solution with 31 Lines of Code)    *
+# Title: Faces on Money                                       *
 # Status: Testing (In Progress / Testing / Working)           *
-# In the previous question you converted from note name to    *
-# frequency. In this question you will write a program that   *
-# reverses that process. Begin by reading a frequency from    *
-# the user. If the frequency is within one Hertz of a value   *
-# listed in the table in the previous question then report    *
-# the name of the note. Otherwise report that the frequency   *
-# does not correspond to a known note. In this exercise you   *
-# only need to consider the notes listed in the table. There  *
-# is no need to consider notes from other octaves.            *
-
+# It is common for images of a country's previous leaders, or *
+# other individual of historical significance, to appear on   *
+# its money. The individuals that appear on banknotes in the  *
+# United states are listed in the table below.                *
+#                                                             *
+# Individual                    Amount                        *
+# George Washington             $1                            *
+# Thomas Jefferson              $2                            *
+# Abraham Lincoln               $5                            *
+# Alexander Hamilton            $10                           *
+# Andrew Jackson                $20                           *
+# Ulysses S. Grant              $50                           *
+# Benjamin Franklin             $100                          *
+#                                                             *
+# Write a program that begins by reading the denomination of  *
+# a banknote from the user. Then your program should display  *
+# the name of the individual that appears on the banknote of  *
+# the entered amount. An appropriate error message should be  *
+# displayed if no such note exits.                            *
+# While two dollar banknotes are rarely seen in circulation   *
+# in the United States, they are legal tender that can be     *
+# spent just like any other denomination. The United States   *
+# has also issued banknotes in denominations of $500, $1000,  *
+# $5000 and $10000 for public use. However, high denomination *
+# banknotes have not been printed since 1945 and were         *
+# officially discontinued in 1969. As a result, we will not   *
+# consider them in this exercise.                             *
+#                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+face_money_dict = { 
+     1: "George Washington",
+     2: "Thomas Jefferson",
+     5: "Abraham Lincoln",
+    10: "Alexander Hamilton",
+    20: "Andrew Jackson",
+    50: "Ulysses S. Grant",
+   100: "Benjamin Franklin",
+}
+fin_data, iMoneyValue, ciMoneyValue = (" ", " ", 0)
 icheck = -1
-iFreqValues, ciFreqValues = (" ", 0)
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
   try:
-    cUserIn1=float(UserIn1)
+    cUserIn1=int(UserIn1)
     icheck = 0
     return cUserIn1
   except:
     print("Invalid input data! Integer input data only.")
-    print("Thank you for using this app.")
     cUserIn1 = 0
     return cUserIn1
 #--------------------------------------------------------------
-iFreqValues = input("Please input the frequency to know the note name?==> ")
-ciFreqValues = data_check(iFreqValues)
+iMoneyValue = input("Enter the denomination(Numeric only): ")
+ciMoneyValue = data_check(iMoneyValue)
 if icheck == 0:
-  if (260.63 <= ciFreqValues <= 262.63):
-    print("The input frequency of %s Hz is a C4 note." % ciFreqValues)
+  fin_data = face_money_dict.get(ciMoneyValue,"Not Found")
+  if fin_data != "Not Found":
+    print("The individual in the note is %s." % fin_data)
   else:
-    if (292.66 <= ciFreqValues <= 294.66):
-      print("The input frequency of %s Hz is a D4 note." % ciFreqValues)
-    else:
-      if (328.63 <= ciFreqValues <= 330.63):
-        print("The input frequency of %s Hz is a E4 note." % ciFreqValues)
-      else:
-        if (348.23 <= ciFreqValues <= 349.23):
-          print("The input frequency of %s Hz is a F4 note." % ciFreqValues)
-        else:
-          if (391.00 <= ciFreqValues <= 393.00):
-            print("The input frequency of %s Hz is a G4 note." % ciFreqValues)
-          else:
-            if (439.00 <= ciFreqValues <= 441.00):
-              print("The input frequency of %s Hz is a A4 note." % ciFreqValues)
-            else:
-              if (492.88 <= ciFreqValues <= 494.88):
-                print("The input frequency of %s Hz is a B4 note." % ciFreqValues)
-              else:
-                print("The input frequency does not correspond to any known note.")
+    print("Invalid data! No equivalent note found.")
+  print("Thank you for using this app.")
+else:
   print("Thank you for using this app.")
 #**************************************************************
 # Open Items:
 #
 # CHistory:
-# C0525231200
-# - complete the code and ready for testing
+# C0526231800
+# - started working on the code for exercise 43
+# - completed the code for exercise 43 and now ready for testing
