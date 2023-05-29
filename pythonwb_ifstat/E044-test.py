@@ -11,7 +11,7 @@
 #                                                             *
 # Write a program that reads a month and day from the user.   *
 # If the month and day match one of the holidays listed       *
-# previously then your proogram should display the holiday's  *
+# previously then your program should display the holiday's   *
 # name. Otherwise your program should indicate that the       *
 # entered month and day do not correspond to the fixed-date   *
 # holiday.                                                    *
@@ -47,22 +47,17 @@ valid_day_dict = {
    "Nov": 30,
    "Dec": 31
 }
-holiday_dict = {
-   "Jan 1" = "New Year's Day",
-   "Jul 1" = "Canada Day",
-  "Dec 25" = "Christmas Day"
-}
-MonList = ["January", "Jan", "january", "jan", "JANUARY", 
-           "February", "Feb", "february", "feb", "FEBRUARY", 
-           "March", "Mar", "march", "mar", "MARCH", "April", 
-           "Apr", "april", "apr", "APRIL", "May", "may", "MAY", 
-           "June", "Jun", "june", "jun", "JUNE", "July", "Jul", 
-           "july", "jul", "JULY", "August", "Aug", "august", 
-           "aug", "AUGUST", "September", "Sep", "september", 
-           "sep", "SEPTEMBER", "October", "Oct", "october", 
-           "oct", "OCTOBER", "November", "Nov", "november", 
-           "nov", "NOVEMBER", "December", "Dec", "december", 
-           "dec", "DECEMBER"]
+MonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
+           "February", "Feb", "february", "feb", "FEBRUARY", "FEB",
+           "March", "Mar", "march", "mar", "MARCH", "MAR", "April", 
+           "Apr", "april", "apr", "APRIL", "APR", "May", "may", "MAY", 
+           "June", "Jun", "june", "jun", "JUNE", "JUN", "July", "Jul", 
+           "july", "jul", "JULY", "JUL", "August", "Aug", "august", 
+           "aug", "AUGUST", "AUG", "September", "Sep", "september", 
+           "sep", "SEPTEMBER", "SEP", "October", "Oct", "october", 
+           "oct", "OCTOBER", "OCT", "November", "Nov", "november", 
+           "nov", "NOVEMBER", "NOV", "December", "Dec", "december", 
+           "dec", "DECEMBER", "DEC"]
 iMonDayOnly = " "
 input_list = []
 iMonth, iDay, pFirstLtr, p2nd3rdLtr, pKeyString = (" ", 0, " ",
@@ -84,26 +79,27 @@ def data_check(UserIn1):
 iMonDayOnly = input("Enter the input date (Month & Day e.g. Jan 8): ")
 input_list = iMonDayOnly.split()
 iMonth = input_list[0]
-iDay = def data_check(input_list[0])
-if iMonth == MonList:
+iDay = data_check(input_list[1])
+if iMonth in MonList:
   pFirstLtr = iMonth[0].capitalize()
   p2nd3rdLtr = iMonth[1:3].lower()
   pKeyString = pFirstLtr + p2nd3rdLtr
   valid_day = valid_day_dict[pKeyString]
   if iDay <= valid_day:
-    if 
+    if pKeyString == "Jan" and iDay == 1:
+      print("It's New Year's Day")
+    elif pKeyString == "Jul" and iDay == 1:
+      print("It's Canada Day")
+    elif pKeyString == "Dec" and iDay == 25:
+      print("It's Christmas Day")
+    else:
+      print("The entered month and day do not correspond \
+      to the fixed-date holiday")
   else:
     print("Invalid Input Data - Invalid day.")
 else:
   print("Invalid Input Data - Invalid month.")
-if iMonNameOnly in MonList:
-
-  
-  print("The input month have " + fin_data + " days.")
-  print("Thank you for using this app.")
-else:
-  print("Invalid input data! Not a valid month name.")
-  print("Thank you for using this app.")
+print("Thank you for using this app.")
 #**************************************************************
 # Open Items:
 #
@@ -112,3 +108,5 @@ else:
 # - Finalize the requirement for exercise 44.
 # C0528232030
 # - Continued coding for exercise 44.
+# C0529231600
+# - 
