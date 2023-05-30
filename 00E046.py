@@ -19,7 +19,108 @@
 # date that was entered.                                      *
 # Computed Result Validated:                                  *
 #**************************************************************
+valid_day_dict = { 
+   "Jan": 31,
+   "Feb": 29,
+   "Mar": 31,
+   "Apr": 30,
+   "May": 31,
+   "Jun": 30,
+   "Jul": 31,
+   "Aug": 31,
+   "Sep": 30,
+   "Oct": 31,
+   "Nov": 30,
+   "Dec": 31
+}
+ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
+           "February", "Feb", "february", "feb", "FEBRUARY", "FEB",
+           "March", "Mar", "march", "mar", "MARCH", "MAR", "April", 
+           "Apr", "april", "apr", "APRIL", "APR", "May", "may", "MAY", 
+           "June", "Jun", "june", "jun", "JUNE", "JUN", "July", "Jul", 
+           "july", "jul", "JULY", "JUL", "August", "Aug", "august", 
+           "aug", "AUGUST", "AUG", "September", "Sep", "september", 
+           "sep", "SEPTEMBER", "SEP", "October", "Oct", "october", 
+           "oct", "OCTOBER", "OCT", "November", "Nov", "november", 
+           "nov", "NOVEMBER", "NOV", "December", "Dec", "december", 
+           "dec", "DECEMBER", "DEC"]
+SpringMon = ["Mar", "Apr", "May", "Jun"]
+SummerMon = ["Jun", "Jul", "Aug", "Sep"]
+FallMon = ["Sep", "Oct", "Nov", "Dec"]
+WinterMon = ["Dec", "Jan", "Feb", "Mar"]
+iMonDayOnly = " "
+input_list = []
+iMonth, iDay, pFirstLtr, p2nd3rdLtr, pKeyString = (" ", 0, " ",
+                                                   " ", " ")
+valid_day = 0
+icheck = -1
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1=int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    print("Invalid input data! Integer input data only.")
+    cUserIn1 = 0
+    return cUserIn1
+#--------------------------------------------------------------
+iMonDayOnly = input("Enter the input date (Month & Day e.g. Jan 8): ")
+input_list = iMonDayOnly.split()
+iMonth = input_list[0]
+iDay = data_check(input_list[1])
+if iMonth in ValMonList:
+  pFirstLtr = iMonth[0].capitalize()
+  p2nd3rdLtr = iMonth[1:3].lower()
+  pKeyString = pFirstLtr + p2nd3rdLtr
+  
+  
+  if pKeyString in SpringMon:
+    if pKeyString != "Mar":
+      print("The season is Spring")
+    else:
+      if iDay >= 20:
+        print("The season is Spring")
+      else:
+        print("The season is Winter")
+    if pKeyString != "Jun":
+      print("The season is Spring")
+    else:
+      if iDay < 21:
+        print("The season is Spring")
+      else:
+        print("The season is Summer")
+  elif pKeyString in SummerMon:
+        if pKeyString != "Jun"
+      print("The season is Summer")
+    else:
+      if iDay >= 21:
+        print("The season is Summer")
+      else:
+        print("The season is Spring")
+    if pKeyString != "Sep":
+      print("The season is Summer")
+    else:
+      if iDay < 22:
+        print("The season is Summer")
+      else:
+        print("The season is Fall")
+  elif pKeyString in FallMon:
+    # process step 3
+  elif pKeyString in WinterMon
+    # process step 4
+  
+
+
+
+
+
+else:
+    print("Invalid Input Data - Invalid day.")
+else:
+  print("Invalid Input Data - Invalid month.")
+print("Thank you for using this app.")
 #--------------------------------------------------------------
 #**************************************************************
 # Open Items:
