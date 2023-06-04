@@ -19,7 +19,7 @@
 # Cancer                       June 21 to July 22             *
 # Leo                          July 23 to August 22           *
 # Virgo                        August 23 to September 22      *
-# Libra                        September 23 to October22      *
+# Libra                        September 23 to October 22     *
 # Scorpio                      October 23 to November 21      *
 # Sagitarius                   November 22 to December 21     *
 #                                                             *
@@ -37,11 +37,11 @@ valid_sign_dict = {
    "May": "Tau0120", "Gem2131",
    "Jun": "Gem0120", "Can2130",
    "Jul": "Can0122", "Leo2331",
-   "Aug": "Leo0122", "Vir2330",
-   "Sep": "Vir0122", "Lib23"
-   "Oct": 31,
-   "Nov": 30,
-   "Dec": 31
+   "Aug": "Leo0122", "Vir2331",
+   "Sep": "Vir0122", "Lib2330",
+   "Oct": "Lib0122", "Sco2331",
+   "Nov": "Sco0121", "Sag2230",
+   "Dec": "Sag0121", "Cap2231"
 }
 ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
            "February", "Feb", "february", "feb", "FEBRUARY", "FEB",
@@ -54,12 +54,9 @@ ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
            "oct", "OCTOBER", "OCT", "November", "Nov", "november", 
            "nov", "NOVEMBER", "NOV", "December", "Dec", "december", 
            "dec", "DECEMBER", "DEC"]
-SpringMon = ["Apr", "May"]
-SummerMon = ["Jul", "Aug"]
-FallMon = ["Oct", "Nov"]
-WinterMon = ["Jan", "Feb"]
 iMonDayOnly = " "
 input_list = []
+sign_duration_list = []
 iMonth, iDay, pFirstLtr, p2nd3rdLtr, pKeyString = (" ", 0, " ",
                                                    " ", " ")
 valid_day = 0
