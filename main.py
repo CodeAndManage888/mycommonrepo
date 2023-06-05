@@ -1,22 +1,32 @@
 #**************************************************************
-# Date: 052923   (Expected Solution with 40 Lines of Code)    *
-# Title: Season from Month and Day                            *
-# Status: Testing (In Progress / Testing / Working)           *
-# The year is divided into four seasons: spring, summer, fall *
-# and winter. While the exact dates that the seasons change   *
-# vary a little bit from year to year because of the way that *
-# the calendar is constructed, we will use the following      *
-# dates for this exercise:                                    *
-# Season                First Day                             *
-# Spring                March 20                              *
-# Summer                June 21                               *
-# Fall                  September 22                          *
-# Winter                December 21                           *
-# Create a program that reads a month and day from the user.  *
-# The user will enter the name of the month as a string,      *
-# followed by the day within the month as an integer. Then    *
-# your program should display the season associated with the  *
-# date that was entered.                                      *
+# Date: 052923   (Expected Solution with 47 Lines of Code)    *
+# Title: Birth Date to Astrological Sign                      *
+# Status: In Progress (In Progress / Testing / Working)       *
+# The horoscopes commonly reported in newspapers use the      *
+# position of the sund at the time of one's birth to try and  *
+# predict the future. This system of astrology divides the    *
+# year into twelve zodia signs, as outline in the table       *
+# below:                                                      *
+#                                                             *
+# Zodiac Sign                  Date Range                     *
+# -----------                  --------------------------     *
+# Capricorn                    December 22 to January 19      *
+# Aquarius                     January 20 to February 18      *
+# Pisces                       February 19 to March 20        *
+# Aries                        March 21 to April 19           *
+# Taurus                       April 20 to May 20             *
+# Gemini                       May 21 to June 20              *
+# Cancer                       June 21 to July 22             *
+# Leo                          July 23 to August 22           *
+# Virgo                        August 23 to September 22      *
+# Libra                        September 23 to October 22     *
+# Scorpio                      October 23 to November 21      *
+# Sagitarius                   November 22 to December 21     *
+#                                                             *
+# Write a program that asks the user to enter his or her      *
+# month and day of birth. Then your program should report the *
+# user's zodiac sign as part of an appropriate output message *
+#                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 valid_day_dict = { 
@@ -33,6 +43,20 @@ valid_day_dict = {
    "Nov": 30,
    "Dec": 31
 }
+valid_sign_dict = { 
+   "Jan": "Cap0119", "Aqu2031"
+   "Feb": "Aqu0118", "Pis1929"
+   "Mar": "Pis0120", "Ari2131"
+   "Apr": "Ari0119", "Tau2030"
+   "May": "Tau0120", "Gem2131"
+   "Jun": "Gem0120", "Can2130"
+   "Jul": "Can0122", "Leo2331"
+   "Aug": "Leo0122", "Vir2331"
+   "Sep": "Vir0122", "Lib2330"
+   "Oct": "Lib0122", "Sco2331"
+   "Nov": "Sco0121", "Sag2230"
+   "Dec": "Sag0121", "Cap2231"
+}
 ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
            "February", "Feb", "february", "feb", "FEBRUARY", "FEB",
            "March", "Mar", "march", "mar", "MARCH", "MAR", "April", 
@@ -44,12 +68,10 @@ ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
            "oct", "OCTOBER", "OCT", "November", "Nov", "november", 
            "nov", "NOVEMBER", "NOV", "December", "Dec", "december", 
            "dec", "DECEMBER", "DEC"]
-SpringMon = ["Apr", "May"]
-SummerMon = ["Jul", "Aug"]
-FallMon = ["Oct", "Nov"]
-WinterMon = ["Jan", "Feb"]
 iMonDayOnly = " "
 input_list = []
+sign_duration_list = []
+sdata1, start1, end1, sdata2, start2, end2 = (" ", 0, 0, " ", 0, 0)
 iMonth, iDay, pFirstLtr, p2nd3rdLtr, pKeyString = (" ", 0, " ",
                                                    " ", " ")
 valid_day = 0
@@ -76,46 +98,13 @@ if (iMonth in ValMonList):
   pKeyString = pFirstLtr + p2nd3rdLtr
   valid_day = valid_day_dict[pKeyString]
   if (iDay != 0) and (iDay <= valid_day):
+    sign_duration_list = valid_sign_dict[pKeyString]
+    sign_data1, sign_data2 = sign_duration_list[0],  sign_duration_list[1]
+    sdata1, start1, end1 = sign_data1[0:4], sign_data1[3:3], sign_data1[5:3] 
+    sdata2, start2, end2 = sign_data2[0:4], sign_data2[3:3], sign_data2[5:3]
+    print(sdata1, start1, end1, sdata2, start2, end2)
+
 #--------------------------------------------------------------  
-    if pKeyString in SpringMon:
-      print("Condition 1: The season is Spring")
-    elif (pKeyString == "Mar" and iDay >= 20) or (pKeyString == "Jun" and iDay < 21):
-      print("Condition 2: The season is Spring")
-    elif (pKeyString == "Mar" and iDay < 20):
-      print("Condition 3: The season is Winter")
-    elif pKeyString == "Jun" and iDay >= 21:
-      print("Condition 4: The season is Summer")
-  #--------------------------------------------------------------  
-    elif pKeyString in SummerMon:
-      print("Condition 5: The season is Summer")
-    elif (pKeyString == "Jun" and iDay >= 21) or (pKeyString == "Sep" and iDay < 22):
-      print("Condition 6: The season is Summer")
-    elif (pKeyString == "Jun" and iDay < 21):
-      print("Condition 7: The season is Spring")
-    elif pKeyString == "Sep" and iDay >= 22:
-      print("Condition 8: The season is Fall")
-  #--------------------------------------------------------------  
-    elif pKeyString in FallMon:
-      print("Condition 9: The season is Fall")
-    elif (pKeyString == "Sep" and iDay >= 22) or (pKeyString == "Dec" and iDay < 21):
-      print("Condition 10: The season is Fall")
-    elif (pKeyString == "Sep" and iDay < 21):
-      print("Condition 11: The season is Summer")
-    elif pKeyString == "Dec" and iDay >= 22:
-      print("Condition 12: The season is Winter")
-  #--------------------------------------------------------------    
-    elif pKeyString in WinterMon:
-      print("Condition 13: The season is Winter")
-    elif (pKeyString == "Dec" and iDay >= 21) or (pKeyString == "Mar" and iDay < 20):
-      print("Condition 14: The season is Winter")
-    elif (pKeyString == "Dec" and iDay < 21):
-      print("Condition 15: The season is Fall")
-    elif pKeyString == "Mar" and iDay >= 20:
-      print("Condition 16: The season is Spring")
-    else:
-      print("Condition 17: Invalid Input Date")
-  else:
-    print("Invalid Input Data - Invalid Day.")
 else:
     print("Invalid Input Data - Invalid Month.")
 print("Thank you for using this app.")
@@ -125,5 +114,3 @@ print("Thank you for using this app.")
 # CHistory:
 # C0529231700
 # - started coding for exercise 46 and finalize requirement
-# C0531231700
-# - completed coding for exercise 46 and ready for testing (refactor)

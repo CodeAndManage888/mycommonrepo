@@ -29,18 +29,32 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+valid_day_dict = { 
+   "Jan": 31,
+   "Feb": 29,
+   "Mar": 31,
+   "Apr": 30,
+   "May": 31,
+   "Jun": 30,
+   "Jul": 31,
+   "Aug": 31,
+   "Sep": 30,
+   "Oct": 31,
+   "Nov": 30,
+   "Dec": 31
+}
 valid_sign_dict = { 
-   "Jan": "Cap0119", "Aqu2031",
-   "Feb": "Aqu0118", "Pis1929",
-   "Mar": "Pis0120", "Ari2131",
-   "Apr": "Ari0119", "Tau2030",
-   "May": "Tau0120", "Gem2131",
-   "Jun": "Gem0120", "Can2130",
-   "Jul": "Can0122", "Leo2331",
-   "Aug": "Leo0122", "Vir2331",
-   "Sep": "Vir0122", "Lib2330",
-   "Oct": "Lib0122", "Sco2331",
-   "Nov": "Sco0121", "Sag2230",
+   "Jan": "Cap0119", "Aqu2031"
+   "Feb": "Aqu0118", "Pis1929"
+   "Mar": "Pis0120", "Ari2131"
+   "Apr": "Ari0119", "Tau2030"
+   "May": "Tau0120", "Gem2131"
+   "Jun": "Gem0120", "Can2130"
+   "Jul": "Can0122", "Leo2331"
+   "Aug": "Leo0122", "Vir2331"
+   "Sep": "Vir0122", "Lib2330"
+   "Oct": "Lib0122", "Sco2331"
+   "Nov": "Sco0121", "Sag2230"
    "Dec": "Sag0121", "Cap2231"
 }
 ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
@@ -57,6 +71,7 @@ ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
 iMonDayOnly = " "
 input_list = []
 sign_duration_list = []
+sdata1, start1, end1, sdata2, start2, end2 = (" ", 0, 0, " ", 0, 0)
 iMonth, iDay, pFirstLtr, p2nd3rdLtr, pKeyString = (" ", 0, " ",
                                                    " ", " ")
 valid_day = 0
@@ -83,46 +98,13 @@ if (iMonth in ValMonList):
   pKeyString = pFirstLtr + p2nd3rdLtr
   valid_day = valid_day_dict[pKeyString]
   if (iDay != 0) and (iDay <= valid_day):
+    sign_duration_list = valid_sign_dict[pKeyString]
+    sign_data1, sign_data2 = sign_duration_list[0],  sign_duration_list[1]
+    sdata1, start1, end1 = sign_data1[0:4], sign_data1[3:3], sign_data1[5:3] 
+    sdata2, start2, end2 = sign_data2[0:4], sign_data2[3:3], sign_data2[5:3]
+    print(sdata1, start1, end1, sdata2, start2, end2)
+
 #--------------------------------------------------------------  
-    if pKeyString in SpringMon:
-      print("Condition 1: The season is Spring")
-    elif (pKeyString == "Mar" and iDay >= 20) or (pKeyString == "Jun" and iDay < 21):
-      print("Condition 2: The season is Spring")
-    elif (pKeyString == "Mar" and iDay < 20):
-      print("Condition 3: The season is Winter")
-    elif pKeyString == "Jun" and iDay >= 21:
-      print("Condition 4: The season is Summer")
-#--------------------------------------------------------------  
-    elif pKeyString in SummerMon:
-      print("Condition 5: The season is Summer")
-    elif (pKeyString == "Jun" and iDay >= 21) or (pKeyString == "Sep" and iDay < 22):
-      print("Condition 6: The season is Summer")
-    elif (pKeyString == "Jun" and iDay < 21):
-      print("Condition 7: The season is Spring")
-    elif pKeyString == "Sep" and iDay >= 22:
-      print("Condition 8: The season is Fall")
-#--------------------------------------------------------------  
-    elif pKeyString in FallMon:
-      print("Condition 9: The season is Fall")
-    elif (pKeyString == "Sep" and iDay >= 22) or (pKeyString == "Dec" and iDay < 21):
-      print("Condition 10: The season is Fall")
-    elif (pKeyString == "Sep" and iDay < 21):
-      print("Condition 11: The season is Summer")
-    elif pKeyString == "Dec" and iDay >= 22:
-      print("Condition 12: The season is Winter")
-#--------------------------------------------------------------    
-    elif pKeyString in WinterMon:
-      print("Condition 13: The season is Winter")
-    elif (pKeyString == "Dec" and iDay >= 21) or (pKeyString == "Mar" and iDay < 20):
-      print("Condition 14: The season is Winter")
-    elif (pKeyString == "Dec" and iDay < 21):
-      print("Condition 15: The season is Fall")
-    elif pKeyString == "Mar" and iDay >= 20:
-      print("Condition 16: The season is Spring")
-    else:
-      print("Condition 17: Invalid Input Date")
-  else:
-    print("Invalid Input Data - Invalid Day.")
 else:
     print("Invalid Input Data - Invalid Month.")
 print("Thank you for using this app.")
