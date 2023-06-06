@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 052923   (Expected Solution with 47 Lines of Code)    *
 # Title: Birth Date to Astrological Sign                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # The horoscopes commonly reported in newspapers use the      *
 # position of the sund at the time of one's birth to try and  *
 # predict the future. This system of astrology divides the    *
@@ -29,6 +29,20 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+comp_sign_dict = {
+   "Cap": "Capricorn",
+   "Aqu": "Aquarius",
+   "Pis": "Pisces",
+   "Ari": "Aries",
+   "Tau": "Taurus",
+   "Gem": "Gemini",
+   "Can": "Cancer",
+   "Leo": "Leo",
+   "Vir": "Virgo",
+   "Lib": "Libra",
+   "Sco": "Scorpio",
+   "Sag": "Sagitarius"
+}
 valid_day_dict = { 
    "Jan": 31,
    "Feb": 29,
@@ -44,18 +58,18 @@ valid_day_dict = {
    "Dec": 31
 }
 valid_sign_dict = { 
-   "Jan": "Cap0119", "Aqu2031"
-   "Feb": "Aqu0118", "Pis1929"
-   "Mar": "Pis0120", "Ari2131"
-   "Apr": "Ari0119", "Tau2030"
-   "May": "Tau0120", "Gem2131"
-   "Jun": "Gem0120", "Can2130"
-   "Jul": "Can0122", "Leo2331"
-   "Aug": "Leo0122", "Vir2331"
-   "Sep": "Vir0122", "Lib2330"
-   "Oct": "Lib0122", "Sco2331"
-   "Nov": "Sco0121", "Sag2230"
-   "Dec": "Sag0121", "Cap2231"
+   "Jan": ["Cap0119", "Aqu2031"],
+   "Feb": ["Aqu0118", "Pis1929"],
+   "Mar": ["Pis0120", "Ari2131"],
+   "Apr": ["Ari0119", "Tau2030"],
+   "May": ["Tau0120", "Gem2131"],
+   "Jun": ["Gem0120", "Can2130"],
+   "Jul": ["Can0122", "Leo2331"],
+   "Aug": ["Leo0122", "Vir2331"],
+   "Sep": ["Vir0122", "Lib2330"],
+   "Oct": ["Lib0122", "Sco2331"],
+   "Nov": ["Sco0121", "Sag2230"],
+   "Dec": ["Sag0121", "Cap2231"]
 }
 ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
            "February", "Feb", "february", "feb", "FEBRUARY", "FEB",
@@ -71,7 +85,7 @@ ValMonList = ["January", "Jan", "january", "jan", "JANUARY", "JAN",
 iMonDayOnly = " "
 input_list = []
 sign_duration_list = []
-sdata1, start1, end1, sdata2, start2, end2 = (" ", 0, 0, " ", 0, 0)
+sdata1, start1, end1, sdata2, start2, end2, final_sign = (" ", 0, 0, " ", 0, 0, " ")
 iMonth, iDay, pFirstLtr, p2nd3rdLtr, pKeyString = (" ", 0, " ",
                                                    " ", " ")
 valid_day = 0
@@ -100,17 +114,18 @@ if (iMonth in ValMonList):
   if (iDay != 0) and (iDay <= valid_day):
     sign_duration_list = valid_sign_dict[pKeyString]
     sign_data1, sign_data2 = sign_duration_list[0],  sign_duration_list[1]
-    sdata1, start1, end1 = sign_data1[0:4], sign_data1[3:3], sign_data1[5:3] 
-    sdata2, start2, end2 = sign_data2[0:4], sign_data2[3:3], sign_data2[5:3]
-    print(sdata1, start1, end1, sdata2, start2, end2)
-
+    sdata1, start1, end1 = sign_data1[0:3], int(sign_data1[3:5]), int(sign_data1[5:7])
+    sdata2, start2, end2 = sign_data2[0:3], int(sign_data2[3:5]), int(sign_data2[5:7])
+    if start1 <= iDay <= end1:
+      final_sign = comp_sign_dict[sdata1]
+      print("The Astrological Sign is", final_sign)
+    elif start2 <= iDay <= end2:
+      final_sign = comp_sign_dict[sdata2]
+      print("The Astrological Sign isdec", final_sign)
+    else:
+      print("Invalid Data")
 #--------------------------------------------------------------  
 else:
     print("Invalid Input Data - Invalid Month.")
 print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0529231700
-# - started coding for exercise 46 and finalize requirement
