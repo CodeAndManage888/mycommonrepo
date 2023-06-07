@@ -22,18 +22,13 @@
 # 2010            Tiger                                       *
 # 2011            Hare                                        *
 #                                                             *
-# Write a program that reads a year from theuser and displays *
-# the animal associated with the year. Your program should    *
-# work correctly for any year greater than or equal to zero,  *
-# not just the one listed in the table.                       *
+# Write a program that reads a year from the user and         *
+# displays the animal associated with the year. Your program  *
+# should work correctly for any year greater than or equal to *
+# zero, not just the one listed in the table.                 *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
 #--------------------------------------------------------------
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0530230945
-# - started coding for exercise 48 and finalize requirement

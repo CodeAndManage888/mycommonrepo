@@ -18,18 +18,13 @@
 # 10.0 or more             Meteoric                           *
 #                                                             *
 # Write a program that reads a magnitude from the user and    *
-# displays the appropriate descripto as part of a meaningful  *
-# message. For example, if the user enters 5.5 then your      *
-# program should indicate that a magnitude 5.5 eqrthquake is  *
-# considered to be a moderate earthquake.                     *
+# displays the appropriate description as part of a           *
+# meaningful message. For example, if the user enters 5.5     *
+# then your program should indicate that a magnitude 5.5      *
+# earthquake is considered to be a moderate earthquake.       *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
 #--------------------------------------------------------------
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0530230945
-# - started coding for exercise 49 and finalize requirement
