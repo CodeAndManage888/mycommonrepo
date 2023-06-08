@@ -63,8 +63,3 @@ else:
   print("Invalid input data! Not a valid month name.")
   print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0522230800
-# - draft of the code started

@@ -53,8 +53,3 @@ else:
     print("The shape's name with " + "'" + iNumSidesOnly + "'" + " sides is " + fin_data + ".")
     print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# c0519231430
-# - completed the code for exercise 37.

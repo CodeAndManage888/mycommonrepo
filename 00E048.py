@@ -29,6 +29,23 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+chi_sign_list = ["Dragon", "Snake", "Horse", "Sheep", "Monkey",
+                 "Rooster", "Dog", "Pig", "Rat", "Ox", "Tiger",
+                 "Hare"]
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1=int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    print("Invalid input data! Integer input data only.")
+    cUserIn1 = 0
+    return cUserIn1
 #--------------------------------------------------------------
+iYearOnly = input("Enter the input year e.g. 1999: ")
+if len(iYearOnly) <= 4:
+  iCnvYear = data_check(iYearOnly)
+  
 #**************************************************************

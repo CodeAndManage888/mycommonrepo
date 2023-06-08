@@ -34,9 +34,3 @@ if icheck == 0 and ciInteger != 0:
 else:
   print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0511231100:
-# - completed the draft & ready for testing for exercise 34
-# - updated status for the completed programs

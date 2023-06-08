@@ -62,8 +62,3 @@ if icheck == 0:
     print("Invalid Data - Incorrect Column Letter")
 print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0529231700
-# - completed coding for exercise 45 and ready for testing

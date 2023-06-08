@@ -121,7 +121,7 @@ if (iMonth in ValMonList):
       print("The Astrological Sign is", final_sign)
     elif start2 <= iDay <= end2:
       final_sign = comp_sign_dict[sdata2]
-      print("The Astrological Sign isdec", final_sign)
+      print("The Astrological Sign is", final_sign)
     else:
       print("Invalid Data")
 #--------------------------------------------------------------  

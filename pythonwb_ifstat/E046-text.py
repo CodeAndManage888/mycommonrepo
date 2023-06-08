@@ -120,10 +120,3 @@ else:
     print("Invalid Input Data - Invalid Month.")
 print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0529231700
-# - started coding for exercise 46 and finalize requirement
-# C0531231700
-# - completed coding for exercise 46 and ready for testing (refactor)

@@ -41,9 +41,3 @@ else:
         print("'" + iOneCharOnly + "'" + " is an invalid input data(Alphabet Only).")
         print("Thank you for using this app.")   
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0519230900
-# - completed the code for exercise 36 ready for testing
-# 
