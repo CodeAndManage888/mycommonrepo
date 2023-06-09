@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 053023   (Expected Solution with 35 Lines of Code)    *
 # Title: Chinese Zodiac                                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # The Chinese zodiac assigns animals to years in a 12 year    *
 # cycle. One 12 year cycle is show in the table below. The    *
 # pattern repeats from the, and with 2012 being another year  *
@@ -29,6 +29,34 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+chi_sign_list = ["Dragon", "Snake", "Horse", "Sheep", "Monkey",
+                 "Rooster", "Dog", "Pig", "Rat", "Ox", "Tiger",
+                 "Hare"]
+rev_chi_sign_list = []
+icheck = -1
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1=int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    print("Invalid input data! Integer input data only.")
+    cUserIn1 = 0
+    return cUserIn1
 #--------------------------------------------------------------
+iYearOnly = input("Enter the input year e.g. 1999: ")
+if len(iYearOnly) <= 4:
+  iCnvYear = data_check(iYearOnly)
+  if (iCnvYear <= 2000) and (icheck == 0):
+    pRemYrs = (2000 - iCnvYear) % 12
+    rev_chi_sign_list = chi_sign_list[::-1]
+    print("The Chinese Zodiac for the year", iYearOnly, "is", rev_chi_sign_list[pRemYrs - 1]+".")
+  elif (iCnvYear > 2000) and (icheck == 0):
+    pRemYrs = (iCnvYear - 2000) % 12
+    print("The Chinese Zodiac for the year", iYearOnly, "is", chi_sign_list[pRemYrs]+".")
+else:
+  print("Invalid Input Data. Invalid Input Data Length.")
+print("Thank you for using this app.")
 #**************************************************************

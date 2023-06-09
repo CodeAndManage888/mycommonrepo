@@ -72,8 +72,3 @@ else:
     print("Invalid input data! Up to two charater data only.")
 print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0525231200
-# - complete the code and ready for testing

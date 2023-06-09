@@ -56,8 +56,3 @@ if icheck == 0:
                 print("The input frequency does not correspond to any known note.")
   print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0525231200
-# - complete the code and ready for testing

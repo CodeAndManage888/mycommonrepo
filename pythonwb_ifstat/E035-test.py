@@ -51,8 +51,3 @@ while icheck == -1:
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0518231730
-# - draft the working code for exercise 35

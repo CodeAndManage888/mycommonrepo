@@ -80,12 +80,3 @@ if (ciSoundLvl < 40) and (icheck == 0):
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0522230900
-# - started the draft of the code for exercise 39
-# C0522232300
-# - continue coding for exercise 39
-# C0523230800
-# - completed coding for exercise 39 ready for testing

@@ -67,9 +67,3 @@ if icheck == 0:
 else:
   print("Thank you for using this app.")
 #**************************************************************
-# Open Items:
-#
-# CHistory:
-# C0526231800
-# - started working on the code for exercise 43
-# - completed the code for exercise 43 and now ready for testing
