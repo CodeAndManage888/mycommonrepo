@@ -25,6 +25,30 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+iMagValue, ciMagValue = (" ", 0)
+icheck = -1
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1=int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    print("Invalid input data! Integer input data only.")
+    cUserIn1 = 0
+    return cUserIn1
 #--------------------------------------------------------------
+iMagValue = input("Enter the earthquake magnitude(Numeric only): ")
+ciMagValue = data_check(iMagValue)
+if icheck == 0:
+  fin_data = face_money_dict.get(ciMoneyValue,"Not Found")
+  if fin_data != "Not Found":
+    print("The individual in the note is %s." % fin_data)
+  else:
+    print("Invalid data! No equivalent note found.")
+  print("Thank you for using this app.")
+else:
+  print("Thank you for using this app.")
+#**************************************************************
 #**************************************************************
