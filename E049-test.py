@@ -1,8 +1,8 @@
 #**************************************************************
 # Date: 053023   (Expected Solution with 30 Lines of Code)    *
 # Title: Richter Scale                                        *
-# Status: In Progress (In Progress / Testing / Working)       *
-# The fllowing table contains earthquake magnitude ranges on  *
+# Status: Testing (In Progress / Testing / Working)           *
+# The following table contains earthquake magnitude ranges on *
 # the Richter scale and their descriptors:                    *
 #                                                             *
 # Magnitude                Descriptor                         *
@@ -42,13 +42,27 @@ def data_check(UserIn1):
 iMagValue = input("Enter the earthquake magnitude(Numeric only): ")
 ciMagValue = data_check(iMagValue)
 if icheck == 0:
-  fin_data = face_money_dict.get(ciMoneyValue,"Not Found")
-  if fin_data != "Not Found":
-    print("The individual in the note is %s." % fin_data)
+  if 0 < ciMagValue < 2.0:
+    print("The value %s in the Richter Scale is Micro" % ciMagValue)
+  elif 2.0 <= ciMagValue < 3.0:
+    print("The value %s in the Richter Scale is Very Minor" % ciMagValue)
+  elif 3.0 <= ciMagValue < 4.0:
+    print("The value %s in the Richter Scale is Minor" % ciMagValue)
+  elif 4.0 <= ciMagValue < 5.0:
+    print("The value %s in the Richter Scale is Light" % ciMagValue)
+  elif 5.0 <= ciMagValue < 6.0: 
+    print("The value %s in the Richter Scale is Moderate" % ciMagValue)
+  elif 6.0 <= ciMagValue < 7.0:
+    print("The value %s in the Richter Scale is Strong" % ciMagValue)
+  elif 7.0 <= ciMagValue < 8.0:
+    print("The value %s in the Richter Scale is Major" % ciMagValue)
+  elif 8.0 <= ciMagValue < 10.0:
+    print("The value %s in the Richter Scale is Great" % ciMagValue)
+  elif ciMagValue >= 10.0:
+    print("The value %s in the Richter Scale is Meteoric" % ciMagValue)
   else:
-    print("Invalid data! No equivalent note found.")
+    print("Invalid Data! Out of range data")
   print("Thank you for using this app.")
 else:
   print("Thank you for using this app.")
-#**************************************************************
 #**************************************************************

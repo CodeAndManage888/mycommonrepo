@@ -1,38 +1,31 @@
 #**************************************************************
-# Date: 053023   (Expected Solution with 35 Lines of Code)    *
-# Title: Chinese Zodiac                                       *
-# Status: In Progress (In Progress / Testing / Working)       *
-# The Chinese zodiac assigns animals to years in a 12 year    *
-# cycle. One 12 year cycle is show in the table below. The    *
-# pattern repeats from the, and with 2012 being another year  *
-# of teh dragon, and 1999 being another year of the hare.     *
+# Date: 053023   (Expected Solution with 30 Lines of Code)    *
+# Title: Richter Scale                                        *
+# Status: Testing (In Progress / Testing / Working)           *
+# The following table contains earthquake magnitude ranges on *
+# the Richter scale and their descriptors:                    *
 #                                                             *
-# Year            Animal                                      *
-# -----           ------------                                *
-# 2000            Dragon                                      *
-# 2001            Snake                                       *
-# 2002            Horse                                       *
-# 2003            Sheep                                       *
-# 2004            Monkey                                      *
-# 2005            Rooster                                     *
-# 2006            Dog                                         *
-# 2007            Pig                                         *
-# 2008            Rat                                         *
-# 2009            Ox                                          *
-# 2010            Tiger                                       *
-# 2011            Hare                                        *
+# Magnitude                Descriptor                         *
+# -----------------        ----------------                   *
+# Less than 2.0            Micro                              *
+# 2.0 to less than 3.0     Very minor                         *
+# 3.0 to less than 4.0     Minor                              *
+# 4.0 to less than 5.0     Light                              *
+# 5.0 to less than 6.0     Moderate                           *
+# 6.0 to less than 7.0     Strong                             *
+# 7.0 to less than 8.0     Major                              *
+# 8.0 to less than 10      Great                              *
+# 10.0 or more             Meteoric                           *
 #                                                             *
-# Write a program that reads a year from the user and         *
-# displays the animal associated with the year. Your program  *
-# should work correctly for any year greater than or equal to *
-# zero, not just the one listed in the table.                 *
+# Write a program that reads a magnitude from the user and    *
+# displays the appropriate description as part of a           *
+# meaningful message. For example, if the user enters 5.5     *
+# then your program should indicate that a magnitude 5.5      *
+# earthquake is considered to be a moderate earthquake.       *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-chi_sign_list = ["Dragon", "Snake", "Horse", "Sheep", "Monkey",
-                 "Rooster", "Dog", "Pig", "Rat", "Ox", "Tiger",
-                 "Hare"]
-rev_chi_sign_list = []
+iMagValue, ciMagValue = (" ", 0)
 icheck = -1
 #--------------------------------------------------------------
 def data_check(UserIn1):
@@ -46,17 +39,30 @@ def data_check(UserIn1):
     cUserIn1 = 0
     return cUserIn1
 #--------------------------------------------------------------
-iYearOnly = input("Enter the input year e.g. 1999: ")
-if len(iYearOnly) <= 4:
-  iCnvYear = data_check(iYearOnly)
-  if (iCnvYear <= 2000) and (icheck == 0):
-    pRemYrs = (2000 - iCnvYear) % 12
-    rev_chi_sign_list = chi_sign_list[::-1]
-    print("The Chinese Zodiac for the year", iYearOnly, "is", rev_chi_sign_list[pRemYrs - 1]+".")
-  elif (iCnvYear > 2000) and (icheck == 0):
-    pRemYrs = (iCnvYear - 2000) % 12
-    print("The Chinese Zodiac for the year", iYearOnly, "is", chi_sign_list[pRemYrs]+".")
+iMagValue = input("Enter the earthquake magnitude(Numeric only): ")
+ciMagValue = data_check(iMagValue)
+if icheck == 0:
+  if 0 < ciMagValue < 2.0:
+    print("The value %s in the Richter Scale is Micro" % ciMagValue)
+  elif 2.0 <= ciMagValue < 3.0:
+    print("The value %s in the Richter Scale is Very Minor" % ciMagValue)
+  elif 3.0 <= ciMagValue < 4.0:
+    print("The value %s in the Richter Scale is Minor" % ciMagValue)
+  elif 4.0 <= ciMagValue < 5.0:
+    print("The value %s in the Richter Scale is Light" % ciMagValue)
+  elif 5.0 <= ciMagValue < 6.0: 
+    print("The value %s in the Richter Scale is Moderate" % ciMagValue)
+  elif 6.0 <= ciMagValue < 7.0:
+    print("The value %s in the Richter Scale is Strong" % ciMagValue)
+  elif 7.0 <= ciMagValue < 8.0:
+    print("The value %s in the Richter Scale is Major" % ciMagValue)
+  elif 8.0 <= ciMagValue < 10.0:
+    print("The value %s in the Richter Scale is Great" % ciMagValue)
+  elif ciMagValue >= 10.0:
+    print("The value %s in the Richter Scale is Meteoric" % ciMagValue)
+  else:
+    print("Invalid Data! Out of range data")
+  print("Thank you for using this app.")
 else:
-  print("Invalid Input Data. Invalid Input Data Length.")
-print("Thank you for using this app.")
+  print("Thank you for using this app.")
 #**************************************************************
