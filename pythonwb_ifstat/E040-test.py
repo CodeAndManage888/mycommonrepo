@@ -33,7 +33,7 @@ def data_check(UserIn1):
   except:
     print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------    
-i3TriSides = input("Input the length of the 3 sides of the triangle e.g. (1, 3, 4)==> ")
+ai3TriSides = input("Input the length of the 3 sides of the triangle e.g. (1, 3, 4)==> ")
 no_spaces = i3TriSides.replace(" ","")
 pCombIn = data_check(no_spaces)
 if (icheck == 0):
