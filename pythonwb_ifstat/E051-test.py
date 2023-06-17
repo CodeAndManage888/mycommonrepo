@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 060123   (Expected Solution with 52 Lines of Code)    *
 # Title: Letter Grade to Grade Points                         *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # At a particular university, letter grades are mapped to     *
 # grade points in the following manner:                       *
 #                                                             *
@@ -28,7 +28,6 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-icheck = -1
 letter_grade_dict = {
    "A+": 4.0,
     "A": 4.0,
@@ -45,17 +44,14 @@ letter_grade_dict = {
 }
 val_let_grade_list=["A+", "a+", "A", "a", "A-", "a-", "B+", "b+", "B", "b", "B-",
             "b-", "C+", "c+", "C", "c", "C-", "c-", "D+", "d+", "D", "d","F","f"]
+iLetterGrade, ciLetterGrade, fin_grade = (" ", " ", 0)
 #--------------------------------------------------------------
 iLetterGrade = input("What is the letter grade(A+, A etc)?==> ")
-if (i1stChar in notes_list) and (i2ndChar in notes_list):
-  ci1stChar, ci2ndChar = (i1stChar.upper(), int(i2ndChar))
-  mid_hz = note_hz_dict[ci1stChar]
-  fin_hz = format(round((mid_hz / 2**(4 - ci2ndChar)), 2), '0.2f')
-  print("The %s%s note has a frequency of %s Hz" % (ci1stChar, i2ndChar, fin_hz))
+if iLetterGrade in val_let_grade_list:
+  ciLetterGrade = iLetterGrade.upper()
+  fin_grade = letter_grade_dict[ciLetterGrade]
+  print("The %s letter grade is equivalent to %s grade point(s)." % (ciLetterGrade, fin_grade))
 else:
-  if len(iNameNotes) == 2:
-    print("Invalid input data! Please use valid note name(C4, A0).")
-  else:
-    print("Invalid input data! Up to two charater data only.")
+  print("The %s letter grade is invalid." % iLetterGrade)
 print("Thank you for using this app.")
 #**************************************************************
