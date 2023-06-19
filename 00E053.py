@@ -27,6 +27,32 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+rating_dict = {
+   0.0: "Unacceptable Performance", 0.4: "Acceptable Performance", 
+   0.6: "Meritorious Performance", 0.7: "Meritorious Performance",
+   0.8: "Meritorious Performance", 0.9: "Meritorious Performance"}
+ValRatingList = [0.0, 0.4, 0.6, 0.7, 0.8, 0.9]
+iGradePts, icheck, ciGradePts, fin_grade = (0.0, -1, 0.0, " ")
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1 = float(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
+def fnd_closest_val(UserIn2, ValList):
+  return min(ValList, key=lambda x: abs(x - UserIn2)) # TAG001
+#--------------------------------------------------------------
+iGradePts = input("What is the employee ratings(numeric only)? ==> ")
+ciGradePts = data_check(iGradePts)
+if icheck == 0:
+  fin_key = ValRatingList
+  fin_grade = letter_grade_dict[fin_key]
+  print("The %s grade point(s) is equivalent to %s letter grade." % (ciGradePts, fin_grade))
+else:
+  print("The %s grade point(s) is invalid." % iGradePts)
+print("Thank you for using this app.")
 #**************************************************************
