@@ -3,7 +3,7 @@
 # Title: Wavelengths of Visible Light                         *
 # Status: In Progress (In Progress / Testing / Working)       *
 # The wavelength of visible light ranges from 380 to 750      *
-# nanometers (nm). While the sqpectrum is continuous, it is   *
+# nanometers (nm). While the spectrum is continuous, it is    *
 # often divided into 6 colors as shown below:                 *
 #                                                             *
 # Color               Wavelength (nm)                         *
