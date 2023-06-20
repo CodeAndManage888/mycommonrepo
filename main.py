@@ -1,25 +1,38 @@
 #**************************************************************
-# Date: 060123   (Expected Solution with 47 Lines of Code)    *
-# Title: Grade Points to Letter Grade                         *
-# Status: Testing (In Progress / Testing / Working)           *
-# In the previous exercise you created a program that         *
-# converts a letter grade into the equivalent number of grade *
-# points. In this exercise you will create a program that     *
-# reverses the process and converts from a grade point value  *
-# entered by the user to a letter grade. Ensure that your     *
-# program handles grade point values that fall between letter *
-# grades. These should be rounded to the closest letter       *
-# grade. Your program should report A+ for a 4.0 (or greater) *
-# grade point average.                                        *
+# Date: 060223   (Expected Solution with 28 Lines of Code)    *
+# Title: Assessing Employees                                  *
+# Status: In Progress (In Progress / Testing / Working)       *
+# At a particular company, employees are rated at the end of  *
+# each year. The rating scale begins at 0.0, with higher      *
+# values indicating better performance and resulting in       *
+# larger raises. The value awarded to an employee is either   *
+# 0.0, 0.4, or 0.6 or more. Values between 0.0 and 0.4, and   *
+# between 0.4 and 0.6 are never used. The meaning associated  *
+# with each rating is shown in the following table. The       *
+# amount of an employee's raise is $2400.00 multiplied by     *
+# their rating.                                               *
+#                                                             *
+# Rating              Meaning                                 *
+# -----------         ---------------------------             *
+# 0.0                 Unacceptable performance                *
+# 0.4                 Acceptable performance                  *
+# 0.6 or more         Meritorious performance                 *
+#                                                             *
+# Write a program that reads a rating from the user and       *
+# indicates whether the performance was unacceptable,         *
+# acceptable or meritorious. The amount of the employee's     *
+# raise should also be reported. Your program should display  *
+# an appropriate error message if an invalid rating is        *
+# entered. 
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-letter_grade_dict = {
-   4.0: "A+", 4.0: "A", 3.7: "A-", 3.3: "B+", 3.0: "B", 2.7: "B-",
-   2.3: "C+", 2.0: "C", 1.7: "C-", 1.3: "D+", 1.0: "D", 0.0: "F"}
-ValGrdPtsList = [4.0, 4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.3, 
-                 1.0, 0.0]
-iGradePts, icheck, ciGradePts, fin_grade = (0.0, -1, 0.0, " ")
+emp_rating_dict = {
+   0.0: "Unacceptable Performance", 0.4: "Acceptable Performance", 
+   0.6: "Meritorious Performance", 0.7: "Meritorious Performance",
+   0.8: "Meritorious Performance", 0.9: "Meritorious Performance"}
+ValRatingList = [0.0, 0.4, 0.6, 0.7, 0.8, 0.9]
+iRating, icheck, ciRating, fin_rating, fin_rating = (" ", -1, 0.0, " ", 0.0)
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -30,21 +43,15 @@ def data_check(UserIn1):
   except:
     print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
-def fnd_closest_val(UserIn2, ValList):
-  return min(ValList, key=lambda x: abs(x - UserIn2)) # TAG001
-#--------------------------------------------------------------
-iGradePts = input("What is the grade points(numeric only)? ==> ")
-ciGradePts = data_check(iGradePts)
+iRating = input("What is the employee rating(numeric only)? ==> ")
+ciRating = data_check(iRating)
 if icheck == 0:
-  fin_key = fnd_closest_val(ciGradePts, ValGrdPtsList)
-  fin_grade = letter_grade_dict[fin_key]
-  print("The %s grade point(s) is equivalent to %s letter grade." % (ciGradePts, fin_grade))
-else:
-  print("The %s grade point(s) is invalid." % iGradePts)
+  if ciRating in ValRatingList:
+    fin_rating = emp_rating_dict[ciRating]
+    fin_raise = ciRating * 2400
+    print("The %s rating is %s." % (ciRating, fin_rating))
+    print("The employee is entitled to $%s salary raise." % fin_raise)
+  else:
+    print("The %s rating is an invalid rating ." % iRating)
 print("Thank you for using this app.")
 #**************************************************************
-# TAG001: what this line of code does is: it calculates the 
-# absolute difference between UserIn2 and each item in the list 
-# ValList, and it then returns the item from ValList for which 
-# this difference is smallest. In other words, it finds the item 
-# in ValList that is closest to UserIn2.

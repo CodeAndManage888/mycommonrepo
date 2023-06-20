@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 060223   (Expected Solution with 28 Lines of Code)    *
 # Title: Assessing Employees                                  *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # At a particular company, employees are rated at the end of  *
 # each year. The rating scale begins at 0.0, with higher      *
 # values indicating better performance and resulting in       *
@@ -27,12 +27,12 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-rating_dict = {
+emp_rating_dict = {
    0.0: "Unacceptable Performance", 0.4: "Acceptable Performance", 
    0.6: "Meritorious Performance", 0.7: "Meritorious Performance",
    0.8: "Meritorious Performance", 0.9: "Meritorious Performance"}
 ValRatingList = [0.0, 0.4, 0.6, 0.7, 0.8, 0.9]
-iGradePts, icheck, ciGradePts, fin_grade = (0.0, -1, 0.0, " ")
+iRating, icheck, ciRating, fin_rating, fin_rating = (" ", -1, 0.0, " ", 0.0)
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -43,16 +43,15 @@ def data_check(UserIn1):
   except:
     print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
-def fnd_closest_val(UserIn2, ValList):
-  return min(ValList, key=lambda x: abs(x - UserIn2)) # TAG001
-#--------------------------------------------------------------
-iGradePts = input("What is the employee ratings(numeric only)? ==> ")
-ciGradePts = data_check(iGradePts)
+iRating = input("What is the employee rating(numeric only)? ==> ")
+ciRating = data_check(iRating)
 if icheck == 0:
-  fin_key = ValRatingList
-  fin_grade = letter_grade_dict[fin_key]
-  print("The %s grade point(s) is equivalent to %s letter grade." % (ciGradePts, fin_grade))
-else:
-  print("The %s grade point(s) is invalid." % iGradePts)
+  if ciRating in ValRatingList:
+    fin_rating = emp_rating_dict[ciRating]
+    fin_raise = ciRating * 2400
+    print("The %s rating is %s." % (ciRating, fin_rating))
+    print("The employee is entitled to $%s salary raise." % fin_raise)
+  else:
+    print("The %s rating is an invalid rating ." % iRating)
 print("Thank you for using this app.")
 #**************************************************************
