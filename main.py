@@ -1,57 +1,59 @@
 #**************************************************************
-# Date: 060223   (Expected Solution with 28 Lines of Code)    *
-# Title: Assessing Employees                                  *
-# Status: In Progress (In Progress / Testing / Working)       *
-# At a particular company, employees are rated at the end of  *
-# each year. The rating scale begins at 0.0, with higher      *
-# values indicating better performance and resulting in       *
-# larger raises. The value awarded to an employee is either   *
-# 0.0, 0.4, or 0.6 or more. Values between 0.0 and 0.4, and   *
-# between 0.4 and 0.6 are never used. The meaning associated  *
-# with each rating is shown in the following table. The       *
-# amount of an employee's raise is $2400.00 multiplied by     *
-# their rating.                                               *
+# Date: 060923   (Expected Solution with 38 Lines of Code)    *
+# Title: Wavelengths of Visible Light                         *
+# Status: Testing (In Progress / Testing / Working)           *
+# The wavelength of visible light ranges from 380 to 750      *
+# nanometers (nm). While the spectrum is continuous, it is    *
+# often divided into 6 colors as shown below:                 *
 #                                                             *
-# Rating              Meaning                                 *
-# -----------         ---------------------------             *
-# 0.0                 Unacceptable performance                *
-# 0.4                 Acceptable performance                  *
-# 0.6 or more         Meritorious performance                 *
+# Color               Wavelength (nm)                         *
+# ----------          ----------------------                  *
+# Violet              380 to less than 450                    *
+# Blue                450 to less than 495                    *
+# Green               495 to less than 570                    *
+# Yellow              570 to less than 590                    *
+# Orange              590 to less than 620                    *
+# Red                 620 to 750                              *
 #                                                             *
-# Write a program that reads a rating from the user and       *
-# indicates whether the performance was unacceptable,         *
-# acceptable or meritorious. The amount of the employee's     *
-# raise should also be reported. Your program should display  *
-# an appropriate error message if an invalid rating is        *
-# entered. 
+# Write a program that reads a wavelength from the user and   *
+# reports its color. Display an appropriate error message if  *
+# the wavelength entered by the user is outside of the        *
+# visible spectrum.                                           *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-emp_rating_dict = {
-   0.0: "Unacceptable Performance", 0.4: "Acceptable Performance", 
-   0.6: "Meritorious Performance", 0.7: "Meritorious Performance",
-   0.8: "Meritorious Performance", 0.9: "Meritorious Performance"}
-ValRatingList = [0.0, 0.4, 0.6, 0.7, 0.8, 0.9]
-iRating, icheck, ciRating, fin_rating, fin_rating = (" ", -1, 0.0, " ", 0.0)
+iWaveLenValue, ciWaveLenValue = (" ", 0)
+icheck = -1
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
   try:
-    cUserIn1 = float(UserIn1)
+    cUserIn1=int(UserIn1)
     icheck = 0
     return cUserIn1
   except:
-    print("Invalid input data! Numeric input data only.")
+    print("Invalid input data! Integer input data only.")
+    cUserIn1 = 0
+    return cUserIn1
 #--------------------------------------------------------------
-iRating = input("What is the employee rating(numeric only)? ==> ")
-ciRating = data_check(iRating)
+iWaveLenValue = input("Enter the Wavelength value(Numeric only): ")
+ciWaveLenValue = data_check(iWaveLenValue)
 if icheck == 0:
-  if ciRating in ValRatingList:
-    fin_rating = emp_rating_dict[ciRating]
-    fin_raise = ciRating * 2400
-    print("The %s rating is %s." % (ciRating, fin_rating))
-    print("The employee is entitled to $%s salary raise." % fin_raise)
+  if 280 <= ciWaveLenValue < 450:
+    print("The Wavelength %snm is Color Violet." % ciWaveLenValue)
+  elif 450 <= ciWaveLenValue < 495:
+    print("The Wavelength %s nm is Color Blue." % ciWaveLenValue)
+  elif 495 <= ciWaveLenValue < 570:
+    print("The Wavelength %s nm is Color Green." % ciWaveLenValue)
+  elif 570 <= ciWaveLenValue < 590:
+    print("The Wavelength %s nm is Color Yellow." % ciWaveLenValue)
+  elif 590 <= ciWaveLenValue < 620: 
+    print("The Wavelength %s nm is Color Orange." % ciWaveLenValue)
+  elif 620 <= ciWaveLenValue <= 750:
+    print("The Wavelength %s nm is Color Red." % ciWaveLenValue)
   else:
-    print("The %s rating is an invalid rating ." % iRating)
-print("Thank you for using this app.")
+    print("Invalid Data! Out of range data")
+  print("Thank you for using this app.")
+else:
+  print("Thank you for using this app.")
 #**************************************************************
