@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 060923   (Expected Solution with 38 Lines of Code)    *
 # Title: Wavelengths of Visible Light                         *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # The wavelength of visible light ranges from 380 to 750      *
 # nanometers (nm). While the spectrum is continuous, it is    *
 # often divided into 6 colors as shown below:                 *
@@ -22,9 +22,7 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-#--------------------------------------------------------------
-#--------------------------------------------------------------
-iMagValue, ciMagValue = (" ", 0)
+iWaveLenValue, ciWaveLenValue = (" ", 0)
 icheck = -1
 #--------------------------------------------------------------
 def data_check(UserIn1):
@@ -38,27 +36,21 @@ def data_check(UserIn1):
     cUserIn1 = 0
     return cUserIn1
 #--------------------------------------------------------------
-iMagValue = input("Enter the earthquake magnitude(Numeric only): ")
-ciMagValue = data_check(iMagValue)
+iWaveLenValue = input("Enter the Wavelength value(Numeric only): ")
+ciWaveLenValue = data_check(iWaveLenValue)
 if icheck == 0:
-  if 0 < ciMagValue < 2.0:
-    print("The value %s in the Richter Scale is Micro" % ciMagValue)
-  elif 2.0 <= ciMagValue < 3.0:
-    print("The value %s in the Richter Scale is Very Minor" % ciMagValue)
-  elif 3.0 <= ciMagValue < 4.0:
-    print("The value %s in the Richter Scale is Minor" % ciMagValue)
-  elif 4.0 <= ciMagValue < 5.0:
-    print("The value %s in the Richter Scale is Light" % ciMagValue)
-  elif 5.0 <= ciMagValue < 6.0: 
-    print("The value %s in the Richter Scale is Moderate" % ciMagValue)
-  elif 6.0 <= ciMagValue < 7.0:
-    print("The value %s in the Richter Scale is Strong" % ciMagValue)
-  elif 7.0 <= ciMagValue < 8.0:
-    print("The value %s in the Richter Scale is Major" % ciMagValue)
-  elif 8.0 <= ciMagValue < 10.0:
-    print("The value %s in the Richter Scale is Great" % ciMagValue)
-  elif ciMagValue >= 10.0:
-    print("The value %s in the Richter Scale is Meteoric" % ciMagValue)
+  if 280 <= ciWaveLenValue < 450:
+    print("The Wavelength %snm is Color Violet." % ciWaveLenValue)
+  elif 450 <= ciWaveLenValue < 495:
+    print("The Wavelength %s nm is Color Blue." % ciWaveLenValue)
+  elif 495 <= ciWaveLenValue < 570:
+    print("The Wavelength %s nm is Color Green." % ciWaveLenValue)
+  elif 570 <= ciWaveLenValue < 590:
+    print("The Wavelength %s nm is Color Yellow." % ciWaveLenValue)
+  elif 590 <= ciWaveLenValue < 620: 
+    print("The Wavelength %s nm is Color Orange." % ciWaveLenValue)
+  elif 620 <= ciWaveLenValue <= 750:
+    print("The Wavelength %s nm is Color Red." % ciWaveLenValue)
   else:
     print("Invalid Data! Out of range data")
   print("Thank you for using this app.")
