@@ -20,6 +20,44 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+icheck = -1
+no_spaces = " "
+side_list = []
+side_a, side_b, side_c, cUserIn1 = (0, 0, 0, 0)
+pCombIn = 0
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1 = int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    print("Invalid input data! Numeric input data only.")
+#--------------------------------------------------------------    
+iNoMin = input("How many minutes consumed this month? Numeric only e.g. (1, 3, 4)==> ")
+iNoMsg = input("How many messages consumed this month? Numeric only e.g. (1, 3, 4)==> ")
+piNoMin = data_check(iNoMin)
+if icheck == 0:
+  if piNoMin <= 50:
+    print("The Total Bill for this Month")
+    print("-----------------------------")
+    print("")
+  side_list = i3TriSides.split()
+  if len(side_list) == 3:
+    side_a, side_b, side_c = [int(side) for side in side_list]
+    if (side_a != 0) and (side_b != 0) and (side_c != 0):
+      if (side_a == side_b) and (side_a == side_c) and (side_b == side_c):
+        print("The triangle is an equilateral triangle.")
+      else:
+        if (side_a != side_b) and (side_a != side_c) and (side_b != side_c):
+          print("The triangle is a scalene triangle.")
+        else:
+          print("The triangle is an isosceles triangle.")
+    else:
+      print("Invalid input data! Please use a non zero data.")
+  else:
+    print("Incomplete number of sides. Three sides are required.")
 #--------------------------------------------------------------
+print("Thank you for using this app.")
 #**************************************************************

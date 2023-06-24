@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 060923   (Expected Solution with 31 Lines of Code)    *
 # Title: Frequency to Name                                    *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Electromagnetic radiation can be classified into one of 7   *
 # categories according to its frequency, as shown in the      *
 # table below:                                                *
@@ -29,7 +29,7 @@ icheck = -1
 def data_check(UserIn1):
   global icheck
   try:
-    cUserIn1=int(UserIn1)
+    cUserIn1=int(float(UserIn1))
     icheck = 0
     return cUserIn1
   except:
