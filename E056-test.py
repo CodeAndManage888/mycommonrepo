@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 061323   (Expected Solution with 44 Lines of Code)    *
 # Title: Cell Phone Bill                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # A particular cell phone plan includes 50 minutes of air     *
 # time and 50 text messages for $15.00 a month. Each          *
 # additional minute of air time costs $0.25, while additional *
@@ -21,10 +21,9 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 icheck = -1
-no_spaces = " "
-side_list = []
-side_a, side_b, side_c, cUserIn1 = (0, 0, 0, 0)
-pCombIn = 0
+base_bill, charge_911, piNoMin, piNoMsg = (15.00, .44, 0, 0)
+iNoMin, iNoMsg = (" ", " ")
+comp_fin_bill, comp_piNoMin, comp_piNoMsg = (0, 0, 0)
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -34,30 +33,41 @@ def data_check(UserIn1):
     return cUserIn1
   except:
     print("Invalid input data! Numeric input data only.")
-#--------------------------------------------------------------    
+#--------------------------------------------------------------
 iNoMin = input("How many minutes consumed this month? Numeric only e.g. (1, 3, 4)==> ")
 iNoMsg = input("How many messages consumed this month? Numeric only e.g. (1, 3, 4)==> ")
+print(" ")
+print("-----------------------------------------------------")
+print("Billing Statement for this Month")
+print("-----------------------------------------------------")
 piNoMin = data_check(iNoMin)
 if icheck == 0:
-  if piNoMin <= 50:
-    print("The Total Bill for this Month")
-    print("-----------------------------")
-    print("")
-  side_list = i3TriSides.split()
-  if len(side_list) == 3:
-    side_a, side_b, side_c = [int(side) for side in side_list]
-    if (side_a != 0) and (side_b != 0) and (side_c != 0):
-      if (side_a == side_b) and (side_a == side_c) and (side_b == side_c):
-        print("The triangle is an equilateral triangle.")
-      else:
-        if (side_a != side_b) and (side_a != side_c) and (side_b != side_c):
-          print("The triangle is a scalene triangle.")
-        else:
-          print("The triangle is an isosceles triangle.")
+  piNoMsg = data_check(iNoMsg)
+  if icheck == 0:
+    print("Base Charge for this month is $%s" % format(base_bill, '0.2f'))
+    print("911 Charge for this month is $%s" % format(charge_911, '0.2f'))
+    if (piNoMin <= 50 or piNoMsg <= 50) and (piNoMsg != 0 and piNoMin != 0):
+      comp_fin_bill = format (((15 + .44)*1.05), '0.2f')
+      print("-----------------------------------------------------")
+      print("Total Bill for this month with 5%% tax is $%s" % comp_fin_bill)
+      print(" ")
+    elif (piNoMin > 50 or piNoMsg > 50) and (piNoMsg != 0 and piNoMin != 0):
+      if piNoMin > 50:
+        comp_piNoMin = (piNoMin - 50)*.25
+        if comp_piNoMin < 0:
+          comp_piNoMin = 0.00
+        print("Additional Charge due to extra Air Time for this month is $%s" % format(comp_piNoMin, '0.2f'))
+      if piNoMsg > 50:
+        comp_piNoMsg = (piNoMsg - 50)*.15
+        if comp_piNoMsg < 0:
+          comp_piNoMsg = 0.00
+        print("Additional Charge due to extra Messages for this month is $%s" % format(comp_piNoMsg, '0.2f'))
+      comp_fin_bill = format(((comp_piNoMin + comp_piNoMsg + 15 + .44)*1.05), '0.2f')
+      print("-----------------------------------------------------")
+      print("Total Bill for this month with 5%% tax is $%s" % comp_fin_bill)
+      print(" ")
     else:
       print("Invalid input data! Please use a non zero data.")
-  else:
-    print("Incomplete number of sides. Three sides are required.")
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
