@@ -18,5 +18,22 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1 = int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
+iPlateNum = input("Please provide a valid plate number e.g. 123ABC or 1234ABC: ")
+if len(iPlateNum) == 6:
+  iNumPart = data_check(iPlateNum[])
+  iLtrPart = iPlateNum[]
+elif len(iPlateNum) == 7:
+  iNumPart = data_check(iPlateNum[])
+  iLtrPart = iPlateNum[]
+else:
+  print("Invalid input data! Unexpected plate number length")
 #**************************************************************
