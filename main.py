@@ -1,121 +1,66 @@
 #**************************************************************
-# Date: 061423   (Expected Solution with 22 Lines of Code)    *
-# Title: Next Day                                             *
-# Status: Testing (In Progress / Testing / Working)           *
-# Write a program that reads a date from the user and         *
-# computes its immediate succcessor. For example, if the user *
-# enters values that represent 2013-11-18 then your program   *
-# should display a message indicating the day immediately     *
-# after 2013-11-18 is 2013-11-19. If the user enter value     *
-# represent 2013-11-30 then the program should indicate that  *
-# the next day is 2013-12-01. If the user enter values that   *
-# represent 2013-12-31 then the program should indicate that  *
-# the next day is 2014-01-01. The date will be entered in     *
-# numeric form with three separate input statements: one for  *
-# the year, one for the month, and one for the day. Ensure    *
-# that your program works correctly for leap years.           *
+# Date: 061523   (Expected Solution with 28 Lines of Code)    *
+# Title: Is a License Plate Valid?                            *
+# Status: In Progress (In Progress / Testing / Working)       *
+# In a particular jurisdiction, older license plates consist  *
+# of three uppercase letters followed by three numbers. When  *
+# all of the license plates following that pattern had been   *
+# used, the format was changed to four numbers followed by    *
+# three uppercase letters.                                    *
+# Write a program that begins by reading a string of          *
+# characters from the user. Then your program should display  *
+# a message indicating whether the characters are valid for   *
+# an older style license plate or a newer style license plate.*
+# Your program should display an appropriate message if the   *
+# string entered by the user is not valid for either style of *
+# license plate.                                              *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-icheck = -1
-iYear, iMonth, iDay, iCnvYear, pRemYrs1, pRemYrs2, pRemYrs3 = (" ", " ", " ", 0, 0, 0, 0)
-ciYear, ciMonth, ciDay, con_input, data_chkd, YearCheck, MonthCheck= (0, 0, 0, 0, 0, " ", 0)
-fin_year, fin_month, fin_day = (" ", " ", " ")
-valid_day_dict = {"01": 31, "02": 29, "03": 31, "04": 30, "05": 31, "06": 30, "07": 31,
-   "08": 31, "09": 30, "10": 31, "11": 30, "12": 31}
+val_ltr_list = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U",
+                "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", 
+                "n", "p", "q", "r", "s", "t", "v", "w", "x", "z",
+                "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", 
+                "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z"]
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
   try:
-    cUserIn1=int(UserIn1)
+    cUserIn1 = int(UserIn1)
     icheck = 0
     return cUserIn1
   except:
-    cUserIn1 = -1
-    return cUserIn1
+    print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
-def leap_year(UserIn2):
-  if len(UserIn2) <= 4:
-    iCnvYear = data_check(UserIn2)
+def char_check(UserIn2):
+  for character in UserIn2:
+    if character not in val_ltr_list:
+      return "Invalid input data! Not a valid character for this plate number version."
+  return "Y"
+#--------------------------------------------------------------
+iPlateNum = input("Please provide a valid plate number e.g. ABC123 or 1234ABC: ")
+if len(iPlateNum) == 6:
+  iLtrPart = iPlateNum[0:3]
+  print(iLtrPart)
+  LtrIndMsg = char_check(iLtrPart)
+  if LtrIndMsg != "Y":
+    print(LtrIndMsg)
+  else:
+    iNumPart = data_check(iPlateNum[3:6])
+    print(iNumPart)
     if icheck == 0:
-      pRemYrs1 = iCnvYear % 400
-      if pRemYrs1 != 0:
-        pRemYrs2 = pRemYrs1 % 100
-        if pRemYrs2 != 0:
-          pRemYrs3 = pRemYrs2 % 4
-          if pRemYrs3 != 0:
-            print("The %s year is not a leap year." % UserIn2)
-            LeapYrInd = "N"
-            return LeapYrInd
-          else:
-            print("The %s year is a leap year." % UserIn2)
-            LeapYrInd = "Y"
-            return LeapYrInd
-        else:
-          print("The %s year is a leap year." % UserIn2)
-          LeapYrInd = "Y"
-          return LeapYrInd
-      else:
-        print("The %s year is a leap year." % UserIn2)
-        LeapYrInd = "Y"
-        return LeapYrInd
-  else:
-    LeapYrInd = "X"
-    return LeapYrInd
-#--------------------------------------------------------------
-iYear = input("Enter the input year. Numeric only e.g. 1999: ")
-iMonth = input("Enter the input month. Numeric only e.g. 01: ")
-iDay = input("Enter the input day. Numeric only e.g. 31: ")
-con_input = iYear + iMonth + iDay
-data_chkd = data_check(con_input)
-if icheck == 0:
-  ciDay = int(iDay)
-  ciMonth = int(iMonth)
-  ciYear = int(iYear)
-  if len(iYear) == 4 and len(iMonth) == 2 and len(iDay) == 2:
-    YearCheck = leap_year(iYear)
-    MonthCheck = valid_day_dict[iMonth]
-    if ciMonth == 2 and ciDay  == 28:
-      if YearCheck == "Y":
-        fin_month = iMonth
-        fin_day = str(ciDay + 1)
-        fin_year = iYear
-      elif YearCheck == "N":
-        fin_month = str(ciMonth + 1)
-        fin_day = "01"
-        fin_year = iYear
-      else:
-        print("Invalid Input Data. Invalid Input Data Length.")
-    elif ciDay == 30 and ciMonth != 12:
-      if MonthCheck == ciDay:
-        fin_month = str(ciMonth + 1)
-        fin_day = "01"
-        fin_year = iYear
-      else:
-        print("Invalid data. Incorrect day for the month.")
-    elif ciDay == 31 and ciMonth == 12:
-        fin_month = "01"
-        fin_day = "01"
-        fin_year = str(ciYear + 1)
-    elif (ciDay == 31 and ciMonth != 12) or (ciDay == 29 and ciMonth == 2):
-      if YearCheck == "N" and ciMonth == 2:
-        fin_month = str(ciMonth + 1)
-        fin_day = "01"
-        fin_year = iYear
-      elif MonthCheck == ciDay:
-        fin_month = str(ciMonth + 1)
-        fin_day = "01"
-        fin_year = iYear
-      else:
-        print("Invalid data. Incorrect day for the month.")
+      print("Input data valid for an older version plate number!")
+elif len(iPlateNum) == 7:
+  print(iPlateNum[0:4])
+  iNumPart = data_check(iPlateNum[0:4])
+  if icheck == 0:
+    iLtrPart = iPlateNum[4:7]
+    print(iLtrPart)
+    LtrIndMsg = char_check(iLtrPart)
+    if LtrIndMsg != "Y":
+      print(LtrIndMsg)
     else:
-      fin_month = iMonth
-      fin_day = str(ciDay + 1)
-      fin_year = iYear
-  else:
-    print("Invalid Input Data. Data length is wrong.")     
+      print("Input data valid for a newer version plate number!")
 else:
-  print("Invalid input data! Integer input data only.")
-print("The next day for the input date is %s-%s-%s" % (fin_year, fin_month, fin_day))
-print("Thank you for using this app.")
+  print("Invalid input data! Unexpected plate number length")
 #**************************************************************
