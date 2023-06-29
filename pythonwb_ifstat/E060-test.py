@@ -1,7 +1,7 @@
 #**************************************************************
 # Date: 061523   (Expected Solution with 45 Lines of Code)    *
 # Title: Roulette Payouts                                     *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # A roulette wheel has 38 spaces on it. Of these spaces, 18   *
 # are black, 18 are red, and two are green. The green spaces  *
 # are numbered 0 and 00. The red spaces are numbered 1, 3, 5, *
@@ -61,13 +61,11 @@ sing_num_list = ["0", "00", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
                  "31", "32", "33", "34", "35", "36"]
 #--------------------------------------------------------------
 print("Roulette Wheel is now closed for bets!")
+#time.sleep(5)
 print("Roulette Wheel is spining: ", end = "")
-#for character in status_bar:
-#  print(character, end = "")
-#  time.sleep(1)
-for _ in range(20):  # this will print ">" 20 times
-    print(">", end="")
-    time.sleep(1)  # delay of 1 second
+for character in status_bar:
+  print(character, end = "")
+  time.sleep(2)
 print("\n")
 selected_number = random.choice(sing_num_list)
 print("The spin resulted in %s" % selected_number)
