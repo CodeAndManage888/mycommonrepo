@@ -1,3 +1,4 @@
+#!/bin/python3
 #**************************************************************
 # Date: 061523   (Expected Solution with 45 Lines of Code)    *
 # Title: Roulette Payouts                                     *
