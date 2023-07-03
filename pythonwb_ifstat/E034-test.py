@@ -1,3 +1,4 @@
+#!/bin/bash
 #**************************************************************
 # Date: 051123                                                *
 # Title: Even or Odd                                          *
@@ -24,13 +25,13 @@ def data_check(UserIn1):
 iInteger = input("What number is in your mind (Integer Only)?==> ")
 ciInteger = data_check(iInteger)
 #--------------------------------------------------------------
-if icheck == 0 and ciInteger != 0:
+if icheck == 0 and ciInteger > 0:
   computed_value = ciInteger % 2
   if computed_value == 1:
     print("Your number is an ODD number.")
   else:
     print("Your number is an EVEN number.")
-  print("Thank you for using this app.")
 else:
-  print("Thank you for using this app.")
+  print("Invalid input data! Greater than zero integer input data only.")
+print("Thank you for using this app.")
 #**************************************************************
