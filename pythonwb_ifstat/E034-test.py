@@ -9,9 +9,7 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-computed_value = 0
-icheck = -1
-iInteger, ciInteger = (0,0)
+computed_value, icheck, iInteger, ciInteger = (0, -1, 0, 0)
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -25,13 +23,14 @@ def data_check(UserIn1):
 iInteger = input("What number is in your mind (Integer Only)?==> ")
 ciInteger = data_check(iInteger)
 #--------------------------------------------------------------
-if icheck == 0 and ciInteger > 0:
-  computed_value = ciInteger % 2
-  if computed_value == 1:
-    print("Your number is an ODD number.")
+if icheck == 0:
+  if ciInteger > 0:
+    computed_value = ciInteger % 2
+    if computed_value == 1:
+      print("Your number is an ODD number.")
+    else:
+      print("Your number is an EVEN number.")
   else:
-    print("Your number is an EVEN number.")
-else:
-  print("Invalid input data! Greater than zero integer input data only.")
+    print("Invalid input data! Greater than zero integer input data only.")
 print("Thank you for using this app.")
 #**************************************************************
