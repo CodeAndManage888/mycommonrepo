@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 063023   (Expected Solution with 22 Lines of Code)    *
 # Title: No More Pennies                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # February 4, 2013 was the last day that pennies were         *
 # distributed by the Royal Canadian Mint. Now that pennies    *
 # have been phased out retailers must adjust totals so that   *
@@ -43,13 +43,13 @@ InputCost = 1
 while InputCost != " ":
   InputCost =input("Input price for the purchased item: ")
   cost_list.append(InputCost)
-#--------------------------------------------------------------
+
 while cost_list[ptr] != " ":
   num_cost_list.append(data_check(cost_list[ptr]))
   ptr = ptr + 1
   if icheck == -1:
     break
-#--------------------------------------------------------------
+
 if icheck == 0:
   for cost in num_cost_list:
     total_cost = total_cost + cost
@@ -59,7 +59,7 @@ if icheck == 0:
     TotCostCash = round(total_cost, 1)
   else:
     TotCostCash = round(total_cost, 2)
-#--------------------------------------------------------------
+
 print("--------------------------------------------------")
 print("Total purchased cost is $ %s" % format(total_cost, "0.2f"))
 print("Total purchased cost if cash payment is $ %s" %  format(TotCostCash, "0.2f"))
