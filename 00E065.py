@@ -6,7 +6,7 @@
 # Write a program that computes the perimeter of a polygon.   *
 # Begin by reading the x and y values for the first point on  *
 # the perimeter of the polygon from the user. Then continue   *
-# reading pairs of x and y values untile the user enters a    *
+# reading pairs of x and y values until the user enters a     *
 # blank line for the x-coordinate. Each time you read an      *
 # additional coordinate you should compute the distance to    *
 # the previous point and add it to the perimeter. When a      *
@@ -28,5 +28,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
+user_input = input("Enter some text: ")
+print("\033[1m" + user_input + "\033[0m")
 #--------------------------------------------------------------
 #**************************************************************
