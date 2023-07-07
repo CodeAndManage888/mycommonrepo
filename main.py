@@ -18,19 +18,76 @@
 #                                                             *
 # Enter the x part of the coordinate: 0                       *
 # Enter the y part of the coordinate: 0                       *
-# Enter the x part of the coordinate: (blank to quite): 1     *
+# Enter the x part of the coordinate (blank to quit): 1       *
 # Enter the y part of the coordinate: 0                       *
-# Enter the x part of the coordinate: (blank to quite): 0     *
+# Enter the x part of the coordinate (blank to quit): 0       *
 # Enter the y part of the coordinate: 1                       *
-# Enter the x part of the coordinate: (blank to quite):       *
+# Enter the x part of the coordinate (blank to quit):         *
 # The perimeter of the polygon is 3.414213562373095           *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+import math
 #--------------------------------------------------------------
-user_input = input("Enter some text: ")
-print("\033[1m" + user_input + "\033[0m")
-
-user_input = input("Enter some text: ")
+UserInX, UserInY = ("", "")
+XCoorList = []
+YCoorList = []
+NumXCoorList = []
+NumYCoorList = []
+#--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1 = int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    icheck = -1
+    print("Invalid input data! Numeric input data only.")
+#--------------------------------------------------------------
+def comp_length(PtX1, PtY1, PtX2, PtY2):
+  fin_length = math.sqrt((PtX2**2 - PtX1**2) + (PtY2**2 - PtY1**2))
+  return fin_length
+#--------------------------------------------------------------
+PtNum = 1
+while UserInX != " ":
+  if PtNum == 1:
+    UserInX = input("Enter the X%s part of the coordinate: " % PtNum)
+    XCoorList.append(UserInX)
+    UserInY = input("Enter the Y%s part of the coordinate: " % PtNum)
+    YCoorList.append(UserInY)
+  else:
+    UserInX = input("Enter the X%s part of the coordinate (blank to quit): " % PtNum)
+    XCoorList.append(UserInX)
+    if UserInX != " ":
+      UserInY = input("Enter the Y%s part of the coordinate: " % PtNum)
+      YCoorList.append(UserInY)
+    else:
+      YCoorList.append(UserInX)
+  PtNum = PtNum + 1
+#--------------------------------------------------------------
+PtNum = 0
+while XCoorList[PtNum] != " ":
+  NumXCoorList.append(data_check(XCoorList[PtNum]))
+  NumYCoorList.append(data_check(YCoorList[PtNum]))
+  PtNum = PtNum + 1
+  if icheck == -1:
+    break
+#--------------------------------------------------------------
+PtNum, SampleSumX, SampleSumY = (0, 0, 0)
+for ptsX in NumXCoorList:
+  SampleSumX = SampleSumX + ptsX
+for ptsY in NumYCoorList:
+   SampleSumY = SampleSumY + ptsY
+#--------------------------------------------------------------
+print("--------------------To Be Deleted----------------------")
+print(XCoorList)
+print(YCoorList)
+print(NumXCoorList)
+print(NumYCoorList)
+print("--------------------To Be Deleted----------------------")
+print("Total Sum of X is %s." % SampleSumX)
+print("Total Sum of Y is %s." % SampleSumY)
+print("Thank you for using this app.")
 #--------------------------------------------------------------
 #**************************************************************
