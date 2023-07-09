@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 063023   (Expected Solution with 22 Lines of Code)    *
 # Title: Compute the Perimeter of a Polygon                   *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Write a program that computes the perimeter of a polygon.   *
 # Begin by reading the x and y values for the first point on  *
 # the perimeter of the polygon from the user. Then continue   *
@@ -29,7 +29,7 @@
 #**************************************************************
 import math
 #--------------------------------------------------------------
-UserInX, UserInY = ("", "")
+LenVal, PeriOfPoly, UserInX, UserInY = (0.0, 0.0, "", "")
 XCoorList = []
 YCoorList = []
 NumXCoorList = []
@@ -46,7 +46,7 @@ def data_check(UserIn1):
     print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
 def comp_length(PtX1, PtY1, PtX2, PtY2):
-  fin_length = math.sqrt((PtX2**2 - PtX1**2) + (PtY2**2 - PtY1**2))
+  fin_length = math.sqrt((PtX2 - PtX1)**2 + (PtY2 - PtY1)**2)
   return fin_length
 #--------------------------------------------------------------
 PtNum = 1
@@ -74,20 +74,19 @@ while XCoorList[PtNum] != " ":
   if icheck == -1:
     break
 #--------------------------------------------------------------
-PtNum, SampleSumX, SampleSumY = (0, 0, 0)
-for ptsX in NumXCoorList:
-  SampleSumX = SampleSumX + ptsX
-for ptsY in NumYCoorList:
-   SampleSumY = SampleSumY + ptsY
+PtNum, CtrVal = (0, 1)
+while CtrVal < len(NumXCoorList) and icheck == 0:
+  if len(NumXCoorList) < 3:
+    print("Input Data Error: Incomplete data, 3 or more points needed.")
+    break
+  if CtrVal == len(NumXCoorList):
+    LenVal = comp_length(NumXCoorList[PtNum], NumYCoorList[PtNum], NumXCoorList[0], NumYCoorList[0])
+  else:
+    LenVal = comp_length(NumXCoorList[PtNum], NumYCoorList[PtNum], NumXCoorList[PtNum + 1], NumYCoorList[PtNum + 1])
+  PeriOfPoly = PeriOfPoly + LenVal
+  CtrVal, PtNum = (CtrVal + 1, PtNum + 1)
 #--------------------------------------------------------------
-print("--------------------To Be Deleted----------------------")
-print(XCoorList)
-print(YCoorList)
-print(NumXCoorList)
-print(NumYCoorList)
-print("--------------------To Be Deleted----------------------")
-print("Total Sum of X is %s." % SampleSumX)
-print("Total Sum of Y is %s." % SampleSumY)
+if icheck == 0:
+  print("The perimeter of the polygon in a plain is %s" % format(PeriOfPoly, "0.2f"))
 print("Thank you for using this app.")
-#--------------------------------------------------------------
 #**************************************************************
