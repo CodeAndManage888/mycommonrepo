@@ -18,6 +18,26 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+icheck, GuestAge, TotalCharge = (0, "", 0.00)
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1 = int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    icheck = -1
+    print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
+while GuestAge != " ":
+  GuestAge = input("Input the age of the guess: ")
+  if GuestAge <= 2:
+    TotalCharge = TotalCharge + 0.00
+  elif GuestAge >= 3 and GuestAge <= 12:
+    TotalCharge = TotalCharge + 14.00
+  elif GuestAge >= 65:
+    TotalCharge = TotalCharge + 18.00
+  else:
+    TotalCharge = TotalCharge + 23.00
 #**************************************************************
