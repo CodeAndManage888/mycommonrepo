@@ -1,6 +1,7 @@
-Executing Test Case 1 - Display: Invalid input data! Integer input data only.:
+Executing Test Case 1 - Display: Invalid input data! Greater than zero integer input data only.:
 -----------------------------------
-What number is in your mind (Integer Only)?==> Thank you for using this app.
+What number is in your mind (Integer Only)?==> Invalid input data! Greater than zero integer input data only.
+Thank you for using this app.
 -----------------------------------
 
 Executing Test Case 2 - Display: Invalid input data! Integer input data only.:
@@ -9,9 +10,9 @@ What number is in your mind (Integer Only)?==> Invalid input data! Integer input
 Thank you for using this app.
 -----------------------------------
 
-Executing Test Case 3 - Display: Invalid input data! Integer input data only.:
+Executing Test Case 3 - Display: Invalid input data! Greater than zero integer input data only.:
 -----------------------------------
-What number is in your mind (Integer Only)?==> Your number is an ODD number.
+What number is in your mind (Integer Only)?==> Invalid input data! Greater than zero integer input data only.
 Thank you for using this app.
 -----------------------------------
 
@@ -59,7 +60,7 @@ Thank you for using this app.
 
 Executing Test Case 11 - Display: Your number is an ODD number.:
 -----------------------------------
-What number is in your mind (Integer Only)?==> Your number is an EVEN number.
+What number is in your mind (Integer Only)?==> Your number is an ODD number.
 Thank you for using this app.
 -----------------------------------
 

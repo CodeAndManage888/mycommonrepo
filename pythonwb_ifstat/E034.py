@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 051123                                                *
 # Title: Even or Odd                                          *
-# Status: Testing (In Progress / Testing / Working)           *
+# Status: Working (In Progress / Testing / Working)           *
 # Write a program that reads an integer from the user. Then   * 
 # your program should display a message indicating whether    * 
 # the inter is even or odd.                                   *

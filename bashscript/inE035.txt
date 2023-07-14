@@ -1,0 +1,26 @@
+- Display: Invalid input data! Numeric input data only.
+1
+- Display: Invalid input data! Numeric input data only.
+X
+- Display: The total equivalent dog years is 10.5
+2
+- Display: 
+12.05
+- Display: 
+85.1234
+- Display: 
+4
+- Display: 
+20
+- Display: 
+106
+- Display: 
+5
+- Display: 
+39
+- Display: 
+157
+- Display: 
+a1
+- Display: 
+12a

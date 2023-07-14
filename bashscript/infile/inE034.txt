@@ -1,8 +1,8 @@
-- Display: Invalid input data! Integer input data only.
+- Display: Invalid input data! Greater than zero integer input data only.
 0
 - Display: Invalid input data! Integer input data only.
 0.000
-- Display: Invalid input data! Integer input data only.
+- Display: Invalid input data! Greater than zero integer input data only.
 -1
 - Display: Invalid input data! Integer input data only.
 12.05
@@ -19,7 +19,7 @@
 - Display: Your number is an ODD number.
 39
 - Display: Your number is an ODD number.
-156
+157
 - Display: Invalid input data! Integer input data only.
 a1
 - Display: Invalid input data! Integer input data only.
