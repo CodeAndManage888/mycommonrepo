@@ -18,7 +18,7 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-icheck, GuestAge, TotalCharge = (0, "", 0.00)
+icheck, GuestAge, cGuestAge, TotalCharge = (0, "", 0, 0.00)
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -32,12 +32,18 @@ def data_check(UserIn1):
 #--------------------------------------------------------------
 while GuestAge != " ":
   GuestAge = input("Input the age of the guess: ")
-  if GuestAge <= 2:
+  if GuestAge != " ":
+    cGuestAge = data_check(GuestAge)
+    if icheck == -1:
+      break
+  if cGuestAge <= 2:
     TotalCharge = TotalCharge + 0.00
-  elif GuestAge >= 3 and GuestAge <= 12:
+  elif cGuestAge >= 3 and cGuestAge <= 12:
     TotalCharge = TotalCharge + 14.00
-  elif GuestAge >= 65:
+  elif cGuestAge >= 65:
     TotalCharge = TotalCharge + 18.00
   else:
     TotalCharge = TotalCharge + 23.00
+print("Total admission cost is %s" % format(TotalCharge, '0.2f'))
+print("Thank you for using this app.")
 #**************************************************************
