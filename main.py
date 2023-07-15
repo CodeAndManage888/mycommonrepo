@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 070823   (Expected Solution with 38 Lines of Code)    *
 # Title: Admission Price                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # A particular zoo determines the price of admission based on *
 # the age of the guest. Guests 2 years of age and less are    *
 # admitted without charge. Children between 3 and 12 years of *
@@ -44,6 +44,8 @@ while GuestAge != " ":
     TotalCharge = TotalCharge + 18.00
   else:
     TotalCharge = TotalCharge + 23.00
-  print("Total admission cost is %s" % format(TotalCharge, '0.2f'))
+if icheck == 0:
+  print("Total admission cost is $%s" % format(TotalCharge, '0.2f'))
 print("Thank you for using this app.")
 #**************************************************************
+# CI07231000: Error in closing the program.
