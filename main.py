@@ -1,51 +1,50 @@
-#!/bin/bash
 #**************************************************************
-# Date: 070823   (Expected Solution with 38 Lines of Code)    *
-# Title: Admission Price                                      *
-# Status: Testing (In Progress / Testing / Working)           *
-# A particular zoo determines the price of admission based on *
-# the age of the guest. Guests 2 years of age and less are    *
-# admitted without charge. Children between 3 and 12 years of *
-# age cost $14.00. Seniors aged 65 years and over cost $18.00.*
-# Admission for all other guests is $23.00.                   *
-# Create a program that begins by reading the ages of all of  *
-# the guests in a group from the user, with one age entered   *
-# on each line. The user will enter a blank line to indicate  *
-# that there are no more guests in the group. Then your       *
-# program should display the admission cost for the group     *
-# with an appropriate message. The cost should be displayed   *
-# using two decimal places.                                   *
+# Date: 051123                                                *
+# Title: Dog Years                                            *
+# Status: Working (In Progress / Testing / Working)           *
+# It is commonly said that one human year is equivalent to 7  * 
+# dog years. However this simple conversion fails to          *
+# recognize that dogs reach adulthood in approximately two    * 
+# years. As a result, some people believe that it is better   *
+# to count each of the first two human years as 10.5 dog      * 
+# years, and then count each additional human year as 4 dog   * 
+# years.                                                      *
+# Write a program that implements the conversion from human   *
+# years to dog years described in the previous paragraph.     *
+# ensure that your program works correctly for conversions of *
+# less than two human years and for conversions of two or     *
+# more human years. Your program should display an            *
+# appropriate error message if the user enters a negative     *
+# number.                                                     *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-icheck, GuestAge, cGuestAge, TotalCharge = (0, "", 0, 0.00)
+icheck = -1
+tot_years, ciDogAgeMYrs = (0, 0)
+TwoYearsOld = 10.5
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
+def data_check(UserIn1, cUserIn1):
   try:
-    cUserIn1 = int(UserIn1)
+    cUserIn1=float(UserIn1)
     icheck = 0
-    return cUserIn1
+    return UserIn1, cUserIn1
   except:
-    icheck = -1
     print("Invalid input data! Numeric input data only.")
-#--------------------------------------------------------------
-while GuestAge != " ":
-  GuestAge = input("Input the age of the guess: ")
-  if GuestAge != " ":
-    cGuestAge = data_check(GuestAge)
-    if icheck == -1:
-      break
-  if cGuestAge <= 2:
-    TotalCharge = TotalCharge + 0.00
-  elif cGuestAge >= 3 and cGuestAge <= 12:
-    TotalCharge = TotalCharge + 14.00
-  elif cGuestAge >= 65:
-    TotalCharge = TotalCharge + 18.00
+    icheck = 0
+#--------------------------------------------------------------    
+while icheck == -1:
+  iDogAgeMYrs = input("What is the age of the dog in human years? ==> ")
+  iDogAgeMYrs, ciDogAgeMYrs = data_check(iDogAgeMYrs, ciDogAgeMYrs)
+  if ciDogAgeMYrs == 2:
+    print("The total equivalent dog years is", TwoYearsOld)
   else:
-    TotalCharge = TotalCharge + 23.00
-if icheck == 0:
-  print("Total admission cost is $%s" % format(TotalCharge, '0.2f'))
+    if ciDogAgeMYrs < 2:
+      tot_years = (ciDogAgeMYrs / 2) * TwoYearsOld
+      print("The total equivalent dog years is", tot_years)
+    else:
+      tot_years = (ciDogAgeMYrs - 2)*4 + TwoYearsOld
+      print("The total equivalent dog years is", tot_years)
+  icheck = 0
+#--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
-# CI07231000: Error in closing the program.
