@@ -22,10 +22,8 @@
 icheck = -1
 tot_years, ciDogAgeMYrs = (0, 0)
 TwoYearsOld = 10.5
-num_list = []
 #--------------------------------------------------------------
 def data_check(UserIn1, cUserIn1):
-#  global icheck
   try:
     cUserIn1=float(UserIn1)
     icheck = 0
@@ -35,18 +33,17 @@ def data_check(UserIn1, cUserIn1):
     icheck = 0
 #--------------------------------------------------------------    
 while icheck == -1:
-  print("Please provide the age of the dog in human years.")
-  iDogAgeMYrs = input("What is the number of human years? ==> ")
+  iDogAgeMYrs = input("What is the age of the dog in human years? ==> ")
   iDogAgeMYrs, ciDogAgeMYrs = data_check(iDogAgeMYrs, ciDogAgeMYrs)
   if ciDogAgeMYrs == 2:
     print("The total equivalent dog years is", TwoYearsOld)
   else:
     if ciDogAgeMYrs < 2:
       tot_years = (ciDogAgeMYrs / 2) * TwoYearsOld
-      print("The total equivalent dog years is ", tot_years)
+      print("The total equivalent dog years is", tot_years)
     else:
       tot_years = (ciDogAgeMYrs - 2)*4 + TwoYearsOld
-      print("The total equivalent dog years is ", tot_years)
+      print("The total equivalent dog years is", tot_years)
   icheck = 0
 #--------------------------------------------------------------
 print("Thank you for using this app.")
