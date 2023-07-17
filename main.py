@@ -23,28 +23,30 @@ icheck = -1
 tot_years, ciDogAgeMYrs = (0, 0)
 TwoYearsOld = 10.5
 #--------------------------------------------------------------
-def data_check(UserIn1, cUserIn1):
+def data_check(UserIn1):
+  global icheck
   try:
     cUserIn1=float(UserIn1)
     icheck = 0
-    return UserIn1, cUserIn1
+    return cUserIn1
   except:
     print("Invalid input data! Numeric input data only.")
-    icheck = 0
-#--------------------------------------------------------------    
-while icheck == -1:
-  iDogAgeMYrs = input("What is the age of the dog in human years? ==> ")
-  iDogAgeMYrs, ciDogAgeMYrs = data_check(iDogAgeMYrs, ciDogAgeMYrs)
-  if ciDogAgeMYrs == 2:
-    print("The total equivalent dog years is", TwoYearsOld)
+    icheck = -1
+#--------------------------------------------------------------  
+iDogAgeMYrs = input("What is the age of the dog in human years? ==> ")
+ciDogAgeMYrs = data_check(iDogAgeMYrs)
+if icheck == 0:
+  if ciDogAgeMYrs < 0:
+    print("Please enter positive number only!")
+  elif ciDogAgeMYrs == 2:
+    print("The total equivalent dog years is 21.0.")
+  elif ciDogAgeMYrs < 2:
+    tot_years = TwoYearsOld * ciDogAgeMYrs
+    print("The total equivalent dog years is %s." % tot_years)
   else:
-    if ciDogAgeMYrs < 2:
-      tot_years = (ciDogAgeMYrs / 2) * TwoYearsOld
-      print("The total equivalent dog years is", tot_years)
-    else:
-      tot_years = (ciDogAgeMYrs - 2)*4 + TwoYearsOld
-      print("The total equivalent dog years is", tot_years)
-  icheck = 0
+    tot_years = ((ciDogAgeMYrs - 2) * 4) + 21
+    print("The total equivalent dog years is %s." % tot_years)
 #--------------------------------------------------------------
 print("Thank you for using this app.")
 #**************************************************************
+# C0717231800 - Addressed issue 81 & 82
