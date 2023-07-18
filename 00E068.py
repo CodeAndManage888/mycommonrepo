@@ -1,6 +1,6 @@
 #!/bin/bash
 #**************************************************************
-# Date: 070823   (Expected Solution with 38 Lines of Code)    *
+# Date: 070823   (Expected Solution with 25 Lines of Code)    *
 # Title: Parity Bits                                          *
 # Status: In Progress (In Progress / Testing / Working)       *
 # A parity bit is a simple mechanism for detecting errors in  *
@@ -11,12 +11,11 @@
 # Parity bits can be computed for either even parity or odd   *
 # parity. If even parity is selected then the parity bit that *
 # is transmitted is chosen so that the total number of one    *
-# bits transmitted (8 bits of data plus the parity bit) is    *
-# even.                                                       *
-# When odd parity is selected the parity bit is chosen so     *
-# that the total number of one bits transmitted is odd.       *
-# Write a program that computes the parity bit for groups of  *
-# 8 bits entered by the user using even parity. Your program  *
+# bit transmitted (8 bits of data plus the parity bit) is     *
+# even. When odd parity is selected the parity bit is chosen  *
+# so that the taol number of one bits transmitted is odd.     *
+# Write a program that compute the parity bit for groups of 8 *
+# bits entered by the user using even parity. Your program    *
 # should read strings containing 8 bits until the user enters *
 # a blank line. After each string is entered by the user your *
 # program should display a clear message indicating whether   *
@@ -31,6 +30,26 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+total_bit = 0
 #--------------------------------------------------------------
 #--------------------------------------------------------------
+UserInputBits = input("Enter the 8 bits combination data for transmission: ")
+if len(UserInputBits) != 8:
+  print("Invalid data length for transmission.")
+else:
+  for char in UserInputBits:
+    if char not in ["1", "0"]:
+      odd_even_ind = 9
+      break
+    else:
+      if char == "1":
+        total_bit = total_bit + 1
+      odd_even_ind = total_bit % 2
+  if odd_even_ind == 1:
+    print("Parity bit should be 1.")
+  elif odd_even_ind == 0:
+    print("Parity bit should be 0.")
+  else:
+    print("Invalid data. Use 1 and 0 only.")
+print("Thank you for using this app.")
 #**************************************************************
