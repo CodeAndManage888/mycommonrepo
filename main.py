@@ -1,52 +1,55 @@
+#!/bin/bash
 #**************************************************************
-# Date: 051123                                                *
-# Title: Dog Years                                            *
-# Status: Working (In Progress / Testing / Working)           *
-# It is commonly said that one human year is equivalent to 7  * 
-# dog years. However this simple conversion fails to          *
-# recognize that dogs reach adulthood in approximately two    * 
-# years. As a result, some people believe that it is better   *
-# to count each of the first two human years as 10.5 dog      * 
-# years, and then count each additional human year as 4 dog   * 
-# years.                                                      *
-# Write a program that implements the conversion from human   *
-# years to dog years described in the previous paragraph.     *
-# ensure that your program works correctly for conversions of *
-# less than two human years and for conversions of two or     *
-# more human years. Your program should display an            *
-# appropriate error message if the user enters a negative     *
-# number.                                                     *
+# Date: 070823   (Expected Solution with 25 Lines of Code)    *
+# Title: Parity Bits                                          *
+# Status: In Progress (In Progress / Testing / Working)       *
+# A parity bit is a simple mechanism for detecting errors in  *
+# data transmitted over an unreliable connection such as a    *
+# telephone line. The basic idea is that an additional bit is *
+# transmitted after each group of 8 bits so that a single bit *
+# error in the transmission can be detected.                  *
+# Parity bits can be computed for either even parity or odd   *
+# parity. If even parity is selected then the parity bit that *
+# is transmitted is chosen so that the total number of one    *
+# bit transmitted (8 bits of data plus the parity bit) is     *
+# even. When odd parity is selected the parity bit is chosen  *
+# so that the taol number of one bits transmitted is odd.     *
+# Write a program that compute the parity bit for groups of 8 *
+# bits entered by the user using even parity. Your program    *
+# should read strings containing 8 bits until the user enters *
+# a blank line. After each string is entered by the user your *
+# program should display a clear message indicating whether   *
+# the parity bit should be 0 or 1. Display an appropriate     *
+# error message if the user enters something other than 8     *
+# bits.                                                       *
+#                                                             *
+# Hint: You should read the input from the user as a string.  *
+# Then you can use the count method to help you determine the *
+# number of zeroes and ones in the string. Information about  *
+# the count method is available online.                       *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-icheck = -1
-tot_years, ciDogAgeMYrs = (0, 0)
-TwoYearsOld = 10.5
+total_bit = 0
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1=float(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    print("Invalid input data! Numeric input data only.")
-    icheck = -1
-#--------------------------------------------------------------  
-iDogAgeMYrs = input("What is the age of the dog in human years? ==> ")
-ciDogAgeMYrs = data_check(iDogAgeMYrs)
-if icheck == 0:
-  if ciDogAgeMYrs < 0:
-    print("Please enter positive number only!")
-  elif ciDogAgeMYrs == 2:
-    print("The total equivalent dog years is 21.0.")
-  elif ciDogAgeMYrs < 2:
-    tot_years = TwoYearsOld * ciDogAgeMYrs
-    print("The total equivalent dog years is %s." % tot_years)
+#--------------------------------------------------------------
+UserInputBits = input("Enter the 8 bits combination data for transmission: ")
+if len(UserInputBits) != 8:
+  print("Invalid data length for transmission.")
+else:
+  for char in UserInputBits:
+    if char not in ["1", "0"]:
+      odd_even_ind = 9
+      break
+    else:
+      if char == "1":
+        total_bit = total_bit + 1
+      odd_even_ind = total_bit % 2
+  if odd_even_ind == 1:
+    print("Parity bit should be 1.")
+  elif odd_even_ind == 0:
+    print("Parity bit should be 0.")
   else:
-    tot_years = ((ciDogAgeMYrs - 2) * 4) + 21
-    print("The total equivalent dog years is %s." % tot_years)
-#--------------------------------------------------------------
+    print("Invalid data. Use 1 and 0 only.")
 print("Thank you for using this app.")
 #**************************************************************
-# C0717231800 - Addressed issue 81 & 82
