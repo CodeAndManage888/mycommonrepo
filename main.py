@@ -1,52 +1,38 @@
 #!/bin/bash
 #**************************************************************
-# Date: 070823   (Expected Solution with 25 Lines of Code)    *
-# Title: Parity Bits                                          *
+# Date: 070823   (Expected Solution with 24 Lines of Code)    *
+# Title: Approximate Pi                                       *
 # Status: Testing (In Progress / Testing / Working)           *
-# A parity bit is a simple mechanism for detecting errors in  *
-# data transmitted over an unreliable connection such as a    *
-# telephone line. The basic idea is that an additional bit is *
-# transmitted after each group of 8 bits so that a single bit *
-# error in the transmission can be detected.                  *
-# Parity bits can be computed for either even parity or odd   *
-# parity. If even parity is selected then the parity bit that *
-# is transmitted is chosen so that the total number of one    *
-# bit transmitted (8 bits of data plus the parity bit) is     *
-# even. When odd parity is selected the parity bit is chosen  *
-# so that the total number of one bits transmitted is odd.    *
-# Write a program that compute the parity bit for groups of 8 *
-# bits entered by the user using even parity. Your program    *
-# should read strings containing 8 bits until the user enters *
-# a blank line. After each string is entered by the user your *
-# program should display a clear message indicating whether   *
-# the parity bit should be 0 or 1. Display an appropriate     *
-# error message if the user enters something other than 8     *
-# bits.                                                       *
+# The value of π can be approximated by the following         *
+# infinite series:                                            *
 #                                                             *
-# Hint: You should read the input from the user as a string.  *
-# Then you can use the count method to help you determine the *
-# number of zeroes and ones in the string. Information about  *
-# the count method is available online.                       *
+# pi = 3+4/(2x3x4)-4/(4x5x6)+4/(6x7x8)-4/(8x9x10) + ...       *
+#                                                             *
+# Write a program that displays 15 approximations of π. The   *
+# first approximation should make use of only the first term  *
+# from the infinite series. Each additional approximation     *
+# displayed by your program should include one more term in   *
+# the series, making it a better approximation of π than any  *
+# of the approximations displayed previously.                 *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-UserInputBits = ""
+approx_cnt = 1
 #--------------------------------------------------------------
-while UserInputBits != " ":
-  UserInputBits = input("Enter the 8 bits combination data for transmission: ")
-  if len(UserInputBits) != 8 and UserInputBits != " ":
-    print("Invalid data length for transmission.")
-  else:
-    if UserInputBits != " ":
-      input_chk = UserInputBits.count("1") + UserInputBits.count("0")
-      if input_chk == 8:
-        total_bit = UserInputBits.count("1")
-        odd_even_ind = total_bit % 2
-        if odd_even_ind == 1:
-          print("Parity bit should be 1.")
-        else:
-          print("Parity bit should be 0.")
-      else:
-        print("Invalid data. Use 1 and 0 only.")
+def term_calc(indata1):
+  a, b, c, out1, ctr = (2, 3, 4, 3, 1)
+  while ctr <= indata1:
+    if ctr % 2 != 0:
+      out1 = out1 + 4/(a*b*c)
+    else:
+      out1 = out1 - 4/(a*b*c)
+    a, b, c = (a + 2, b + 2, c + 2)
+    ctr = ctr + 1
+  return out1
+#--------------------------------------------------------------
+while approx_cnt != 16:
+  pi_value = term_calc(approx_cnt) 
+  print(format(pi_value,'0.15f'))
+  approx_cnt = approx_cnt + 1
 print("Thank you for using this app.")
 #**************************************************************
