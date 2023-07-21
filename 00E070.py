@@ -22,10 +22,49 @@
 # display the shifted message. Ensure that your program       *
 # encodes both upper case and lowercase letters. Your program *
 # should also support negative shift values so that it can be *
-# used both to encode messages anddecode messages.            *
+# used both to encode messages and decode messages.           *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+alpha_low_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", 
+                  "j", "k", "l", "m", "n", "o", "p", "q", "r", 
+                  "s", "t", "u", "v", "w", "x", "y", "z"]
+alpha_up_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 
+                 "J", "K", "L", "M", "N", "O", "P", "Q", "R", 
+                 "S", "T", "U", "V", "W", "X", "Y", "Z"]
 #--------------------------------------------------------------
+def data_check(UserIn1):
+  global icheck
+  try:
+    cUserIn1 = int(UserIn1)
+    icheck = 0
+    return cUserIn1
+  except:
+    icheck = -1
+    print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
+#new_s = s[:index] + new_char + s[index + 1:]
+MessageInOld, MessageInProc = input("Enter your message here: ")
+ShiftIn = input("Enter the pass key (numeric only): ")
+cShiftIn = data_check(ShiftIn)
+for char in MessageInOld:
+  if char in alpha_up_list:
+    OldLtr = char
+    NewPtr = alpha_up_list.index[char] + cShiftIn
+    NewLtr = alpha_up_list[NewPtr]
+    OldPtr = MessageInOld.index(char)
+    MessageInNew = MessageInProc[:OldPtr] + NewLtr + MessageInProc[OldPtr + 1:]
+    MessageInProc = MessageInNew
+  elif char in alpha_low_list:
+    OldLtr = char
+    NewPtr = alpha_low_list.index[char] + cShiftIn
+    NewLtr = alpha_low_list[NewPtr]
+    MessageInNew = MessageInProc.replace(NewLtr, OldLtr, 1) 
+    MessageInProc = MessageInNew
+  else:
+    OldLtr = char
+    MessageInNew = MessageInProc.replace(OldLtr, OldLtr, 1) 
+    MessageInProc = MessageInNew
+print("The coded/decoded message: " MessageInNew)
+print("Thank you for using this app.")
 #**************************************************************
