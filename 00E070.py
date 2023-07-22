@@ -32,6 +32,8 @@ alpha_low_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
 alpha_up_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 
                  "J", "K", "L", "M", "N", "O", "P", "Q", "R", 
                  "S", "T", "U", "V", "W", "X", "Y", "Z"]
+new_up_list = []
+new_low_list = []
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -43,10 +45,12 @@ def data_check(UserIn1):
     icheck = -1
     print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
-#new_s = s[:index] + new_char + s[index + 1:]
 MessageInOld, MessageInProc = input("Enter your message here: ")
 ShiftIn = input("Enter the pass key (numeric only): ")
 cShiftIn = data_check(ShiftIn)
+new_up_list = alpha_up_list[cShiftIn:] + alpha_up_list[:cShiftIn]
+new_low_list = alpha_low_list[cShiftIn:] + alpha_low_list[:cShiftIn]
+
 for char in MessageInOld:
   if char in alpha_up_list:
     OldLtr = char
@@ -65,6 +69,6 @@ for char in MessageInOld:
     OldLtr = char
     MessageInNew = MessageInProc.replace(OldLtr, OldLtr, 1) 
     MessageInProc = MessageInNew
-print("The coded/decoded message: " MessageInNew)
+print("The coded/decoded message: ", MessageInNew)
 print("Thank you for using this app.")
 #**************************************************************
