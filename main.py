@@ -32,8 +32,6 @@ alpha_low_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
 alpha_up_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 
                  "J", "K", "L", "M", "N", "O", "P", "Q", "R", 
                  "S", "T", "U", "V", "W", "X", "Y", "Z"]
-new_up_list = []
-new_low_list = []
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -45,31 +43,28 @@ def data_check(UserIn1):
     icheck = -1
     print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
-new_up_list = alpha_up_list[-2:] + alpha_up_list[:-2]
-print(new_up_list)
-
-#new_s = s[:index] + new_char + s[index + 1:]
-MessageInOld, MessageInProc = input("Enter your message here: ")
+MessageInOld = input("Enter your message here: ")
+MessageInProc = MessageInOld
 ShiftIn = input("Enter the pass key (numeric only): ")
 cShiftIn = data_check(ShiftIn)
-for char in MessageInOld:
-  if char in alpha_up_list:
-    OldLtr = char
-    NewPtr = alpha_up_list.index[char] + cShiftIn
-    NewLtr = alpha_up_list[NewPtr]
-    OldPtr = MessageInOld.index(char)
-    MessageInNew = MessageInProc[:OldPtr] + NewLtr + MessageInProc[OldPtr + 1:]
-    MessageInProc = MessageInNew
-  elif char in alpha_low_list:
-    OldLtr = char
-    NewPtr = alpha_low_list.index[char] + cShiftIn
-    NewLtr = alpha_low_list[NewPtr]
-    MessageInNew = MessageInProc.replace(NewLtr, OldLtr, 1) 
-    MessageInProc = MessageInNew
-  else:
-    OldLtr = char
-    MessageInNew = MessageInProc.replace(OldLtr, OldLtr, 1) 
-    MessageInProc = MessageInNew
-print("The coded/decoded message: ", MessageInNew)
+new_up_list = alpha_up_list[cShiftIn:] + alpha_up_list[:cShiftIn]
+new_low_list = alpha_low_list[cShiftIn:] + alpha_low_list[:cShiftIn]
+if icheck == 0:
+  for char in MessageInOld:
+    if char in alpha_up_list:
+      MsgPos = MessageInOld.index(char)
+      CharPos = alpha_up_list.index(char)
+      MessageInNew = MessageInProc[:MsgPos] + new_up_list[CharPos] + MessageInProc[MsgPos + 1:]
+      MessageInProc = MessageInNew
+    elif char in alpha_low_list:
+      MsgPos = MessageInOld.index(char)
+      CharPos = alpha_low_list.index(char)
+      MessageInNew = MessageInProc[:MsgPos] + new_low_list[CharPos] + MessageInProc[MsgPos + 1:]
+      MessageInProc = MessageInNew
+    else:
+      MsgPos = MessageInOld.index(char)
+      MessageInNew = MessageInProc[:MsgPos] + char + MessageInProc[MsgPos + 1:]
+      MessageInProc = MessageInNew
+  print("The coded/decoded message: ", MessageInNew)
 print("Thank you for using this app.")
 #**************************************************************
