@@ -52,17 +52,33 @@ new_low_list = alpha_low_list[cShiftIn:] + alpha_low_list[:cShiftIn]
 if icheck == 0:
   for char in MessageInOld:
     if char in alpha_up_list:
+      print("cond up", charth)
       MsgPos = MessageInOld.index(char)
       CharPos = alpha_up_list.index(char)
       MessageInNew = MessageInProc[:MsgPos] + new_up_list[CharPos] + MessageInProc[MsgPos + 1:]
       MessageInProc = MessageInNew
     elif char in alpha_low_list:
+      print("cond down", char)
       MsgPos = MessageInOld.index(char)
+      print("Get Position:", MsgPos)
       CharPos = alpha_low_list.index(char)
       MessageInNew = MessageInProc[:MsgPos] + new_low_list[CharPos] + MessageInProc[MsgPos + 1:]
+      print("---------- org break down -------------")
+      print(MessageInOld[:MsgPos])
+      print(MessageInOld[MsgPos + 1:])
+      print("---------- org break down -------------")
+      print("---------- new char -------------------")
+      print(new_low_list[CharPos])
+      print("---------- new char -------------------")
+      print("---------- assemble -------------------")
+      print(MessageInProc[:MsgPos])
+      print(MessageInProc[MsgPos + 1:])
+      print("---------- assemble -------------------")
       MessageInProc = MessageInNew
     else:
+      print("cond other", char)
       MsgPos = MessageInOld.index(char)
+      print("Get Position:", MsgPos)
       MessageInNew = MessageInProc[:MsgPos] + char + MessageInProc[MsgPos + 1:]
       MessageInProc = MessageInNew
   print("The coded/decoded message: ", MessageInNew)
