@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 070823   (Expected Solution with 35 Lines of Code)    *
 # Title: Caesar Cipher                                        *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # One of the first known examples of encryption was used by   *
 # Julius Caesar. Caesar needed to provide written             *
 # instructions to his generals, but he didn’t want his        *
@@ -32,6 +32,7 @@ alpha_low_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
 alpha_up_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 
                  "J", "K", "L", "M", "N", "O", "P", "Q", "R", 
                  "S", "T", "U", "V", "W", "X", "Y", "Z"]
+ProcCtr = 0
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -50,37 +51,23 @@ cShiftIn = data_check(ShiftIn)
 new_up_list = alpha_up_list[cShiftIn:] + alpha_up_list[:cShiftIn]
 new_low_list = alpha_low_list[cShiftIn:] + alpha_low_list[:cShiftIn]
 if icheck == 0:
-  for char in MessageInOld:
+  while ProcCtr != len(MessageInOld):
+    char = MessageInOld[ProcCtr]
     if char in alpha_up_list:
-      print("cond up", charth)
-      MsgPos = MessageInOld.index(char)
+      MsgPos = ProcCtr
       CharPos = alpha_up_list.index(char)
       MessageInNew = MessageInProc[:MsgPos] + new_up_list[CharPos] + MessageInProc[MsgPos + 1:]
       MessageInProc = MessageInNew
     elif char in alpha_low_list:
-      print("cond down", char)
-      MsgPos = MessageInOld.index(char)
-      print("Get Position:", MsgPos)
+      MsgPos = ProcCtr
       CharPos = alpha_low_list.index(char)
       MessageInNew = MessageInProc[:MsgPos] + new_low_list[CharPos] + MessageInProc[MsgPos + 1:]
-      print("---------- org break down -------------")
-      print(MessageInOld[:MsgPos])
-      print(MessageInOld[MsgPos + 1:])
-      print("---------- org break down -------------")
-      print("---------- new char -------------------")
-      print(new_low_list[CharPos])
-      print("---------- new char -------------------")
-      print("---------- assemble -------------------")
-      print(MessageInProc[:MsgPos])
-      print(MessageInProc[MsgPos + 1:])
-      print("---------- assemble -------------------")
       MessageInProc = MessageInNew
     else:
-      print("cond other", char)
-      MsgPos = MessageInOld.index(char)
-      print("Get Position:", MsgPos)
+      MsgPos = ProcCtr
       MessageInNew = MessageInProc[:MsgPos] + char + MessageInProc[MsgPos + 1:]
       MessageInProc = MessageInNew
+    ProcCtr = ProcCtr + 1
   print("The coded/decoded message: ", MessageInNew)
 print("Thank you for using this app.")
 #**************************************************************
