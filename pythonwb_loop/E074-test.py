@@ -2,13 +2,13 @@
 #**************************************************************
 # Date: 071123   (Expected Solution with 18 Lines of Code)    *
 # Title: Multiplication Table                                 *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # In this exercise you will create a program that displays a  *
 # multiplication table that shows the products of all         *
 # combinations of integers from 1 times 1 up to and including *
 # 10 tims 10. Your multiplication table should include a row  *
 # of labels(bold) across the top of it containing the numbers *
-# 1 through 10. The exp0ected oputput from the program is     *
+# 1 through 10. The expected output from the program is       *
 # shows below:                                                *
 #                                                             *
 #       1    2    3    4    5    6    7    8    9    10       *
@@ -33,6 +33,27 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+NumRowCtr = 1
 #--------------------------------------------------------------
-#--------------------------------------------------------------
+print("{:<5}".format(""), end="")
+NumColCtr = 1
+while NumColCtr !=11:
+  PrintValue = NumRowCtr * NumColCtr
+  if NumColCtr < 10:
+    print("\033[1m{:<5}".format(PrintValue), end="")
+  else:
+    print("{:<5}\033[0m".format(PrintValue))
+  NumColCtr += 1
+while NumRowCtr != 11:
+  print("{:<5}".format(NumRowCtr), end="")
+  NumColCtr = 1
+  while NumColCtr !=11:
+    PrintValue = NumRowCtr * NumColCtr
+    if NumColCtr < 10:
+      print("{:<5}".format(PrintValue), end="")
+    else:
+      print("{:<5}".format(PrintValue))
+    NumColCtr += 1
+  NumRowCtr += 1
+print("Thank you for using this app.")
 #**************************************************************

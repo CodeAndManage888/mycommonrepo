@@ -12,7 +12,7 @@
 # While d does not evenly divide m or d does not evenly       *
 # divide n do                                                 *
 #    Decrease the value of d by 1                             *
-# Report d as the greates common divisor of n and m           *
+# Report d as the greatest common divisor of n and m          *
 #                                                             *
 # Write a program that reads two positive integers from the   *
 # user and uses this algorithm to determine and report their  *
