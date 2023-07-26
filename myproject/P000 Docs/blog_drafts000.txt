@@ -1,0 +1,17 @@
+My website for Diskarteng Pinoy Tech website. It is a site that feature unnecessary tech solutions for everyday Pinoy challenges.
+First Project - Lotto Results Monitor and Data Analysis
+Problem Statement: Lotto raffle is a big thing in the Philippines it provide hope to us Pinoy who wants to have a better life in an instant. Once in awhile I participate in this raffle but since I understand the chances of winning the lotto is near impossible I rarely check the winning number. Which makes me wonder if I have ever won. That gets me thinking I know I can make a program that will check the winning numbers from the website and notify me if I won the lotto. This is what this project about a simple extract, compare and notify process.
+Overview of the Solution:
+- I started with an extract mechanism to check a reliable regularly updated website to get my information
+- I then will store the data into a simple text file that will be updated regularly.
+- I will then create a user input process to accept the choosent number and the target date draw including how long should it be monitored
+- I will then compare these number with the number in the file and if there is an hit starting from 3 numbers and up i will get notified via text. I'm thinking Twillo?
+- But I don't want to stop there since I'm already gathering all this information why not adding or building a additional features like:
+a.) creating a dashboarb about the winning numbers and prizes
+b.) can I answer some questions like is the economic status of the country drive the lotto participation?
+c.) are there any chosen number that i bet won already won from the previous draw?
+- the list can go on but I need to limit it for now since I also have other projects that I want to start on and share it to the internet.
+Project Status:
+- I have already coded and implemented the extract process. it schedule to run every 7 am everyday. 
+- While that is running i need to figure out how can i extract the last 15 year worth of data. Do you know any reliable website that is easy to webscrape?
+- That is it for now. I will keep you posted in my next project updates
