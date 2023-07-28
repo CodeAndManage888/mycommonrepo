@@ -25,6 +25,7 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+prime_factor_list = []
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -36,5 +37,23 @@ def data_check(UserIn1):
     icheck = -1
     print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
+UserNum = input("Enter the input number: ")
+cUserNum = data_check(UserNum)
+factor = 2
+while factor <= cUserNum:
+  remainder = cUserNum % factor
+  if remainder == 0:
+    prime_factor_list.append(factor)
+    cUserNum = cUserNum // factor
+  else:
+    factor += 1
+print("The prime factors of %s are: " % UserNum, end="")
+for prime in prime_factor_list:
+  if (len(prime_factor_list) - prime_factor_list.index(prime)) == 1:
+    print(prime, " ", end="")
+  else:
+    print(prime, " ")
+    print("", end="\n")
+#print("Thank you for using this app.", end="\n")
 print("Thank you for using this app.")
 #**************************************************************

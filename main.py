@@ -1,27 +1,31 @@
 #!/bin/bash
 #**************************************************************
-# Date: 071123   (Expected Solution with 17 Lines of Code)    *
-# Title: Greatest Common Divisor                              *
-# Status: Testing (In Progress / Testing / Working)           *
-# The greatest common divisor of two positive integers, n and *
-# m, is the largest number, d, which divides evenly into both *
-# n and m. There are algorithms that can be used to solve     *
-# this problem, including:                                    *
+# Date: 072623   (Expected Solution with 27 Lines of Code)    *
+# Title: Prime Factors                                        *
+# Status: In Progress (In Progress / Testing / Working)       *
+# The prime factorization of an integer, n, can be determined *
+# using the following steps:                                  *
 #                                                             *
-# Initialize d to the smaller of m and n.                     *
-# While d does not evenly divide m or d does not evenly       *
-# divide n do                                                 *
-#    Decrease the value of d by 1                             *
-# Report d as the greatest common divisor of n and m          *
+# Initialize factor to two                                    *
+# While factor is less than or equal to n do                  *
+#   If n is evenly divisible by factor then                   *
+#      Conclude that factor is a factor of n                  *
+#      Divide n by factor using integer division              *
+#   Else                                                      *
+#      Increase factor by one                                 *
+# Write a program that reads an integer from the user. If the *
+# value entered by the user is less than 2 then your program  *
+# should display an appropriate error message. Otherwise your *
+# program should display the prime numbers that can be        *
+# multiplied together to compute n, with one factor appearin  *
+# on each line. For example:                                  *
 #                                                             *
-# Write a program that reads two positive integers from the   *
-# user and uses this algorithm to determine and report their  *
-# greatest common divisor.                                    *
+# Enter an integer (2 or greater): 72                         *
+# The prime factors of 72 are: 2 2 2 3 3                      *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-InNumList = []
-StopInd = "N"
+prime_factor_list = []
 #--------------------------------------------------------------
 def data_check(UserIn1):
   global icheck
@@ -33,26 +37,34 @@ def data_check(UserIn1):
     icheck = -1
     print("Invalid input data! Numeric input data only.")
 #--------------------------------------------------------------
-UserIn = input("Find the GCF of these 2 numbers: ")
-CombValue = UserIn.replace(" ","")
-cCombValue = data_check(CombValue)
-if icheck == 0:
-  InNumList = UserIn.split()
-  if len(InNumList) == 2:
-    Num1, Num2 = [int(Num) for Num in InNumList]
-    if Num1 < Num2:
-      gcd_value = Num1
-    else:
-      gcd_value = Num2
-    while StopInd == "N":
-      rem_val1, rem_val2 = Num1 % gcd_value, Num2 % gcd_value
-      if rem_val1 == 0 and rem_val2 == 0:
-        StopInd = "Y"
-      else:
-        gcd_value -= 1
-    if StopInd == "Y":
-      print("The GCF of the numbers %s and %s is %s." % (Num1, Num2, gcd_value))
+UserNum = input("Enter the input number: ")
+cUserNum = data_check(UserNum)
+factor = 2
+while factor <= cUserNum:
+  remainder = cUserNum % factor
+  if remainder == 0:
+    prime_factor_list.append(factor)
+    cUserNum = cUserNum // factor
   else:
-    print("Invalid input data. Not enough input data.")
+    factor += 1
+print("The prime factors of %s are: " % UserNum, end="")
+#print(len(prime_factor_list))
+for prime in prime_factor_list:
+  if prime == prime_factor_list[-1]:
+    print(prime," ")
+  else:
+    print(prime," ", end="")  
+#while (len(prime_factor_list) - ctr) != 1:
+#  if 
+#  print(prime," ", end="")
+#  if (len(prime_factor_list) - prime_factor_list.index(prime)) != 1:
+#    print("1st")
+#    print((len(prime_factor_list) - prime_factor_list.index(prime)))
+#    print(prime," ", end="")
+#  else:
+#    print("2nd")
+#    print((len(prime_factor_list) - prime_factor_list.index(prime)))
+#    print(prime," ", end="")
+#print("Thank you for using this app.", end="\n")
 print("Thank you for using this app.")
 #**************************************************************
