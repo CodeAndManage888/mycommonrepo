@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import csv
 
 # Replace 'path/to/offline_table.html' with the actual path to your HTML file
-html_file_path = '/home/pi/Desktop/localrepo/mycommonrepo/myproject/infile/Lotto Resuts.html'
+html_file_path = '/home/pi/Desktop/localrepo/mycommonrepo/myproject/infile/Lotto Resuts-2013.html'
 
 # Read the contents of the HTML file
 with open(html_file_path, 'r') as file:
