@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 072623   (Expected Solution with 27 Lines of Code)    *
 # Title: Prime Factors                                        *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # The prime factorization of an integer, n, can be determined *
 # using the following steps:                                  *
 #                                                             *
@@ -26,34 +26,26 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 prime_factor_list = []
+datachk = False
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1 = int(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    icheck = -1
-    print("Invalid input data! Numeric input data only.")
-#--------------------------------------------------------------
-UserNum = input("Enter the input number: ")
-cUserNum = data_check(UserNum)
+try: 
+  UserNum = int(input("Enter the input number: "))
+  cUserNum = UserNum
+except:
+  print("Invalid input data! Numeric input data only.")
+  datachk = True
 factor = 2
-while factor <= cUserNum:
-  remainder = cUserNum % factor
-  if remainder == 0:
-    prime_factor_list.append(factor)
-    cUserNum = cUserNum // factor
-  else:
-    factor += 1
-print("The prime factors of %s are: " % UserNum, end="")
-for prime in prime_factor_list:
-  if (len(prime_factor_list) - prime_factor_list.index(prime)) == 1:
-    print(prime, " ", end="")
-  else:
-    print(prime, " ")
-    print("", end="\n")
-#print("Thank you for using this app.", end="\n")
+if datachk == False:
+  while factor <= cUserNum:
+    remainder = cUserNum % factor
+    if remainder == 0:
+      prime_factor_list.append(factor)
+      cUserNum = cUserNum // factor
+    else:
+      factor += 1
+  print("The prime factors of %s are: " % UserNum, end="")
+  for prime in prime_factor_list:
+    print(prime, end = " ")
+  print("")
 print("Thank you for using this app.")
 #**************************************************************
