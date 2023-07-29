@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 072623   (Expected Solution with 18 Lines of Code)    *
 # Title: Binary to Decimal                                    *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Write a program that converts a binary (base 2) number to   *
 # decimal (base 10). Your program should begin by reading the *
 # binary number from the user as a string. Then it should     *
@@ -13,16 +13,22 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+binary_digit_list = []
+datachk = False
+totsum, ctr = 0, 0
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1 = int(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    icheck = -1
-    print("Invalid input data! Numeric input data only.")
-#--------------------------------------------------------------
+BinaryNum = input("Enter the binary number: ")
+for digit in BinaryNum:
+  if digit == "1" or digit == "0":
+     binary_digit_list.append(digit)
+  else:
+    print("Invalid input data! Data is not a binary number.")
+    datachk = True
+if datachk == False:
+  binary_digit_list.reverse()
+  while ctr < len(binary_digit_list):
+    totsum += int(binary_digit_list[ctr]) * (2 ** ctr)
+    ctr += 1
+  print("The decimal equivalent of the binary number %s is %s" % (BinaryNum, totsum))
 print("Thank you for using this app.")
 #**************************************************************
