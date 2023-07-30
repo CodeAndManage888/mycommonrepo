@@ -29,6 +29,6 @@ if datachk == False:
   while ctr < len(binary_digit_list):
     totsum += int(binary_digit_list[ctr]) * (2 ** ctr)
     ctr += 1
-  print("The decimal equivalent of the binary number %s is %s" % (BinaryNum, totsum))
+  print("The decimal equivalent of the binary number %s is %s." % (BinaryNum, totsum))
 print("Thank you for using this app.")
 #**************************************************************

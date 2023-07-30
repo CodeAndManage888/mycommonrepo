@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 072623   (Expected Solution with 26 Lines of Code)    *
 # Title: Decimal to Binary                                    *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Write a program that converts a decimal (base 10) number to *
 # binary (base 2). Read the decimal number from the user as an*
 # integer and then use the division algorithm shown below to  *
@@ -22,16 +22,24 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+Temp_Bin_List = []
+Fin_Bin_Val = ""
+InvDataChk = False
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1 = int(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    icheck = -1
-    print("Invalid input data! Numeric input data only.")
-#--------------------------------------------------------------
+try: 
+  UserNum = int(input("Enter the input number: "))
+  cUserNum = UserNum
+except:
+  print("Invalid input data! Numeric input data only.")
+  InvDataChk = True
+if InvDataChk == False:
+  while cUserNum != 0:
+    BinDgt = cUserNum % 2
+    Temp_Bin_List.append(str(BinDgt))
+    cUserNum //= 2
+  Temp_Bin_List.reverse()
+  for Bit in Temp_Bin_List:
+    Fin_Bin_Val += Bit
+  print("The binary equivalent of the decimal number %s is %s." % (UserNum, Fin_Bin_Val))
 print("Thank you for using this app.")
 #**************************************************************
