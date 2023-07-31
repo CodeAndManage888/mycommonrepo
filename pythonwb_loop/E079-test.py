@@ -63,16 +63,23 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+import random
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1 = int(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    icheck = -1
-    print("Invalid input data! Numeric input data only.")
+Ctr, UpdateNum = 99, 0
 #--------------------------------------------------------------
+random_num = random.randint(1,100)
+max_num = random_num
+print(random_num)
+while Ctr != 0:
+  random_num = random.randint(1,100)
+  if random_num > max_num:
+    max_num = random_num
+    UpdateNum += 1
+    print("%s <=== Update" % random_num)
+  else:
+    print(random_num)
+  Ctr -= 1
+print("The maximum value found was %s." % max_num)
+print("The maximum value was updated %s times." % UpdateNum)
 print("Thank you for using this app.")
 #**************************************************************

@@ -1,45 +1,67 @@
 #!/bin/bash
 #**************************************************************
-# Date: 072623   (Expected Solution with 26 Lines of Code)    *
-# Title: Decimal to Binary                                    *
+# Date: 072623   (Expected Solution with 47 Lines of Code)    *
+# Title: Coin Flip Simulation                                 *
 # Status: In Progress (In Progress / Testing / Working)       *
-# Write a program that converts a decimal (base 10) number to *
-# binary (base 2). Read the decimal number from the user as an*
-# integer and then use the division algorithm shown below to  *
-# perform the conversion. When the algorithm completes, result*
-# contains the binary representation of the number. Display   *
-# the result, along with an appropriate message.              *
-#                                                             *
-# Let result be an empty string                               *
-# Let q represent the number to convert                       *
-# repeat                                                      *
-#    Set r equal to the remainder when q is divided by 2      *
-#    Convert r to a string and add it to the beginning of     *
-#    result                                                   *
-#    Divide q by 2, discarding any remainder, and store the   *
-#    result back into q                                       *
-# until q is 0                                                *
+# What's the minimum number of times you have to flip a coin  *
+# before you can have three consecutive flips that results in *
+# the same outcome (either all three are heads or all three   *
+# are tails)? What's the maximum number of flips that might   *
+# be needed? How many flips are needed on average? In this    *
+# exercise we will explore these questions by creating a      *
+# program that simulates several series of coin flips.        *
+# Create a program that uses Python's random number generator *
+# to simulate flipping a coin several times. The simulated    *
+# coins until either 3 consecutive heads or 3 consecutive     *
+# tails occur. Display an H each time the outcome is heads,   *
+# and a T each time the outcome is tails, with all of the     *
+# outcomes shown of the same line. Then display the number of *
+# flips needed to reach 3 consecutive flips with the same     *
+# outcome. When your program is run it should perform the     *
+# simulation 10 times and report the average number of flips  *
+# needed. Sample output is shown below:                       *
+# H T T T (4 flips)                                           *
+# H H T T H T H T T H H T H T T H T T T (19 flips)            *
+# T T T (3 flips)                                             *
+# T H H H (4 flips)                                           *
+# H H H (3 flips)                                             *
+# T H T T H T H H T T H H T H T H H H (18 flips)              *
+# H T T H H H (6 flips)                                       *
+# T H T T T (5 flips)                                         *
+# T T H T T H T H T H H H (12 flips)                          *
+# T H T T T (5 flips)                                         *
+# On Average, 7.9 flips were needed                           *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-Temp_Bin_List = []
-Fin_Bin_Val = ""
-InvDataChk = False
+import random
 #--------------------------------------------------------------
-try: 
-  UserNum = int(input("Enter the input number: "))
-  cUserNum = UserNum
-except:
-  print("Invalid input data! Numeric input data only.")
-  InvDataChk = True
-if InvDataChk == False:
-  while cUserNum != 0:
-    BinDgt = cUserNum % 2
-    Temp_Bin_List.append(str(BinDgt))
-    cUserNum //= 2
-  Temp_Bin_List.reverse()
-  for Bit in Temp_Bin_List:
-    Fin_Bin_Val += Bit
-  print("The binary equivalent of the decimal number %s is %s." % (UserNum, Fin_Bin_Val))
+CoinFlip = ["H","T"]
+SumCollect = []
+Ctr, ThreeTimes, TotCnt = 10, 0, 0
+#--------------------------------------------------------------
+while Ctr != 0:
+  CoinToss = random.choice(CoinFlip)
+  LastToss = CoinToss
+#  print("First generated data: ", CoinToss)
+  while ThreeTimes <= 3:
+    print(CoinToss," ", end="")
+    CoinToss = random.choice(CoinFlip)
+    if LastToss == CoinToss:
+      ThreeTimes += 1
+#      if ThreeTimes == 2:
+#        print("Second occurence data: ", CoinToss, end="")
+    else:
+      ThreeTimes = 0
+    TotCnt += 1
+    LastToss = CoinToss
+#  print(CoinToss," ", end="")
+  print("(%s flips)" % TotCnt)
+#  print("Last generated data: ", CoinToss)
+  SumCollect.append(TotCnt)
+  TotCnt, ThreeTimes = 0, 0
+  Ctr -= 1
+AveFlip = sum(SumCollect) / 10
+print("On Average, %s flips were needed to get 3 consecutive same result" % AveFlip)
 print("Thank you for using this app.")
 #**************************************************************
