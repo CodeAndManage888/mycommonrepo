@@ -34,16 +34,30 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+import random
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1 = int(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    icheck = -1
-    print("Invalid input data! Numeric input data only.")
+CoinFlip = ["H","T"]
+SumCollect = []
+Ctr, ThreeTimes, TotCnt = 10, 1, 0
 #--------------------------------------------------------------
+while Ctr != 0:
+  CoinToss = random.choice(CoinFlip)
+  LastToss = CoinToss
+  while ThreeTimes != 3:
+    print(CoinToss," ", end="")
+    CoinToss = random.choice(CoinFlip)
+    if LastToss == CoinToss:
+      ThreeTimes += 1
+    else:
+      ThreeTimes = 0
+    TotCnt += 1
+    LastToss = CoinToss
+#  print(CoinToss," ", end="")
+  print("(%s flips)" % TotCnt)
+  SumCollect.append(TotCnt)
+  TotCnt, ThreeTimes = 0, 0
+  Ctr -= 1
+AveFlip = sum(SumCollect) / 10
+print("On Average, %s flips were needed to get 3 consecutive same result" % AveFlip)
 print("Thank you for using this app.")
 #**************************************************************
