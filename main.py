@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 072623   (Expected Solution with 47 Lines of Code)    *
 # Title: Coin Flip Simulation                                 *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # What's the minimum number of times you have to flip a coin  *
 # before you can have three consecutive flips that results in *
 # the same outcome (either all three are heads or all three   *
@@ -38,30 +38,30 @@ import random
 #--------------------------------------------------------------
 CoinFlip = ["H","T"]
 SumCollect = []
-Ctr, ThreeTimes, TotCnt = 10, 0, 0
+Ctr, ThreeTimes, TotCnt = 10, 1, 0
 #--------------------------------------------------------------
 while Ctr != 0:
   CoinToss = random.choice(CoinFlip)
   LastToss = CoinToss
-#  print("First generated data: ", CoinToss)
-  while ThreeTimes <= 3:
+  while ThreeTimes < 3:
     print(CoinToss," ", end="")
     CoinToss = random.choice(CoinFlip)
     if LastToss == CoinToss:
       ThreeTimes += 1
-#      if ThreeTimes == 2:
-#        print("Second occurence data: ", CoinToss, end="")
+      if ThreeTimes == 3:
+        print(CoinToss," ", end="")
+        TotCnt += 1
     else:
-      ThreeTimes = 0
-    TotCnt += 1
+      ThreeTimes = 1
     LastToss = CoinToss
-#  print(CoinToss," ", end="")
+    TotCnt += 1  
   print("(%s flips)" % TotCnt)
-#  print("Last generated data: ", CoinToss)
   SumCollect.append(TotCnt)
-  TotCnt, ThreeTimes = 0, 0
+  TotCnt, ThreeTimes = 0, 1
   Ctr -= 1
 AveFlip = sum(SumCollect) / 10
 print("On Average, %s flips were needed to get 3 consecutive same result" % AveFlip)
 print("Thank you for using this app.")
 #**************************************************************
+# Open Item: This needs to be simulated in VS since I can't 
+# follow the logic on the program arrived to the final output.
