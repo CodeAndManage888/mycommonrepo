@@ -1,11 +1,14 @@
 #!/bin/bash
 #**************************************************************
-# Date: MMDDYY   (Expected Solution with XX Lines of Code)    *
-# Title:                                                      *
+# Date: 080123   (Expected Solution with 42 Lines of Code)    *
+# Title: Median of Three Values                               *
 # Status: In Progress (In Progress / Testing / Working)       *
+# Write a functions that takes three numbers as parameters,   *
+# and returns the median value of theose parameters as its    *
+# result. Include a main program that reads three values from *
+# the user and displays their median.                         *
 #                                                             *
 # Computed Result Validated:                                  *
-#                                                             *
 #**************************************************************
 #--------------------------------------------------------------
 def data_check(UserIn1):
