@@ -13,19 +13,23 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+Input_List = []
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1 = int(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    icheck = -1
-    print("Invalid input data! Numeric input data only.")
+def cal_long_side(UserIn1, UserIn2):
+  return "Computation Complete"
 #--------------------------------------------------------------
 UserNum = input("Enter the 2 short side of the triangle: ")
+try:
+  cUserNum = int(UserNum.replace(" ", ""))
+  icheck = 0
+except:
+  icheck = -1
+  print("Invalid input data! Numeric input data only.")
 
+if icheck != -1:
+  Input_List = UserNum.split()
+  OutPrint = cal_long_side(Input_List[0], Input_List[1])
+  print(OutPrint)
 
 print("Thank you for using this app.")
 #**************************************************************
