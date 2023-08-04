@@ -18,12 +18,16 @@ content = soup.get_text()
 keyword2 = ("6/58", "6/55", "6/49", "6/45", "6/42")
 keyword1 = "Lotto GamesWinning NumbersJackpot Prize"
 
+#print(content)                                 #uncomment for debugging
+
 # extract the relevant data from the page
 position = content.find(keyword1)
 if position != -1:
     start = max(0, position)
-    end = position + len(keyword1) + 239
+    end = position + len(keyword1) + 245
 portion = content[start:end]
+
+#print(portion)                                 #uncomment for debugging
 
 # extract the details from the cutoff portion
 file_path = "/home/pi/Desktop/localrepo/mycommonrepo/myproject/outfile/daily_lotto_result.txt"
@@ -37,6 +41,7 @@ while ctr1 < len(keyword2):
         else:
             end = datapos + 50
     datadetail = portion[start:end]
+#    print(datadetail)                           #uncomment for debugging
     
 # extract per column for storage
     colpos = datadetail.find("-")
