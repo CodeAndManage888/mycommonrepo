@@ -24,7 +24,8 @@ def read_pdf(file_path, PageExerNoStr):
         title_flag = False
         
         content = text.split("\n")
-#        print(content)                                                   # Uncomment for debugging
+#        content = text.split(" ")
+        print(content)                                                    # Uncomment for debugging
         
         for line in content:
 #            print(line)
@@ -41,7 +42,7 @@ def read_pdf(file_path, PageExerNoStr):
                         break
                     else:
                         return_block.append(line)
-#        print(return_block)                                              # Uncomment for debugging
+        print(return_block)                                              # Uncomment for debugging
         return return_block
 
 def format_then_write(textdata):
@@ -52,6 +53,8 @@ def format_then_write(textdata):
     formatted_date = current_date.strftime("%m%d%y")                     # Current date format MMDDYY
     final_recs = []
     line_code = textdata[1]
+#    print(textdata)
+#    print(line_code)
     rec00 = "#!/bin/bash"
     final_recs.append(rec00)
     
@@ -71,12 +74,12 @@ def format_then_write(textdata):
     final_recs.append(rec04)
     
     templine, reqtdetail = ["", ""]
-    char_ctr, item_ctr, word_ctr = [0, 0, 0]
-    leftover = ""
+    item_ctr = 0
     while item_ctr < (len(textdata) - 3):
         templine += (" " + textdata[item_ctr + 2])
         item_ctr += 1
-    print(templine)
+#    print(templine)
+
 #    for idx, char in enumerate(templine):
 #        reqtdetail += char
 #        char_ctr += 1
@@ -87,7 +90,7 @@ def format_then_write(textdata):
 #            reqtdetail = ""
             
     for idx, word in enumerate(templine):
-        if len(reqtdetail) + len(word) < 59:
+        if (len(reqtdetail) + len(word)) < 59:
             reqtdetail += word
         else:
             rec05 = "# " + reqtdetail + "  *"
