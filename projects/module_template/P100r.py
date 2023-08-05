@@ -123,7 +123,9 @@ def format_then_write(textdata):
 
 if __name__ == "__main__":
     UserPageIn = input("Enter the target page(s) & exercise number: ")
-    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"            # Path to your PDF file
+#    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"            # Path to your PDF file
+    pdf_file_path = "/workspaces/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"            # Path to your PDF file
+
     tmp_data = read_pdf(pdf_file_path, UserPageIn)
 #    print(tmp_data)                                                      # Uncomment for debugging
     format_then_write(tmp_data)
