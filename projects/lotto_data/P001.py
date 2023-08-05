@@ -12,7 +12,7 @@ def convert_date_format(date_str):
     return formatted_date
 
 # Replace 'path/to/offline_table.html' with the actual path to your HTML file
-html_file_path = '/home/pi/Desktop/localrepo/mycommonrepo/myproject/infile/Lotto Resuts-2013.html'
+html_file_path = '/home/pi/Desktop/localrepo/mycommonrepo/projects/lotto_data/infile/Lotto Resuts-2013.html'
 
 # Read the contents of the HTML file
 with open(html_file_path, 'r') as file:
@@ -31,8 +31,8 @@ if position1 != -1:
 portion = content[start:end]
 lines = portion.split("\n")
 
-file_path = "/home/pi/Desktop/localrepo/mycommonrepo/myproject/outfile/raw_hist_data.txt"
-clean_file_path = "/home/pi/Desktop/localrepo/mycommonrepo/myproject/outfile/final_data.txt"
+file_path = "/home/pi/Desktop/localrepo/mycommonrepo/projects/lotto_data/outfile/raw_hist_data.txt"
+clean_file_path = "/home/pi/Desktop/localrepo/mycommonrepo/projects/lotto_data/outfile/final_data.txt"
 with open(file_path, "w") as file_handle:
     # clean unnecessary lines in the file
     for line in lines:
@@ -74,7 +74,8 @@ with open(file_path, "r") as file_record:
                                 detail3 = convert_date_format(clean1[pos2 + 15:pos2 + 24])
                                 pos3 = pos2 + 24
                     detail4 = clean1[pos3:len(clean1) - 1]
-                    outrec = "{:>5} ; {:>20} ; {:>20} ; {:>20}".format(detail1, detail3, detail2, detail4)
+                    detail5 = clean1[len(clean1) - 1:]
+                    outrec = "{:>5} ; {:>20} ; {:>20} ; {:>20} ; {:>5}".format(detail1, detail3, detail2, detail4, detail5)
                     print(outrec, file=file_out)
 file_record.close()
 file_out.close()
