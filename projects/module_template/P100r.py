@@ -14,121 +14,104 @@ def read_pdf(file_path, PageExerNoStr):
 
         # Get the text data
         page = pdf_reader.pages[int(Target_List[0])]
-        text = page.extract_text()
-        
+        text = page.extract_text()      
+#        print(text)                                                       # Uncomment for debugging
+
+        # Prepare the extraction of the target exercise only.
+        content = text.split("\n")
+#        print(content)                                                    # Uncomment for debugging
         start_txt = "Exercise " + Target_List[1] + ":"
         end_txt = "Exercise " + str(int(Target_List[1]) + 1) + ":"
 #        print(start_txt)                                                  # Uncomment for debugging
 #        print(end_txt)                                                    # Uncomment for debugging
         return_block = []
-        title_flag = False
+        start_pos_list = []
+        end_pos_list = []
+
+        # This line of codes will will identify the title and other starting/ending details.
+        for idx1, line in enumerate(content):
+            startpos = line.find(start_txt)
+            if startpos != -1:
+                start_pos_list.append(idx1)
+            endpos = line.find(end_txt)
+            if endpos != -1:
+                end_pos_list.append(idx1)
+                break
         
-        content = text.split("\n")
-#        content = text.split(" ")
-        print(content)                                                    # Uncomment for debugging
-        
-        for line in content:
-#            print(line)
-            pos1 = line.find(start_txt)
-            if pos1 != -1 and not title_flag:
-                return_block.append(line)
-                title_flag = True
+#        print(start_pos_list)                                             # Uncomment for debugging
+#        print(end_pos_list)                                               # Uncomment for debugging
+
+        line_ctr = start_pos_list[0]
+        end_ctr = len(end_pos_list) - 1
+        add_pos = len(start_pos_list) - 1
+        while (line_ctr + add_pos) < end_pos_list[end_ctr]:
+            if line_ctr == 0:
+                num_start_dtls = len(start_pos_list)
+                if num_start_dtls == 2 and line_ctr == 0:
+                    return_block.append(content[line_ctr + add_pos])
+                elif num_start_dtls == 2 and line_ctr == 1:
+                    return_block.append(content[line_ctr + add_pos])
             else:
-                if title_flag:
-                    pos2 = line.find(end_txt)
-                    if pos2 != -1:
-                        return_block.append(line)
-                        title_flag = False
-                        break
-                    else:
-                        return_block.append(line)
-        print(return_block)                                              # Uncomment for debugging
+                return_block.append(content[line_ctr + add_pos])
+            line_ctr += 1
+
+#        print(return_block)                                              # Uncomment for debugging
         return return_block
 
 def format_then_write(textdata):
     file_path = "/home/runner/mycommonrepo/projects/module_template/outfile/temp000.py"
-    
     # The following code will format the text
     current_date = datetime.datetime.now()
     formatted_date = current_date.strftime("%m%d%y")                     # Current date format MMDDYY
     final_recs = []
     line_code = textdata[1]
-#    print(textdata)
-#    print(line_code)
+    TotCodPos = line_code.find("—")
+#    print(textdata)                                                     # Uncomment for debugging
+#    print(line_code)                                                    # Uncomment for debugging
     rec00 = "#!/bin/bash"
     final_recs.append(rec00)
-    
     rec01 = "#**************************************************************"
     final_recs.append(rec01)
-    
-    rec02 = "# Date: " + formatted_date + " (Expected Solution with " + line_code[1:3] + " Lines of Code)      *"
+    rec02 = "# Date: " + formatted_date + " (Expected Solution with " + line_code[TotCodPos + 1:TotCodPos + 3] + " Lines of Code)      *"
     final_recs.append(rec02)
-    
     title = textdata[0]
     title_pos1 = title.index(":")
     space00 = 55 - len(title[title_pos1:])
     rec03 = "# Title:" + title[title_pos1 + 1:] + (" " * space00) + "*"
     final_recs.append(rec03)
-    
     rec04 = "# Status: In Progress (In Progress / Testing / Working)       *"
     final_recs.append(rec04)
-    
-    templine, reqtdetail = ["", ""]
-    item_ctr = 0
-    while item_ctr < (len(textdata) - 3):
-        templine += (" " + textdata[item_ctr + 2])
-        item_ctr += 1
-#    print(templine)
 
-#    for idx, char in enumerate(templine):
-#        reqtdetail += char
-#        char_ctr += 1
-#        if char_ctr == 59:
-#            rec05 = "# " + reqtdetail + " *"
-#            final_recs.append(rec05)
-#            char_ctr = 0
-#            reqtdetail = ""
-            
-    for idx, word in enumerate(templine):
-        if (len(reqtdetail) + len(word)) < 59:
-            reqtdetail += word
-        else:
-            rec05 = "# " + reqtdetail + "  *"
-            final_recs.append(rec05)
-            reqtdetail = ""
+    word_list = []
+    word_ctr, item_ctr, reqtdetail = (0, 2, "")
+    while item_ctr <= (len(textdata) - 2):
+        word_list += textdata[item_ctr].split(" ")
+        item_ctr += 1
+    print(word_list)
+    print(len(word_list))
+
+    while word_ctr <= len(word_list):
+        if len(reqtdetail) < 59:
+            popped_word = word_list.pop(word_ctr)
+            reqtdetail += popped_word + " "
+            if (len(reqtdetail) + len(word_list[word_ctr + 1])) > 59:
+                rec05 = "# " + reqtdetail + "  *"
+                final_recs.append(rec05)
+        word_ctr += 1
     
     rec06 = "#                                                             *"
     final_recs.append(rec06)
-    
     rec07 = "# Computed Result Validated:                                  *"
     final_recs.append(rec07)
-    
     rec08 = "#**************************************************************"
     final_recs.append(rec08)
+
+    for item in final_recs:                                               # Uncomment for debugging
+        print(item)                                                       # Uncomment for debugging
     
-    #print(final_recs)
-    for item in final_recs:
-        print(item,end="\n")
-
-#    if os.path.exists(file_path):
-#        record_exists = False
-#        with open(file_path, "r") as file_record:
-#            for line in file_handle:
-#                if file_record in line:
-#                    record_exists = True
-#                    break
-#        if not record_exists:
-#            with open(file_path, "a") as file_handle:
-#                    print(file_record, file=file_handle)
-#    else:
-#        with open(file_path, "w") as file_handle:
-#            print(file_record, file=file_handle)
-
 if __name__ == "__main__":
     UserPageIn = input("Enter the target page(s) & exercise number: ")
-#    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"            # Path to your PDF file
-    pdf_file_path = "/workspaces/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"            # Path to your PDF file
-
+#   pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"           # Path to your PDF file (Cloud)
+    pdf_file_path = "/workspaces/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"            # Path to your PDF file (Cloud)
     tmp_data = read_pdf(pdf_file_path, UserPageIn)
-#    print(tmp_data)                                                      # Uncomment for debugging
     format_then_write(tmp_data)
