@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-import csv
 from datetime import datetime
 
 def convert_date_format(date_str):
