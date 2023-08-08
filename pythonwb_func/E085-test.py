@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 080123   (Expected Solution with 47 Lines of Code)    *
 # Title: Convert an Integer to its Ordinal Number             *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Words like first, second and third are referred to as       *
 # ordinal numbers. In this exercise, you will write a         *
 # function that takes an integer as its only parameter and    *
@@ -17,16 +17,26 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+ordinal_dict = {1:"First", 2:"Second", 3:"Third", 4:"Fourth",
+                5:"Fifth", 6:"Sixth", 7:"Seventh", 8:"Eighth", 
+                9:"Ninth:", 10:"Tenth", 11:"Eleventh", 12:"Twelfth"}
+NumFlag = False
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1 = int(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    icheck = -1
-    print("Invalid input data! Numeric input data only.")
+def ordinal_conv(InputVal):
+  outvalue = ordinal_dict.get(InputVal, " ")
+  return outvalue
 #--------------------------------------------------------------
+UserIn = input("What is the input number: ")
+try:
+  cUserIn = int(UserIn)
+  NumFlag = True
+except:
+  print("Invalid input data! Numeric input data only.")
+if NumFlag:
+  ordinal_num = ordinal_conv(cUserIn)
+  if ordinal_num != " ":
+    print("The ordinal number equivalent of %s is %s." % (UserIn, ordinal_num))
+  else:
+    print("The ordinal number is not available for %s." % UserIn)
 print("Thank you for using this app.")
 #**************************************************************
