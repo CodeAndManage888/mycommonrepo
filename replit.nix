@@ -1,6 +1,8 @@
 { pkgs }: {
   deps = [
-		pkgs.python38Packages.pip
+		pkgs.python39Packages.bootstrapped-pip
+  pkgs.python39Packages.bootstrapped-pip
+  pkgs.python38Packages.pip
   pkgs.python39Packages.pip
   pkgs.import os
   pkgs.nodePackages.prettier
