@@ -1,130 +1,86 @@
-import PyPDF2
-import os
-import datetime
-
-def read_pdf(file_path, PageExerNoStr):
-    Traget_List = []
-    Target_List = PageExerNoStr.split()
-    with open(file_path, 'rb') as file:
-        # Create a PDF reader object
-        pdf_reader = PyPDF2.PdfReader(file)
-
-        # Get the total number of pages in the PDF
-        num_pages = len(pdf_reader.pages)                                                # Do I still need this?
-
-        # Get the text data
-        page = pdf_reader.pages[int(Target_List[0])]
-        text = page.extract_text()      
-#        print(text)                                                                     # Uncomment for debugging
-
-        # Prepare the extraction of the target exercise only.
-        content = text.split("\n")
-#        print(content)                                                                  # Uncomment for debugging
-        start_txt = "Exercise " + Target_List[1] + ":"
-        end_txt = "Exercise " + str(int(Target_List[1]) + 1) + ":"
-#        print(start_txt)                                                                # Uncomment for debugging
-#        print(end_txt)                                                                  # Uncomment for debugging
-        return_block = []
-        start_pos_list = []
-        end_pos_list = []
-
-        # This line of codes will will identify the title and other starting/ending details.
-        for idx1, line in enumerate(content):
-            startpos = line.find(start_txt)
-            if startpos != -1:
-                start_pos_list.append(idx1)
-            endpos = line.find(end_txt)
-            if endpos != -1:
-                end_pos_list.append(idx1)
-                break
-        
-#        print(start_pos_list)                                                           # Uncomment for debugging
-#        print(end_pos_list)                                                             # Uncomment for debugging
-
-        line_ctr = start_pos_list[0]
-        end_ctr = len(end_pos_list) - 1
-        add_pos = len(start_pos_list) - 1
-        while (line_ctr + add_pos) < end_pos_list[end_ctr]:
-            if line_ctr == 0:
-                num_start_dtls = len(start_pos_list)
-                if num_start_dtls == 2 and line_ctr == 0:
-                    return_block.append(content[line_ctr + add_pos])
-                elif num_start_dtls == 2 and line_ctr == 1:
-                    return_block.append(content[line_ctr + add_pos])
-            else:
-                return_block.append(content[line_ctr + add_pos])
-            line_ctr += 1
-
-#        print(return_block)                                                             # Uncomment for debugging
-        return return_block
-
-def format_then_write(textdata):
-    file_path = "/workspaces/mycommonrepo/projects/module_template/outfile_cloud/gen_template.py"
-    # The following code will format the text
-    current_date = datetime.datetime.now()
-    formatted_date = current_date.strftime("%m%d%y")                                     # Current date format MMDDYY
-    final_recs = []
-    line_code = textdata[1]
-    TotCodPos = line_code.find("—")
-#    print(textdata)                                                                     # Uncomment for debugging
-#    print(line_code)                                                                    # Uncomment for debugging
-    rec00 = "#!/bin/bash"
-    final_recs.append(rec00)
-    rec01 = "#**************************************************************"
-    final_recs.append(rec01)
-    rec02 = "# Date: " + formatted_date + " (Expected Solution with " + line_code[TotCodPos + 1:TotCodPos + 3] + " Lines of Code)      *"
-    final_recs.append(rec02)
-    title = textdata[0]
-    title_pos1 = title.index(":")
-    space00 = 55 - len(title[title_pos1:])
-    rec03 = "# Title:" + title[title_pos1 + 1:] + (" " * space00) + "*"
-    final_recs.append(rec03)
-    rec04 = "# Status: In Progress (In Progress / Testing / Working)       *"
-    final_recs.append(rec04)
-
-    word_list = []
-    for idx3, readline in enumerate(textdata):
-        if idx3 != 0 and idx3 != 1:
-            word_list += readline.split(" ")
-
-#    print(word_list)                                                                    # Uncomment for debugging
-#    print(len(word_list))                                                               # Uncomment for debugging
-
-    reqtdetail = ""
-    for idx2, word in enumerate(word_list):
-        reqtdetail += word + " "
-        if idx2 != (len(word_list) - 1):
-            if (len(reqtdetail) + len(word_list[idx2 + 1])) > 59:
-                addspaces = 59 - (len(reqtdetail) - 1)
-                rec05 = "# " + reqtdetail + (addspaces * " ") + "*"
-                final_recs.append(rec05)
-                reqtdetail = ""
-        else:
-            addspaces = 59 - (len(reqtdetail) - 1)
-            rec05 = "# " + reqtdetail + (addspaces * " ") + "*"
-            final_recs.append(rec05)
-            reqtdetail = ""
-
-#    reqtdetail = "                                                          "           # Uncomment for debugging
-#    rec05 = "# " + reqtdetail + "  *"                                                   # Uncomment for debugging
-#    final_recs.append(rec05)                                                            # Uncomment for debugging
-
-    rec06 = "#                                                             *"
-    final_recs.append(rec06)
-    rec07 = "# Computed Result Validated:                                  *"
-    final_recs.append(rec07)
-    rec08 = "#**************************************************************"
-    final_recs.append(rec08)
-
-    with open(file_path, "w") as file_handle:
-        for item in final_recs:
-            print(item)                                                                  # Uncomment for debugging
-            print(item, file=file_handle)
-    file_handle.close()
-    
+#!/bin/bash
+#**************************************************************
+# Date: 081023 (Expected Solution with 48 Lines of Code)      *
+# Title: The Twelve Days of Christmas                         *
+# Status: Testing (In Progress / Testing / Working)           *
+# The Twelve Days of Christmas is a repetitive song that      *
+# describes an increasingly long list of gifts sent to one’s  *
+# true love on each of 12 days. A single gift is sent on the  *
+# ﬁrst day. A new gift is added to the collection on each     *
+# additional day, and then the complete collection is sent.   *
+# The ﬁrst three verses of the song are shown below. The      *
+# complete lyrics are available on the internet.              *
+#                                                             *
+# On the ﬁrst day of Christmas                                *
+# my true love sent to me:                                    *
+# A partridge in a pear tree.                                 *
+#                                                             *
+# On the second day of Christmas                              *
+# my true love sent to me:                                    *
+# Two turtle doves,                                           *
+# And a partridge in a pear tree.                             *
+#                                                             *
+# On the third day of Christmas                               *
+# my true love sent to me:                                    *
+# Three French hens,                                          *
+# Two turtle doves,                                           *
+# And a partridge in a pear tree.                             *
+#                                                             *
+# Your task is to write a program that displays the           *
+# complete lyrics for The Twelve Days of Christmas. Write a   *
+# function that takes the verse number as its only parameter  *
+# and displays the speciﬁed verse of the song. Then call that *
+# function 12 times with integers that increase from 1 to 12. *
+# Each item that is sent to the recipient in the song should  *
+# only appear once in your program, with the possible         *
+# exception of the partridge. It may appear twice if that     *
+# helps you handle the difference between “A partridge in a   *
+# pear tree” in the ﬁrst verse and “And a partridge in a pear *
+# tree” in the subsequent verses. Import your solution to     *
+# Exercise 85 to help you complete this exercise.             *
+#                                                             *
+# Computed Result Validated:                                  *
+#**************************************************************
+num_of_days = 1
+temp_dict = []
+lyrics_dict = {1:"first_A partridge in a pear tree",
+                2:"second_Two turtle doves,",
+                3:"third_Three French hens,",
+                4:"fourth_Four calling birds,",
+                5:"fifth_Five gold rings,",
+                6:"sixth_Six geese a-laying",
+                7:"seventh_Seven swans a-swimming",
+                8:"eighth_Eight maids a-milking",
+                9:"ninth_Nine ladies dancing",
+                10:"tenth_Ten lords a-leaping",
+                11:"eleventh_Eleven pipers piping",
+                12:"twelfth_Twelve drummers drumming"}
+#--------------------------------------------------------------
+def song_verse(input_num):
+  outvalue = lyrics_dict.get(input_num, " ")
+  temp_dict = outvalue.split("_")
+  if input_num == 1:
+    print("On the %s day of Christmas, my true love sent to me" % temp_dict[0])
+    print(temp_dict[1])
+    print(" ")
+  else:
+    outvalue = lyrics_dict.get(input_num, " ")
+    temp_dict = outvalue.split("_")
+    print("On the %s day of Christmas, my true love sent to me" % temp_dict[0])
+    while input_num != 0:
+      if input_num == 1:
+        print("And", temp_dict[1].lower())
+        print(" ")
+      else:
+        print(temp_dict[1])
+      input_num -= 1
+      outvalue = lyrics_dict.get(input_num, " ")
+      temp_dict = outvalue.split("_")
+#--------------------------------------------------------------
 if __name__ == "__main__":
-    UserPageIn = input("Enter the target page(s) & exercise number: ")
-#   pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"          # Path to your PDF file (Cloud)
-    pdf_file_path = "/workspaces/mycommonrepo/projects/module_template/infile_cloud/The Python Workbook.pdf"            # Path to your PDF file (Cloud)
-    tmp_data = read_pdf(pdf_file_path, UserPageIn)
-    format_then_write(tmp_data)
+  while num_of_days <= 12:
+    song_verse(num_of_days)
+    num_of_days += 1
+
+print("Thank you for using this app.")
+#**************************************************************
