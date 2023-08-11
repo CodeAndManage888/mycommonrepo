@@ -37,7 +37,12 @@ def read_pdf(file_path, PageExerNoStr):
             if endpos != -1:
                 end_pos_list.append(idx1)
                 break
-        
+            else:
+                endpos = line.find("This copy belongs to")
+                if endpos != -1:
+                    end_pos_list.append(idx1)
+                    break
+
 #        print(start_pos_list)                                                           # Uncomment for debugging
 #        print(end_pos_list)                                                             # Uncomment for debugging
 
