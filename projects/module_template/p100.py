@@ -20,7 +20,7 @@ def read_pdf(file_path, page_exer_nostr):
             page_ctr -= 1
             idx4 += 1
             text += page.extract_text()
-        print(text)                                                                     # Uncomment for debugging
+#        print(text)                                                                     # Uncomment for debugging
 
         # Prepare the extraction of the target exercise only.
         content = text.split("\n")
@@ -80,6 +80,8 @@ def format_then_write(textdata):
     final_recs = []
     line_code = textdata[1]
     TotCodPos = line_code.find("—")
+    if TotCodPos == -1:
+        TotCodPos = line_code.find("(")
 #    print(textdata)                                                                     # Uncomment for debugging
 #    print(line_code)                                                                    # Uncomment for debugging
     rec00 = "#!/bin/bash"
@@ -129,6 +131,20 @@ def format_then_write(textdata):
     final_recs.append(rec07)
     rec08 = "#**************************************************************"
     final_recs.append(rec08)
+    rec09 = "#--------------------------------------------------------------"
+    final_recs.append(rec09)
+    rec10 = "def func_name(UserIn):"
+    final_recs.append(rec10)
+    rec11 = "   return"
+    final_recs.append(rec11)
+    rec12 = "#--------------------------------------------------------------"
+    final_recs.append(rec12)
+    rec13 = 'if __name__ == "__main__":'
+    final_recs.append(rec13)
+    rec14 = '   print("Thank you for using this app.")'
+    final_recs.append(rec14)
+    rec15 = "#**************************************************************"
+    final_recs.append(rec15)
 
     with open(file_path, "w") as file_handle:
         for item in final_recs:
