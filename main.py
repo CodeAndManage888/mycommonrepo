@@ -1,86 +1,51 @@
 #!/bin/bash
 #**************************************************************
-# Date: 081023 (Expected Solution with 48 Lines of Code)      *
-# Title: The Twelve Days of Christmas                         *
-# Status: Testing (In Progress / Testing / Working)           *
-# The Twelve Days of Christmas is a repetitive song that      *
-# describes an increasingly long list of gifts sent to one’s  *
-# true love on each of 12 days. A single gift is sent on the  *
-# ﬁrst day. A new gift is added to the collection on each     *
-# additional day, and then the complete collection is sent.   *
-# The ﬁrst three verses of the song are shown below. The      *
-# complete lyrics are available on the internet.              *
-#                                                             *
-# On the ﬁrst day of Christmas                                *
-# my true love sent to me:                                    *
-# A partridge in a pear tree.                                 *
-#                                                             *
-# On the second day of Christmas                              *
-# my true love sent to me:                                    *
-# Two turtle doves,                                           *
-# And a partridge in a pear tree.                             *
-#                                                             *
-# On the third day of Christmas                               *
-# my true love sent to me:                                    *
-# Three French hens,                                          *
-# Two turtle doves,                                           *
-# And a partridge in a pear tree.                             *
-#                                                             *
-# Your task is to write a program that displays the           *
-# complete lyrics for The Twelve Days of Christmas. Write a   *
-# function that takes the verse number as its only parameter  *
-# and displays the speciﬁed verse of the song. Then call that *
-# function 12 times with integers that increase from 1 to 12. *
-# Each item that is sent to the recipient in the song should  *
-# only appear once in your program, with the possible         *
-# exception of the partridge. It may appear twice if that     *
-# helps you handle the difference between “A partridge in a   *
-# pear tree” in the ﬁrst verse and “And a partridge in a pear *
-# tree” in the subsequent verses. Import your solution to     *
-# Exercise 85 to help you complete this exercise.             *
+# Date: 081123 (Expected Solution with (3 Lines of Code)      *
+# Title: Is it a Valid Triangle?                              *
+# Status: In Progress (In Progress / Testing / Working)       *
+# If you have 3 straws, possibly of differing lengths, it may *
+# or may not be possible to lay them down so that they form a *
+# triangle when their ends are touching. For example, if all  *
+# of the straws have a length of 6 inches. then one can       *
+# easily construct an equilateral triangle using them.        *
+# However, if one straw is 6 inches. long, while the other    *
+# two are each only 2 inches. long, then a triangle cannot be *
+# formed. In general, if any one length is greater than or    *
+# equal to the sum of the other two then the lengths cannot   *
+# be used to form a triangle. Otherwise they can form a       *
+# triangle. Write a function that determines whether or not   *
+# three lengths can form a triangle. The function will take 3 *
+# parameters and return a Boolean result. In addition, write  *
+# a program that reads 3 lengths from the user and            *
+# demonstrates the behaviour of this function.                *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-num_of_days = 1
-temp_dict = []
-lyrics_dict = {1:"first_A partridge in a pear tree",
-                2:"second_Two turtle doves,",
-                3:"third_Three French hens,",
-                4:"fourth_Four calling birds,",
-                5:"fifth_Five gold rings,",
-                6:"sixth_Six geese a-laying",
-                7:"seventh_Seven swans a-swimming",
-                8:"eighth_Eight maids a-milking",
-                9:"ninth_Nine ladies dancing",
-                10:"tenth_Ten lords a-leaping",
-                11:"eleventh_Eleven pipers piping",
-                12:"twelfth_Twelve drummers drumming"}
 #--------------------------------------------------------------
-def song_verse(input_num):
-  outvalue = lyrics_dict.get(input_num, " ")
-  temp_dict = outvalue.split("_")
-  if input_num == 1:
-    print("On the %s day of Christmas, my true love sent to me" % temp_dict[0])
-    print(temp_dict[1])
-    print(" ")
-  else:
-    outvalue = lyrics_dict.get(input_num, " ")
-    temp_dict = outvalue.split("_")
-    print("On the %s day of Christmas, my true love sent to me" % temp_dict[0])
-    while input_num != 0:
-      if input_num == 1:
-        print("And", temp_dict[1].lower())
-        print(" ")
-      else:
-        print(temp_dict[1])
-      input_num -= 1
-      outvalue = lyrics_dict.get(input_num, " ")
-      temp_dict = outvalue.split("_")
+def check_triangle_sides(side_1st, side_2nd, side_3rd):
+  comb_data = side_1st + side_2nd + side_3rd
+  invalid_check = False
+  try:
+    conv_comb_data = int(comb_data)
+  except:
+    invalid_check = True
+    print("Invalid input data! Numeric input data only.")
+  if not invalid_check:
+    sum_1st = int(side_1st) + int(side_2nd)
+    sum_2nd = int(side_2nd) + int(side_3rd)
+    sum_3rd = int(side_3rd) + int(side_1st)
+    if int(side_3rd) > sum_1st or int(side_1st) > sum_2nd or int(side_2nd) > sum_3rd:
+      valid_triangle = False
+    else:
+      valid_triangle = True
+    if valid_triangle:
+      print("Input sides are for a valid triangle!")
+    else:
+      print("Input sides are not for a valid triangle!")
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  while num_of_days <= 12:
-    song_verse(num_of_days)
-    num_of_days += 1
-
-print("Thank you for using this app.")
+  side_length = input("Enter the length of each triangle sides: ")
+  temp_val = side_length.split(" ")
+  check_triangle_sides(temp_val[0], temp_val[1], temp_val[2])
+  print("Thank you for using this app.")
 #**************************************************************
