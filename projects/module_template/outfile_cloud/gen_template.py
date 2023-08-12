@@ -1,22 +1,26 @@
 #!/bin/bash
 #**************************************************************
-# Date: 081123 (Expected Solution with 48 Lines of Code)      *
-# Title: Capitalize It                                        *
+# Date: 081123 (Expected Solution with 30 Lines of Code)      *
+# Title: Does a String Represent an Integer?                  *
 # Status: In Progress (In Progress / Testing / Working)       *
-# Many people do not use capital letters correctly,           *
-# especially when typing on small devices like smart phones.  *
-# In this exercise, you will write a function that            *
-# capitalizes the appropriate characters in a string. A       *
-# lowercase “i” should be replaced with an uppercase “I” if   *
-# it is both preceded and followed by a space. The ﬁrst       *
-# character in the string should also be capitalized, as well *
-# as the ﬁrst non-space character after a “.”, “!” or “?”.    *
-# For example, if the function is provided with the string    *
-# “what time do i have to be there? what’s the address?” then *
-# it should return the string “What time do I have to be      *
-# there? What’s the address?”. Include a main program that    *
-# reads a string from the user, capitalizes it using your     *
-# function, and displays the result.                          *
+# In this exercise you will write a function named isInteger  *
+# that determines whether or not the characters in a string   *
+# represent a valid integer. When determining if a string     *
+# represents an integer you should ignore any leading or      *
+# trailing white space. Once this white space is ignored, a   *
+# string represents an integer if its length is at least 1    *
+# and it only contains digits, or if its ﬁrst character is    *
+# either +or-and the ﬁrst character is followed by one or     *
+# more characters, all of which are digits. Write a main      *
+# program that reads a string from the user and reports       *
+# whether or not it represents an integer. Ensure that the    *
+# main program will not run if the ﬁle containing your        *
+# solution is imported into another program. This copy        *
+# belongs to 'acha04'Exercise 90: Does a String Represent an  *
+# Integer? 43 Hint: You may ﬁnd the lstrip ,rstrip            *
+# and/orstrip methods for strings helpful when completing     *
+# this exercise. Documentation for these methods is available *
+# online.                                                     *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
