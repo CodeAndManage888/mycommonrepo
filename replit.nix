@@ -1,6 +1,10 @@
 { pkgs }: {
   deps = [
-		pkgs.python39Packages.bootstrapped-pip
+		pkgs.python39Packages.pip
+  pkgs.2
+  pkgs.python39Packages.pip
+  pkgs.python39Packages.bootstrapped-pip
+  pkgs.python39Packages.bootstrapped-pip
   pkgs.python39Packages.bootstrapped-pip
   pkgs.python38Packages.pip
   pkgs.python39Packages.pip

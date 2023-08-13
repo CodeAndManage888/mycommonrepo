@@ -1,6 +1,6 @@
 #!/bin/bash
 #**************************************************************
-# Date: 081123 (Expected Solution with 48 Lines of Code)      *
+# Date: 081323 (Expected Solution with 48 Lines of Code)      *
 # Title: Capitalize It                                        *
 # Status: In Progress (In Progress / Testing / Working)       *
 # Many people do not use capital letters correctly,           *
@@ -21,15 +21,9 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def data_check(UserIn1):
-  global icheck
-  try:
-    cUserIn1 = int(UserIn1)
-    icheck = 0
-    return cUserIn1
-  except:
-    icheck = -1
-    print("Invalid input data! Numeric input data only.")
+def func_name(UserIn):
+   return
 #--------------------------------------------------------------
-print("Thank you for using this app.")
+if __name__ == "__main__":
+   print("Thank you for using this app.")
 #**************************************************************

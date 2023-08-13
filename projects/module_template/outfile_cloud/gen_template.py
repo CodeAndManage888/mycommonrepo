@@ -1,23 +1,26 @@
 #!/bin/bash
 #**************************************************************
-# Date: 081223 (Expected Solution with 33 Lines of Code)      *
-# Title: Is it a Valid Triangle?                              *
+# Date: 081323 (Expected Solution with 30 Lines of Code)      *
+# Title: Does a String Represent an Integer?                  *
 # Status: In Progress (In Progress / Testing / Working)       *
-# If you have 3 straws, possibly of differing lengths, it may *
-# or may not be possible to lay them down so that they form a *
-# triangle when their ends are touching. For example, if all  *
-# of the straws have a length of 6 inches. then one can       *
-# easily construct an equilateral triangle using them.        *
-# However, if one straw is 6 inches. long, while the other    *
-# two are each only 2 inches. long, then a triangle cannot be *
-# formed. In general, if any one length is greater than or    *
-# equal to the sum of the other two then the lengths cannot   *
-# be used to form a triangle. Otherwise they can form a       *
-# triangle. Write a function that determines whether or not   *
-# three lengths can form a triangle. The function will take 3 *
-# parameters and return a Boolean result. In addition, write  *
-# a program that reads 3 lengths from the user and            *
-# demonstrates the behaviour of this function.                *
+# In this exercise you will write a function named isInteger  *
+# that determines whether or not the characters in a string   *
+# represent a valid integer. When determining if a string     *
+# represents an integer you should ignore any leading or      *
+# trailing white space. Once this white space is ignored, a   *
+# string represents an integer if its length is at least 1    *
+# and it only contains digits, or if its ﬁrst character is    *
+# either +or-and the ﬁrst character is followed by one or     *
+# more characters, all of which are digits. Write a main      *
+# program that reads a string from the user and reports       *
+# whether or not it represents an integer. Ensure that the    *
+# main program will not run if the ﬁle containing your        *
+# solution is imported into another program. This copy        *
+# belongs to 'acha04'Exercise 90: Does a String Represent an  *
+# Integer? 43 Hint: You may ﬁnd the lstrip ,rstrip            *
+# and/orstrip methods for strings helpful when completing     *
+# this exercise. Documentation for these methods is available *
+# online.                                                     *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
