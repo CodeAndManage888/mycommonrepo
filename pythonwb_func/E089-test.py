@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 081323 (Expected Solution with 48 Lines of Code)      *
 # Title: Capitalize It                                        *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Many people do not use capital letters correctly,           *
 # especially when typing on small devices like smart phones.  *
 # In this exercise, you will write a function that            *
@@ -21,9 +21,30 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(UserIn):
-   return
+def capitalize_func(string_input):
+  for idx, char in enumerate(string_input):
+    if idx == 0:
+      print(char.capitalize(),end="")
+      prev_space_flag, punc_mark_flag = False, False
+    elif char == " ":
+      prev_space_flag = True
+      print(char,end="")
+    elif (char == "." or char == "!" or char == "?"):
+      punc_mark_flag = True
+      print(char,end="")
+    elif char == "i" and prev_space_flag and string_input[idx + 1] == " ":
+      print(char.capitalize(),end="")
+      prev_space_flag = False
+    elif punc_mark_flag and string_input[idx - 1] == " ":
+      print(char.capitalize(),end="")
+      punc_mark_flag = False
+    else:
+      print(char,end="")
+      prev_space_flag = False
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   print("Thank you for using this app.")
+  user_string = input("Write anything to be capitalize: ")
+  capitalize_func(user_string)
+  print("")
+  print("Thank you for using this app.")
 #**************************************************************
