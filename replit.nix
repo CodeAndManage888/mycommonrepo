@@ -1,16 +1,7 @@
 { pkgs }: {
   deps = [
-		pkgs.python39Packages.pip
-  pkgs.2
-  pkgs.python39Packages.pip
-  pkgs.python39Packages.bootstrapped-pip
-  pkgs.python39Packages.bootstrapped-pip
-  pkgs.python39Packages.bootstrapped-pip
   pkgs.python38Packages.pip
-  pkgs.python39Packages.pip
-  pkgs.import os
-  pkgs.nodePackages.prettier
-    pkgs.python38Full
+  pkgs.python38Full
   ];
   env = {
     PYTHON_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [

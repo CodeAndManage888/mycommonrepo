@@ -1,4 +1,4 @@
 turtle
 debugpy
 requests
-pypdf2
+PyPDF2

@@ -15,12 +15,10 @@
 # program that reads a string from the user and reports       *
 # whether or not it represents an integer. Ensure that the    *
 # main program will not run if the ﬁle containing your        *
-# solution is imported into another program. This copy        *
-# belongs to 'acha04'Exercise 90: Does a String Represent an  *
-# Integer? 43 Hint: You may ﬁnd the lstrip ,rstrip            *
-# and/orstrip methods for strings helpful when completing     *
-# this exercise. Documentation for these methods is available *
-# online.                                                     *
+# solution is imported into another program. Hint: You may    *
+# ﬁnd the lstrip ,rstrip and/orstrip methods for strings      *
+# helpful when completing this exercise. Documentation for    *
+# these methods is available online.                          *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
