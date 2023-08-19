@@ -1,20 +1,15 @@
 #!/bin/bash
 #**************************************************************
-# Date: 081723 (Expected Solution with 40 Lines of Code)      *
-# Title: Check a Password                                     *
+# Date: 081923 (Expected Solution with 22 Lines of Code)      *
+# Title: Random Good Password                                 *
 # Status: In Progress (In Progress / Testing / Working)       *
-# In this exercise you will write a function that determines  *
-# whether or not a password is good. We will deﬁne a good     *
-# password to be a one that is at least 8 characters long and *
-# contains at least one uppercase letter, at least one        *
-# lowercase letter, and at least one number. Your function    *
-# should return true if the password passed to it as its only *
-# parameter is good. Otherwise it should return false.        *
-# Include a main program that reads a password from the user  *
-# and reports whether or not it is good. Ensure This copy     *
-# belongs to 'acha04'Exercise 96: Check a Password 45 that    *
-# your main program only runs when your solution has not been *
-# imported into another ﬁle.                                  *
+# Using your solutions to Exercises 94 and 96, write a        *
+# program that generates a random good password and displays  *
+# it. Count and display the number of attempts that were      *
+# needed before a good password was generated. Structure your *
+# solution so that it imports the functions you wrote         *
+# previously and then calls them from a function namedmain in *
+# the ﬁle that you create for this exercise.                  *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
