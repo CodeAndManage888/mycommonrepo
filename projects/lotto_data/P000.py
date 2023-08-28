@@ -4,6 +4,9 @@ import os
 from bs4 import BeautifulSoup
 from datetime import datetime
 
+def final_data_check(data_one, data_two, data_three, data_four, data_five):
+  return
+
 def convert_date_format(date_str):
     # Convert the input date string to a datetime object
     date_object = datetime.strptime(date_str, "%m/%d/%Y")

@@ -10,7 +10,7 @@
 # trailing white space. Once this white space is ignored, a   *
 # string represents an integer if its length is at least 1    *
 # and it only contains digits, or if its ﬁrst character is    *
-# either +or-and the ﬁrst character is followed by one or     *
+# either +or- and the ﬁrst character is followed by one or    *
 # more characters, all of which are digits. Write a main      *
 # program that reads a string from the user and reports       *
 # whether or not it represents an integer. Ensure that the    *
@@ -23,9 +23,11 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(UserIn):
-   return
+def isInteger(UserIn):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   print("Thank you for using this app.")
+  input_string = input("Enter the data to be checked: ")
+  isInteger(input_string.strip(" "))
+  print("Thank you for using this app.")
 #**************************************************************
