@@ -23,11 +23,16 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def isInteger(UserIn):
+def isInteger(user_input):
+  proc_data_one = user_input.strip()
+  if (proc_data_one[0] == "+" or proc_data_one[0] == "-") and len(UserIn) >= 1:
+    print("User input is an integer!")
+  else:
+    print("User input is NOT an integer")
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   input_string = input("Enter the data to be checked: ")
-  isInteger(input_string.strip(" "))
+  isInteger(input_string)
   print("Thank you for using this app.")
 #**************************************************************

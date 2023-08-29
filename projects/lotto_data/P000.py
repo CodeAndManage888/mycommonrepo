@@ -63,7 +63,7 @@ for entry in records:
         if datapos != -1:
             start = max(0, datapos)
             datadetail = entry[start:]
-#            print(datadetail)                                 #uncomment for debugging
+            print(datadetail)                                 #uncomment for debugging
             detail1 = datadetail[0:4]                          #lotto game
             tmpdtl = datadetail[21:]
             chkidx1 = tmpdtl.find("/")
