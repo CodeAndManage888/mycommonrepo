@@ -4,14 +4,14 @@
 # Title: Operator Precedence                                  *
 # Status: In Progress (In Progress / Testing / Working)       *
 # Write a function named precedence that returns an integer   *
-# representing the prece- dence of a mathematical operator. A *
+# representing the precedence of a mathematical operator. A   *
 # string containing the operator will be passed to the        *
 # function as its only parameter. Your function should return *
 # 1 for +and-, 2 for* and/, and 3 forˆ. If the string passed  *
 # to the function is not one of these operators then the      *
 # function should return -1. Include a main program that      *
 # reads an operator from the user and either displays the     *
-# operator’s precedence or an error message indi- cating that *
+# operator’s precedence or an error message indicating that   *
 # the input was not an operator. Your main program should     *
 # only run when the ﬁle containing your solution has not been *
 # imported into another program. In this exercise, along with *
@@ -23,9 +23,10 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(UserIn):
-   return
+def precedence(UserIn):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   print("Thank you for using this app.")
+  math_equation = input("Enter the mathematical equation: ")
+  print("Thank you for using this app.")
 #**************************************************************
