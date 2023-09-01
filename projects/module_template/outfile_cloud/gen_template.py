@@ -18,7 +18,13 @@
 # ﬁrst parameter, and the unit of measure (cup, tablespoon or *
 # teaspoon) as its second parameter. Return a string          *
 # representing the measure using the largest possible units   *
-# as the function’s only result.                              *
+# as the function’s only result. This copy belongs to         *
+# 'acha04'Exercise 102: Reduce Measures 47 For example, if    *
+# the function is provided with parameters representing 59    *
+# teaspoons then it should return the string “1 cup, 3        *
+# tablespoons, 2 teaspoons”. Hint: One cup is equivalent to   *
+# 16 tablespoons. One tablespoon is equivalent to 3           *
+# teaspoons.                                                  *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************

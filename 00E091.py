@@ -23,10 +23,24 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def precedence(UserIn):
-  return
+def precedence(user_in):
+  for idx, char in enumerate(user_in):
+    valid_chk = False
+    if char == "+" or char == "-":
+      precedence_value = 1
+      valid_chk = True
+    elif char == "*" or char == "/":
+      precedence_value = 2
+      valid_chk = True
+    elif char == "^":
+      precedence_value = 3
+      valid_chk = True
+  if valid_chk is False:
+      precedence_value = -1
+  return precedence_value
 #--------------------------------------------------------------
 if __name__ == "__main__":
   math_equation = input("Enter the mathematical equation: ")
+  print("Precedence value: " + str(precedence(math_equation)))
   print("Thank you for using this app.")
 #**************************************************************
