@@ -35,8 +35,8 @@ def precedence(user_in):
     elif char == "^":
       precedence_value = 3
       valid_chk = True
-  if valid_chk is False:
-      precedence_value = -1
+  #if valid_chk is False:
+  #   precedence_value = -1
   return precedence_value
 #--------------------------------------------------------------
 if __name__ == "__main__":
