@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 081523 (Expected Solution with 30 Lines of Code)      *
 # Title: Operator Precedence                                  *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Write a function named precedence that returns an integer   *
 # representing the precedence of a mathematical operator. A   *
 # string containing the operator will be passed to the        *

@@ -15,9 +15,14 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(UserIn):
-   return
+def prime_check(user_input):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   print("Thank you for using this app.")
+  user_input = input("Please enter the number(integer only): ")
+  if prime_check(int(user_input)) == 1:
+    print("The number is a prime number.")
+  else:
+    print("The number is NOT a prime number.")
+  print("Thank you for using this app.")
 #**************************************************************
