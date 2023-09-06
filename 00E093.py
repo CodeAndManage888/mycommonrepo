@@ -13,10 +13,23 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+import sys
+sys.path.append('/home/runner/mycommonrepo/pythonwb_func')
+import E092_test
 #--------------------------------------------------------------
 def next_prime(user_input):
-  return
+  proc_num = user_input
+  found_prime = False
+  while not found_prime:
+    response_ind = E092_test.prime_check(proc_num)
+    next_prime = proc_num
+    proc_num += 1
+    if response_ind == 1:
+      found_prime = True
+  print("The next prime numer for " + str(user_input) + " is " + str(next_prime))
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  ask_integer = input("Please enter the number(integer only): ")
+  next_prime(int(ask_integer))
   print("Thank you for using this app.")
 #**************************************************************
