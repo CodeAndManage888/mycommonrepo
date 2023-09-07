@@ -14,9 +14,9 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-prime_factor_list = []
 #--------------------------------------------------------------
 def prime_check(user_input):
+  prime_factor_list = []
   factor = 2
   while factor <= user_input:
     remainder = user_input % factor

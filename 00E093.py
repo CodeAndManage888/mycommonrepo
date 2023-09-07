@@ -24,7 +24,7 @@ def next_prime(user_input):
     response_ind = E092_test.prime_check(proc_num)
     next_prime = proc_num
     proc_num += 1
-    if response_ind == 1:
+    if response_ind == 1 and next_prime != user_input:
       found_prime = True
   print("The next prime numer for " + str(user_input) + " is " + str(next_prime))
 #--------------------------------------------------------------
