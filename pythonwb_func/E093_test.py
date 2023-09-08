@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 081523 (Expected Solution with 27 Lines of Code)      *
 # Title: Next Prime                                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # In this exercise you will create a function named nextPrime *
 # that finds and returns the ﬁrst prime number larger than    *
 # some integer, n. The value of n will be passed to the       *
