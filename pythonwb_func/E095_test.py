@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 081523 (Expected Solution with 45 Lines of Code)      *
 # Title: Random License Plate                                 *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # In a particular jurisdiction, older license plates consist  *
 # of three letters followed by three numbers. When all of the *
 # license plates following that pattern had been used, the    *
@@ -16,10 +16,21 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+import random
 #--------------------------------------------------------------
-def func_name(UserIn):
-   return
+def gen_plate_num():
+  comb_value = ""
+  ctr = 4
+  while ctr != 0:
+    comb_value += str(random.randint(0, 9))
+    ctr -= 1
+  ctr = 3
+  while ctr != 0:
+    comb_value += chr(random.randint(65, 90))
+    ctr -= 1
+  return comb_value
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   print("Thank you for using this app.")
+  print("The generated new plate number is", gen_plate_num())
+  print("Thank you for using this app.")
 #**************************************************************

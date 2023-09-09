@@ -11,17 +11,16 @@
 # should return true if the password passed to it as its only *
 # parameter is good. Otherwise it should return false.        *
 # Include a main program that reads a password from the user  *
-# and reports whether or not it is good. Ensure This copy     *
-# belongs to 'acha04'Exercise 96: Check a Password 45 that    *
-# your main program only runs when your solution has not been *
-# imported into another ﬁle.                                  *
+# and reports whether or not it is good. Ensure that your     *
+# main program only runs when your solution has not been      *
+# imported into another file                                  *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
 def func_name(UserIn):
-   return
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   print("Thank you for using this app.")
+  print("Thank you for using this app.")
 #**************************************************************
