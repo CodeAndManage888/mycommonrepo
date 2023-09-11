@@ -3,7 +3,7 @@
 # Date: 082223 (Expected Solution with 41 Lines of Code)      *
 # Title: Hexadecimal and Decimal Digits                       *
 # Status: In Progress (In Progress / Testing / Working)       *
-# Write two functions, hex2int andint2hex , that convert      *
+# Write two functions, hex2int and int2hex , that convert     *
 # between hexadecimal digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9,   *
 # A, B, C, D, E and F) and base 10 integers. The hex2int      *
 # function is responsible for converting a string containing  *
@@ -20,9 +20,11 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(UserIn):
-   return
+def hex2int(user_in):
+  return
+def int2hex(user_in):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   print("Thank you for using this app.")
+  print("Thank you for using this app.")
 #**************************************************************

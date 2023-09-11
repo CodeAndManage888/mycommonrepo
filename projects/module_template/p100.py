@@ -134,15 +134,15 @@ def format_then_write(textdata):
     final_recs.append(rec08)
     rec09 = "#--------------------------------------------------------------"
     final_recs.append(rec09)
-    rec10 = "def func_name(UserIn):"
+    rec10 = "def func_name(user_in):"
     final_recs.append(rec10)
-    rec11 = "   return"
+    rec11 = "  return"
     final_recs.append(rec11)
     rec12 = "#--------------------------------------------------------------"
     final_recs.append(rec12)
     rec13 = 'if __name__ == "__main__":'
     final_recs.append(rec13)
-    rec14 = '   print("Thank you for using this app.")'
+    rec14 = '  print("Thank you for using this app.")'
     final_recs.append(rec14)
     rec15 = "#**************************************************************"
     final_recs.append(rec15)
