@@ -22,7 +22,7 @@ import random
 #--------------------------------------------------------------
 def ran_password():
   final_value = ""
-  ctr = random.randint(7, 10)
+  ctr = random.randint(8, 10)
   while ctr != 0:
     final_value += chr(random.randint(33, 126))
     ctr -= 1

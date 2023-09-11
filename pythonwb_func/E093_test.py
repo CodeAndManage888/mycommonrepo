@@ -16,6 +16,7 @@
 import sys
 sys.path.append('/home/runner/mycommonrepo/pythonwb_func')
 import E092_test
+#import E092
 #--------------------------------------------------------------
 def next_prime(user_input):
   proc_num = user_input
