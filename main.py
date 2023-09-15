@@ -72,8 +72,8 @@ def read_pdf(file_path, page_exer_nostr):
 
 def format_then_write(textdata):
 #    file_path = "/workspaces/mycommonrepo/projects/module_template/outfile_cloud/gen_template.py"                   # Path to your outfile (Cloud)
-#    file_path = "/workspaces/mycommonrepo/projects/module_template/outfile_cloud/gen_template.py"                   # Path to your outfile (Cloud)
-    file_path = "/home/runner/mycommonrepo/projects/module_template/outfile_cloud/gen_template.py"                   # Path to your outfile (Desktop)
+    file_path = "/workspaces/inoutfiles/projects/module_template/outfile_cloud/gen_template.py"                      # Path to your outfile (Cloud)
+#    file_path = "/home/runner/mycommonrepo/projects/module_template/outfile_cloud/gen_template.py"                  # Path to your outfile (Desktop)
 
     # The following code will format the text
     current_date = datetime.datetime.now()
@@ -134,15 +134,15 @@ def format_then_write(textdata):
     final_recs.append(rec08)
     rec09 = "#--------------------------------------------------------------"
     final_recs.append(rec09)
-    rec10 = "def func_name(UserIn):"
+    rec10 = "def func_name(user_in):"
     final_recs.append(rec10)
-    rec11 = "   return"
+    rec11 = "  return"
     final_recs.append(rec11)
     rec12 = "#--------------------------------------------------------------"
     final_recs.append(rec12)
     rec13 = 'if __name__ == "__main__":'
     final_recs.append(rec13)
-    rec14 = '   print("Thank you for using this app.")'
+    rec14 = '  print("Thank you for using this app.")'
     final_recs.append(rec14)
     rec15 = "#**************************************************************"
     final_recs.append(rec15)
@@ -155,9 +155,8 @@ def format_then_write(textdata):
     
 if __name__ == "__main__":
     UserPageIn = input("Enter the target page(s) & exercise number: ")
-    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"          # Path to your PDF file (Cloud)
-#   pdf_file_path = "/workspaces/mycommonrepo/projects/module_template/infile_cloud/The Python Workbook.pdf"            # Path to your PDF file (Cloud)
+#    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"          # Path to your PDF file (Cloud)
+    pdf_file_path = "/workspaces/inoutfiles/projects/module_template/infile_cloud/The Python Workbook.pdf"               # Path to your PDF file (Cloud)
 #   pdf_file_path = "/home/pi/Desktop/localrepo/mycommonrepo/projects/module_template/infile_cloud/The Python Workbook.pdf"  # Path to your PDF file (Desktop)
     tmp_data = read_pdf(pdf_file_path, UserPageIn)
     format_then_write(tmp_data)
-    
