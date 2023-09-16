@@ -21,11 +21,17 @@
 #**************************************************************
 #--------------------------------------------------------------
 def hex2int(user_in):
+  hex_ltr_dict = {"A":10, "B":11, "C":12, "D":13, "E":14, "F":15, 
+                  "a":10, "b":11, "c":12, "d":13, "e":14, "f":15}
+  cmp_idx = len(user_in) - 1
+  for char in user_in:
+    int_output += 
   return
 def int2hex(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   input_data = input("Enter hexadecimal or decimal number: ")
+  hex2int(input_data)
   print("Thank you for using this app.")
 #**************************************************************
