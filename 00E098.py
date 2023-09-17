@@ -23,15 +23,26 @@
 def hex2int(user_in):
   hex_ltr_dict = {"A":10, "B":11, "C":12, "D":13, "E":14, "F":15, 
                   "a":10, "b":11, "c":12, "d":13, "e":14, "f":15}
+  num_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  int_output = 0
   cmp_idx = len(user_in) - 1
+  print(cmp_idx)
   for char in user_in:
-    int_output += 
-  return
+    print(char)
+    if char not in num_list:
+      int_output += hex_ltr_dict[char] * 16**cmp_idx
+      print(int_output)
+    else:
+      int_output += int(char) * 16**cmp_idx
+      print(int_output)
+    cmp_idx -= 1
+    print(cmp_idx)
+    return int_output
 def int2hex(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   input_data = input("Enter hexadecimal or decimal number: ")
-  hex2int(input_data)
+  print("The equivalent integer is", hex2int(input_data))
   print("Thank you for using this app.")
 #**************************************************************
