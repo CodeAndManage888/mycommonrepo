@@ -19,30 +19,47 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-#--------------------------------------------------------------
 def hex2int(user_in):
   hex_ltr_dict = {"A":10, "B":11, "C":12, "D":13, "E":14, "F":15, 
                   "a":10, "b":11, "c":12, "d":13, "e":14, "f":15}
   num_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   int_output = 0
-  cmp_idx = len(user_in) - 1
-  print(cmp_idx)
-  for char in user_in:
-    print(char)
+  for idx, char in enumerate(reversed(user_in)):
+    print(char, idx)
     if char not in num_list:
-      int_output += hex_ltr_dict[char] * 16**cmp_idx
+      int_output += hex_ltr_dict[char] * 16**idx
       print(int_output)
     else:
-      int_output += int(char) * 16**cmp_idx
+      int_output += int(char) * 16**idx
       print(int_output)
-    cmp_idx -= 1
-    print(cmp_idx)
-    return int_output
+  return int_output
 def int2hex(user_in):
-  return
+  int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
+  fin_nums = []
+  fin_out = ""
+  int_num = int(user_in)
+  while int_num // 16 >= 0:
+    remainder = int_num % 16
+    if remainder > 9:
+      print(remainder)
+      fin_nums.append(int_ltr_dict[remainder])
+    else:
+      fin_nums.append(str(remainder))
+    int_num = int_num // 16
+    if int_num == 0:
+      fin_nums.reverse()
+      for item in fin_nums:
+        fin_out += item
+      break
+  return fin_out
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  input_data = input("Enter hexadecimal or decimal number: ")
-  print("The equivalent integer is", hex2int(input_data))
+  input_data = input("Enter hexadecimal or decimal number and put H or D at the start:")
+  if input_data[0:1] == "H" or input_data[0:1] == "h":
+    func_in = input_data[1:len(input_data)]
+    print("The equivalent integer for", func_in, "is", hex2int(func_in))
+  elif input_data[0:1] == "D" or input_data[0:1] == "d":
+    func_in = input_data[1:len(input_data)]
+    print("The equivalent hexadecimal for", func_in, "is", int2hex(func_in))
   print("Thank you for using this app.")
 #**************************************************************
