@@ -1,0 +1,65 @@
+- All 0 EM - Thank you for using this app.
+0
+0
+0
+0
+- All 0.00 EM - Thank you for using this app.
+0.00
+0.00
+0.00
+0.00
+- All 0.0000 EM - Thank you for using this app.
+0.0000
+0.0000
+0.0000
+0.0000
+- All non zeroes EM - Your computed BMI using formula 1 is
+10
+15
+20
+25
+- All XX.00 EM - Your computed BMI using formula 1 is
+10.00
+15.00
+20.00
+25.00
+- All XX.0000 EM - Your computed BMI using formula 1 is
+10.0000
+15.0000
+20.0000
+25.0000
+- 1st 2 are XX.00 EM - Your computed BMI using formula 1 is
+10.00
+15.00
+0.00
+0.00
+- 1st Only 1 field XX.00 EM - Invalid input combination:
+10.00
+0.00
+0.00
+0.00
+- 1st Only 1 field XX.00 EM - Invalid input combination:
+0.00
+15.00
+0.00
+0.00
+- 2nd 2 are XX.00 EM - Your computed BMI using formula 2 is
+0.00
+0.00
+20.00
+25.00
+- 2nd Only 1 field XX.00 EM - Invalid input combination:
+0.00
+0.00
+0.00
+25.00
+- 2nd Only 1 field XX.00 EM - Invalid input combination:
+0.00
+0.00
+20.00
+0.00
+- Test Open Item 8. No fix yet.
+0.50
+0.75
+0.00
+0.00

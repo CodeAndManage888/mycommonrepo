@@ -1,0 +1,30 @@
+- Minimum value
+0
+- Minimum value
+0.000
+- Negative value
+000
+- Value with decimal value
+136.01
+- Value with 4 decimal value
+852.1234
+- Value only
+999
+- Value only
+111
+- Value only
+555
+- Value only
+987
+- Value only
+579
+- Value only
+782
+- Value only
+627
+- Value only
+915
+- Value only
+694
+- Value only
+101

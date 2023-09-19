@@ -1,0 +1,35 @@
+Executing Test Case 1 - Minimum value:
+-----------------------------------
+Please provide the temperature in Celsuis.
+What is the temperature in Celsuis? ==> The temperature in Fahrenheit and Kelvin are 32.000000 and 273.150000 degrees.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 2 - Minimum value:
+-----------------------------------
+Please provide the temperature in Celsuis.
+What is the temperature in Celsuis? ==> The temperature in Fahrenheit and Kelvin are 32.000000 and 273.150000 degrees.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 3 - Negative value:
+-----------------------------------
+Please provide the temperature in Celsuis.
+What is the temperature in Celsuis? ==> The temperature in Fahrenheit and Kelvin are -40.000000 and 233.150000 degrees.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 4 - Temp with decimal value:
+-----------------------------------
+Please provide the temperature in Celsuis.
+What is the temperature in Celsuis? ==> The temperature in Fahrenheit and Kelvin are 97.880000 and 309.750000 degrees.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 5 - Temp with 4 decimal value:
+-----------------------------------
+Please provide the temperature in Celsuis.
+What is the temperature in Celsuis? ==> The temperature in Fahrenheit and Kelvin are 98.577680 and 310.137600 degrees.
+Thank you for using this app.
+-----------------------------------
+

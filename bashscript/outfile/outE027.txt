@@ -1,0 +1,75 @@
+Executing Test Case 1 - All 0 EM - Thank you for using this app.:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Please enter your weight in kg: Please enter your height in meter: Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 2 - All 0.00 EM - Thank you for using this app.:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Please enter your weight in kg: Please enter your height in meter: Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 3 - All 0.0000 EM - Thank you for using this app.:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Please enter your weight in kg: Please enter your height in meter: Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 4 - All non zeroes EM - Your computed BMI using formula 1 is:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Your computed BMI using formula 1 is 31.244444.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 5 - All XX.00 EM - Your computed BMI using formula 1 is:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Your computed BMI using formula 1 is 31.244444.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 6 - All XX.0000 EM - Your computed BMI using formula 1 is:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Your computed BMI using formula 1 is 31.244444.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 7 - 1st 2 are XX.00 EM - Your computed BMI using formula 1 is:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Your computed BMI using formula 1 is 31.244444.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 8 - 1st Only 1 field XX.00 EM - Invalid input combination::
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Invalid input combination: non zeroes for both fields or all zeroes only
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 9 - 1st Only 1 field XX.00 EM - Invalid input combination::
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Invalid input combination: non zeroes for both fields or all zeroes only
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 10 - 2nd 2 are XX.00 EM - Your computed BMI using formula 2 is:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Please enter your weight in kg: Please enter your height in meter: Your computed BMI using formula 2 is 0.032000.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 11 - 2nd Only 1 field XX.00 EM - Invalid input combination::
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Please enter your weight in kg: Please enter your height in meter: Invalid input combination: non zeroes for both fields or all zeroes only
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 12 - 2nd Only 1 field XX.00 EM - Invalid input combination::
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Please enter your weight in kg: Please enter your height in meter: Invalid input combination: non zeroes for both fields or all zeroes only
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 13 - Test Open Item 8. No fix yet.:
+Please use zeroes if the data is not available
+Please enter your weight in lbs: Please enter your height in inches: Your computed BMI using formula 1 is 624.888889.
+Thank you for using this app.
+-----------------------------------
+

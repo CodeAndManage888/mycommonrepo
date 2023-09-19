@@ -1,0 +1,36 @@
+- Minimum value
+0
+- Minimum value
+0.000
+- Negative value
+000
+- Value with decimal value
+13.01
+- Value with 4 decimal value
+85.1234
+- Value only
+99
+- Value only
+11
+- Value only
+55
+- Value only
+98
+- Value only
+57
+- Value only
+78
+- Value only
+62
+- Value only
+91
+- Value only
+69
+- Value only
+99999999999
+- Error value
+abc
+- Error value
+123.a
+- Error value
+1b3

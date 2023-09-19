@@ -1,0 +1,26 @@
+- Display: Invalid input data! Greater than zero integer input data only.
+0
+- Display: Invalid input data! Integer input data only.
+0.000
+- Display: Invalid input data! Greater than zero integer input data only.
+-1
+- Display: Invalid input data! Integer input data only.
+12.05
+- Display: Invalid input data! Integer input data only.
+85.1234
+- Display: Your number is an EVEN number.
+4
+- Display: Your number is an EVEN number.
+20
+- Display: Your number is an EVEN number.
+106
+- Display: Your number is an ODD number.
+5
+- Display: Your number is an ODD number.
+39
+- Display: Your number is an ODD number.
+157
+- Display: Invalid input data! Integer input data only.
+a1
+- Display: Invalid input data! Integer input data only.
+12a

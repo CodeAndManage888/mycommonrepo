@@ -1,0 +1,18 @@
+- Minimum value
+0
+- Minimum value
+0.000
+- Negative value
+0000
+- Value with decimal value
+1366.01
+- Value with 4 decimal value
+8524.1234
+- Value only
+9999
+- Value only
+1111
+- Value only
+5555
+- Value only
+9876

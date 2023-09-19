@@ -1,0 +1,78 @@
+Executing Test Case 1 - Display: Invalid input data! Greater than zero integer input data only.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Invalid input data! Greater than zero integer input data only.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 2 - Display: Invalid input data! Integer input data only.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Invalid input data! Integer input data only.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 3 - Display: Invalid input data! Greater than zero integer input data only.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Invalid input data! Greater than zero integer input data only.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 4 - Display: Invalid input data! Integer input data only.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Invalid input data! Integer input data only.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 5 - Display: Invalid input data! Integer input data only.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Invalid input data! Integer input data only.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 6 - Display: Your number is an EVEN number.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Your number is an EVEN number.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 7 - Display: Your number is an EVEN number.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Your number is an EVEN number.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 8 - Display: Your number is an EVEN number.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Your number is an EVEN number.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 9 - Display: Your number is an ODD number.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Your number is an ODD number.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 10 - Display: Your number is an ODD number.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Your number is an ODD number.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 11 - Display: Your number is an ODD number.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Your number is an ODD number.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 12 - Display: Invalid input data! Integer input data only.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Invalid input data! Integer input data only.
+Thank you for using this app.
+-----------------------------------
+
+Executing Test Case 13 - Display: Invalid input data! Integer input data only.:
+-----------------------------------
+What number is in your mind (Integer Only)?==> Invalid input data! Integer input data only.
+Thank you for using this app.
+-----------------------------------
+
