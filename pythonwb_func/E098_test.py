@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 082223 (Expected Solution with 41 Lines of Code)      *
 # Title: Hexadecimal and Decimal Digits                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Write two functions, hex2int and int2hex , that convert     *
 # between hexadecimal digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9,   *
 # A, B, C, D, E and F) and base 10 integers. The hex2int      *
@@ -25,13 +25,10 @@ def hex2int(user_in):
   num_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   int_output = 0
   for idx, char in enumerate(reversed(user_in)):
-    print(char, idx)
     if char not in num_list:
       int_output += hex_ltr_dict[char] * 16**idx
-      print(int_output)
     else:
       int_output += int(char) * 16**idx
-      print(int_output)
   return int_output
 def int2hex(user_in):
   int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
@@ -41,7 +38,6 @@ def int2hex(user_in):
   while int_num // 16 >= 0:
     remainder = int_num % 16
     if remainder > 9:
-      print(remainder)
       fin_nums.append(int_ltr_dict[remainder])
     else:
       fin_nums.append(str(remainder))
