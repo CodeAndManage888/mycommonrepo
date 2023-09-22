@@ -18,11 +18,34 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+in_list = []
 #--------------------------------------------------------------
-def conv_2base(user_in):
+def conv_dec_anyb(user_in1b, user_in1c):
+  #reads the target base
+  #checks if it is a valid base then output an error and stop
+  #reads the input number
+  #check the max char for base 10 is correct e.g. 9 only
+    #output ane error and stop if out of range for the base
+  #process the request if it pass all checks then return the output.
+   return
+def conv_anyb_dec(user_in2a, user_in2b):
+  #reads the starting base
+  #checks if it is a valid base then output an error and stop
+  #reads the input number
+  #check the max char for the base e.g. base 2 max is 1, base 3 max is 2
+    #output ane error and stop if out of range for the base
+  #process the request if it pass all checks then return the output.
+    #starting base will be used for computation instead of creating separate processess
+    #base 16 will have a special conversion
    return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   conv_2base()
-   print("Thank you for using this app.")
+  user_data = input("Start & target base(2 to 16 only) then number e.g. 2 10 10110: ")
+  in_list = user_data.split(" ")
+  input_one, input_two, input_three = in_list[0], in_list[1], in_list[2]
+  if input_two == "10":
+    print_out = conv_anyb_dec(int(input_one),input_three)
+  else:
+    print_out = conv_dec_anyb(int(input_two),input_three)
+  print("Thank you for using this app.")
 #**************************************************************
