@@ -1,61 +1,61 @@
 #!/bin/bash
 #**************************************************************
-# Date: 082223 (Expected Solution with 41 Lines of Code)      *
-# Title: Hexadecimal and Decimal Digits                       *
-# Status: Testing (In Progress / Testing / Working)           *
-# Write two functions, hex2int and int2hex , that convert     *
-# between hexadecimal digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9,   *
-# A, B, C, D, E and F) and base 10 integers. The hex2int      *
-# function is responsible for converting a string containing  *
-# a single hexadecimal digit to a base 10 integer, while      *
-# the int2hex function is responsible for converting an       *
-# integer between 0 and 15 to a single hexadecimal digit.     *
-# Each function will take the value to convert as its only    *
-# parameter and return the converted value as the function’s  *
-# only result. Ensure that the hex2int function works         *
-# correctly for both uppercase and lowercase letters. Your    *
-# functions should end the program with a meaningful error    *
-# message if an invalid parameter is provided.                *
+# Date: 082323 (Expected Solution with 61 Lines of Code)      *
+# Title: Arbitrary Base Conversions                           *
+# Status: In Progress (In Progress / Testing / Working)       *
+# Write a program that allows the user to convert a number    *
+# from one base to another. Your program should support bases *
+# between 2 and 16 for both the input number and the result   *
+# number. If the user chooses a base outside of this range    *
+# then an appropriate error message should be displayed and   *
+# the program should exit. Divide your program into several   *
+# functions, including a function that converts from an       *
+# arbitrary base to base 10, a function that converts from    *
+# base 10 to an arbitrary base, and a main program that reads *
+# the bases and input number from the user. You may ﬁnd your  *
+# solutions to Exercises 77, 78 and 98 helpful when           *
+# completing this exercise.                                   *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-def hex2int(user_in):
-  hex_ltr_dict = {"A":10, "B":11, "C":12, "D":13, "E":14, "F":15, 
-                  "a":10, "b":11, "c":12, "d":13, "e":14, "f":15}
-  num_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-  int_output = 0
-  for idx, char in enumerate(reversed(user_in)):
-    if char not in num_list:
-      int_output += hex_ltr_dict[char] * 16**idx
-    else:
-      int_output += int(char) * 16**idx
-  return int_output
-def int2hex(user_in):
-  int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
-  fin_nums = []
-  fin_out = ""
-  int_num = int(user_in)
-  while int_num // 16 >= 0:
-    remainder = int_num % 16
-    if remainder > 9:
-      fin_nums.append(int_ltr_dict[remainder])
-    else:
-      fin_nums.append(str(remainder))
-    int_num = int_num // 16
-    if int_num == 0:
-      fin_nums.reverse()
-      for item in fin_nums:
-        fin_out += item
-      break
-  return fin_out
+in_list = []
+digit_list = []
+#--------------------------------------------------------------
+def conv_dec_anyb(user_in1b, user_in1c):
+  if user_in1b <= 2 and user_in1b >= 16:
+    for num in user_in1c:
+      digit_list.append(num)
+    if digit_list.max() == user_in1b - 1:
+      #process the request if it pass all checks then return the output.
+      a = 1+1
+  else:
+    print("Input Error: Invalid target base.")
+  
+  #reads the target base
+  #checks if it is a valid base then output an error and stop
+  #reads the input number
+  #check the max char for base 10 is correct e.g. 9 only
+    #output ane error and stop if out of range for the base
+  
+  return
+def conv_anyb_dec(user_in2a, user_in2b):
+  #reads the starting base
+  #checks if it is a valid base then output an error and stop
+  #reads the input number
+  #check the max char for the base e.g. base 2 max is 1, base 3 max is 2
+    #output ane error and stop if out of range for the base
+  #process the request if it pass all checks then return the output.
+    #starting base will be used for computation instead of creating separate processess
+    #base 16 will have a special conversion
+   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  input_data = input("Enter hexadecimal or decimal number and put H or D at the start:")
-  if input_data[0:1] == "H" or input_data[0:1] == "h":
-    func_in = input_data[1:len(input_data)]
-    print("The equivalent integer for", func_in, "is", hex2int(func_in))
-  elif input_data[0:1] == "D" or input_data[0:1] == "d":
-    func_in = input_data[1:len(input_data)]
-    print("The equivalent hexadecimal for", func_in, "is", int2hex(func_in))
+  user_data = input("Start & target base(2 to 16 only) then number e.g. 2 10 10110: ")
+  in_list = user_data.split(" ")
+  input_one, input_two, input_three = in_list[0], in_list[1], in_list[2]
+  if input_two == "10":
+    print_out = conv_anyb_dec(int(input_one),input_three)
+  else:
+    print_out = conv_dec_anyb(int(input_two),input_three)
   print("Thank you for using this app.")
 #**************************************************************
