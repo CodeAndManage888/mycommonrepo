@@ -19,15 +19,25 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 in_list = []
+digit_list = []
 #--------------------------------------------------------------
 def conv_dec_anyb(user_in1b, user_in1c):
+  if user_in1b <= 2 and user_in1b >= 16:
+    for num in user_in1c:
+      digit_list.append(num)
+    if digit_list.max() == user_in1b - 1:
+      #process the request if it pass all checks then return the output.
+      a = 1+1
+  else:
+    print("Input Error: Invalid target base.")
+  
   #reads the target base
   #checks if it is a valid base then output an error and stop
   #reads the input number
   #check the max char for base 10 is correct e.g. 9 only
     #output ane error and stop if out of range for the base
-  #process the request if it pass all checks then return the output.
-   return
+  
+  return
 def conv_anyb_dec(user_in2a, user_in2b):
   #reads the starting base
   #checks if it is a valid base then output an error and stop
