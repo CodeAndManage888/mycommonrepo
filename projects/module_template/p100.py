@@ -20,7 +20,7 @@ def read_pdf(file_path, page_exer_nostr):
             page_ctr -= 1
             idx4 += 1
             text += page.extract_text()
-        print(text)                                                                     # Uncomment for debugging
+#        print(text)                                                                     # Uncomment for debugging
 
         # Prepare the extraction of the target exercise only.
         content = text.split("\n")
