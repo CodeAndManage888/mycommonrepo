@@ -20,25 +20,30 @@
 #**************************************************************
 in_list = []
 digit_list = []
+hex_val = ["A", "B", "C", "D", "E", "F"]
 #--------------------------------------------------------------
-def conv_dec_anyb(user_in1b, user_in1c):
-  if user_in1b <= 2 and user_in1b >= 16:
-    for num in user_in1c:
-      digit_list.append(num)
-    if digit_list.max() == user_in1b - 1:
-      #process the request if it pass all checks then return the output.
-      a = 1+1
+def conv_dec_anybase(user_in1b, user_in1c):
+  err_ind, fin_anybase_val = 0, ""
+  if user_in1b >= 2 and user_in1b <= 16:
+    for char in user_in1c:
+      if char in hex_val:
+        print("Input Error: Invalid Decimal Data")
+        err_ind = 1
+        break
+    if err_ind != 1:
+      proc_num = int(user_in1c)
+      while proc_num != 0:
+        BaseDgt = proc_num % int(user_in1b)
+        digit_list.append(str(BaseDgt))
+        proc_num //= int(user_in1b)
+      digit_list.reverse()
+      for digit in digit_list:
+        fin_anybase_val += digit
+      return fin_anybase_val
   else:
     print("Input Error: Invalid target base.")
   
-  #reads the target base
-  #checks if it is a valid base then output an error and stop
-  #reads the input number
-  #check the max char for base 10 is correct e.g. 9 only
-    #output ane error and stop if out of range for the base
-  
-  return
-def conv_anyb_dec(user_in2a, user_in2b):
+def conv_anybase_dec(user_in2a, user_in2b):
   #reads the starting base
   #checks if it is a valid base then output an error and stop
   #reads the input number
@@ -54,8 +59,9 @@ if __name__ == "__main__":
   in_list = user_data.split(" ")
   input_one, input_two, input_three = in_list[0], in_list[1], in_list[2]
   if input_two == "10":
-    print_out = conv_anyb_dec(int(input_one),input_three)
+    print_out = conv_anybase_dec(int(input_one),input_three)
   else:
-    print_out = conv_dec_anyb(int(input_two),input_three)
+    print_out = conv_dec_anybase(int(input_two),input_three)
+    print("The converted value of %s to base %s is %s" % (input_three, input_two, print_out))
   print("Thank you for using this app.")
 #**************************************************************
