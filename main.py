@@ -18,9 +18,7 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-in_list = []
-digit_list = []
-hex_val = ["A", "B", "C", "D", "E", "F"]
+in_list, digit_list, hex_val = [], [], ["A", "B", "C", "D", "E", "F"]
 #--------------------------------------------------------------
 def conv_dec_anybase(user_in1b, user_in1c):
   err_ind, fin_anybase_val = 0, ""
@@ -32,13 +30,30 @@ def conv_dec_anybase(user_in1b, user_in1c):
         break
     if err_ind != 1:
       proc_num = int(user_in1c)
-      while proc_num != 0:
-        BaseDgt = proc_num % int(user_in1b)
-        digit_list.append(str(BaseDgt))
-        proc_num //= int(user_in1b)
-      digit_list.reverse()
-      for digit in digit_list:
-        fin_anybase_val += digit
+      if user_in1b != 16:
+        while proc_num != 0:
+          BaseDgt = proc_num % int(user_in1b)
+          digit_list.append(str(BaseDgt))
+          proc_num //= int(user_in1b)
+        digit_list.reverse()
+        for digit in digit_list:
+          fin_anybase_val += digit
+      else:
+        int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
+        fin_nums = []
+        int_num = int(user_in1c)
+        while int_num // 16 >= 0:
+          remainder = int_num % 16
+          if remainder > 9:
+            fin_nums.append(int_ltr_dict[remainder])
+          else:
+            fin_nums.append(str(remainder))
+          int_num = int_num // 16
+          if int_num == 0:
+            fin_nums.reverse()
+            for item in fin_nums:
+              fin_anybase_val += item
+            break
       return fin_anybase_val
   else:
     print("Input Error: Invalid target base.")
@@ -52,7 +67,39 @@ def conv_anybase_dec(user_in2a, user_in2b):
   #process the request if it pass all checks then return the output.
     #starting base will be used for computation instead of creating separate processess
     #base 16 will have a special conversion
-   return
+
+#----------------Exer 77 Binary to Dec----------------------------------------------
+BinaryNum = input("Enter the binary number: ")
+for digit in BinaryNum:
+  if digit == "1" or digit == "0":
+     binary_digit_list.append(digit)
+  else:
+    print("Invalid input data! Data is not a binary number.")
+    datachk = True
+if datachk == False:
+  binary_digit_list.reverse()
+  while ctr < len(binary_digit_list):
+    totsum += int(binary_digit_list[ctr]) * (2 ** ctr)
+    ctr += 1
+#----------------Exer 98 Hex to Dec----------------------------------------------
+    int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
+  fin_nums = []
+  fin_out = ""
+  int_num = int(user_in)
+  while int_num // 16 >= 0:
+    remainder = int_num % 16
+    if remainder > 9:
+      fin_nums.append(int_ltr_dict[remainder])
+    else:
+      fin_nums.append(str(remainder))
+    int_num = int_num // 16
+    if int_num == 0:
+      fin_nums.reverse()
+      for item in fin_nums:
+        fin_out += item
+      break
+#------------------Sample Code Only--------------------------------------------
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_data = input("Start & target base(2 to 16 only) then number e.g. 2 10 10110: ")
