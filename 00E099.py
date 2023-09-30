@@ -59,18 +59,21 @@ def conv_dec_anybase(user_in1b, user_in1c):
     print("Input Error: Invalid target base.")
   
 def conv_anybase_dec(user_in2a, user_in2b):
-  #reads the starting base
-  #checks if it is a valid base then output an error and stop
-  #reads the input number
-  #check the max char for the base e.g. base 2 max is 1, base 3 max is 2
-    #output ane error and stop if out of range for the base
-  #process the request if it pass all checks then return the output.
-    #starting base will be used for computation instead of creating separate processess
-    #base 16 will have a special conversion
-
-#----------------Exer 77 Binary to Dec----------------------------------------------
-BinaryNum = input("Enter the binary number: ")
-for digit in BinaryNum:
+  other_base_digit_list = []
+  ctr = 0
+  if user_in2a != 16:
+    for digit in user_in2b:
+      if digit >= 0 or digit <= (user_in2a - 1):
+        other_base_digit_list.append(digit)
+      else:
+        print("Invalid input data! Data is not a binary number.")
+        datachk = True
+    while ctr < len(other_base_digit_list):
+      totsum += other_base_digit_list[ctr] * (user_in2a ** ctr)
+      ctr += 1
+  else:
+    for digit in user_in2b:
+      if (digit >= 0 or digit <= (user_in2b - 1)) and user_in2a != 16:
   if digit == "1" or digit == "0":
      binary_digit_list.append(digit)
   else:
