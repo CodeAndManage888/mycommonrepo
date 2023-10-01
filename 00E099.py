@@ -60,10 +60,14 @@ def conv_dec_anybase(user_in1b, user_in1c):
   
 def conv_anybase_dec(user_in2a, user_in2b):
   other_base_digit_list = []
+  int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
+  valid_digit = ["0", "1", "2", "3", "4", "5", "6", "7",
+                "8", "9", "A", "B", "C", "D", "E", "F", 
+                "a", "b", "c", "d", "e", "f"]
   ctr = 0
   if user_in2a != 16:
     for digit in user_in2b:
-      if digit >= 0 or digit <= (user_in2a - 1):
+      if digit in valid_digit:
         other_base_digit_list.append(digit)
       else:
         print("Invalid input data! Data is not a binary number.")
@@ -73,19 +77,17 @@ def conv_anybase_dec(user_in2a, user_in2b):
       ctr += 1
   else:
     for digit in user_in2b:
-      if (digit >= 0 or digit <= (user_in2b - 1)) and user_in2a != 16:
-  if digit == "1" or digit == "0":
-     binary_digit_list.append(digit)
-  else:
-    print("Invalid input data! Data is not a binary number.")
-    datachk = True
-if datachk == False:
-  binary_digit_list.reverse()
-  while ctr < len(binary_digit_list):
-    totsum += int(binary_digit_list[ctr]) * (2 ** ctr)
-    ctr += 1
+      if digit in valid_digit:
+        other_base_digit_list.append(digit)
+    else:
+      print("Invalid input data! Data is not a binary number.")
+      datachk = True
+    while ctr < len(other_base_digit_list):
+      
+  if datachk == False:
+    binary_digit_list.reverse()
 #----------------Exer 98 Hex to Dec----------------------------------------------
-    int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
+    
   fin_nums = []
   fin_out = ""
   int_num = int(user_in)
