@@ -58,35 +58,22 @@ def conv_dec_anybase(user_in1b, user_in1c):
   else:
     print("Input Error: Invalid target base.")
 def conv_anybase_dec(user_in2a, user_in2b):
-  other_base_digit_list = []
   int_ltr_dict = {"0":0, "1":1, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7,
                   "8":8, "9":9, "A":10, "B":11, "C":12, "D":13, "E":14, 
                   "F":15, "a":10, "b":11, "c":12, "d":13, "e":14, "f":15}
-  valid_digit1 = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   ctr, totsum = 0, 0
   datachk = False
-  if user_in2a != 16:
-    for digit in user_in2b:
-      if digit in valid_digit1:
-        other_base_digit_list.append(digit)
-      else:
-        print("Invalid input data! Data is not a binary number.")
-        datachk = True
-    while ctr < len(other_base_digit_list):
-      totsum += other_base_digit_list[ctr] * (user_in2a ** ctr)
-      ctr += 1
-  else:
-    for digit in user_in2b:
-      if digit in int_ltr_dict:
-        other_base_digit_list.append(int_ltr_dict[digit])
-      else:
-        print("Invalid input data! Data is not a binary number.")
-        datachk = True
-    if datachk is False:
-      other_base_digit_list.reverse()
-    while ctr < len(other_base_digit_list):
-      totsum += other_base_digit_list[ctr] * (16 ** ctr)
-      ctr += 1
+  for digit in user_in2b:
+    if digit in int_ltr_dict and int_ltr_dict[digit] <= user_in2a - 1:
+      digit_list.append(int_ltr_dict[digit])
+    else:
+      print("Invalid input data! Data is not a valid base %s number." % user_in2a)
+      datachk = True
+  if datachk is False:
+      digit_list.reverse()
+  while ctr < len(digit_list):
+    totsum += digit_list[ctr] * (user_in2a ** ctr)
+    ctr += 1
   if datachk is False:
     return totsum
 #--------------------------------------------------------------
