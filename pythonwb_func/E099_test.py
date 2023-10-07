@@ -18,10 +18,12 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-in_list, digit_list, hex_val = [], [], ["A", "B", "C", "D", "E", "F"]
+in_list, digit_list, hex_val = [], [], ["A", "B", "C", "D", "E", "F",
+                                        "a", "b", "c", "d", "e", "f",]
 #--------------------------------------------------------------
 def conv_dec_anybase(user_in1b, user_in1c):
   err_ind, fin_anybase_val = 0, ""
+  int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
   if user_in1b >= 2 and user_in1b <= 16:
     for char in user_in1c:
       if char in hex_val:
@@ -33,13 +35,12 @@ def conv_dec_anybase(user_in1b, user_in1c):
       if user_in1b != 16:
         while proc_num != 0:
           BaseDgt = proc_num % int(user_in1b)
-          digit_list.append(str(BaseDgt))
+          digit_list.append(int_ltr_dict.get(BaseDgt,str(BaseDgt)))
           proc_num //= int(user_in1b)
         digit_list.reverse()
         for digit in digit_list:
           fin_anybase_val += digit
       else:
-        int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
         fin_nums = []
         int_num = int(user_in1c)
         while int_num // 16 >= 0:
@@ -69,6 +70,7 @@ def conv_anybase_dec(user_in2a, user_in2b):
     else:
       print("Invalid input data! Data is not a valid base %s number." % user_in2a)
       datachk = True
+      break
   if datachk is False:
       digit_list.reverse()
   while ctr < len(digit_list):
