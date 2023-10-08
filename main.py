@@ -1,93 +1,48 @@
 #!/bin/bash
 #**************************************************************
-# Date: 082323 (Expected Solution with 61 Lines of Code)      *
-# Title: Arbitrary Base Conversions                           *
-# Status: In Progress (In Progress / Testing / Working)       *
-# Write a program that allows the user to convert a number    *
-# from one base to another. Your program should support bases *
-# between 2 and 16 for both the input number and the result   *
-# number. If the user chooses a base outside of this range    *
-# then an appropriate error message should be displayed and   *
-# the program should exit. Divide your program into several   *
-# functions, including a function that converts from an       *
-# arbitrary base to base 10, a function that converts from    *
-# base 10 to an arbitrary base, and a main program that reads *
-# the bases and input number from the user. You may ﬁnd your  *
-# solutions to Exercises 77, 78 and 98 helpful when           *
-# completing this exercise.                                   *
+# Date: 082423 (Expected Solution with 47 Lines of Code)      *
+# Title: Days in a Month                                      *
+# Status: Testing (In Progress / Testing / Working)           *
+# Write a function that determines how many days there are in *
+# a particular month. Your function will take two parameters: *
+# The month as an integer between 1 and 12, and the year as a *
+# four digit integer. Ensure that your function reports the   *
+# correct number of days in February for leap years. Include  *
+# a main program that reads a month and year from the user    *
+# and displays the number of days in that month. You may ﬁnd  *
+# your solution to Exercise 57 helpful when solving this      *
+# problem.                                                    *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-in_list, digit_list, hex_val = [], [], ["A", "B", "C", "D", "E", "F",
-                                        "a", "b", "c", "d", "e", "f",]
+input_list = []
+month_dict = {1:31, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30,
+              10:31, 11:30, 12:31}
+pRemYrs1, pRemYrs2, pRemYrs3 = 0, 0, 0
 #--------------------------------------------------------------
-def conv_dec_anybase(user_in1b, user_in1c):
-  err_ind, fin_anybase_val = 0, ""
-  int_ltr_dict = {10:"A", 11:"B", 12:"C", 13:"D", 14:"E", 15:"F"}
-  if user_in1b >= 2 and user_in1b <= 16:
-    for char in user_in1c:
-      if char in hex_val:
-        print("Input Error: Invalid Decimal Data")
-        err_ind = 1
-        break
-    if err_ind != 1:
-      proc_num = int(user_in1c)
-      if user_in1b != 16:
-        while proc_num != 0:
-          BaseDgt = proc_num % int(user_in1b)
-          digit_list.append(int_ltr_dict.get(BaseDgt,str(BaseDgt)))
-          proc_num //= int(user_in1b)
-        digit_list.reverse()
-        for digit in digit_list:
-          fin_anybase_val += digit
-      else:
-        fin_nums = []
-        int_num = int(user_in1c)
-        while int_num // 16 >= 0:
-          remainder = int_num % 16
-          if remainder > 9:
-            fin_nums.append(int_ltr_dict[remainder])
-          else:
-            fin_nums.append(str(remainder))
-          int_num = int_num // 16
-          if int_num == 0:
-            fin_nums.reverse()
-            for item in fin_nums:
-              fin_anybase_val += item
-            break
-      return fin_anybase_val
+def days_month(usr_in1, usr_in2):
+  if usr_in1 != 2:
+    final_data = month_dict.get(usr_in1)
   else:
-    print("Input Error: Invalid target base.")
-def conv_anybase_dec(user_in2a, user_in2b):
-  int_ltr_dict = {"0":0, "1":1, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7,
-                  "8":8, "9":9, "A":10, "B":11, "C":12, "D":13, "E":14, 
-                  "F":15, "a":10, "b":11, "c":12, "d":13, "e":14, "f":15}
-  ctr, totsum = 0, 0
-  datachk = False
-  for digit in user_in2b:
-    if digit in int_ltr_dict and int_ltr_dict[digit] <= user_in2a - 1:
-      digit_list.append(int_ltr_dict[digit])
+    pRemYrs1 = usr_in2 % 400
+    if pRemYrs1 != 0:
+      pRemYrs2 = pRemYrs1 % 100
+      if pRemYrs2 != 0:
+        pRemYrs3 = pRemYrs2 % 4
+        if pRemYrs3 != 0:
+          final_data = 28
+        else:
+          final_data = 29
+      else:
+        final_data = 29
     else:
-      print("Invalid input data! Data is not a valid base %s number." % user_in2a)
-      datachk = True
-      break
-  if datachk is False:
-      digit_list.reverse()
-  while ctr < len(digit_list):
-    totsum += digit_list[ctr] * (user_in2a ** ctr)
-    ctr += 1
-  if datachk is False:
-    return totsum
+      final_data = 29
+  return final_data
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_data = input("Start & target base(2 to 16 only) then number e.g. 2 10 10110: ")
-  in_list = user_data.split(" ")
-  input_one, input_two, input_three = in_list[0], in_list[1], in_list[2]
-  if input_two == "10":
-    print_out = conv_anybase_dec(int(input_one),input_three)
-    print("The converted value of %s to decimal is %s" % (input_three, print_out))
-  else:
-    print_out = conv_dec_anybase(int(input_two),input_three)
-    print("The converted value of %s to base %s is %s" % (input_three, input_two, print_out))
+  user_inputs = input("Enter the month and the year e.g. 2 2000: ")
+  input_list = user_inputs.split(" ")
+  days_in_months = days_month(int(input_list[0]), int(input_list[1]))
+  print("The number of days to the given month and year is %s" % days_in_months)
   print("Thank you for using this app.")
 #**************************************************************

@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 082323 (Expected Solution with 61 Lines of Code)      *
 # Title: Arbitrary Base Conversions                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Write a program that allows the user to convert a number    *
 # from one base to another. Your program should support bases *
 # between 2 and 16 for both the input number and the result   *
