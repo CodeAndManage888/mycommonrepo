@@ -18,20 +18,31 @@
 # ﬁrst parameter, and the unit of measure (cup, tablespoon or *
 # teaspoon) as its second parameter. Return a string          *
 # representing the measure using the largest possible units   *
-# as the function’s only result. This copy belongs to         *
-# 'acha04'Exercise 102: Reduce Measures 47 For example, if    *
-# the function is provided with parameters representing 59    *
-# teaspoons then it should return the string “1 cup, 3        *
-# tablespoons, 2 teaspoons”. Hint: One cup is equivalent to   *
-# 16 tablespoons. One tablespoon is equivalent to 3           *
-# teaspoons.                                                  *
+# as the function’s only result. For example, if the function *
+# is provided with parameters representing 59 teaspoons then  *
+# it should return the string “1 cup, 3 tablespoons, 2        *
+# teaspoons”. Hint: One cup is equivalent to 16 tablespoons.  *
+# One tablespoon is equivalent to 3 teaspoons.                *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+input_list = []
 #--------------------------------------------------------------
-def func_name(UserIn):
-   return
+def calc_measurement(user_in1, user_in2):
+  val_measure = ["Cups", "Cup", "cups", "cup", "Tablespoon", "Tablespoons",
+                "tablespoon", "tablespoons", "Teaspoon", "Teaspoons",
+                "Teaspoon", "Teaspoons"]
+  cup_val, tbl_val, tea_val = 0, 0, 0
+  if user_in2 in val_measure:
+    cup_val = user_in1 // (16 * 3)
+  else:
+    print("Invalid Input Data")
+  message = print("%s Cup(s), %s Tablespoon(s), %s Teaspoon(s)" % (cup_val, tbl_val, tea_val))
+  return message
 #--------------------------------------------------------------
 if __name__ == "__main__":
-   print("Thank you for using this app.")
+  user_input = input("Enter the unit and its measure e.g. 2 cups: ")
+  input_list = user_input.split(" ")
+  print(calc_measurement(int(input_list[0]), input_list[1]))
+  print("Thank you for using this app.")
 #**************************************************************
