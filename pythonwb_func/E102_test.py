@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 090123 (Expected Solution with 83 Lines of Code)      *
 # Title: Reduce Measures                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)       *
 # Many recipe books still use cups, tablespoons and teaspoons *
 # to describe the volumes of ingredients used when cooking or *
 # baking. While such recipes are easy enough to follow if you *
@@ -29,15 +29,21 @@
 input_list = []
 #--------------------------------------------------------------
 def calc_measurement(user_in1, user_in2):
-  val_measure = ["Cups", "Cup", "cups", "cup", "Tablespoon", "Tablespoons",
-                "tablespoon", "tablespoons", "Teaspoon", "Teaspoons",
-                "Teaspoon", "Teaspoons"]
+  val_measure3 = ["Cups", "Cup", "cups", "cup"]
+  val_measure2 = ["Tablespoon", "Tablespoons", "tablespoon", "tablespoons"]
+  val_measure1 = ["Teaspoon", "Teaspoons", "teaspoon", "teaspoons"]
   cup_val, tbl_val, tea_val = 0, 0, 0
-  if user_in2 in val_measure:
-    cup_val = user_in1 // (16 * 3)
+  if user_in2 in val_measure1:
+    cup_val, tbl_val = user_in1 // (16 * 3), user_in1 % (16 * 3)
+    tbl_val, tea_val = tbl_val // 3, tbl_val % 3
+  elif user_in2 in val_measure2:
+    cup_val, tbl_val = user_in1 // 16, user_in1 % 16
+    tbl_val, tea_val = tbl_val // 3, tbl_val % 3
+  elif user_in2 in val_measure3:
+    cup_val = user_in1
   else:
     print("Invalid Input Data")
-  message = print("%s Cup(s), %s Tablespoon(s), %s Teaspoon(s)" % (cup_val, tbl_val, tea_val))
+  message = "%s Cup(s), %s Tablespoon(s), %s Teaspoon(s)" % (cup_val, tbl_val, tea_val)
   return message
 #--------------------------------------------------------------
 if __name__ == "__main__":
