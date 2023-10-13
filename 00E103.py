@@ -15,10 +15,10 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-magic_dates = []
+magic_dates_list = []
 ctr = 0
 #--------------------------------------------------------------
-def magic_dates(user_in):
+def magic_date(user_in):
   if usr_in1 != 2:
     final_data = month_dict.get(usr_in1)
   else:
@@ -39,9 +39,9 @@ def magic_dates(user_in):
 #--------------------------------------------------------------
 if __name__ == "__main__":
   print("This program will display all magic dates in the 20th century.")
-  user_in = input("Enter a month (e.g. January): ")
-  while ctr <= len(magic_dates):
-    print(magic_dates.get(ctr))
+  user_in = input("Enter the month and day (e.g. January 8): ")
+  while ctr <= len(magic_dates_list):
+    print(magic_dates_list[ctr])
     ctr += 1
   print("Thank you for using this app.")
 #**************************************************************
