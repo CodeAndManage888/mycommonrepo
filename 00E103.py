@@ -17,8 +17,11 @@
 #**************************************************************
 magic_dates_list = []
 ctr = 0
+month_dict = {1:31, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30,
+              10:31, 11:30, 12:31}
 #--------------------------------------------------------------
-def magic_date(user_in):
+def magic_date(usr_in1, usr_in2):
+  
   if usr_in1 != 2:
     final_data = month_dict.get(usr_in1)
   else:
@@ -39,7 +42,9 @@ def magic_date(user_in):
 #--------------------------------------------------------------
 if __name__ == "__main__":
   print("This program will display all magic dates in the 20th century.")
-  user_in = input("Enter the month and day (e.g. January 8): ")
+  user_in = input("Enter the month and day (e.g. 1 8): ")
+  user_in_list = user_in.split()
+  magic_date(int(user_in_list[0]), int(user_in_list[1]))
   while ctr <= len(magic_dates_list):
     print(magic_dates_list[ctr])
     ctr += 1
