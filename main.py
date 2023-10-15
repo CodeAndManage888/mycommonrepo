@@ -1,54 +1,58 @@
 #!/bin/bash
 #**************************************************************
-# Date: 090123 (Expected Solution with 83 Lines of Code)      *
-# Title: Reduce Measures                                      *
+# Date: 092123 (Expected Solution with 26 Lines of Code)      *
+# Title: Magic Dates                                          *
 # Status: In Progress (In Progress / Testing / Working)       *
-# Many recipe books still use cups, tablespoons and teaspoons *
-# to describe the volumes of ingredients used when cooking or *
-# baking. While such recipes are easy enough to follow if you *
-# have the appropriate measuring cups and spoons, they can be *
-# difﬁcult to double, triple or quadruple when cooking        *
-# Christmas dinner for the entire extended family. For        *
-# example, a recipe that calls for 4 tablespoons of an        *
-# ingredient requires 16 tablespoons when quadrupled.         *
-# However, 16 tablespoons would be better expressed (and      *
-# easier to measure) as 1 cup. Write a function that          *
-# expresses an imperial volume using the largest units pos-   *
-# sible. The function will take the number of units as its    *
-# ﬁrst parameter, and the unit of measure (cup, tablespoon or *
-# teaspoon) as its second parameter. Return a string          *
-# representing the measure using the largest possible units   *
-# as the function’s only result. For example, if the function *
-# is provided with parameters representing 59 teaspoons then  *
-# it should return the string “1 cup, 3 tablespoons, 2        *
-# teaspoons”. Hint: One cup is equivalent to 16 tablespoons.  *
-# One tablespoon is equivalent to 3 teaspoons.                *
+# A magic date is a date where the day multiplied by the      *
+# month is equal to the two digit year. For example, June 10, *
+# 1960 is a magic date because June is the sixth month, and 6 *
+# times 10 is 60, which is equal to the two digit year. Write *
+# a function that determines whether or not a date is a magic *
+# date. Use your function to create a main program that ﬁnds  *
+# and displays all of the magic dates in the 20th century.    *
+# You will probably ﬁnd your solution to Exercise 100 helpful *
+# when completing this exercise.                              *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-input_list = []
+formated_date = ""
+month_dict = {1:31, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30,
+              10:31, 11:30, 12:31}
+conv_month = {1:"January", 3:"March", 4:"April", 5:"May", 6:"June", 7:"July", 8:"August", 9:"September",
+              10:"October", 11:"November", 12:"December"}
 #--------------------------------------------------------------
-def calc_measurement(user_in1, user_in2):
-  val_measure3 = ["Cups", "Cup", "cups", "cup"]
-  val_measure2 = ["Tablespoon", "Tablespoons", "tablespoon", "tablespoons"]
-  val_measure1 = ["Teaspoon", "Teaspoons", "teaspoon", "teaspoons"]
-  cup_val, tbl_val, tea_val = 0, 0, 0
-  if user_in2 in val_measure1:
-    cup_val, tbl_val = user_in1 // (16 * 3), user_in1 % (16 * 3)
-    tbl_val, tea_val = tbl_val // 3, tbl_val % 3
-  elif user_in2 in val_measure2:
-    cup_val, tbl_val = user_in1 // 16, user_in1 % 16
-    tbl_val, tea_val = tbl_val // 3, tbl_val % 3
-  elif user_in2 in val_measure3:
-    cup_val = user_in1
-  else:
-    print("Invalid Input Data")
-  message = "%s Cup(s), %s Tablespoon(s), %s Teaspoon(s)" % (cup_val, tbl_val, tea_val)
-  return message
+def magic_date(usr_in1, usr_in2, usr_in3):
+  if usr_in1 != 2:
+    if usr_in2 <= month_dict.get(usr_in1):
+      if usr_in1 * usr_in2 == usr_in3:
+        formated_date = conv_month.get(usr_in1) + " " + str(usr_in2) + ", " + str(1900 + usr_in3)
+    else:
+      print("Invalid Data: Invalid Input Day")
+      return
+  else: 
+    pRemYrs1 = (usr_in3 + 1900) % 400
+    if pRemYrs1 != 0:
+      pRemYrs2 = pRemYrs1 % 100
+      if pRemYrs2 != 0:
+        pRemYrs3 = pRemYrs2 % 4
+        feb_days = 28 if pRemYrs3 != 0 else 29
+      else:
+        feb_days = 29
+    else:
+      feb_days = 29
+    if usr_in2 <= feb_days:
+      if usr_in1 * usr_in2 == usr_in3:
+        formated_date = "February" + " " + str(usr_in2) + ", " + str(1900 + usr_in3)
+    else:
+      print("Invalid Data: Invalid Input Day")
+      return
+  return formated_date
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_input = input("Enter the unit and its measure e.g. 2 cups: ")
-  input_list = user_input.split(" ")
-  print(calc_measurement(int(input_list[0]), input_list[1]))
+  print("This program will determine if the input date is a magic date.")
+  user_in = input("Enter the month and day (e.g. 1 8 99): ")
+  user_in_list = user_in.split()
+  output_data = magic_date(int(user_in_list[0]), int(user_in_list[1]), int(user_in_list[2]))
+  print("The date %s is a magic date." % output_data)
   print("Thank you for using this app.")
 #**************************************************************

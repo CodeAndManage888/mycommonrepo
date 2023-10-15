@@ -29,10 +29,7 @@ def days_month(usr_in1, usr_in2):
       pRemYrs2 = pRemYrs1 % 100
       if pRemYrs2 != 0:
         pRemYrs3 = pRemYrs2 % 4
-        if pRemYrs3 != 0:
-          final_data = 28
-        else:
-          final_data = 29
+        final_data = 28 if pRemYrs3 != 0 else 29
       else:
         final_data = 29
     else:
