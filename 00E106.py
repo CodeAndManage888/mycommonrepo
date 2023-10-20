@@ -8,8 +8,8 @@
 # values before performing other calculations. Write a        *
 # function that takes a list of values and an non-negative    *
 # integer, n, as its parameters. The function should create a *
-# new copy of the list with the nlargest elements and the     *
-# nsmallest elements removed. Then it should return the new   *
+# new copy of the list with the n largest elements and the    *
+# n smallest elements removed. Then it should return the new  *
 # copy of the list as the function’s only result. The order   *
 # of the elements in the returned list does not have to match *
 # the order of the elements in the original list. Write a     *
@@ -23,9 +23,24 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def remove_outlier(user_in):
-  return
+def remove_outlier(num_list):
+  if len(num_list) <= 4:
+    print("Input Error: Incomplete dataset")
+  else:
+    num_list.sort()
+    num_list.pop(0)
+    num_list.pop(1)
+    num_list.pop(-1)
+    num_list.pop(-2)
+  return num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_in = []
+  user_in = input("Enter a list of numbers separated by commas: ")
+  user_in = user_in.split(",")
+  user_in = [int(i) for i in user_in]
+  out_list = remove_outlier(user_in)
+  print("Original Number List: %s" % user_in)
+  print("Outlier Removed List: %s" % out_list)
   print("Thank you for using this app.")
 #**************************************************************
