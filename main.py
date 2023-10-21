@@ -1,45 +1,15 @@
-#!/bin/bash
-#**************************************************************
-# Date: 101723 (Expected Solution with 43 Lines of Code)      *
-# Title: Remove Outliers                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
-# When analysing data collected as part of a science          *
-# experiment it may be desirable to remove the most extreme   *
-# values before performing other calculations. Write a        *
-# function that takes a list of values and an non-negative    *
-# integer, n, as its parameters. The function should create a *
-# new copy of the list with the n largest elements and the    *
-# n smallest elements removed. Then it should return the new  *
-# copy of the list as the function’s only result. The order   *
-# of the elements in the returned list does not have to match *
-# the order of the elements in the original list. Write a     *
-# main program that demonstrates your function. Your function *
-# should read a list of numbers from the user and remove the  *
-# two largest and two smallest values from it. Display the    *
-# list with the outliers removed, followed by the original    *
-# list. Your program should generate an appropriate error     *
-# message if the user enters less than 4 values.              *
-#                                                             *
-# Computed Result Validated:                                  *
-#**************************************************************
-#--------------------------------------------------------------
-def remove_outlier(num_list):
-  if len(num_list) <= 4:
-    print("Input Error: Incomplete dataset")
-  else:
-    num_list.sort()
-    num_list.pop(0)
-    num_list.pop(1)
-    num_list.pop(-1)
-    num_list.pop(-2)
-  return num_list
-#--------------------------------------------------------------
+#import site
+#print(site.getsitepackages())
+#x = 1
+#print(x == 1)
+#user_input = " "
+#proc_data_one = user_input.strip()
+#print(ord("A"), ord("Z"), ord("a"), ord("z"), ord("0"), ord("9"))
+#digit_list = [2, 4, 5, "A", "F", "B"]
+#print(digit_list.sort())
+def fib1(n: int) -> int:
+  if n < 2:
+    return n
+  return fib1(n - 1) + fib1(n - 2)
 if __name__ == "__main__":
-  user_in = []
-  user_in = input("Enter a list of numbers separated by commas: ")
-  user_in = user_in.split(",")
-  out_list = remove_outlier(user_in)
-  print("Original Number List: %s" % user_in)
-  print("Outlier Removed List: %s" % out_list)
-  print("Thank you for using this app.")
-#**************************************************************
+  print(fib1(5))
