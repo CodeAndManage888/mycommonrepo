@@ -27,20 +27,19 @@ def remove_outlier(num_list):
   if len(num_list) <= 4:
     print("Input Error: Incomplete dataset")
   else:
-    num_list.sort()
     num_list.pop(0)
-    num_list.pop(1)
+    num_list.pop(0)
     num_list.pop(-1)
-    num_list.pop(-2)
+    num_list.pop(-1)
   return num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in = []
   user_in = input("Enter a list of numbers separated by commas: ")
-  user_in = user_in.split(",")
+  user_in = user_in.split(" ")
   user_in = [int(i) for i in user_in]
-  out_list = remove_outlier(user_in)
   print("Original Number List: %s" % user_in)
+  out_list = remove_outlier(user_in)
   print("Outlier Removed List: %s" % out_list)
   print("Thank you for using this app.")
 #**************************************************************
