@@ -27,6 +27,7 @@ def remove_outlier(num_list):
   if len(num_list) <= 4:
     print("Input Error: Incomplete dataset")
   else:
+    num_list.sort()
     num_list.pop(0)
     num_list.pop(0)
     num_list.pop(-1)
