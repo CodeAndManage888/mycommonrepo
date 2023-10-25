@@ -1,46 +1,40 @@
 #!/bin/bash
 #**************************************************************
-# Date: 101723 (Expected Solution with 43 Lines of Code)      *
-# Title: Remove Outliers                                      *
+# Date: 101923 (Expected Solution with 21 Lines of Code)      *
+# Title: Avoiding Duplicates                                  *
 # Status: In Progress (In Progress / Testing / Working)       *
-# When analysing data collected as part of a science          *
-# experiment it may be desirable to remove the most extreme   *
-# values before performing other calculations. Write a        *
-# function that takes a list of values and an non-negative    *
-# integer, n, as its parameters. The function should create a *
-# new copy of the list with the n largest elements and the    *
-# n smallest elements removed. Then it should return the new  *
-# copy of the list as the function’s only result. The order   *
-# of the elements in the returned list does not have to match *
-# the order of the elements in the original list. Write a     *
-# main program that demonstrates your function. Your function *
-# should read a list of numbers from the user and remove the  *
-# two largest and two smallest values from it. Display the    *
-# list with the outliers removed, followed by the original    *
-# list. Your program should generate an appropriate error     *
-# message if the user enters less than 4 values.              *
+# In this exercise, you will create a program that reads      *
+# words from the user until the user enters a blank line.     *
+# After the user enters a blank line your program should dis- *
+# play each word entered by the user exactly once. The words  *
+# should be displayed in the same order that they were        *
+# entered. For example, if the user enters: first second      *
+# first third second then your program should display: first  *
+# second third                                                *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+word_list = []
+user_word = " "
 #--------------------------------------------------------------
-def remove_outlier(num_list):
-  if len(num_list) <= 4:
-    print("Input Error: Incomplete dataset")
-  else:
-    num_list.sort()
-    num_list.pop(0)
-    num_list.pop(0)
-    num_list.pop(-1)
-    num_list.pop(-1)
-  return num_list
+def rem_dup(user_list):
+  unique_list = []
+  ctr = 0
+  while user_list:
+    word = user_list.pop(0)
+    if word not in unique_list:
+      unique_list.append(word)
+    unique_list.reverse()
+  while ctr <= len(unique_list) - 1:
+    print(unique_list[ctr])
+    ctr -= 1
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in = []
-  user_in = input("Enter a list of numbers separated by commas: ")
-  user_in = user_in.split(" ")
-  user_in = [int(i) for i in user_in]
-  print("Original Number List: %s" % user_in)
-  out_list = remove_outlier(user_in)
-  print("Outlier Removed List: %s" % out_list)
+  while user_word != "":
+    user_word = input("Enter a word: ")
+    if user_word != "":
+      word_list.append(user_word)
+  rem_dup(word_list)
   print("Thank you for using this app.")
 #**************************************************************

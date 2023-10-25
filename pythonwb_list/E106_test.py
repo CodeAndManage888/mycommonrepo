@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 101723 (Expected Solution with 43 Lines of Code)      *
 # Title: Remove Outliers                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # When analysing data collected as part of a science          *
 # experiment it may be desirable to remove the most extreme   *
 # values before performing other calculations. Write a        *
