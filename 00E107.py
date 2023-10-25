@@ -14,10 +14,27 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+word_list = []
+user_word = " "
 #--------------------------------------------------------------
-def func_name(user_in):
+def rem_dup(user_list):
+  unique_list = []
+  ctr = 0
+  while user_list:
+    word = user_list.pop(0)
+    if word not in unique_list:
+      unique_list.append(word)
+    unique_list.reverse()
+  while ctr <= len(unique_list) - 1:
+    print(unique_list[ctr])
+    ctr -= 1
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  while user_word != "":
+    user_word = input("Enter a word: ")
+    if user_word != "":
+      word_list.append(user_word)
+  rem_dup(word_list)
   print("Thank you for using this app.")
 #**************************************************************
