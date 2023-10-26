@@ -24,7 +24,6 @@ def rem_dup(user_list):
     word = user_list.pop(0)
     if word not in unique_list:
       unique_list.append(word)
-#  unique_list.reverse()
   while ctr <= len(unique_list) - 1:
     print(unique_list[ctr])
     ctr += 1

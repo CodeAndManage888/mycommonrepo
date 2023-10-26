@@ -1,40 +1,27 @@
 #!/bin/bash
 #**************************************************************
-# Date: 101923 (Expected Solution with 21 Lines of Code)      *
-# Title: Avoiding Duplicates                                  *
+# Date: 101923 (Expected Solution with 38 Lines of Code)      *
+# Title: Negatives, Zeros and Positives                       *
 # Status: In Progress (In Progress / Testing / Working)       *
-# In this exercise, you will create a program that reads      *
-# words from the user until the user enters a blank line.     *
-# After the user enters a blank line your program should dis- *
-# play each word entered by the user exactly once. The words  *
-# should be displayed in the same order that they were        *
-# entered. For example, if the user enters: first second      *
-# first third second then your program should display: first  *
-# second third                                                *
+# Create a program that reads integers from the user until a  *
+# blank line is entered. Once all of the integers have been   *
+# read your program should display all of the negative        *
+# numbers, followed by all of the zeros, followed by all of   *
+# the positive numbers. Within each group the numbers should  *
+# be displayed in the same order that they were entered       *
+# by the user. For example, if the user enters the values 3,  *
+# -4, 1, 0,-1, 0, and-2 then your program should output the   *
+# values -4,-1,-2, 0, 0, 3, and 1. Your program should        *
+# display each value on its own line.                         *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-word_list = []
-user_word = " "
+user_num = 0
 #--------------------------------------------------------------
-def rem_dup(user_list):
-  unique_list = []
-  ctr = 0
-  while user_list:
-    word = user_list.pop(0)
-    if word not in unique_list:
-      unique_list.append(word)
-    unique_list.reverse()
-  while ctr <= len(unique_list) - 1:
-    print(unique_list[ctr])
-    ctr -= 1
+def arrange_integer(user_list):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  while user_word != "":
-    user_word = input("Enter a word: ")
-    if user_word != "":
-      word_list.append(user_word)
-  rem_dup(word_list)
+  user_in = int(input("Enter a number (Negative, Zeroes and Positives): "))
   print("Thank you for using this app.")
 #**************************************************************
