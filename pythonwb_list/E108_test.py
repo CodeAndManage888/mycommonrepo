@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 101923 (Expected Solution with 38 Lines of Code)      *
 # Title: Negatives, Zeros and Positives                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Create a program that reads integers from the user until a  *
 # blank line is entered. Once all of the integers have been   *
 # read your program should display all of the negative        *
@@ -16,11 +16,24 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+# Variables
+user_in_list = []
+user_num = 0
 #--------------------------------------------------------------
 def arrange_integer(user_list):
+  # Arrange the integers in the list
+  ctr = 0
+  user_list.sort()
+  while ctr <= len(user_in_list) - 1:
+    print(user_list[ctr])
+    ctr += 1
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_num = input(int("Enter a number (Negative, Zeroes and Positives): "))
+  while user_num != "":
+    user_num = input("Enter a number (Negative, Zeroes and Positives): ")
+    if user_num != "":
+      user_in_list.append(int(user_num))
+  arrange_integer(user_in_list)
   print("Thank you for using this app.")
 #**************************************************************
