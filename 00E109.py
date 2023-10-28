@@ -4,7 +4,7 @@
 # Title: List of Proper Divisors                              *
 # Status: In Progress (In Progress / Testing / Working)       *
 # A proper divisor of a positive integer, n, is a positive    *
-# integer less than nwhich divides evenly into n. Write a     *
+# integer less than n which divides evenly into n. Write a    *
 # function that computes all of the proper divisors of a      *
 # positive integer. The integer will be passed to the         *
 # function as its only parameter. The function will return a  *
