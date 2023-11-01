@@ -1,34 +1,39 @@
 #!/bin/bash
 #**************************************************************
-# Date: 102123 (Expected Solution with 36 Lines of Code)      *
-# Title: List of Proper Divisors                              *
+# Date: 102223 (Expected Solution with 35 Lines of Code)      *
+# Title: Perfect Numbers                                      *
 # Status: In Progress (In Progress / Testing / Working)       *
-# A proper divisor of a positive integer, n, is a positive    *
-# integer less than n which divides evenly into n. Write a    *
-# function that computes all of the proper divisors of a      *
-# positive integer. The integer will be passed to the         *
-# function as its only parameter. The function will return a  *
-# list containing all of the proper divisors as its only      *
-# result. Complete this exercise by writing a main program    *
-# that demonstrates the function by reading a value from the  *
-# user and displaying the list of its proper divisors. Ensure *
-# that your main program only runs when your solution has not *
-# been imported into another ﬁle.                             *
+# An integer, n, is said to be perfect when the sum of all of *
+# the proper divisors of n is equal to n. For example, 28 is a*
+# perfect number because its proper divisors are 1, 2, 4 ,7   *
+# and 14 ,and 1+2+4+7+14 = 28 . Write a function that         *
+# determines whether or not a positive integer is perfect.    *
+# Your function will take one parameter. If that parameter is *
+# a perfect number then your function will return true.       *
+# Otherwise it will return false. In addition, write a main   *
+# program that uses your function to identify and display all *
+# of the perfect numbers between 1 and 10,000. Import your    *
+# solution to Exercise 109 when completing this task.         *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+import E109
 #--------------------------------------------------------------
-def prop_divisor(user_in):
-  # Function Body
-  out_list = []
-  for i in range(1, user_in):
-    if user_in % i == 0:
-      out_list.append(i)
-  return out_list
+def perfect_mun(user_int):
+  prop_list = []
+  prop_list = E109.prop_divisor(user_int)
+  sum_prop = 0
+  for i in range(len(prop_list)):
+    sum_prop += prop_list[i]
+  if sum_prop == user_int:
+    print(user_int, "is a perfect number")
+    return True
+  else:
+#    print(user_int, "is not a perfect number")
+    return False
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_int = input("Enter the number: ")
-  final_list = prop_divisor(int(user_int))
-  print("List of proper divisor for %s are %s." % (int(user_int), ', '.join(map(str, final_list))))
+  for i in range(1,100000):
+    perfect_mun(i)
   print("Thank you for using this app.")
 #**************************************************************
