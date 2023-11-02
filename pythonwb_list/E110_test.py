@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 102223 (Expected Solution with 35 Lines of Code)      *
 # Title: Perfect Numbers                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # An integer, n, is said to be perfect when the sum of all of *
 # the proper divisors of n is equal to n. For example, 28 is a*
 # perfect number because its proper divisors are 1, 2, 4 ,7   *
