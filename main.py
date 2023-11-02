@@ -1,39 +1,43 @@
 #!/bin/bash
 #**************************************************************
-# Date: 102223 (Expected Solution with 35 Lines of Code)      *
-# Title: Perfect Numbers                                      *
+# Date: 102923 (Expected Solution with 38 Lines of Code)      *
+# Title: Only the Words                                       *
 # Status: In Progress (In Progress / Testing / Working)       *
-# An integer, n, is said to be perfect when the sum of all of *
-# the proper divisors of n is equal to n. For example, 28 is a*
-# perfect number because its proper divisors are 1, 2, 4 ,7   *
-# and 14 ,and 1+2+4+7+14 = 28 . Write a function that         *
-# determines whether or not a positive integer is perfect.    *
-# Your function will take one parameter. If that parameter is *
-# a perfect number then your function will return true.       *
-# Otherwise it will return false. In addition, write a main   *
-# program that uses your function to identify and display all *
-# of the perfect numbers between 1 and 10,000. Import your    *
-# solution to Exercise 109 when completing this task.         *
+# In this exercise you will create a program that identiﬁes   *
+# all of the words in a string entered by the user. Begin by  *
+# writing a function that takes a string of text as its only  *
+# parameter. Your function should return a list of the words  *
+# in the string with the punctuation marks at the edges of    *
+# the words removed. The punctuation marks that you must      *
+# remove include commas, periods, question marks, hyphens,    *
+# apostrophes, exclamation points, colons, and semicolons.    *
+# Do not remove punctuation marks that appear in the middle   *
+# of a words, such as the apostrophes used to form a          *
+# contraction. For example, if your function is provided      *
+# with the string "Examples of contractions include: don’t,   *
+# isn’t, and wouldn’t." then your function should return the  *
+# list ["Examples", "of", "contractions", "include",          *
+# "don’t","isn’t","and","wouldn’t"] . Write a main program    *
+# that demonstrates your function. It should read a string    *
+# from the user and display all of the words in the string    *
+# with the punctuation marks removed. You will need to import *
+# your solution to this exercise when completing Exercise 158.*
+# As a result, you should ensure that your main program only  *
+# runs when your ﬁle has not been imported into another       *
+# program.                                                    *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-import E109
 #--------------------------------------------------------------
-def perfect_mun(user_int):
-  prop_list = []
-  prop_list = E109.prop_divisor(user_int)
-  sum_prop = 0
-  for i in range(len(prop_list)):
-    sum_prop += prop_list[i]
-  if sum_prop == user_int:
-    print(user_int, "is a perfect number")
-    return True
-  else:
-#    print(user_int, "is not a perfect number")
-    return False
+def words_func(user_str):
+  word_list = []
+  for word in user_str.split(" "):
+    word_list.append(word.strip(",.:;'\"?!"))
+  return word_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  for i in range(1,100000):
-    perfect_mun(i)
+  user_string = input("Enter the string of words as an input: ")
+  out_list = words_func(user_string)
+  print("The words in the string are: %s" % ', '.join(map(str, out_list)))
   print("Thank you for using this app.")
 #**************************************************************
