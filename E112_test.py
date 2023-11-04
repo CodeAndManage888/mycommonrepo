@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 103023 (Expected Solution with 44 Lines of Code)      *
 # Title: Below and Above Average                              *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Write a program that reads numbers from the user until a    *
 # blank line is entered. Your program should display the      *
 # average of all of the values entered by the user. Then the  *
@@ -13,19 +13,18 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-user_num = ""
+user_num = " "
 user_int_list = []
 input_ave = 0
 first_list = []
 middle_list = []
 last_list = []
-
 #--------------------------------------------------------------
 def average_func(num_list):
   above_list = []
   below_list = []
   equal_list = []
-  ave_val = num_list.sum() / len(num_list)
+  ave_val = sum(num_list) / len(num_list)
   for num in num_list:
     if num < ave_val:
       below_list.append(num)
@@ -36,13 +35,14 @@ def average_func(num_list):
   return ave_val, below_list, equal_list, above_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  while user_num != " ":
+  while user_num != "":
     user_num = input("Enter a number: ")
-    user_int_list.append(int(user_num))
+    if user_num != "":
+      user_int_list.append(int(user_num))
   input_ave, first_list, middle_list, last_list = average_func(user_int_list)
   print("Average:", input_ave)
-  print("Below Average: %s" % ', '.join(map(first_list)))
-  print("Equal to Average: %s" % ', '.join(map(middle_list)))
-  print("Above Average: %s" % ', '.join(map(last_list)))
+  print("Below Average: %s" % ', '.join(map(str,first_list)))
+  print("Equal to Average: %s" % ', '.join(map(str,middle_list)))
+  print("Above Average: %s" % ', '.join(map(str,last_list)))
   print("Thank you for using this app.")
 #**************************************************************
