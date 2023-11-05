@@ -22,10 +22,25 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+word_list = []
+user_word = " "
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def word_list_fmt(str_list):
+  str_list_fmt = ""
+  for word in str_list:
+    if len(str_list) == 1:
+      str_list_fmt = word
+    else:
+      str_list_fmt += word + ", "
+      if word == str_list[-1]:
+        str_list_fmt += "and "
+  return str_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  while user_word != "":
+    user_word = input("Enter a word: ")
+    if user_word != "":
+      word_list.append(user_word)
+  print("Formatted List: ", word_list_fmt(word_list))
   print("Thank you for using this app.")
 #**************************************************************
