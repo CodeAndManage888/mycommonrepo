@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 110323 (Expected Solution with 43 Lines of Code)      *
 # Title: Formatting a List                                    *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # When writing out a list of items in English, one normally   *
 # separates the items with commas. In addition, the word      *
 # “and” is normally included before the last item, unless the *
@@ -27,20 +27,28 @@ user_word = " "
 #--------------------------------------------------------------
 def word_list_fmt(str_list):
   str_list_fmt = ""
-  for word in str_list:
+  ctr = 0
+  while ctr <= len(str_list) - 1:
     if len(str_list) == 1:
-      str_list_fmt = word
+      str_list_fmt = str_list[ctr]
+      break
+    elif len(str_list) == 2:
+      str_list_fmt = str_list[0] + " and " + str_list[1]
+      break
     else:
-      str_list_fmt += word + ", "
-      if word == str_list[-1]:
-        str_list_fmt += "and "
-  return str_list
+      if ctr == len(str_list) - 2:
+        str_list_fmt += str_list[ctr] + " and " + str_list[ctr + 1]
+        break
+      else:
+        str_list_fmt += str_list[ctr] + ", "
+    ctr += 1
+  return str_list_fmt
 #--------------------------------------------------------------
 if __name__ == "__main__":
   while user_word != "":
     user_word = input("Enter a word: ")
     if user_word != "":
       word_list.append(user_word)
-  print("Formatted List: ", word_list_fmt(word_list))
+  print("Formatted List:", word_list_fmt(word_list))
   print("Thank you for using this app.")
 #**************************************************************
