@@ -1,54 +1,33 @@
 #!/bin/bash
 #**************************************************************
-# Date: 110323 (Expected Solution with 43 Lines of Code)      *
-# Title: Formatting a List                                    *
+# Date: 110323 (Expected Solution with 28 Lines of Code)      *
+# Title: Random Lottery Numbers                               *
 # Status: In Progress (In Progress / Testing / Working)       *
-# When writing out a list of items in English, one normally   *
-# separates the items with commas. In addition, the word      *
-# “and” is normally included before the last item, unless the *
-# list only contains one item. Consider the following four    *
-# lists: apples apples and oranges apples, oranges and        *
-# bananas apples, oranges, bananas and lemons Write a         *
-# function that takes a list of strings as its only           *
-# parameter. Your function should return a string that        *
-# contains all of the items in the list formatted in the      *
-# manner described previously as its only result. While the   *
-# examples shown previously only include lists containing     *
-# four elements or less, your function should behave          *
-# correctly for lists of any length. Include a main program   *
-# that reads several items from the user, formats them by     *
-# calling your function, and then displays the result         *
-# returned by the function.                                   *
+# In order to win the top prize in a particular lottery, one  *
+# must match all 6 numbers on his or her ticket to the 6      *
+# numbers between 1 and 49 that are drawn by the lottery      *
+# organizer. Write a program that generates a random          *
+# selection of 6 numbers for a lottery ticket. Ensure that    *
+# the 6 numbers selected do not contain any duplicates.       *
+# Display the numbers in ascending order.                     *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-word_list = []
-user_word = " "
+import random
+lotto_num = []
 #--------------------------------------------------------------
-def word_list_fmt(str_list):
-  str_list_fmt = ""
-  ctr = 0
-  while ctr <= len(str_list) - 1:
-    if len(str_list) == 1:
-      str_list_fmt = str_list[ctr]
-      break
-    elif len(str_list) == 2:
-      str_list_fmt = str_list[0] + " and " + str_list[1]
-      break
-    else:
-      if ctr == len(str_list) - 2:
-        str_list_fmt += str_list[ctr] + " and " + str_list[ctr + 1]
-        break
-      else:
-        str_list_fmt += str_list[ctr] + ", "
-    ctr += 1
-  return str_list_fmt
+def gen_six_num():
+  num_list = []
+  ran_num = random.randint(1,49)
+  while len(num_list) != 6:
+    if ran_num not in num_list:
+      num_list.append(ran_num)
+      ran_num = random.randint(1,49)
+    num_list.sort()
+  return num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  while user_word != "":
-    user_word = input("Enter a word: ")
-    if user_word != "":
-      word_list.append(user_word)
-  print("Formatted List:", word_list_fmt(word_list))
+  lotto_num = gen_six_num()
+  print("The winning numbers are: %s" % ', '.join(map(str, lotto_num)))
   print("Thank you for using this app.")
 #**************************************************************
