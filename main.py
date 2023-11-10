@@ -11,10 +11,10 @@
 # into Pig Latin:  If the word begins with a consonant       *
 # (including y), then all letters at the beginning of the     *
 # word, up to the ﬁrst vowel (excluding y), are removed and   *
-# then added to the end of the word, followed by ay. For      *
+# then added to the end of the word, followed by "ay". For    *
 # example, computer becomes omputercay and think becomes      *
 # inkthay. If the word begins with a vowel (not including    *
-# y), then way is added to the end of the word. For example,  *
+# y), then "way" is added to the end of the word. For example,*
 # algorithm becomes algorithmway and office becomes officeway.*
 # Write a program that reads a line of text from the user.    *
 # Then your program should translate the line into Pig Latin  *
@@ -26,10 +26,19 @@
 #**************************************************************
 #--------------------------------------------------------------
 def pig_ltn_trans(user_str):
-  return
+  pig_ltn_str = ""
+  vowels = ["a", "e", "i", "o", "u"]
+  word_list = []
+  word_list = user_str.split()
+  for word in word_list:
+    if word[0] in vowels:
+      pig_ltn_str += word + "way "
+    else:
+      pig_ltn_str += word[1:] + word[0] + "ay "
+  return pig_ltn_str
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input = input("Enter a string of words in lowercase only: ")
-  print("Translated string: ", pig_ltn_trans(user_input)
+  print("Translated string: ", pig_ltn_trans(user_input))
   print("Thank you for using this app.")
 #**************************************************************
