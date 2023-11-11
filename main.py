@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 110323 (Expected Solution with 32 Lines of Code)      *
 # Title: Pig Latin                                            *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Pig Latin is a language constructed by transforming English *
 # words. While the origins of the language are unknown, it    *
 # is mentioned in at least two documents from the nineteenth  *
@@ -30,11 +30,18 @@ def pig_ltn_trans(user_str):
   vowels = ["a", "e", "i", "o", "u"]
   word_list = []
   word_list = user_str.split()
-  for word in word_list:
-    if word[0] in vowels:
-      pig_ltn_str += word + "way "
-    else:
-      pig_ltn_str += word[1:] + word[0] + "ay "
+  for word in word_list:  
+    ctr = 0
+    for ltr in word:
+      if ltr in vowels:
+        if ctr == 0:
+          pig_ltn_str += word + "way "
+          break
+        else:
+          pig_ltn_str += word[ctr:] + word[0:ctr] + "ay "
+          break
+      else:
+        ctr += 1
   return pig_ltn_str
 #--------------------------------------------------------------
 if __name__ == "__main__":
