@@ -3,15 +3,15 @@
 # Date: 111323 (Expected Solution with 41 Lines of Code)      *
 # Title: Line of Best Fit                                     *
 # Status: In Progress (In Progress / Testing / Working)       *
-# A line of best ﬁt is a straight line that best approximates *
-# a collection of ndata points. In this exercise, we will     *
-# assume that each point in the collection has an xcoordinate *
-# and a ycoordinate. The symbols ¯x and ¯y are used to        *
-# represent the average xvalue in This copy belongs to the    *
-# collection and the average y value in the collection        *
-# respectively. The line of best fit is represented by the    *
-# equation y = mx + b where m and b are calculated using the  *
-# following formulas:                                         *
+# A line of best fit is a straight line that best approximates*
+# a collection of n data points. In this exercise, we will    *
+# assume that each point in the collection has an x coordinate*
+# and a y coordinate. The symbols ¯x and ¯y are used to       *
+# represent the average x value in the collection and the     *
+# average y value in the collection respectively. The line of *
+# best fit is represented by the equation y = mx + b where m  *
+# and b are calculated using the following formulas:          *
+#                                                             *
 #                       (summation x) * (summation y)         *
 #        summation xy − ----------------------------          *
 #                                  n                          *
@@ -20,6 +20,7 @@
 #                              ----------------               *
 #                                     n                       *
 #           b = ¯y − m¯x                                      *
+#                                                             *
 # Write a program that reads a collection of points from the  *
 # user. The user will enter the x part of the ﬁrst coordinate *
 # on its own line, followed by the y part of the ﬁrst         *
@@ -35,8 +36,13 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def line_best_fit(user_in):
   return
+def compute_m(user_in):
+  return
+def compute_b(user_in):
+  fin_val = ave_y - m*ave_x
+  return fin_val
 #--------------------------------------------------------------
 if __name__ == "__main__":
   print("Thank you for using this app.")
