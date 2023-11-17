@@ -49,6 +49,7 @@ if __name__ == "__main__":
   while user_x != "":
     user_x = input("Enter x coordinates: ")
     if user_x != "":
-      user_y = input("Enter y coordinates: ")
+      while user_y != "":
+        user_y = input("Enter y coordinates: ")
   print("Thank you for using this app.")
 #**************************************************************
