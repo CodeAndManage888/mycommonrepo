@@ -35,7 +35,9 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-user_x, user_y = "", ""
+user_x, user_y = " ", " "
+sum_x, sum_y, sum_xy, sum_x_sq = 0, 0, 0, 0
+xy_coordinate = []
 #--------------------------------------------------------------
 def line_best_fit(user_in):
   return
@@ -46,11 +48,13 @@ def compute_b(user_in):
   return fin_val
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  while user_x == "":
+  while user_x != "":
     user_x = input("Enter x coordinates: ")
-    if int(user_x) >= 0:
-      while user_y == "":
+    if user_x != "" and int(user_x) >= 0:
+      xy_coordinate.append(user_x)
+      while user_y == "" or user_y == " ":
         user_y = input("Enter y coordinates: ")
-      user_y = ""
+      xy_coordinate.append(user_y)
+  print(xy_coordinate)
   print("Thank you for using this app.")
 #**************************************************************
