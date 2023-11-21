@@ -42,13 +42,13 @@ def line_best_fit(user_lst):
   ctr, sum_x, sum_y, sum_xy, sum_x_squared, = 0, 0, 0, 0, 0
   while ctr <= len(user_lst) - 1:
     sum_x += float(user_lst[ctr])
+    sum_x_squared += float(user_lst[ctr]) ** 2
     sum_y += float(user_lst[ctr + 1])
     sum_xy += float(user_lst[ctr]) * float(user_lst[ctr + 1])
     ctr += 2
-  sum_x_squared = sum_x ** 2
   num_data_pts = len(user_lst) / 2
-  comp_b_val = (sum_xy - (sum_x * sum_y) / num_data_pts) / (sum_x_squared - ((sum_x ** 2) / num_data_pts))
-  comp_m_val = (sum_y/num_data_pts) - (comp_b_val * (sum_x/num_data_pts))
+  comp_m_val = (sum_xy - (sum_x * sum_y) / num_data_pts) / (sum_x_squared - ((sum_x ** 2) / num_data_pts))
+  comp_b_val = (sum_y/num_data_pts) - (comp_m_val * (sum_x/num_data_pts))
   return comp_m_val, comp_b_val
 #--------------------------------------------------------------
 if __name__ == "__main__":
