@@ -1,67 +1,73 @@
 #!/bin/bash
 #**************************************************************
-# Date: 111323 (Expected Solution with 41 Lines of Code)      *
-# Title: Line of Best Fit                                     *
+# Date: 111323 (Expected Solution with 48 Lines of Code)      *
+# Title: Shuffling a Deck of Cards                            *
 # Status: In Progress (In Progress / Testing / Working)       *
-# A line of best fit is a straight line that best approximates*
-# a collection of n data points. In this exercise, we will    *
-# assume that each point in the collection has an x coordinate*
-# and a y coordinate. The symbols ¯x and ¯y are used to       *
-# represent the average x value in the collection and the     *
-# average y value in the collection respectively. The line of *
-# best fit is represented by the equation y = mx + b where m  *
-# and b are calculated using the following formulas:          *
+# A standard deck of playing cards contains 52 cards. Each    *
+# card has one of four suits along with a value. The suits    *
+# are normally spades, hearts, diamonds and clubs while the   *
+# values are 2 through 10, Jack, Queen, King and Ace. Each    *
+# playing card can be represented using two characters. The   *
+# first character is the value of the card, with the values 2 *
+# through 9 being represented directly. The characters “T”,   *
+# “J”, “Q”, “K” and “A” are used to represent the values 10,  *
+# Jack, Queen, King and Ace respectively. The second          *
+# character is used to represent the suit of the card. It is  *
+# normally a lowercase letter: “s” for spades, “h” for        *
+# hearts, “d” for diamonds and “c” for clubs. The following   *
+# table provides several examples of cards and their          *
+# two-character representations.                              *
 #                                                             *
-#                       (summation x) * (summation y)         *
-#        summation xy − ----------------------------          *
-#                                  n                          *
-#   m =  -------------------------------------------          *
-#           (summation x**2) − (summation x)**2               *
-#                              ----------------               *
-#                                     n                       *
-#           b = ¯y − m¯x                                      *
+#           Card             | Abbreviation                   *
+#          ----------------------------------                 *
+#           Jack of spades   | Js                             *
+#           Two of clubs     | 2c                             *
+#           Ten of diamonds  | Td                             *
+#           Ace of hearts    | Ah                             *
+#           Nine of spades   | 9s                             *
 #                                                             *
-# Write a program that reads a collection of points from the  *
-# user. The user will enter the x part of the ﬁrst coordinate *
-# on its own line, followed by the y part of the ﬁrst         *
-# coordinate on its own line. Allow the user to continue      *
-# entering coordinates, with the x and y parts each entered   *
-# on their own line, until your program reads a blank line for*
-# the x coordinate. Display the formula for the line of best  *
-# fit in the form y = mx + b by replacing m and b with the    *
-# values you calculated using the preceding formulas. For     *
-# example, if the user inputs the coordinates (1,1),(2,2.1)   *
-# and (3,2.9) then your program should display y = 0.95x + 0.1*
+# Card Abbreviation Jack of spades Js Two of clubs 2c Ten of  *
+# diamonds Td Ace of hearts Ah Nine of spades 9s Begin by     *
+# writing a function named createDeck . It will use loops to  *
+# create a complete deck of cards by storing the two-character*
+# abbreviations for all 52 cards into a list. Return the list *
+# of cards as the function’s only result. Your function will  *
+# not take any parameters. Write a second function named      *
+# shuffle that randomizes the order of the cards in a list.   *
+# One technique that can be used to shuffle the cards is to   *
+# visit each element in the list and swap it with another     *
+# random element in the list. You must write your own loop    *
+# for shufﬂing the cards. You cannot make use of Python’s     *
+# built-in shufﬂe function. Use both of the functions         *
+# described in the previous paragraphs to create a main       *
+# program that displays a deck of cards before and after it   *
+# has been shuffled. Ensure that your main program only runs  *
+# when your functions have not been imported into another     *
+# file.                                                       *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-user_x, user_y = " ", " "
-xy_coordinate = []
+import random
 #--------------------------------------------------------------
-def line_best_fit(user_lst):
-  ctr, sum_x, sum_y, sum_xy, sum_x_squared, = 0, 0, 0, 0, 0
-  while ctr <= len(user_lst) - 1:
-    sum_x += float(user_lst[ctr])
-    sum_x_squared += float(user_lst[ctr]) ** 2
-    sum_y += float(user_lst[ctr + 1])
-    sum_xy += float(user_lst[ctr]) * float(user_lst[ctr + 1])
-    ctr += 2
-  num_data_pts = len(user_lst) / 2
-  comp_m_val = (sum_xy - (sum_x * sum_y) / num_data_pts) / (sum_x_squared - ((sum_x ** 2) / num_data_pts))
-  comp_b_val = (sum_y/num_data_pts) - (comp_m_val * (sum_x/num_data_pts))
-  return comp_m_val, comp_b_val
+deck_of_cards = ['2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s', 
+                 'Ts', 'Js', 'Qs', 'Ks', 'As', '2h', '3h', '4h', 
+                 '5h', '6h', '7h', '8h', '9h', 'Th', 'Jh', 'Qh', 
+                 'Kh', 'Ah', '2d', '3d', '4d', '5d', '6d', '7d', 
+                 '8d', '9d', 'Td', 'Jd', 'Qd', 'Kd', 'Ad', '2c', 
+                 '3c', '4c', '5c', '6c', '7c', '8c', '9c', 'Tc', 
+                 'Jc', 'Qc', 'Kc', 'Ac']
+deck_shuffled = []
+idx = 0
+#--------------------------------------------------------------
+def createDeck(user_in):
+  idx = random.randint(0,len(deck_of_cards)-1)
+  while len(deck_shuffled) > 0:
+    deck_shuffled.append(deck_of_cards.pop(idx))
+    idx = random.randint(0,len(deck_of_cards)-1)
+  return deck_shuffled
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  while user_x != "":
-    user_x = input("Enter x coordinates: ")
-    if user_x != "" and float(user_x) >= 0:
-      xy_coordinate.append(user_x)
-      while user_y == "" or user_y == " ":
-        user_y = input("Enter y coordinates: ")
-      xy_coordinate.append(user_y)
-      user_x, user_y = " ", " "
-  print(xy_coordinate)
-  fin_m_val, fin_b_val = line_best_fit(xy_coordinate)
-  print(f"y = {fin_m_val:.2f}x + {fin_b_val:.2f}")
+  print("deck_of_cards = ", deck_of_cards)
+  print("createDeck(deck_of_cards) = ", createDeck(deck_of_cards))
   print("Thank you for using this app.")
 #**************************************************************
