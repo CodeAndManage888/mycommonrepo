@@ -59,15 +59,16 @@ deck_of_cards = ['2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s',
 deck_shuffled = []
 idx = 0
 #--------------------------------------------------------------
-def createDeck(user_in):
-  idx = random.randint(0,len(deck_of_cards)-1)
-  while len(deck_shuffled) > 0:
-    deck_shuffled.append(deck_of_cards.pop(idx))
-    idx = random.randint(0,len(deck_of_cards)-1)
+def createDeck(deckcard_list):
+  idx = random.randint(0,len(deckcard_list)-1)
+  while len(deckcard_list) != 0:
+    deck_shuffled.append(deckcard_list.pop(idx))
+    if len(deckcard_list) != 0:
+      idx = random.randint(0,len(deckcard_list)-1)
   return deck_shuffled
 #--------------------------------------------------------------
 if __name__ == "__main__":
   print("deck_of_cards = ", deck_of_cards)
-  print("createDeck(deck_of_cards) = ", createDeck(deck_of_cards))
+  print("deck_of_cards = ", createDeck(deck_of_cards))
   print("Thank you for using this app.")
 #**************************************************************
