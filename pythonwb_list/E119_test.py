@@ -25,7 +25,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 import random
-import E118_test
+import E118
 #--------------------------------------------------------------
 deck_of_cards = ['2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s', 
                  'Ts', 'Js', 'Qs', 'Ks', 'As', '2h', '3h', '4h', 
@@ -51,7 +51,7 @@ def deal_func(ShuffledDeck):
 if __name__ == "__main__":
   print("This program will shuffle a deck of cards and then deal out four hands of five cards each.")
   print("Deck of Cards: ", deck_of_cards)
-  deck_shuffled = E118_test.createDeck(deck_of_cards)
+  deck_shuffled = E118.createDeck(deck_of_cards)
   print("Deck of Cards Before Dealing: ", deck_shuffled)
   player_1, player_2, player_3, player_4, deck_remain = deal_func(deck_shuffled)
   print("First Player Cards: ", player_1)

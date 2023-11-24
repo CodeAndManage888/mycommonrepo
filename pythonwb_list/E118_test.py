@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 111323 (Expected Solution with 48 Lines of Code)      *
 # Title: Shuffling a Deck of Cards                            *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # A standard deck of playing cards contains 52 cards. Each    *
 # card has one of four suits along with a value. The suits    *
 # are normally spades, hearts, diamonds and clubs while the   *
