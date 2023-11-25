@@ -11,13 +11,12 @@
 # uses your function to report whether or not the list is     *
 # sorted. Make sure you consider these questions when         *
 # completing this exercise: Is a list that is empty in sorted *
-# order? What about a list containing one element? This copy  *
-# belongs to 'acha04'56 5 List Exercises                      *
+# order? What about a list containing one element?            *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def sorted_list(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
