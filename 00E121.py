@@ -20,9 +20,22 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def countRange(user_lst, minVal, maxVal):
+  # Count the number of elements in the list that are greater
+  # than or equal to the minimum value and less than the maximum
+  # value.
+  count = user_lst.count(x for x in user_lst if x >= minVal and x < maxVal)
+  return count
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  print("Enter a list of numbers separated by commas: ", end="")
+  user_in = input()
+  user_in = user_in.split(",")
+  user_in = [int(i) for i in user_in]
+  print("Enter a minimum value: ", end="")
+  min_val = int(input())
+  print("Enter a maximum value: ", end="")
+  max_val = int(input())
+  print("The number of elements in the list that are greater than or equal to", min_val, "and less than", max_val, "is", countRange(user_in, min_val, max_val))
   print("Thank you for using this app.")
 #**************************************************************
