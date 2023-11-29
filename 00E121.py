@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 111323 (Expected Solution with 49 Lines of Code)      *
 # Title: Count the Elements                                   *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Python’s standard library includes a method named count     *
 # that determines how many times a speciﬁc value occurs in a  *
 # list. In this exercise, you will create a new function      *
@@ -24,7 +24,7 @@ def countRange(user_lst, minVal, maxVal):
   # Count the number of elements in the list that are greater
   # than or equal to the minimum value and less than the maximum
   # value.
-  count = user_lst.count(x for x in user_lst if x >= minVal and x < maxVal)
+  count = len([x for x in user_lst if x >= minVal and x < maxVal])
   return count
 #--------------------------------------------------------------
 if __name__ == "__main__":
