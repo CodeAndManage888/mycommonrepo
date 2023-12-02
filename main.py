@@ -38,9 +38,21 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+symbol = ["+", "-", "*", "/", "(", ")"]
+#--------------------------------------------------------------
+# possible solution is to create a list with no spaces first
+# then split the string into tokens
 #--------------------------------------------------------------
 def token_func(user_in):
-  user_in_list = user_in.split()
+  user_in_list = []
+  for i in range(len(user_in)):
+    if user_in[i] in symbol:
+      if user_in[i+1] != " " and user_in[i] == "+" or user_in[i] == "-":
+        user_in_list.append(user_in[i]+user_in[i+1])
+      else:
+        user_in_list.append(user_in[i])
+    else:
+      user_in_list.append(user_in[i])
   return user_in_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
