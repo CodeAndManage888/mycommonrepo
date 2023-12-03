@@ -43,17 +43,29 @@ symbol = ["+", "-", "*", "/", "(", ")"]
 # possible solution is to create a list with no spaces first
 # then split the string into tokens
 #--------------------------------------------------------------
+# having issues with more than one space between tokens and
+# more than 1 numbers together. parenthesis is also a problem
+# tokens that are are in between numbers are also a problem
+#--------------------------------------------------------------
 def token_func(user_in):
-  user_in_list = []
-  for i in range(len(user_in)):
-    if user_in[i] in symbol:
-      if user_in[i+1] != " " and user_in[i] == "+" or user_in[i] == "-":
-        user_in_list.append(user_in[i]+user_in[i+1])
+  no_spaces_list = user_in.split()
+  token_list = []
+  for i in range(len(no_spaces_list)):
+    if len(no_spaces_list[i]) == 1:
+      if no_spaces_list[i] in symbol:
+        token_list.append(no_spaces_list[i])
       else:
-        user_in_list.append(user_in[i])
+        token_list.append(int(no_spaces_list[i]))
     else:
-      user_in_list.append(user_in[i])
-  return user_in_list
+      for j in range(len(no_spaces_list[i])):
+        if no_spaces_list[i][j] == "+" or no_spaces_list[i][j] == "-":
+          if j == 0:
+            
+        elif no_spaces_list[i][j] == "(" or no_spaces_list[i][j] == ")":
+        elif no_spaces_list[i][j] == "/" or no_spaces_list[i][j] == "*":
+        else:
+          token_list.append(int(no_spaces_list[i][j]))
+  return token_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
   math_exp = input("Enter a mathematical expression: ")
