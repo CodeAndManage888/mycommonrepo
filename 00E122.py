@@ -66,10 +66,8 @@ def token_func(user_in):
           elif no_spaces_list[i].isdigit():
             token_list.append(int(no_spaces_list[i]))
             break
-        elif no_spaces_list[i][j] == "(" or no_spaces_list[i][j] == ")":
-          print("Test 2")
-        elif no_spaces_list[i][j] == "/" or no_spaces_list[i][j] == "*":
-          print("Test 2")
+        elif no_spaces_list[i][j] in symbol:
+          token_list.append(no_spaces_list[i][j])
         else:
           token_list.append(int(no_spaces_list[i][j]))
   return token_list
