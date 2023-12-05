@@ -51,6 +51,7 @@ def token_func(user_in):
   no_spaces_list = user_in.split()
   print(no_spaces_list)                    # test only
   token_list = []
+  save_end_idx = 0
   for i in range(len(no_spaces_list)):
     if len(no_spaces_list[i]) == 1:
       if no_spaces_list[i] in symbol:
@@ -68,8 +69,13 @@ def token_func(user_in):
             break
         elif no_spaces_list[i][j] in symbol:
           token_list.append(no_spaces_list[i][j])
+          if j != 1 or j != len(no_spaces_list[i]) - 1:
+            save_end_idx = j
         else:
-          token_list.append(int(no_spaces_list[i][j]))
+          if j == 0:
+            token_list.append(int(no_spaces_list[i][:save_end_idx]))
+          else:
+            token_list.append(int(no_spaces_list[i][j]))
   return token_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
