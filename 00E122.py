@@ -61,10 +61,7 @@ def token_func(user_in):
     else:
       for j in range(len(no_spaces_list[i])):
         if no_spaces_list[i][j] == "+" or no_spaces_list[i][j] == "-":
-          if no_spaces_list[i].lstrip('-+').isdigit():
-            token_list.append(int(no_spaces_list[i]))
-            break
-          elif no_spaces_list[i].isdigit():
+          if no_spaces_list[i].lstrip('-+').isdigit() or no_spaces_list[i].isdigit():
             token_list.append(int(no_spaces_list[i]))
             break
         elif no_spaces_list[i][j] in symbol:
