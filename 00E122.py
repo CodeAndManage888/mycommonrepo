@@ -53,6 +53,8 @@ def token_func(user_in):
   token_list = []
   save_end_idx = 0
   for i in range(len(no_spaces_list)):
+    print(i)                              # test only
+    print(no_spaces_list[i])              # test only
     if len(no_spaces_list[i]) == 1:
       if no_spaces_list[i] in symbol:
         token_list.append(no_spaces_list[i])
@@ -60,13 +62,15 @@ def token_func(user_in):
         token_list.append(int(no_spaces_list[i]))
     else:
       for j in range(len(no_spaces_list[i])):
+        print(i)                              # test only
+        print(no_spaces_list[i][j])           # test only
         if no_spaces_list[i][j] == "+" or no_spaces_list[i][j] == "-":
           if no_spaces_list[i].lstrip('-+').isdigit() or no_spaces_list[i].isdigit():
             token_list.append(int(no_spaces_list[i]))
             break
         elif no_spaces_list[i][j] in symbol:
           token_list.append(no_spaces_list[i][j])
-          if j != 1 or j != len(no_spaces_list[i]) - 1:
+          if j != 0 or j != len(no_spaces_list[i]) - 1:
             save_end_idx = j
         else:
           if j == 0:
