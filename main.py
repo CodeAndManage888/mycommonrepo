@@ -51,22 +51,38 @@ def token_func(user_in):
   no_spaces_list = user_in.split()
   print(no_spaces_list)                    # test only
   token_list = []
+  pos_list = []
   save_end_idx = 0
   for i in range(len(no_spaces_list)):
-    print(i)                              # test only
-    print(no_spaces_list[i])              # test only
+    print(i)                                 # test only
+    print(no_spaces_list[i])                 # test only
     if len(no_spaces_list[i]) >= 1:
       if no_spaces_list[i] in symbol:
         token_list.append(no_spaces_list[i])
       elif no_spaces_list[i].isdigit():
         token_list.append(int(no_spaces_list[i]))
       else:
-        if no_spaces_list[i] == "(":
-          save_end_idx = i
-        elif no_spaces_list[i] == ")":
-          token_list.append(no_spaces_list[i])
-          token_list.append(no_spaces_list[save_end_idx])
-          save_end_idx = 0
+        for j in symbol:
+          try:
+            pos_item = no_spaces_list[i].index(j)
+            pos_list.append(pos_item)
+          except ValueError:
+            continue
+        print(pos_list)                      # test only
+        start_pos = 0
+        for n in pos_list:
+          print(n)                           # test only
+          print(no_spaces_list[i][:n])       # test only
+          if no_spaces_list[i][:n].isdigit():
+            token_list.append(int(no_spaces_list[i][start_pos:n]))
+            token_list.append(no_spaces_list[i][n])
+            start_pos = n + 1
+          else:
+            token_list.append(no_spaces_list[i][start_pos:n])
+            token_list.append(no_spaces_list[i][n])
+            start_pos = n + 1
+        pos_list.clear()
+        start_pos = 0
   return token_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
