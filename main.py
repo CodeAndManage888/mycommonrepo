@@ -40,19 +40,11 @@
 #**************************************************************
 symbol = ["+", "-", "*", "/", "(", ")"]
 #--------------------------------------------------------------
-# possible solution is to create a list with no spaces first
-# then split the string into tokens
-#--------------------------------------------------------------
-# having issues with more than one space between tokens and
-# more than 1 numbers together. parenthesis is also a problem
-# tokens that are are in between numbers are also a problem
-#--------------------------------------------------------------
 def token_func(user_in):
   no_spaces_list = user_in.split()
   print(no_spaces_list)                    # test only
   token_list = []
   pos_list = []
-  save_end_idx = 0
   for i in range(len(no_spaces_list)):
     print(i)                                 # test only
     print(no_spaces_list[i])                 # test only
@@ -68,6 +60,8 @@ def token_func(user_in):
             pos_list.append(pos_item)
           except ValueError:
             continue
+        if len(no_spaces_list[i]) - 1 != pos_list[len(pos_list) - 1]:
+          pos_list.append(len(no_spaces_list[i]) - 1)
         print(pos_list)                      # test only
         start_pos = 0
         for n in pos_list:
