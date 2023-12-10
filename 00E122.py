@@ -71,10 +71,12 @@ def token_func(user_in):
             token_list.append(int(no_spaces_list[i][start_pos:n]))
             token_list.append(no_spaces_list[i][n])
             start_pos = n + 1
+            print(token_list)                # test only
           else:
-            token_list.append(no_spaces_list[i][start_pos:n])
+#            token_list.append(no_spaces_list[i][start_pos:n])
             token_list.append(no_spaces_list[i][n])
             start_pos = n + 1
+            print(token_list)                # test only
         pos_list.clear()
         start_pos = 0
   return token_list
