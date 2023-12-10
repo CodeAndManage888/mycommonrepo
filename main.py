@@ -42,12 +42,12 @@ symbol = ["+", "-", "*", "/", "(", ")"]
 #--------------------------------------------------------------
 def token_func(user_in):
   no_spaces_list = user_in.split()
-  print(no_spaces_list)                    # test only
+  #print(no_spaces_list)                                    # test only
   token_list = []
   pos_list = []
   for i in range(len(no_spaces_list)):
-    print(i)                                 # test only
-    print(no_spaces_list[i])                 # test only
+    #print(i)                                               # test only
+    #print(no_spaces_list[i])                               # test only
     if len(no_spaces_list[i]) >= 1:
       if no_spaces_list[i] in symbol:
         token_list.append(no_spaces_list[i])
@@ -62,21 +62,26 @@ def token_func(user_in):
             continue
         if len(no_spaces_list[i]) - 1 != pos_list[len(pos_list) - 1]:
           pos_list.append(len(no_spaces_list[i]) - 1)
-        print(pos_list)                      # test only
+        #print(pos_list)                                    # test only
         start_pos = 0
         for n in pos_list:
-          print(n)                           # test only
-          print(no_spaces_list[i][:n])       # test only
+          #@print(n)                                         # test only
+          #print(no_spaces_list[i][:n])                     # test only
           if no_spaces_list[i][:n].isdigit():
-            token_list.append(int(no_spaces_list[i][start_pos:n]))
+            if no_spaces_list[i][start_pos:n] is not None:
+              token_list.append(int(no_spaces_list[i][start_pos:n]))
+            print(no_spaces_list[i][start_pos:n])          # test only
             token_list.append(no_spaces_list[i][n])
+            print(no_spaces_list[i][n])                    # test only
             start_pos = n + 1
-            print(token_list)                # test only
+            print(token_list)                              # test only
           else:
-#            token_list.append(no_spaces_list[i][start_pos:n])
+            token_list.append(no_spaces_list[i][start_pos:n])
+            print(no_spaces_list[i][start_pos:n])          # test only
             token_list.append(no_spaces_list[i][n])
+            print(no_spaces_list[i][n])                    # test only
             start_pos = n + 1
-            print(token_list)                # test only
+            print(token_list)                              # test only
         pos_list.clear()
         start_pos = 0
   return token_list
