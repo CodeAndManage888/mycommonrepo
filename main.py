@@ -65,23 +65,24 @@ def token_func(user_in):
         #print(pos_list)                                    # test only
         start_pos = 0
         for n in pos_list:
-          #@print(n)                                         # test only
+          #@print(n)                                        # test only
           #print(no_spaces_list[i][:n])                     # test only
           if no_spaces_list[i][:n].isdigit():
-            if no_spaces_list[i][start_pos:n] is not None:
+            if no_spaces_list[i][start_pos:n]:
               token_list.append(int(no_spaces_list[i][start_pos:n]))
-            print(no_spaces_list[i][start_pos:n])          # test only
+            print("Number Cond1:", no_spaces_list[i][start_pos:n])       # test only
             token_list.append(no_spaces_list[i][n])
-            print(no_spaces_list[i][n])                    # test only
+            print("Number Cond2:", no_spaces_list[i][n])                 # test only
             start_pos = n + 1
-            print(token_list)                              # test only
+            print("After Number Cond12:", token_list)                     # test only
           else:
-            token_list.append(no_spaces_list[i][start_pos:n])
-            print(no_spaces_list[i][start_pos:n])          # test only
+            if no_spaces_list[i][start_pos:n]:
+              token_list.append(no_spaces_list[i][start_pos:n])
+            print("Non Num Cond1:", no_spaces_list[i][start_pos:n])      # test only
             token_list.append(no_spaces_list[i][n])
-            print(no_spaces_list[i][n])                    # test only
+            print("Non Num Cond2:", no_spaces_list[i][n])                # test only
             start_pos = n + 1
-            print(token_list)                              # test only
+            print("After Non Num Cond12:", token_list)                    # test only
         pos_list.clear()
         start_pos = 0
   return token_list
