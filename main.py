@@ -74,15 +74,23 @@ def token_func(user_in):
             token_list.append(no_spaces_list[i][n])
             print("Number Cond2:", no_spaces_list[i][n])                 # test only
             start_pos = n + 1
-            print("After Number Cond12:", token_list)                     # test only
+            print("After Number Cond12:", token_list)                    # test only
           else:
             if no_spaces_list[i][start_pos:n]:
-              token_list.append(no_spaces_list[i][start_pos:n])
+              if no_spaces_list[i][start_pos:n] in symbol:
+                token_list.append(no_spaces_list[i][start_pos:n])
+              else:
+                token_list.append(int(no_spaces_list[i][start_pos:n]))
             print("Non Num Cond1:", no_spaces_list[i][start_pos:n])      # test only
-            token_list.append(no_spaces_list[i][n])
+            if no_spaces_list[i][n] in symbol:
+              print("It's a symbol")                                     # test only
+              token_list.append(no_spaces_list[i][n])
+            else:
+              print("It's a number")
+              token_list.append(int(no_spaces_list[i][n]))
             print("Non Num Cond2:", no_spaces_list[i][n])                # test only
             start_pos = n + 1
-            print("After Non Num Cond12:", token_list)                    # test only
+            print("After Non Num Cond12:", token_list)                   # test only
         pos_list.clear()
         start_pos = 0
   return token_list
@@ -92,3 +100,8 @@ if __name__ == "__main__":
   print(token_func(math_exp))
   print("Thank you for using this app.")
 #**************************************************************
+'''
+List of Issues:
+1.) Unable to handle floats including signed numbers
+2.) Unable to handle single group expression with signed numbers e.g. 4(-1)
+'''

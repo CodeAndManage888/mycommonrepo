@@ -14,4 +14,7 @@
 #return fib1(n - 1) + fib1(n - 2)
 #if __name__ == "__main__":
 #print(fib1(5))
-count = len([ltr in ltr for ltr in "ABADZFAHIJKLMNOPQRSTUVWXYZ" if ltr == "A" and ltr == "Z"])
+#count = len([ltr in ltr for ltr in "ABADZFAHIJKLMNOPQRSTUVWXYZ" if ltr == "A" and ltr == "Z"])
+def greet(name):
+'''This function greets the person passed in as a parameter'''
+print("Hello, " + name)
