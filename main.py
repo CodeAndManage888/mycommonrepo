@@ -39,6 +39,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 symbol = ["+", "-", "*", "/", "(", ")"]
+symbol2 = ["*", "/", "(", ")"]
 #--------------------------------------------------------------
 def token_func(user_in):
   no_spaces_list = user_in.split()
@@ -54,7 +55,7 @@ def token_func(user_in):
       elif no_spaces_list[i].isdigit():
         token_list.append(int(no_spaces_list[i]))
       else:
-        for j in symbol:
+        for j in symbol2:
           try:
             pos_item = no_spaces_list[i].index(j)
             pos_list.append(pos_item)
@@ -62,10 +63,10 @@ def token_func(user_in):
             continue
         if len(no_spaces_list[i]) - 1 != pos_list[len(pos_list) - 1]:
           pos_list.append(len(no_spaces_list[i]) - 1)
-        #print(pos_list)                                    # test only
+        print(pos_list)                                    # test only
         start_pos = 0
         for n in pos_list:
-          #@print(n)                                        # test only
+          #print(n)                                         # test only
           #print(no_spaces_list[i][:n])                     # test only
           if no_spaces_list[i][:n].isdigit():
             if no_spaces_list[i][start_pos:n]:
@@ -102,6 +103,7 @@ if __name__ == "__main__":
 #**************************************************************
 '''
 List of Issues:
-1.) Unable to handle floats including signed numbers
-2.) Unable to handle single group expression with signed numbers e.g. 4(-1)
+1.) Closed: Unable to handle floats (It not part of the requirement.)
+2.) Unable to handle signed numbers e.g. -5 + 5
+3.) Unable to handle single group expression with signed numbers e.g. 4(-1)
 '''
