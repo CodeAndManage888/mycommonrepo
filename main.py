@@ -1,162 +1,109 @@
-import PyPDF2
-import os
-import datetime
-
-def read_pdf(file_path, page_exer_nostr):
-    target_list = page_exer_nostr.split()
-    page_ctr = len(target_list) - 1
-    with open(file_path, 'rb') as file:
-        # Create a PDF reader object
-        pdf_reader = PyPDF2.PdfReader(file)
-
-        # Get the total number of pages in the PDF
-        num_pages = len(pdf_reader.pages)                                                # Do I still need this?
-
-        # Get the text data
-        idx4 = 1
-        text = ""
-        while page_ctr != 0:
-            page = pdf_reader.pages[int(target_list[idx4])]
-            page_ctr -= 1
-            idx4 += 1
-            text += page.extract_text()
-#        print(text)                                                                     # Uncomment for debugging
-
-        # Prepare the extraction of the target exercise only.
-        content = text.split("\n")
-#        print(content)                                                                  # Uncomment for debugging
-        start_txt = "Exercise " + target_list[0] + ":"
-        end_txt = "Exercise " + str(int(target_list[0]) + 1) + ":"
-#        print(start_txt)                                                                # Uncomment for debugging
-#        print(end_txt)                                                                  # Uncomment for debugging
-        return_block = []
-        start_pos_list = []
-        end_pos_list = []
-
-        # This line of codes will will identify the title and other starting/ending details.
-        start_flag = False
-        for idx1, line in enumerate(content):
-            startpos = line.find(start_txt)
-            if startpos != -1 and not start_flag:
-                start_pos_list.append(idx1)
-                start_flag = True
-            endpos = line.find(end_txt)
-            if endpos != -1:
-                end_pos_list.append(idx1)
-                break
+#!/bin/bash
+#**************************************************************
+# Date: 112423 (Expected Solution with 64 Lines of Code)      *
+# Title: Tokenizing a String                                  *
+# Status: In Progress (In Progress / Testing / Working)       *
+# Tokenizing is the process of converting a string into a     *
+# list of substrings, known as tokens. In many circumstances, *
+# a list of tokens is far easier to work with than the        *
+# original string because the original string may have        *
+# irregular spacing. In some cases substantial work is also   *
+# required to determine where one token ends and the next one *
+# begins. In a mathematical expression, tokens are items such *
+# as operators, numbers and parentheses. Some tokens, such as *
+# *, /, ˆ, ( and ) are easy to identify because the token is a*
+# single character, and the character is never part of        *
+# another token. The + and - symbols are a little bit more    *
+# challenging to handle because they might represent the      *
+# addition or subtraction operator, or they might be part of  *
+# a number token. Hint: A + or - is an operator if the        *
+# non-whitespace character immediately before it is part of a *
+# number, or if the non-whitespace character immediately      *
+# before it is a close parenthesis. Otherwise it is part of a *
+# number. Write a function that takes a string containing a   *
+# mathematical expression as its only parameter and breaks it *
+# into a list of tokens. Each token should be a parenthesis,  *
+# an operator, or a number with an optional leading + or - (  *
+# for simplicity we will only work with integers in this      *
+# problem). Return the list of tokens as the function’s       *
+# result. You may assume that the string passed to your       *
+# function always contains a valid mathematical expression    *
+# consisting of parentheses, operators and integers. However, *
+# your function must handle variable amounts of whitespace    *
+# between these elements. Include a main program that         *
+# demonstrates your tokenizing function by reading an         *
+# expression from the user and printing the list of tokens.   *
+# Ensure that the main program will not run when the file     *
+# containing your solution is imported into another program.  *
+#                                                             *
+# Computed Result Validated:                                  *
+#**************************************************************
+symbol = ["+", "-", "*", "/", "(", ")"]
+symbol2 = ["*", "/", "(", ")"]
+#--------------------------------------------------------------
+def token_func(user_in):
+  no_spaces_list = user_in.split()
+  #print(no_spaces_list)                                    # test only
+  token_list = []
+  pos_list = []
+  for i in range(len(no_spaces_list)):
+    #print(i)                                               # test only
+    #print(no_spaces_list[i])                               # test only
+    if len(no_spaces_list[i]) >= 1:
+      if no_spaces_list[i] in symbol:
+        token_list.append(no_spaces_list[i])
+      elif no_spaces_list[i].isdigit():
+        token_list.append(int(no_spaces_list[i]))
+      else:
+        for j in symbol2:
+          try:
+            pos_item = no_spaces_list[i].index(j)
+            pos_list.append(pos_item)
+          except ValueError:
+            continue
+        if len(no_spaces_list[i]) - 1 != pos_list[len(pos_list) - 1]:
+          pos_list.append(len(no_spaces_list[i]) - 1)
+        print(pos_list)                                    # test only
+        start_pos = 0
+        for n in pos_list:
+          #print(n)                                         # test only
+          #print(no_spaces_list[i][:n])                     # test only
+          if no_spaces_list[i][:n].isdigit():
+            if no_spaces_list[i][start_pos:n]:
+              token_list.append(int(no_spaces_list[i][start_pos:n]))
+            print("Number Cond1:", no_spaces_list[i][start_pos:n])       # test only
+            token_list.append(no_spaces_list[i][n])
+            print("Number Cond2:", no_spaces_list[i][n])                 # test only
+            start_pos = n + 1
+            print("After Number Cond12:", token_list)                    # test only
+          else:
+            if no_spaces_list[i][start_pos:n]:
+              if no_spaces_list[i][start_pos:n] in symbol:
+                token_list.append(no_spaces_list[i][start_pos:n])
+              else:
+                token_list.append(int(no_spaces_list[i][start_pos:n]))
+            print("Non Num Cond1:", no_spaces_list[i][start_pos:n])      # test only
+            if no_spaces_list[i][n] in symbol:
+              print("It's a symbol")                                     # test only
+              token_list.append(no_spaces_list[i][n])
             else:
-                endpos = line.find("This copy belongs to")
-                if endpos != -1 and len(target_list) == 2:
-                    end_pos_list.append(idx1)
-                    break
-
-#        print(start_pos_list)                                                           # Uncomment for debugging
-#        print(end_pos_list)                                                             # Uncomment for debugging
-
-        line_ctr = start_pos_list[0]
-        end_ctr = len(end_pos_list) - 1
-        add_pos = len(start_pos_list) - 1
-        while (line_ctr + add_pos) < end_pos_list[end_ctr]:
-            if line_ctr == 0:
-                num_start_dtls = len(start_pos_list)
-                if num_start_dtls == 2 and line_ctr == 0:
-                    return_block.append(content[line_ctr + add_pos])
-                elif num_start_dtls == 2 and line_ctr == 1:
-                    return_block.append(content[line_ctr + add_pos])
-            else:
-                return_block.append(content[line_ctr + add_pos])
-            line_ctr += 1
-
-#        print(return_block)                                                             # Uncomment for debugging
-        return return_block
-
-def format_then_write(textdata):
-#    file_path = "/workspaces/mycommonrepo/projects/module_template/outfile_cloud/gen_template.py"                   # Path to your outfile (Cloud)
-#    file_path = "/workspaces/inoutfiles/projects/module_template/outfile_cloud/gen_template.py"                      # Path to your outfile (Cloud)
-    file_path = "/home/runner/mycommonrepo/projects/module_template/outfile_cloud/gen_template.py"                  # Path to your outfile (Desktop)
-
-    # The following code will format the text
-    current_date = datetime.datetime.now()
-    formatted_date = current_date.strftime("%m%d%y")                                     # Current date format MMDDYY
-    final_recs = []
-    line_code = textdata[1]
-    TotCodPos = line_code.find("—")
-    if TotCodPos == -1:
-        TotCodPos = line_code.find("(")
-#    print(textdata)                                                                     # Uncomment for debugging
-#    print(line_code)                                                                    # Uncomment for debugging
-    rec00 = "#!/bin/bash"
-    final_recs.append(rec00)
-    rec01 = "#**************************************************************"
-    final_recs.append(rec01)
-    rec02 = "# Date: " + formatted_date + " (Expected Solution with " + line_code[TotCodPos + 1:TotCodPos + 3] + " Lines of Code)      *"
-    final_recs.append(rec02)
-    title = textdata[0]
-    title_pos1 = title.index(":")
-    space00 = 55 - len(title[title_pos1:])
-    rec03 = "# Title:" + title[title_pos1 + 1:] + (" " * space00) + "*"
-    final_recs.append(rec03)
-    rec04 = "# Status: In Progress (In Progress / Testing / Working)       *"
-    final_recs.append(rec04)
-
-    word_list = []
-    for idx3, readline in enumerate(textdata):
-        if idx3 != 0 and idx3 != 1:
-            word_list += readline.split(" ")
-
-#    print(word_list)                                                                    # Uncomment for debugging
-#    print(len(word_list))                                                               # Uncomment for debugging
-
-    reqtdetail = ""
-    for idx2, word in enumerate(word_list):
-        reqtdetail += word + " "
-        if idx2 != (len(word_list) - 1):
-            if (len(reqtdetail) + len(word_list[idx2 + 1])) > 59:
-                addspaces = 59 - (len(reqtdetail) - 1)
-                rec05 = "# " + reqtdetail + (addspaces * " ") + "*"
-                final_recs.append(rec05)
-                reqtdetail = ""
-        else:
-            addspaces = 59 - (len(reqtdetail) - 1)
-            rec05 = "# " + reqtdetail + (addspaces * " ") + "*"
-            final_recs.append(rec05)
-            reqtdetail = ""
-
-#    reqtdetail = "                                                          "           # Uncomment for debugging
-#    rec05 = "# " + reqtdetail + "  *"                                                   # Uncomment for debugging
-#    final_recs.append(rec05)                                                            # Uncomment for debugging
-
-    rec06 = "#                                                             *"
-    final_recs.append(rec06)
-    rec07 = "# Computed Result Validated:                                  *"
-    final_recs.append(rec07)
-    rec08 = "#**************************************************************"
-    final_recs.append(rec08)
-    rec09 = "#--------------------------------------------------------------"
-    final_recs.append(rec09)
-    rec10 = "def func_name(user_in):"
-    final_recs.append(rec10)
-    rec11 = "  return"
-    final_recs.append(rec11)
-    rec12 = "#--------------------------------------------------------------"
-    final_recs.append(rec12)
-    rec13 = 'if __name__ == "__main__":'
-    final_recs.append(rec13)
-    rec14 = '  print("Thank you for using this app.")'
-    final_recs.append(rec14)
-    rec15 = "#**************************************************************"
-    final_recs.append(rec15)
-
-    with open(file_path, "w") as file_handle:
-        for item in final_recs:
-            print(item)                                                                  # Uncomment for debugging
-            print(item, file=file_handle)
-    file_handle.close()
-
+              print("It's a number")
+              token_list.append(int(no_spaces_list[i][n]))
+            print("Non Num Cond2:", no_spaces_list[i][n])                # test only
+            start_pos = n + 1
+            print("After Non Num Cond12:", token_list)                   # test only
+        pos_list.clear()
+        start_pos = 0
+  return token_list
+#--------------------------------------------------------------
 if __name__ == "__main__":
-    UserPageIn = input("Enter the exercise number & target page(s) - EEE PPP PPP: ")
-#    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"          # Path to your PDF file (Cloud)
-    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_cloud/The Python Workbook.pdf"               # Path to your PDF file (Cloud)
-#   pdf_file_path = "/home/pi/Desktop/localrepo/mycommonrepo/projects/module_template/infile_cloud/The Python Workbook.pdf"  # Path to your PDF file (Desktop)
-    tmp_data = read_pdf(pdf_file_path, UserPageIn)
-    format_then_write(tmp_data)
+  math_exp = input("Enter a mathematical expression: ")
+  print(token_func(math_exp))
+  print("Thank you for using this app.")
+#**************************************************************
+'''
+List of Issues:
+1.) Closed: Unable to handle floats (It not part of the requirement.)
+2.) Unable to handle signed numbers e.g. -5 + 5
+3.) Unable to handle single group expression with signed numbers e.g. 4(-1)
+'''
