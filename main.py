@@ -48,7 +48,7 @@ def token_func(user_in):
   pos_list = []
   for i in range(len(no_spaces_list)):
     #print(i)                                               # test only
-    #print(no_spaces_list[i])                               # test only
+    print(no_spaces_list[i])                                # test only
     if len(no_spaces_list[i]) >= 1:
       if no_spaces_list[i] in symbol:
         token_list.append(no_spaces_list[i])
@@ -61,6 +61,10 @@ def token_func(user_in):
             pos_list.append(pos_item)
           except ValueError:
             continue
+        if len(pos_list) == 0:
+          pos_list.append(len(no_spaces_list[i]))
+          #pos_list.append(1)
+        print(pos_list)
         if len(no_spaces_list[i]) - 1 != pos_list[len(pos_list) - 1]:
           pos_list.append(len(no_spaces_list[i]) - 1)
         print(pos_list)                                    # test only
@@ -83,6 +87,9 @@ def token_func(user_in):
               else:
                 token_list.append(int(no_spaces_list[i][start_pos:n]))
             print("Non Num Cond1:", no_spaces_list[i][start_pos:n])      # test only
+            if len(no_spaces_list[i]) == n:
+              token_list.append(no_spaces_list[i])
+              break
             if no_spaces_list[i][n] in symbol:
               print("It's a symbol")                                     # test only
               token_list.append(no_spaces_list[i][n])
