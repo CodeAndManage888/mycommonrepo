@@ -89,7 +89,7 @@ def token_func(user_in):
             print("Non Num Cond1:", no_spaces_list[i][start_pos:n])      # test only
             if len(no_spaces_list[i]) == n:
               token_list.append(no_spaces_list[i])
-              break
+              continue
             if no_spaces_list[i][n] in symbol:
               print("It's a symbol")                                     # test only
               token_list.append(no_spaces_list[i][n])
