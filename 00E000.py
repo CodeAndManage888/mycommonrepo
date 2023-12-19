@@ -36,15 +36,22 @@
 #  user_num = int(input("Enter a number: "))
 #  comp(user_num)
 #-----------------------------------------------------------------------------------
-price = {"Nachos":6, "Pizaa":6, "Cheeseburger":10, "Water":4, "Coke":5}
-olist = []
-tax = .07
-total = 0
+#price = {"Nachos":6, "Pizza":6, "Cheeseburger":10, "Water":4, "Coke":5}
+#olist = []
+#tax = .07
+#total = 0
 
-order = input()
-olist = order.split()
-for o in olist:
-    total += price.get(o,5)
-total += total*tax
-f_total = f"{total:.2f}"
-print(f_total)
+#order = input()
+#olist = order.split()
+#for o in olist:
+#    total += price.get(o,5)
+#total += total*tax
+#f_total = f"{total:.2f}"
+#print(f_total)
+#-----------------------------------------------------------------------------------
+def add(x,y):
+  print(add(x + y,x*y))
+  return
+
+func = add
+func(1,2)
