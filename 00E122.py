@@ -75,6 +75,7 @@ def token_func(user_in):
           if no_spaces_list[i][:n].isdigit():
             if no_spaces_list[i][start_pos:n]:
               token_list.append(int(no_spaces_list[i][start_pos:n]))
+              assert no_spaces_list[i][start_pos:n]:
             print("Number Cond1:", no_spaces_list[i][start_pos:n])       # test only
             token_list.append(no_spaces_list[i][n])
             print("Number Cond2:", no_spaces_list[i][n])                 # test only
