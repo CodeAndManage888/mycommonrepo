@@ -1,3 +1,4 @@
+'''
 #import site
 #print(site.getsitepackages())
 #x = 1
@@ -10,6 +11,7 @@
 #count = len([ltr in ltr for ltr in "ABADZFAHIJKLMNOPQRSTUVWXYZ" if ltr == "A" and ltr == "Z"])
 #def greet(name):
 #'''This function greets the person passed in as a parameter'''
+'''
 #print("Hello, " + name)
 #-----------------------------------------------------------------------------------
 #Algorithm 1: Fibonacci using Recurssion
@@ -52,6 +54,10 @@
 def add(x,y):
   print(add(x + y,x*y))
   return
-
 func = add
 func(1,2)
+'''
+#-----------------------------------------------------------------------------------
+pyfile = open("00E122.py", "r")
+print(pyfile.read())
+pyfile.close()
