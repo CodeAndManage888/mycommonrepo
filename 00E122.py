@@ -38,9 +38,25 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-symbol = ["+", "-", "*", "/", "(", ")"]
-symbol2 = ["*", "/", "(", ")"]
+symbol = ["*", "/", "(", ")"]
 #--------------------------------------------------------------
+def token_func(math_str):
+  token_list = []
+  num_pos = []
+  signed_pos = []
+  no_spaces_list = math_str.split()
+  print(no_spaces_list)
+  for exp in no_spaces_list:
+    if len(exp) == 1:
+      token_list.append(exp)
+    else:
+      for index, char in enumerate(exp):
+        if char.isdigit():
+          num_pos.append(index)
+        elif char == "+" or char == "-":
+          signed_pos.append(index)
+  return token_list
+'''
 def token_func(user_in):
   no_spaces_list = user_in.split()
   #print(no_spaces_list)                                    # test only
@@ -103,6 +119,7 @@ def token_func(user_in):
         pos_list.clear()
         start_pos = 0
   return token_list
+'''
 #--------------------------------------------------------------
 if __name__ == "__main__":
   math_exp = input("Enter a mathematical expression: ")
