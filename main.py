@@ -58,8 +58,11 @@ def token_func(math_str):
       for index, char in enumerate(exp):
         if char in symbol:
           token_list.append(char)
+          continue
         elif char == "+" or char == "-":
-          if index == num_pos[0] - 1:
+          for num_index in num_pos:
+            if exp(index:num_index + 1).isdigit():
+              token_list.append(exp(index:num_index + 1))
   return token_list
 '''
 def token_func(user_in):
