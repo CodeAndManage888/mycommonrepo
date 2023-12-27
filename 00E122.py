@@ -61,9 +61,7 @@ def token_func(math_str):
           token_list.append(char)
           continue
         elif char == "+" or char == "-":
-          for num_index in num_pos:
-            if exp(index:num_index + 1).isdigit():
-              token_list.append(exp(cur_idx : num_index + 1))
+          if num_pos[0] - signed_pos[0]:
         else:
           continue
   return token_list
