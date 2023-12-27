@@ -66,7 +66,15 @@ pyfile.close()
 with open("00E122.py", "r") as code:
   for num in range(0,10):
     print(code.read(5))
-'''
 #-----------------------------------------------------------------------------------
 squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 print(squares[1:-1])
+'''
+#-----------------------------------------------------------------------------------
+txt = input("Enter a string: ")
+word_list = txt.split()
+long_word = ""
+for word in word_list:
+  if len(word) > len(long_word):
+    long_word = word
+print(long_word)
