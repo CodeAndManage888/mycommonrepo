@@ -1,22 +1,22 @@
 #!/bin/bash
 #**************************************************************
 # Date: 112423 (Expected Solution with 62 Lines of Code)      *
-# Title: Inﬁx to Postﬁx                                       *
+# Title: Infix to Postfix                                     *
 # Status: In Progress (In Progress / Testing / Working)       *
-# Mathematical expressions are often written in inﬁx form,    *
+# Mathematical expressions are often written in infix form,   *
 # where operators appear between the operands on which they   *
 # act. While this is a common form, it is also possible to    *
-# express mathematical expressions in postﬁx form, where the  *
-# operator appears after both operands. For example, the inﬁx *
+# express mathematical expressions in postfix form, where the *
+# operator appears after both operands. For example, the infix*
 # expression 3+4 is written as 34+ in postﬁx form. One can    *
-# convert an inﬁx expression to postﬁx form using the         *
+# convert an infix expression to postfix form using the       *
 # following algorithm: Create a new empty list, operators     *
-# Create a new empty list, postﬁx Foreach token in the inﬁx   *
-# expression Ifthe token is an integer then Add the token to  *
-# the end of postﬁx Ifthe token is an operator then While     *
+# Create a new empty list, postfix For each token in the infix*
+# expression. If the token is an integer then Add the token to*
+# the end of postfix. If the token is an operator then While  *
 # operators is not empty and the last item in operators is    *
 # not an open parenthesis and precedence(token)               *
-# <precedence(last item in operators )do Remove the last item *
+# precedence (last item in operators) do Remove the last item *
 # from operators and add it to postﬁx Add token to the end of *
 # operators Ifthe token is an open parenthesis then Add token *
 # to the end of operators Ifthe token is a close parenthesis  *
