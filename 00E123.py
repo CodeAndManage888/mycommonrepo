@@ -6,7 +6,7 @@
 # Mathematical expressions are often written in infix form,   *
 # where operators appear between the operands on which they   *
 # act. While this is a common form, it is also possible to    *
-# express mathematical expressions in postfix form, where the *
+# express mathematical expressions into postfix form, where the *
 # operator appears after both operands. For example, the infix*
 # expression 3+4 is written as 34+ in postﬁx form. One can    *
 # convert an infix expression to postfix form using the       *
