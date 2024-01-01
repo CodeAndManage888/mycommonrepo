@@ -1,4 +1,11 @@
 #-----------------------------------------------------------------------------------
+def febseq(x):
+  if x == 0 or x == 1:
+    return 1
+  else:
+    return febseq(x-1) + febseq(x-2)
+print(febseq(10))
+'''
 #-----------------------------------------------------------------------------------
 def breakword():
   word = input("Enter a word: ")
@@ -8,7 +15,6 @@ def breakword():
     yield oltr
 
 print(list(breakword()))
-'''
 #-----------------------------------------------------------------------------------
 triple = lambda x: x * 3
 add = lambda x, y: x + y
