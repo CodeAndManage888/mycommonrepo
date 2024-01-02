@@ -1,11 +1,19 @@
 #-----------------------------------------------------------------------------------
+def fibo(x):
+  if x == 0:
+    return 0
+  else:
+    return 
+x = int(input("Enter a number: "))
+print(fibo(x))
+'''
+#-----------------------------------------------------------------------------------
 def febseq(x):
   if x == 0 or x == 1:
     return 1
   else:
     return febseq(x-1) + febseq(x-2)
 print(febseq(10))
-'''
 #-----------------------------------------------------------------------------------
 def breakword():
   word = input("Enter a word: ")
