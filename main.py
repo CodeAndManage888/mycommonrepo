@@ -1,11 +1,11 @@
 #-----------------------------------------------------------------------------------
-def fibo(x):
+def fib1(x: int) -> int:
   if x == 0:
     return 0
-  else:
-    return 
-x = int(input("Enter a number: "))
-print(fibo(x))
+  return fib1(x-2) + fib1(x-1)
+if __name__ == "__main__":
+  x = int(input("Enter a number: "))
+  print(fib1(x))
 '''
 #-----------------------------------------------------------------------------------
 def febseq(x):
