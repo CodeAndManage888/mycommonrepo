@@ -1,14 +1,17 @@
 #-----------------------------------------------------------------------------------
 def fibonacci(x: int) -> int:
-  if x <= 0:
-    print(x)
-  print(fibonacci(x-1))
-  print(fibonacci(x-2))
-  return x
-
+  if x == 0:
+    return 0
+  elif x == 1:
+    return 1
+  else:
+    return fibonacci(x-1) + fibonacci(x-2)
 if __name__ == "__main__":
   x = int(input("Enter a number: "))
-  fibonacci(x)
+  ctr = 0
+  while ctr < x:
+    print(fibonacci(ctr))
+    ctr += 1
 '''
 #-----------------------------------------------------------------------------------
 def febseq(x):
