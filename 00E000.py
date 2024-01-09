@@ -1,4 +1,13 @@
 #-----------------------------------------------------------------------------------
+def apply_twice(func, arg):
+  return func(func(arg))
+
+def add_five(x):
+  return x + 5
+
+print(apply_twice(add_five, 10))
+'''
+#-----------------------------------------------------------------------------------
 def fibonacci(x: int) -> int:
   if x == 0:
     return 0
@@ -12,7 +21,6 @@ if __name__ == "__main__":
   while ctr < x:
     print(fibonacci(ctr))
     ctr += 1
-'''
 #-----------------------------------------------------------------------------------
 def febseq(x):
   if x == 0 or x == 1:
