@@ -65,12 +65,31 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+symbol = ["*", "/", "(", ")"]
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def token_func(math_str):
+  token_list = []
+  no_spaces_list = math_str.split()
+  print("Input: ", no_spaces_list)
+  for exp in no_spaces_list:
+    if len(exp) == 1:
+      token_list.append(exp)
+    else:
+      signed_char = ""
+      for char in exp:
+        if char in symbol:
+          if len(signed_char) != 0:
+            token_list.append(signed_char)
+            signed_char = ""
+          token_list.append(char)
+        elif char == "+" or char == "-" or char.isdigit():
+          signed_char += char
+      if signed_char != "":
+        token_list.append(signed_char)
+  return token_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in = input("Please enter an infix expression: ")
-  print(func_name(user_in))
+  math_exp = input("Enter a mathematical expression: ")
+  print(token_func(math_exp))
   print("Thank you for using this app.")
 #**************************************************************
