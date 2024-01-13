@@ -1,15 +1,21 @@
 #-----------------------------------------------------------------------------------
+import array as arr
+from array import *
+special_nums = arr.array('d', [0.577, 1.618, 2.718, 3.14, 6, 37, 1729])
+for i in special_nums:
+  print(i)
+'''
+#-----------------------------------------------------------------------------------
 def my_func(f, arg):
     return f(arg)
 
 my_func(lambda x: 2*x*x, 5)
-'''
 #-----------------------------------------------------------------------------------
 def apply_twice(func, arg):
   return func(func(arg))
 
 def add_five(x):
-  return x + 5
+  return x + 
 
 print(apply_twice(add_five, 10))
 #-----------------------------------------------------------------------------------
