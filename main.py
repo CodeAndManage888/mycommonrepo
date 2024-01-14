@@ -1,146 +1,95 @@
-#-----------------------------------------------------------------------------------
-import array as arr
-from array import *
-special_nums = arr.array('d', [0.577, 1.618, 2.718, 3.14, 6, 37, 1729])
-for i in special_nums:
-  print(i)
-'''
-#-----------------------------------------------------------------------------------
-def my_func(f, arg):
-    return f(arg)
-
-my_func(lambda x: 2*x*x, 5)
-#-----------------------------------------------------------------------------------
-def apply_twice(func, arg):
-  return func(func(arg))
-
-def add_five(x):
-  return x + 
-
-print(apply_twice(add_five, 10))
-#-----------------------------------------------------------------------------------
-def fibonacci(x: int) -> int:
-  if x == 0:
-    return 0
-  elif x == 1:
-    return 1
-  else:
-    return fibonacci(x-1) + fibonacci(x-2)
+#!/bin/bash
+#**************************************************************
+# Date: 112423 (Expected Solution with 62 Lines of Code)      *
+# Title: Infix to Postfix                                     *
+# Status: In Progress (In Progress / Testing / Working)       *
+# Mathematical expressions are often written in infix form,   *
+# where operators appear between the operands on which they   *
+# act. While this is a common form, it is also possible to    *
+# express mathematical expressions into postfix form, where   *
+# the operator appears after both operands. For example, the  *
+# infix expression 3 + 4 is written as 3 4 + in postﬁx form.  *
+# One can convert an infix expression to postfix form using   * 
+# the following algorithm:                                    *
+#                                                             *
+# Create a new empty list, operators                          *
+# Create a new empty list, postfix                            *
+#                                                             *
+# For each token in the infix expression                      *
+#    If the token is an integer then                          *
+#       Add the token to the end of postfix.                  *
+#    If the token is an operator then                         *
+#       While operators is not empty and                      *
+#             the last item in operators is not an open       *
+#             parenthesis and precedence(token) < precedence  *
+#             (last item in operators) do                     *
+#         Remove the last item from operators and add it to   *
+#         postﬁx                                              *
+#       Add token to the end of operators                     *
+#    If the token is an open parenthesis then                 *
+#        Add token to the end of operators                    *
+#    If the token is a close parenthesis then                 *
+#       While the last item in operators is not an open       *
+#       parenthesis do                                        *
+#         Remove the last item from operators and add it to   *
+#         postﬁx                                              *
+#       Remove the open parenthesis from operators            *
+#                                                             *
+# While operators is not the empty list do                    *
+#   Remove the last item from operators and add it to postﬁx  * 
+#                                                             *
+# Return postﬁx as the result of the algorithm                *
+#                                                             *
+# Use your solution to Exercise 122 to tokenize a mathematical*
+# expression. Then use algorithm above to transform the       *
+# expression from inﬁx form to postﬁx form. Your code that    *
+# implements the preceding algorithm algorithm should reside  *
+# in a function that takes a list of tokens representing an   *
+# inﬁx expression as its only parameter. It should return a   *
+# list of tokens representing the equivalent postﬁx expression*
+# as its only result. Include a main program that demonstrates*
+# your inﬁx to postﬁx function by reading an expression from  *
+# the user in inﬁx form and displaying it in postﬁx form.     *
+# The purpose of converting from inﬁx form to postﬁx form will*
+# become apparent when you read Exercise 124. You may ﬁnd your*
+# solutions to Exercises 90 and 91 helpful when completing    *
+# this problem.                                               *
+#                                                             *
+# The algorithms provided in Exercises 123 and 124 do not     *
+# perform any error checking. As a result, you may crash your *
+# program or receive incorrect results if you provide them    *
+# with invalid input. These algorithms can be extended to     *
+# detect invalid input and respond to it in a reasonable      *
+# manner. Doing so is left as an independent study exercise   *
+# for the interested student.                                 *
+#                                                             *
+# Computed Result Validated:                                  *
+#**************************************************************
+symbol = ["*", "/", "(", ")"]
+#--------------------------------------------------------------
+def token_func(math_str):
+  token_list = []
+  no_spaces_list = math_str.split()
+  print("Input: ", no_spaces_list)
+  for exp in no_spaces_list:
+    if len(exp) == 1:
+      token_list.append(exp)
+    else:
+      signed_char = ""
+      for char in exp:
+        if char in symbol:
+          if len(signed_char) != 0:
+            token_list.append(signed_char)
+            signed_char = ""
+          token_list.append(char)
+        elif char == "+" or char == "-" or char.isdigit():
+          signed_char += char
+      if signed_char != "":
+        token_list.append(signed_char)
+  return token_list
+#--------------------------------------------------------------
 if __name__ == "__main__":
-  x = int(input("Enter a number: "))
-  ctr = 0
-  while ctr < x:
-    print(fibonacci(ctr))
-    ctr += 1
-#-----------------------------------------------------------------------------------
-def febseq(x):
-  if x == 0 or x == 1:
-    return 1
-  else:
-    return febseq(x-1) + febseq(x-2)
-print(febseq(10))
-#-----------------------------------------------------------------------------------
-def breakword():
-  word = input("Enter a word: ")
-  oltr = ""
-  for ltr in word:
-    oltr += ltr
-    yield oltr
-
-print(list(breakword()))
-#-----------------------------------------------------------------------------------
-triple = lambda x: x * 3
-add = lambda x, y: x + y
-print(add(triple(3), 4))
-#-----------------------------------------------------------------------------------
-def polynomial(x):
-    return x**2 + 5*x + 4
-print(polynomial(5))
-
-print((lambda x: x**2 + 5*x + 4)(5))
-#-----------------------------------------------------------------------------------
-def my_func(f, arg):
-  return f(arg)
-
-x = int(input())
-
-print(my_func(lambda x: 2*x*x, x))
-#-----------------------------------------------------------------------------------
-txt = input("Enter a string: ")
-word_list = txt.split()
-long_word = ""
-for word in word_list:
-  if len(word) >= len(long_word):
-    long_word = word
-print(long_word)
-#import site
-#print(site.getsitepackages())
-#x = 1
-#print(x == 1)
-#user_input = " "
-#proc_data_one = user_input.strip()
-#print(ord("A"), ord("Z"), ord("a"), ord("z"), ord("0"), ord("9"))
-#digit_list = [2, 4, 5, "A", "F", "B"]
-#print(digit_list.sort())
-#count = len([ltr in ltr for ltr in "ABADZFAHIJKLMNOPQRSTUVWXYZ" if ltr == "A" and ltr == "Z"])
-#def greet(name):
-'''
-'''
-#print("Hello, " + name)
-#-----------------------------------------------------------------------------------
-#Algorithm 1: Fibonacci using Recurssion
-#def fib1(n: int) -> int:
-#  if n < 2:
-#    print("condition 1")
-#    return n
-#  else:
-#    print("condition 2")
-#    return fib1(n - 1) + fib1(n - 2)
-#if __name__ == "__main__":
-#  user_num = int(input("Enter a number: "))
-#  print(fib1(user_num))
-#-----------------------------------------------------------------------------------
-#Algorith 2: Fibonacci
-#def comp(n):
-#  for i in range(n):
-#    if i < 2:
-#      print(i)
-#    else:
-#      print(i+1)
-#  return
-#if __name__ == "__main__":
-#  user_num = int(input("Enter a number: "))
-#  comp(user_num)
-#-----------------------------------------------------------------------------------
-#price = {"Nachos":6, "Pizza":6, "Cheeseburger":10, "Water":4, "Coke":5}
-#olist = []
-#tax = .07
-#total = 0
-
-#order = input()
-#olist = order.split()
-#for o in olist:
-#    total += price.get(o,5)
-#total += total*tax
-#f_total = f"{total:.2f}"
-#print(f_total)
-#-----------------------------------------------------------------------------------
-def add(x,y):
-  print(add(x + y,x*y))
-  return
-func = add
-func(1,2)
-test run
-#-----------------------------------------------------------------------------------
-pyfile = open("00E122.py", "r")
-for num in range(0,100):
-  print(pyfile.read(5))
-pyfile.close()
-#-----------------------------------------------------------------------------------
-with open("00E122.py", "r") as code:
-  for num in range(0,10):
-    print(code.read(5))
-#-----------------------------------------------------------------------------------
-squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-print(squares[1:-1])
-'''
+  math_exp = input("Enter a mathematical expression: ")
+  print(token_func(math_exp))
+  print("Thank you for using this app.")
+#**************************************************************
