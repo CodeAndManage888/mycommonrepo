@@ -21,7 +21,7 @@
 #    If the token is an operator then                         *
 #       While operators is not empty and                      *
 #             the last item in operators is not an open       *
-#             parenthesis and precedence(token) <# precedence *
+#             parenthesis and precedence(token) < precedence  *
 #             (last item in operators) do                     *
 #         Remove the last item from operators and add it to   *
 #         postﬁx                                              *
