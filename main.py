@@ -12,7 +12,7 @@ def twoSum(numbers, target):
     for i in range(len(numbers)):
         for j in range(i+1, len(numbers)):
             if numbers[i] + numbers[j] == target:
-                return [i, j]
+                return [i+1, j+1]
     return []
 # ------------------------------------------------------------------------
 # The main function
@@ -23,6 +23,7 @@ if __name__ == "__main__":
     numbers = [int(x) for x in line.split(',')]
     # Sort the input list
     numbers.sort()
+    print(numbers)
     # Read in the target
     target = int(input())
     # Find the two numbers that add up to the target
