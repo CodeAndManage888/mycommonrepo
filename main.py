@@ -1,4 +1,12 @@
 # ------------------------------------------------------------------------
+# Given a linked list, determine if it has a cycle in it.
+# Follow up: Can you solve it without using extra space?
+# ------------------------------------------------------------------------
+
+
+
+'''
+# ------------------------------------------------------------------------
 # Given an array of integers that is already sorted in ascending order, 
 # find two numbers such that they add up to a specific target number.
 # The function twoSum should return indices of the two numbers such that 
@@ -29,6 +37,4 @@ if __name__ == "__main__":
     # Find the two numbers that add up to the target
     print(twoSum(numbers, target))
 # ------------------------------------------------------------------------
-# Given a linked list, determine if it has a cycle in it.
-# Follow up: Can you solve it without using extra space?
-# ------------------------------------------------------------------------
+'''
