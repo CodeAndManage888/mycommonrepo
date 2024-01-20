@@ -1,40 +1,105 @@
-# ------------------------------------------------------------------------
-# Given a linked list, determine if it has a cycle in it.
-# Follow up: Can you solve it without using extra space?
-# ------------------------------------------------------------------------
+#!/bin/bash
+#**************************************************************
+# Date: 112423 (Expected Solution with 62 Lines of Code)      *
+# Title: Infix to Postfix                                     *
+# Status: In Progress (In Progress / Testing / Working)       *
+# Mathematical expressions are often written in infix form,   *
+# where operators appear between the operands on which they   *
+# act. While this is a common form, it is also possible to    *
+# express mathematical expressions into postfix form, where   *
+# the operator appears after both operands. For example, the  *
+# infix expression 3 + 4 is written as 3 4 + in postﬁx form.  *
+# One can convert an infix expression to postfix form using   * 
+# the following algorithm:                                    *
+#                                                             *
+# Create a new empty list, operators                          *
+# Create a new empty list, postfix                            *
+#                                                             *
+# For each token in the infix expression                      *
+#    If the token is an integer then                          *
+#       Add the token to the end of postfix.                  *
+#    If the token is an operator then                         *
+#       While operators is not empty and                      *
+#             the last item in operators is not an open       *
+#             parenthesis and precedence(token) < precedence  *
+#             (last item in operators) do                     *
+#         Remove the last item from operators and add it to   *
+#         postﬁx                                              *
+#       Add token to the end of operators                     *
+#    If the token is an open parenthesis then                 *
+#        Add token to the end of operators                    *
+#    If the token is a close parenthesis then                 *
+#       While the last item in operators is not an open       *
+#       parenthesis do                                        *
+#         Remove the last item from operators and add it to   *
+#         postﬁx                                              *
+#       Remove the open parenthesis from operators            *
+#                                                             *
+# While operators is not the empty list do                    *
+#   Remove the last item from operators and add it to postﬁx  * 
+#                                                             *
+# Return postﬁx as the result of the algorithm                *
+#                                                             *
+# Use your solution to Exercise 122 to tokenize a mathematical*
+# expression. Then use algorithm above to transform the       *
+# expression from inﬁx form to postﬁx form. Your code that    *
+# implements the preceding algorithm algorithm should reside  *
+# in a function that takes a list of tokens representing an   *
+# inﬁx expression as its only parameter. It should return a   *
+# list of tokens representing the equivalent postﬁx expression*
+# as its only result. Include a main program that demonstrates*
+# your inﬁx to postﬁx function by reading an expression from  *
+# the user in inﬁx form and displaying it in postﬁx form.     *
+# The purpose of converting from inﬁx form to postﬁx form will*
+# become apparent when you read Exercise 124. You may ﬁnd your*
+# solutions to Exercises 90 and 91 helpful when completing    *
+# this problem.                                               *
+#                                                             *
+# The algorithms provided in Exercises 123 and 124 do not     *
+# perform any error checking. As a result, you may crash your *
+# program or receive incorrect results if you provide them    *
+# with invalid input. These algorithms can be extended to     *
+# detect invalid input and respond to it in a reasonable      *
+# manner. Doing so is left as an independent study exercise   *
+# for the interested student.                                 *
+#                                                             *
+# Computed Result Validated:                                  *
+#**************************************************************
+symbol = ["*", "/", "(", ")"]
+#--------------------------------------------------------------
+def token_func(math_str):
+  token_list = []
+  no_spaces_list = math_str.split()
+  print("Input: ", no_spaces_list)
+  for exp in no_spaces_list:
+    if len(exp) == 1:
+      token_list.append(exp)
+    else:
+      signed_char = ""
+      for char in exp:
+        if char in symbol:
+          if len(signed_char) != 0:
+            token_list.append(signed_char)
+            signed_char = ""
+          token_list.append(char)
+        elif char == "+" or char == "-" or char.isdigit():
+          signed_char += char
+      if signed_char != "":
+        token_list.append(signed_char)
+  return token_list
 
-
-
-'''
-# ------------------------------------------------------------------------
-# Given an array of integers that is already sorted in ascending order, 
-# find two numbers such that they add up to a specific target number.
-# The function twoSum should return indices of the two numbers such that 
-# they add up to the target, where index1 must be less than index2 are not
-# zero-based.
-# Note: You may assume that each input would have exactly one solution.
-# Input: numbers={2, 7, 11, 15}, target=9 Outpu: [1,2]
-# ------------------------------------------------------------------------
-def twoSum(numbers, target):
-    # Write your code here
-    for i in range(len(numbers)):
-        for j in range(i+1, len(numbers)):
-            if numbers[i] + numbers[j] == target:
-                return [i+1, j+1]
-    return []
-# ------------------------------------------------------------------------
-# The main function
-# ------------------------------------------------------------------------
+def conv_infix_to_postfix(token_list):
+  operators = []
+  postfix = []
+  for token in token_list:
+    if token.isdigit():
+      postfix.append(token)
+    elif token == "(":
+#--------------------------------------------------------------
 if __name__ == "__main__":
-    # Read in a list of integers
-    line = input().strip()
-    numbers = [int(x) for x in line.split(',')]
-    # Sort the input list
-    numbers.sort()
-    print(numbers)
-    # Read in the target
-    target = int(input())
-    # Find the two numbers that add up to the target
-    print(twoSum(numbers, target))
-# ------------------------------------------------------------------------
-'''
+  math_exp = input("Enter a mathematical expression: ")
+  infix_terms = token_func(math_exp)
+  print("Infix: ", infix_terms)
+  postfix_terms = conv_infix_to_postfix(infix_terms)
+  print("Thank you for using this app.")
+#**************************************************************
