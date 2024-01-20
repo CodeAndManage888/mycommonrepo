@@ -87,9 +87,19 @@ def token_func(math_str):
       if signed_char != "":
         token_list.append(signed_char)
   return token_list
+
+def conv_infix_to_postfix(token_list):
+  operators = []
+  postfix = []
+  for token in token_list:
+    if token.isdigit():
+      postfix.append(token)
+    elif token == "(":
 #--------------------------------------------------------------
 if __name__ == "__main__":
   math_exp = input("Enter a mathematical expression: ")
-  print(token_func(math_exp))
+  infix_terms = token_func(math_exp)
+  print("Infix: ", infix_terms)
+  postfix_terms = conv_infix_to_postfix(infix_terms)
   print("Thank you for using this app.")
 #**************************************************************
