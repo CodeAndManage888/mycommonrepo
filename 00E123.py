@@ -95,11 +95,13 @@ def conv_infix_to_postfix(token_list):
     if token.isdigit():
       postfix.append(token)
     elif token == "(":
+      while operators != [] and operators[-1] != ")":
+        postfix.append(operators.pop())
       operators.append(token)
     elif token == ")":
       while operators[-1] != "(":
         postfix.append(operators.pop())
-  for operator in operators:
+  while operators != []:
     postfix.append(operators.pop())
   return postfix
 #--------------------------------------------------------------
@@ -108,5 +110,6 @@ if __name__ == "__main__":
   infix_terms = token_func(math_exp)
   print("Infix: ", infix_terms)
   postfix_terms = conv_infix_to_postfix(infix_terms)
+  print("Postfix: ", postfix_terms)
   print("Thank you for using this app.")
 #**************************************************************
