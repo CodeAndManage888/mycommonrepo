@@ -94,6 +94,8 @@ def conv_infix_to_postfix(token_list):
   for token in token_list:
     if token.isdigit():
       postfix.append(token)
+    elif token == "+" or token == "-" or token == "*":
+      operators.append(token)
     elif token == "(":
       while operators != [] and operators[-1] != ")":
         postfix.append(operators.pop())
