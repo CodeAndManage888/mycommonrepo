@@ -108,7 +108,7 @@ def conv_infix_to_postfix(token_list):
   return postfix
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  math_exp = input("Enter a mathematical expression: ")
+  math_exp = input("Enter a mathematical expression w/ Spaces: ")
   infix_terms = token_func(math_exp)
   print("Infix: ", infix_terms)
   postfix_terms = conv_infix_to_postfix(infix_terms)
