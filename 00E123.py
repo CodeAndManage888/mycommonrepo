@@ -100,12 +100,17 @@ def conv_infix_to_postfix(token_list):
     elif token == "(":
       while operators != [] and operators[-1] != ")":
         postfix.append(operators.pop())
-      operators.append(token)
+#      operators.append(token)
     elif token == ")":
-      while operators[-1] != "(":
+      while operators != [] and operators[-1] != "(":
         postfix.append(operators.pop())
-  while operators != []:
-    postfix.append(operators.pop())
+  print("Not Empty: ", operators)
+  for item in operators:
+    if item != "(" or item != ")":
+      postfix.append(operators.pop())
+    else:
+      operators.pop()
+  print("Empty: ", operators)
   return postfix
 #--------------------------------------------------------------
 if __name__ == "__main__":
