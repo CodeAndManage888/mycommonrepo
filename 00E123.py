@@ -65,7 +65,6 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-#symbol = ["*", "/", "(", ")"]
 symbol = ["*", "/", "(", ")" , "+", "-"]
 #--------------------------------------------------------------
 def token_func(math_str):
@@ -100,7 +99,6 @@ def conv_infix_to_postfix(token_list):
     elif token == "(":
       while operators != [] and operators[-1] != ")":
         postfix.append(operators.pop())
-#      operators.append(token)
     elif token == ")":
       while operators != [] and operators[-1] != "(":
         postfix.append(operators.pop())
