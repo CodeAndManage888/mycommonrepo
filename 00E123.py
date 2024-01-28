@@ -97,7 +97,7 @@ def conv_infix_to_postfix(token_list):
     elif token == "+" or token == "-" or token == "*" or token == "/":
       operators.append(token)
     elif token == "(":
-      while operators != [] and operators[-1] != ")":
+      while operators != [] and operators[-1] == ")":
         postfix.append(operators.pop())
     elif token == ")":
       while operators != [] and operators[-1] != "(":
@@ -119,3 +119,8 @@ if __name__ == "__main__":
   print("Postfix: ", postfix_terms)
   print("Thank you for using this app.")
 #**************************************************************
+# Open Issues:
+# 1) It can't handle signed token refer to 122 code.
+# 2) It can't handle complex expression like parenthesis and 
+# operand e.g. (2 -1 ) * (3 + 4)
+# 3) It can't handle multiple parethesis e.g. (2+2)(1+1)
