@@ -66,6 +66,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 symbol = ["*", "/", "(", ")" , "+", "-"]
+symbol2 = ["/", "+", "-"]
 #--------------------------------------------------------------
 def token_func(math_str):
   token_list = []
@@ -91,18 +92,25 @@ def token_func(math_str):
 def conv_infix_to_postfix(token_list):
   operators = []
   postfix = []
+  close_open = []
   for token in token_list:
     if token.isdigit():
       postfix.append(token)
     elif token == "+" or token == "-" or token == "*" or token == "/":
       operators.append(token)
     elif token == "(":
+      close_open.append(token)
       while operators != [] and operators[-1] == ")":
         postfix.append(operators.pop())
+      if close_open[0] == ")" and close_open[1] == "(":
+        operators.append("*")
+      close_open.clear()  #will clear the list
     elif token == ")":
+      close_open.append(token)
       while operators != [] and operators[-1] != "(":
         postfix.append(operators.pop())
   print("Not Empty: ", operators)
+  #clean up steps?
   for item in operators:
     if item != "(" or item != ")":
       postfix.append(operators.pop())
@@ -119,8 +127,3 @@ if __name__ == "__main__":
   print("Postfix: ", postfix_terms)
   print("Thank you for using this app.")
 #**************************************************************
-# Open Issues:
-# 1) It can't handle signed token refer to 122 code.
-# 2) It can't handle complex expression like parenthesis and 
-# operand e.g. (2 -1 ) * (3 + 4)
-# 3) It can't handle multiple parethesis e.g. (2+2)(1+1)
