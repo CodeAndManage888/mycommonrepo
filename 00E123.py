@@ -66,7 +66,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 symbol = ["*", "/", "(", ")" , "+", "-"]
-symbol2 = ["/", "+", "-"]
+#symbol2 = ["/", "+", "-"]
 #--------------------------------------------------------------
 def token_func(math_str):
   token_list = []
@@ -98,6 +98,7 @@ def conv_infix_to_postfix(token_list):
       postfix.append(token)
     elif token == "+" or token == "-" or token == "*" or token == "/":
       operators.append(token)
+      close_open.clear()  #will clear the list
     elif token == "(":
       close_open.append(token)
       while operators != [] and operators[-1] == ")":
