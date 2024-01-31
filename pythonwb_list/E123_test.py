@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 112423 (Expected Solution with 62 Lines of Code)      *
 # Title: Infix to Postfix                                     *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Mathematical expressions are often written in infix form,   *
 # where operators appear between the operands on which they   *
 # act. While this is a common form, it is also possible to    *
@@ -128,3 +128,6 @@ if __name__ == "__main__":
   print("Postfix: ", postfix_terms)
   print("Thank you for using this app.")
 #**************************************************************
+# Open Issues:
+# 1.) The exercise 122 solution can't handle signed number that
+#     affects the exercise 123 solution.
