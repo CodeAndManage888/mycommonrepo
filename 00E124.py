@@ -87,6 +87,25 @@ def conv_infix_to_postfix(token_list):
       operators.pop()
   print("Empty: ", operators)
   return postfix
+
+def eval_express(postfix):
+  values = []
+  for token in postfix:
+    if token.isdigit():
+      values.append(token)
+    else:
+      right = values.pop()
+      left = values.pop()
+      if token == "+":
+        result = int(left) + int(right)
+      elif token == "-":
+        result = int(left) - int(right)
+      elif token == "*":
+        result = int(left) * int(right)
+      elif token == "/":
+        result = int(left) / int(right)
+      values.append(result)
+  return values.pop()
 #--------------------------------------------------------------
 if __name__ == "__main__":
   math_exp = input("Enter a mathematical expression w/ Spaces: ")
