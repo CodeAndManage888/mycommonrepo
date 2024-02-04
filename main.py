@@ -113,6 +113,8 @@ if __name__ == "__main__":
   print("Infix: ", infix_terms)
   postfix_terms = conv_infix_to_postfix(infix_terms)
   print("Postfix: ", postfix_terms)
+  express_results = eval_express(postfix_terms)
+  print("Expression Results: ", express_results)
   print("Thank you for using this app.")
 #**************************************************************
 # Open Issues:
