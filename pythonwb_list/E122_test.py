@@ -66,3 +66,6 @@ if __name__ == "__main__":
   print(token_func(math_exp))
   print("Thank you for using this app.")
 #**************************************************************
+# Open Issues:
+# 1.) The exercise 122 solution can't handle signed number that
+#     affects the exercise 123 and 124 solutions.

@@ -119,4 +119,4 @@ if __name__ == "__main__":
 #**************************************************************
 # Open Issues:
 # 1.) The exercise 122 solution can't handle signed number that
-#     affects the exercise 123 solution.
+#     affects the exercise 123 and 124 solutions.
