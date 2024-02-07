@@ -34,8 +34,8 @@ def sublist_chk(subl1, subl2):
     return sublist_chk(subl1, subl2[1:])
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  sublist_in1 = input("Enter a list of numbers separated by spaces: ")
-  sublist_in2 = input("Enter a list of numbers separated by spaces: ")
+  sublist_in1 = input("Enter a first list of numbers separated by spaces: ")
+  sublist_in2 = input("Enter a second list of numbers separated by spaces: ")
   sublist_1 = sublist_in1.split()
   sublist_2 = sublist_in2.split()
   print("List 1: ", sublist_1)
