@@ -24,12 +24,10 @@
 #**************************************************************
 #--------------------------------------------------------------
 def sublist_chk(subl1, subl2):
-  if subl1 == []:
-    return False
-  elif subl2 == []:
+  if subl1 == subl2 or subl2 == []:
     return True
-  elif subl1[0] == subl2[0]:
-    return sublist_chk(subl1[1:], subl2[1:])
+  elif len(subl2) == 1:
+    return subl2[0] in subl1
   else:
     return sublist_chk(subl1 [1:], subl2)
 #--------------------------------------------------------------
