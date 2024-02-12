@@ -26,13 +26,12 @@
 def sublist_chk(subl1, subl2):
   if subl1 == subl2 or subl2 == []:
     return True
-  elif len(subl2) == 1:
-    return subl2[0] in subl1
-  elif len(subl2) > 1:
-    if subl2[0] in subl1:
-      return sublist_chk(subl1[subl1.index(subl2[0]):], subl2[1:])
-    else:
-      return False
+  
+  elif len(subl2) >= 1:
+    if subl1[0] == subl2[0]:
+      return sublist_chk(subl1, subl2[1:])
+    elif subl1[0] != subl2[0]:
+      return sublist_chk(subl1[1:], subl2)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   sublist_in1 = input("Enter a first list of numbers separated by spaces: ")
