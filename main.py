@@ -1,51 +1,42 @@
 #!/bin/bash
 #**************************************************************
-# Date: 112523 (Expected Solution with 44 Lines of Code)      *
-# Title: Does a List contain a Sublist?                       *
+# Date: 112623 (Expected Solution with 40 Lines of Code)      *
+# Title: Generate All Sublists of a List                      *
 # Status: In Progress (In Progress / Testing / Working)       *
-# A sublist is a list that makes up part of a larger list. A  *
-# sublist may be a list containing a single element, multiple *
-# elements, or even no elements at all. For example, [1],     *
-# [2],[3] and [4] are all sublists of [1, 2, 3, 4] . The      *
-# list [2, 3] is also a sublist of [1, 2, 3, 4], but [2, 4] is*
-# not a sublist [1, 2, 3, 4] because the elements 2 and 4 are *
-# not adjacent in the longer list. The empty list is a sublist*
-# of any list. As a result, [] is a sublist of [1, 2, 3, 4]. A*
-# list is a sublist of itself, meaning that [1, 2, 3, 4] is   *
-# also a sublist of [1, 2, 3, 4]. In this exercise you will   *
-# create a function, is Sublist, that determines whether or   *
-# not one list is a sublist of another. Your function should  *
-# take two lists, larger and smaller, as its only parameters. *
-# It should return True if and only if smaller is a sublist of*
-# larger . Write a main program that demonstrates your        * 
-# function.                                                   *
+# Using the deﬁnition of a sublist from Exercise 125, write a *
+# function that returns a list containing every possible      *
+# sublist of a list. For example, the sublists of [1, 2, 3]   *
+# are[],[1],[2],[3],[1, 2] ,[2, 3] and [1, 2, 3] . Note that  *
+# your function will always return a list containing at       *
+# least the empty list because the empty list is a sublist of *
+# every list. Include a main program that demonstrate your    *
+# function by displaying all of the sublists of several       *
+# different lists.                                            *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def sublist_chk(subl1, subl2):
-  if subl1 == subl2 or subl2 == []:
-    return True
-  elif subl1 == [] and subl2 != []:
-    return False
-  elif len(subl1) > 1 and len(subl2) > 1:
-    if subl1[1] != subl2[1]:
-      return False
-  elif subl1[0] == subl2[0]:
-    return sublist_chk(subl1, subl2[1:])
-  elif subl1[0] != subl2[0] and len(subl1) > 1:
-    return sublist_chk(subl1[1:], subl2)
+def extract_sublst(olist):
+  nlist = []
+  ilist = []
+  glist = []
+  ctrgrp_rng = 0
+  while ctrgrp_rng <= len(olist) - 1:
+    glist.append(ctrgrp_rng)
+    ctrgrp_rng += 1
+  stop_mark = len(olist) - 1
+  nlist.append(ilist)
+  for ctrx, x in enumerate(olist):
+    ilist.append(x)
+    if ctrx == stop_mark:
+      nlist.append(ilist)
+      ilist = []
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  sublist_in1 = input("Enter a first list of numbers separated by spaces: ")
-  sublist_in2 = input("Enter a second list of numbers separated by spaces: ")
-  sublist_1 = sublist_in1.split()
-  sublist_2 = sublist_in2.split()
-  print("List 1: ", sublist_1)
-  print("List 2: ", sublist_2)
-  if sublist_chk(sublist_1, sublist_2):
-    print("List 2 is a sublist of List 1")
-  else:
-    print("List 2 is not a sublist of List 1")
+  sublist_in = input("Enter a first list of numbers separated by spaces: ")
+  sublist = sublist_in.split()
+  print(extract_sublst(sublist)
+  print("Original List: ", sublist)
   print("Thank you for using this app.")
 #**************************************************************

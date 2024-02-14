@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 112523 (Expected Solution with 44 Lines of Code)      *
 # Title: Does a List contain a Sublist?                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # A sublist is a list that makes up part of a larger list. A  *
 # sublist may be a list containing a single element, multiple *
 # elements, or even no elements at all. For example, [1],     *
@@ -24,17 +24,21 @@
 #**************************************************************
 #--------------------------------------------------------------
 def sublist_chk(subl1, subl2):
+  ilist = []
   if subl1 == subl2 or subl2 == []:
     return True
-  elif subl1 == [] and subl2 != []:
+  elif len(subl2) == 1:
+    return subl2[0] in subl1
+  elif len(subl2) > 1:
+    for ctrx, x in enumerate(subl1):
+      if x in subl2:
+        ilist.append(ctrx)
+    for posi, posx in enumerate(ilist):
+      if posi != len(ilist) - 1 and ilist[posi + 1] - posx != 1:
+          return False
+    return True
+  else:
     return False
-  elif len(subl1) > 1 and len(subl2) > 1:
-    if subl1[1] != subl2[1]:
-      return False
-  elif subl1[0] == subl2[0]:
-    return sublist_chk(subl1, subl2[1:])
-  elif subl1[0] != subl2[0] and len(subl1) > 1:
-    return sublist_chk(subl1[1:], subl2)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   sublist_in1 = input("Enter a first list of numbers separated by spaces: ")
