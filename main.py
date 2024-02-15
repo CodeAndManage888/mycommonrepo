@@ -21,22 +21,18 @@ def extract_sublst(olist):
   ilist = []
   glist = []
   ctrgrp_rng = 0
-  while ctrgrp_rng <= len(olist) - 1:
+  while ctrgrp_rng <= len(olist) - 2:
     glist.append(ctrgrp_rng)
     ctrgrp_rng += 1
+  print(ctrgrp_rng)
   stop_mark = len(olist) - 1
   nlist.append(ilist)
-  for ctrx, x in enumerate(olist):
-    ilist.append(x)
-    if ctrx == stop_mark:
-      nlist.append(ilist)
-      ilist = []
-  return
+  return nlist
 #--------------------------------------------------------------
 if __name__ == "__main__":
   sublist_in = input("Enter a first list of numbers separated by spaces: ")
   sublist = sublist_in.split()
-  print(extract_sublst(sublist)
+  print(extract_sublst(sublist))
   print("Original List: ", sublist)
   print("Thank you for using this app.")
 #**************************************************************
