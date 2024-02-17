@@ -17,29 +17,30 @@
 #**************************************************************
 #--------------------------------------------------------------
 def extract_sublst(olist):
-  nlist = []
-  ilist = []
-  glist = []
+  nlist, ilist, glist = [], [], []
   ctrgrp_rng, ctr = 0, 0
   while ctrgrp_rng <= len(olist) - 2:
     glist.append(ctrgrp_rng)
     ctrgrp_rng += 1
   print(glist)
+  print(ilist)
   for g in glist:
     if g == 0:
       nlist.append(ilist)
+      print("Final List after Cond 1:", nlist)
     else:
-      while ctr < len(olist) - 1:
-        ilist.append(olist[ctr])
-        ctr += g
-        nlist.append(ilist)
-        ilist = []
+      while ctr < len(olist) - 1 and ctr < len(olist) - g:
+        ilist.append(olist[ctr + g])
+        ctr += 1
+      nlist.append(ilist)
+      ilist = []
+      ctr = 0
   return nlist
 #--------------------------------------------------------------
 if __name__ == "__main__":
   sublist_in = input("Enter a first list of numbers separated by spaces: ")
   sublist = sublist_in.split()
-  print(extract_sublst(sublist))
   print("Original List: ", sublist)
+  print("Extracted Sublists: ", extract_sublst(sublist))
   print("Thank you for using this app.")
 #**************************************************************
