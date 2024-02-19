@@ -29,7 +29,7 @@ def extract_sublst(olist):
       nlist.append(ilist)
       print("Final List after Cond 1:", nlist)
     else:
-      while ctr < len(olist) - 1 and ctr < len(olist) - g:
+      while ctr <= len(olist) and ctr + g < len(olist):
         ilist.append(olist[ctr + g])
         ctr += 1
       nlist.append(ilist)
