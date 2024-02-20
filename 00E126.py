@@ -23,14 +23,17 @@ def extract_sublst(olist):
     glist.append(ctrgrp_rng)
     ctrgrp_rng += 1
   print(glist)
-  print(ilist)
+  grp = len(0list) - 2
+  for i in olist:
+    while ctr <= grp:
+      ilist
   for g in glist:
     if g == 0:
       nlist.append(ilist)
       print("Final List after Cond 1:", nlist)
     else:
-      while ctr <= len(olist) and ctr + g < len(olist):
-        ilist.append(olist[ctr + g])
+      while ctr + g <= len(olist) - 1:
+        ilist.append(olist[ctr:ctr + g])
         ctr += 1
       nlist.append(ilist)
       ilist = []
