@@ -17,27 +17,18 @@
 #**************************************************************
 #--------------------------------------------------------------
 def extract_sublst(olist):
-  nlist, ilist, glist = [], [], []
-  ctrgrp_rng, ctr = 0, 0
-  while ctrgrp_rng <= len(olist) - 2:
-    glist.append(ctrgrp_rng)
-    ctrgrp_rng += 1
+  nlist, glist = [], []
+  ctr1, ctr2 = 0, 0
+  while ctr1 <= len(olist) - 2:
+    glist.append(ctr1)
+    ctr1 += 1
+  nlist.append([])
   print(glist)
-  grp = len(0list) - 2
-  for i in olist:
-    while ctr <= grp:
-      ilist
   for g in glist:
-    if g == 0:
-      nlist.append(ilist)
-      print("Final List after Cond 1:", nlist)
-    else:
-      while ctr + g <= len(olist) - 1:
-        ilist.append(olist[ctr:ctr + g])
-        ctr += 1
-      nlist.append(ilist)
-      ilist = []
-      ctr = 0
+    while len(olist) - 1 >= ctr2 and ctr2 + g < len(olist):
+      nlist.append([olist[ctr2 + g:]])
+      ctr2 += 1
+    ctr2 = 0
   return nlist
 #--------------------------------------------------------------
 if __name__ == "__main__":
