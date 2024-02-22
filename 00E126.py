@@ -19,16 +19,19 @@
 def extract_sublst(olist):
   nlist, glist = [], []
   ctr1, ctr2 = 0, 0
-  while ctr1 <= len(olist) - 2:
+  while ctr1 <= len(olist) - 1:
     glist.append(ctr1)
     ctr1 += 1
   nlist.append([])
   print(glist)
   for g in glist:
-    while len(olist) - 1 >= ctr2 and ctr2 + g < len(olist):
-      nlist.append([olist[ctr2 + g:]])
-      ctr2 += 1
-    ctr2 = 0
+    if g == 0:
+      nlist.append([])
+    else:
+      while len(olist) >= ctr2 and ctr2 + g < len(olist):
+        nlist.append(olist[ctr2:ctr2 + g])
+        ctr2 += 1
+      ctr2 = 0
   return nlist
 #--------------------------------------------------------------
 if __name__ == "__main__":
