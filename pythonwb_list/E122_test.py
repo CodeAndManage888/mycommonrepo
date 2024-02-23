@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 112423 (Expected Solution with 64 Lines of Code)      *
 # Title: Tokenizing a String                                  *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Tokenizing is the process of converting a string into a     *
 # list of substrings, known as tokens. In many circumstances, *
 # a list of tokens is far easier to work with than the        *
@@ -38,36 +38,27 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-symbol = ["+", "-", "*", "/", "(", ")"]
+symbol = ["*", "/", "(", ")"]
 #--------------------------------------------------------------
-# possible solution is to create a list with no spaces first
-# then split the string into tokens
-#--------------------------------------------------------------
-# having issues with more than one space between tokens and
-# more than 1 numbers together. parenthesis is also a problem
-# tokens that are are in between numbers are also a problem
-#--------------------------------------------------------------
-def token_func(user_in):
-  no_spaces_list = user_in.split()
-  print(no_spaces_list)                    # test only
+def token_func(math_str):
   token_list = []
-  save_end_idx = 0
-  for i in range(len(no_spaces_list)):
-    print(i)                              # test only
-    print(no_spaces_list[i])              # test only
-    if len(no_spaces_list[i]) >= 1:
-      if no_spaces_list[i] in symbol:
-        token_list.append(no_spaces_list[i])
-      elif no_spaces_list[i].isdigit():
-        token_list.append(int(no_spaces_list[i]))
-      else:
-	for j in 
-        if no_spaces_list[i] == "(":
-          save_end_idx = i
-        elif no_spaces_list[i] == ")":
-          token_list.append(no_spaces_list[i])
-          token_list.append(no_spaces_list[save_end_idx])
-          save_end_idx = 0
+  no_spaces_list = math_str.split()
+  print("Input: ", no_spaces_list)
+  for exp in no_spaces_list:
+    if len(exp) == 1:
+      token_list.append(exp)
+    else:
+      signed_char = ""
+      for char in exp:
+        if char in symbol:
+          if len(signed_char) != 0:
+            token_list.append(signed_char)
+            signed_char = ""
+          token_list.append(char)
+        elif char == "+" or char == "-" or char.isdigit():
+          signed_char += char
+      if signed_char != "":
+        token_list.append(signed_char)
   return token_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
@@ -75,3 +66,6 @@ if __name__ == "__main__":
   print(token_func(math_exp))
   print("Thank you for using this app.")
 #**************************************************************
+# Open Issues:
+# 1.) The exercise 122 solution can't handle signed number that
+#     affects the exercise 123 and 124 solutions.
