@@ -28,5 +28,10 @@ def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_in = input("Enter a number: ")
+  sublist_in = input("Enter a first list of numbers separated by spaces: ")
+  sublist = sublist_in.split()
+  print("Original List: ", sublist)
+  print("Extracted Sublists: ", extract_sublst(sublist))
   print("Thank you for using this app.")
 #**************************************************************
