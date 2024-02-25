@@ -24,14 +24,17 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def prime_num_func(user_in):
+  prime_num_list = []
+  for num in range(2, user_in):
+    if num % 2 != 0:
+      prime_num_list.append(num)
+  return prime_num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in = input("Enter a number: ")
-  sublist_in = input("Enter a first list of numbers separated by spaces: ")
-  sublist = sublist_in.split()
-  print("Original List: ", sublist)
-  print("Extracted Sublists: ", extract_sublst(sublist))
+  user_in = input("Enter the number limits separated by spaces: ")
+  limitlist = user_in.split()
+  print("Limit List: ", limitlist)
+  print("Extracted Prime List: ", prime_num_func(limitlist))
   print("Thank you for using this app.")
 #**************************************************************
