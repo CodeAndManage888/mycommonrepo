@@ -25,10 +25,17 @@
 #**************************************************************
 #--------------------------------------------------------------
 def prime_num_func(user_in):
+  all_num_list = []
   prime_num_list = []
+  for num in range(user_in):
+      all_num_list.append(num)
+  print(all_num_list)
+  all_num_list.pop(0)
+  all_num_list.pop(1)
   for num in range(2, user_in):
     if num % 2 != 0:
       prime_num_list.append(num)
+
   return prime_num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
