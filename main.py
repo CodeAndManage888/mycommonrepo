@@ -1,46 +1,56 @@
-#!/bin/bash
-#**************************************************************
-# Date: 112823 (Expected Solution with 33 Lines of Code)      *
-# Title: The Sieve of Eratosthenes                            *
-# Status: In Progress (In Progress / Testing / Working)       *
-# The Sieve of Eratosthenes is a technique that was developed *
-# more than 2,000 years ago to easily ﬁnd all of the prime    *
-# numbers between 2 and some limit, say 100. A description of *
-# the algorithm follows: Write down all of the numbers from 0 *
-# to the limit Cross out 0 and 1 because they are not prime   *
-# Set p equal to 2 While p is less than the limit do Cross out*
-# all multiples of p (but not pitself) Set p equal to the next*
-# number in the list that is not crossed out Report all of    *
-# the numbers that have not been crossed out as prime The key *
-# to this algorithm is that it is relatively easy to cross    *
-# out every nth number on a piece of paper. This is also an   *
-# easy task for a computer a for loop can simulate this       *
-# behavior when a third parameter is provided to the range    *
-# function. When a number is crossed out, we know that it is  *
-# no longer prime, but it still occupies space on the piece   *
-# of paper, and must still be considered when computing later *
-# prime numbers.                                              *
-#                                                             *
-# Computed Result Validated:                                  *
-#**************************************************************
-#--------------------------------------------------------------
-def prime_num_func(user_in):
-  all_num_list = []
-  prime_num_list = []
-  for num in range(user_in):
-      all_num_list.append(num)
-  print(all_num_list)
-  all_num_list.pop(0)
-  all_num_list.pop(1)
-  for num in range(2, user_in):
-    if num % 2 != 0:
-      prime_num_list.append(num)
-  return prime_num_list
-#--------------------------------------------------------------
-if __name__ == "__main__":
-  user_in = input("Enter the number limits separated by spaces: ")
-  limitlist = user_in.split()
-  print("Limit List: ", limitlist)
-  print("Extracted Prime List: ", prime_num_func(limitlist))
-  print("Thank you for using this app.")
-#**************************************************************
+import PyPDF2
+import os
+import datetime
+
+def read_pdf(file_path, page_exer_nostr):
+    target_list = page_exer_nostr.split()
+    page_ctr = len(target_list) - 1
+    with open(file_path, 'rb') as file:
+        # Create a PDF reader object
+        pdf_reader = PyPDF2.PdfReader(file)
+
+        # Get the total number of pages in the PDF
+        num_pages = len(pdf_reader.pages)                                                # Do I still need this?
+
+        # Get the text data
+        idx4 = 1
+        text = ""
+        while page_ctr != 0:
+            page = pdf_reader.pages[int(target_list[idx4])]
+            page_ctr -= 1
+            idx4 += 1
+            text += page.extract_text()
+#        print(text)                                                                     # Uncomment for debugging
+
+        # Prepare the extraction of the target exercise only.
+        content = text.split("\n")
+#        print(content)                                                                  # Uncomment for debugging
+        start_txt = "Exercise " + target_list[0] + ":"
+        end_txt = "Exercise " + str(int(target_list[0]) + 1) + ":"
+#        print(start_txt)                                                                # Uncomment for debugging
+#        print(end_txt)                                                                  # Uncomment for debugging
+        return_block = []
+        start_pos_list = []
+        end_pos_list = []
+
+        # This line of codes will will identify the title and other starting/ending details.
+        start_flag = False
+        for idx1, line in enumerate(content):
+            startpos = line.find(start_txt)
+            if startpos != -1 and not start_flag:
+                start_pos_list.append(idx1)
+                start_flag = True
+            endpos = line.find(end_txt)
+            if endpos != -1:
+                end_pos_list.append(idx1)
+                break
+            else:
+                endpos = line.find("This copy belongs to")
+                if endpos != -1 and len(target_list) == 2:
+                    end_pos_list.append(idx1)
+                    break
+
+#        print(start_pos_list)                                                           # Uncomment for debugging
+#        print(end_pos_list)                                                             # Uncomment for debugging
+
+        line_ctr = start_pos_list[0]
