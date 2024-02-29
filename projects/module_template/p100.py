@@ -152,7 +152,7 @@ def format_then_write(textdata):
             print(item)                                                                  # Uncomment for debugging
             print(item, file=file_handle)
     file_handle.close()
-    
+
 if __name__ == "__main__":
     UserPageIn = input("Enter the exercise number & target page(s) - EEE PPP PPP: ")
 #    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_replit/The Python Workbook.pdf"          # Path to your PDF file (Cloud)
@@ -160,4 +160,3 @@ if __name__ == "__main__":
 #   pdf_file_path = "/home/pi/Desktop/localrepo/mycommonrepo/projects/module_template/infile_cloud/The Python Workbook.pdf"  # Path to your PDF file (Desktop)
     tmp_data = read_pdf(pdf_file_path, UserPageIn)
     format_then_write(tmp_data)
-  
