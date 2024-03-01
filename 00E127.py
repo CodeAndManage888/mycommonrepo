@@ -27,21 +27,27 @@
 def prime_num_func(user_in):
   all_num_list = []
   prime_num_list = []
+  prime_num = 2
   for num in range(user_in):
       all_num_list.append(num)
   print(all_num_list)
-  all_num_list.pop(0)
-  all_num_list.pop(1)
-  for num in range(2, user_in):
-    if num % 2 != 0:
-      prime_num_list.append(num)
-
+  if 0 in all_num_list:
+    all_num_list.remove(0)
+  if 1 in all_num_list:
+    all_num_list.remove(1)
+  print(all_num_list)
+  while prime_num < user_in:
+    for num in all_num_list:
+      if num % prime_num == 0 and num != prime_num:
+        all_num_list.remove(num)
+      else:
+        prime_num_list.append(num)
+        prime_num = num
   return prime_num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in = input("Enter the number limits separated by spaces: ")
-  limitlist = user_in.split()
-  print("Limit List: ", limitlist)
-  print("Extracted Prime List: ", prime_num_func(limitlist))
+  user_in = input("Enter the number limit: ")
+  print("Number Limit: ", int(user_in))
+  print("Extracted Prime List: ", prime_num_func(int(user_in)))
   print("Thank you for using this app.")
 #**************************************************************
