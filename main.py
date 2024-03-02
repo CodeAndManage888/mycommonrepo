@@ -28,7 +28,7 @@ def prime_num_func(user_in):
   all_num_list = []
   prime_num_list = []
   prime_num = 2
-  for num in range(user_in):
+  for num in range(user_in + 1):
       all_num_list.append(num)
   print(all_num_list)
   if 0 in all_num_list:
