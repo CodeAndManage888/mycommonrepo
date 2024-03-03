@@ -43,6 +43,7 @@ def prime_num_func(user_in):
       else:
         prime_num_list.append(num)
         prime_num = num
+  print(prime_num_list)
   return prime_num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
