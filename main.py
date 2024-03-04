@@ -26,25 +26,26 @@
 #--------------------------------------------------------------
 def prime_num_func(user_in):
   all_num_list = []
-  prime_num_list = []
+  # setting p equal to 2
   prime_num = 2
+  # writing down all numbers from 0 to the limit
   for num in range(user_in + 1):
       all_num_list.append(num)
   print(all_num_list)
+  # crossing out 0 and 1
   if 0 in all_num_list:
     all_num_list.remove(0)
   if 1 in all_num_list:
     all_num_list.remove(1)
   print(all_num_list)
-  while prime_num < user_in:
+  # while p is less than the limit
+  while prime_num <= user_in:
     for num in all_num_list:
       if num % prime_num == 0 and num != prime_num:
         all_num_list.remove(num)
-      else:
-        prime_num_list.append(num)
-        prime_num = num
-  print(prime_num_list)
-  return prime_num_list
+    if all_num_list.index(prime_num) < len(all_num_list) - 1:
+      prime_num = all_num_list[all_num_list.index(prime_num) + 1]
+  return all_num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in = input("Enter the number limit: ")
