@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 112823 (Expected Solution with 33 Lines of Code)      *
 # Title: The Sieve of Eratosthenes                            *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # The Sieve of Eratosthenes is a technique that was developed *
 # more than 2,000 years ago to easily ﬁnd all of the prime    *
 # numbers between 2 and some limit, say 100. A description of *
@@ -45,6 +45,8 @@ def prime_num_func(user_in):
         all_num_list.remove(num)
     if all_num_list.index(prime_num) < len(all_num_list) - 1:
       prime_num = all_num_list[all_num_list.index(prime_num) + 1]
+    else:
+      break
   return all_num_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
