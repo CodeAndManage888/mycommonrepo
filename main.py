@@ -1,57 +1,30 @@
 #!/bin/bash
 #**************************************************************
-# Date: 112823 (Expected Solution with 33 Lines of Code)      *
-# Title: The Sieve of Eratosthenes                            *
-# Status: Testing (In Progress / Testing / Working)           *
-# The Sieve of Eratosthenes is a technique that was developed *
-# more than 2,000 years ago to easily ﬁnd all of the prime    *
-# numbers between 2 and some limit, say 100. A description of *
-# the algorithm follows: Write down all of the numbers from 0 *
-# to the limit Cross out 0 and 1 because they are not prime   *
-# Set p equal to 2 While p is less than the limit do Cross out*
-# all multiples of p (but not pitself) Set p equal to the next*
-# number in the list that is not crossed out Report all of    *
-# the numbers that have not been crossed out as prime The key *
-# to this algorithm is that it is relatively easy to cross    *
-# out every nth number on a piece of paper. This is also an   *
-# easy task for a computer a for loop can simulate this       *
-# behavior when a third parameter is provided to the range    *
-# function. When a number is crossed out, we know that it is  *
-# no longer prime, but it still occupies space on the piece   *
-# of paper, and must still be considered when computing later *
-# prime numbers.                                              *
+# Date: 120723 (Expected Solution with 40 Lines of Code)      *
+# Title: Reverse Lookup                                       *
+# Status: In Progress (In Progress / Testing / Working)       *
+# Write a function named reverseLookup that ﬁnds all of the   *
+# keys in a dictionary that map to a speciﬁc value. The       *
+# function will take the dictionary and the value to search   *
+# for as its only parameters. It will return a (possibly      *
+# empty) list of keys from the dictionary that map to the     *
+# provided value. Include a main program that demonstrates    *
+# the reverseLookup function as part of your solution to this *
+# exercise. Your program should create a dictionary and then  *
+# show that the reverseLookup function works correctly when   *
+# it returns multiple keys, a single key, and no keys. Ensure *
+# that your main program only runs when the ﬁle containing    *
+# your solution to this exercise has not been imported into   *
+# another program. © Springer International Publishing        *
+# Switzerland 2014 B. Stephenson, The Python Workbook , DOI   *
+# 10.1007/978-3-319-14240-1_661                               *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def prime_num_func(user_in):
-  all_num_list = []
-  # setting p equal to 2
-  prime_num = 2
-  # writing down all numbers from 0 to the limit
-  for num in range(user_in + 1):
-      all_num_list.append(num)
-  print(all_num_list)
-  # crossing out 0 and 1
-  if 0 in all_num_list:
-    all_num_list.remove(0)
-  if 1 in all_num_list:
-    all_num_list.remove(1)
-  print(all_num_list)
-  # while p is less than the limit
-  while prime_num <= user_in:
-    for num in all_num_list:
-      if num % prime_num == 0 and num != prime_num:
-        all_num_list.remove(num)
-    if all_num_list.index(prime_num) < len(all_num_list) - 1:
-      prime_num = all_num_list[all_num_list.index(prime_num) + 1]
-    else:
-      break
-  return all_num_list
+def func_name(user_in):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in = input("Enter the number limit: ")
-  print("Number Limit: ", int(user_in))
-  print("Extracted Prime List: ", prime_num_func(int(user_in)))
   print("Thank you for using this app.")
 #**************************************************************
