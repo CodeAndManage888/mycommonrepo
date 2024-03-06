@@ -15,9 +15,7 @@
 # it returns multiple keys, a single key, and no keys. Ensure *
 # that your main program only runs when the ﬁle containing    *
 # your solution to this exercise has not been imported into   *
-# another program. © Springer International Publishing        *
-# Switzerland 2014 B. Stephenson, The Python Workbook , DOI   *
-# 10.1007/978-3-319-14240-1_661                               *
+# another program.                                            *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
