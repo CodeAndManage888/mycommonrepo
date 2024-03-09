@@ -4,7 +4,7 @@
 # Title: Two Dice Simulation                                  *
 # Status: In Progress (In Progress / Testing / Working)       *
 # In this exercise you will simulate 1,000 rolls of two dice. *
-# Begin by writing a func- tion that simulates rolling a pair *
+# Begin by writing a function that simulates rolling a pair   *
 # of six-sided dice. Your function will not take any          *
 # parameters. It will return the total that was rolled on two *
 # dice as its only result. Write a main program that uses     *
@@ -20,9 +20,18 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def rollDice():
+  import random
+  return random.randint(1, 6) + random.randint(1, 6)
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  print("This is main program.")
+  rolls = 1000
+  roll_count = [0] * 11
+  for i in range(rolls):
+    roll_count[rollDice() - 2] += 1
+  print("Roll\tCount\tExpected\tActual")
+  for i in range(11):
+    print(f"{i + 2}\t{roll_count[i]}\t{roll_count[i] / rolls * 100:.2f}%\t{(i + 2) / 36 * 100:.2f}%")
   print("Thank you for using this app.")
 #**************************************************************
