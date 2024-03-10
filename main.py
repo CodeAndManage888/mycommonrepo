@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 022624 (Expected Solution with 42 Lines of Code)      *
 # Title: Two Dice Simulation                                  *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # In this exercise you will simulate 1,000 rolls of two dice. *
 # Begin by writing a function that simulates rolling a pair   *
 # of six-sided dice. Your function will not take any          *
