@@ -10,8 +10,7 @@
 # letter on the key. Pressing the number 2, 3, 4 or 5 times   *
 # generates the second, third, fourth or ﬁfth character       *
 # listed for that key. Key Symbols 1 .,?!: 2 ABC 3 DEF 4 GHI  *
-# This copy belongs to 'acha04'Exercise 130:Text Messaging 63 *
-# 5 JKL 6 MNO 7 PQRS 8 TUV 9 WXYZ 0 space Write a program     *
+# 5 JKL 6 MNO 7 PQRS 8 TUV 9 WXYZ 0 space. Write a program    *
 # that displays the key presses that must be made to enter a  *
 # text message read from the user. Construct a dictionary     *
 # that maps from each letter or symbol to the key presses.    *
