@@ -25,9 +25,22 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def convKeyPad(user_input):
+  key_pad = {1:".,?!:", 2:"abcABC", 3:"defDEF", 4:"ghiGHI",
+             5:"jklJKL",6:"mnoMNO", 7:"pqrsPQRS", 8:"tuvTUV",
+             9:"wxyzWXYZ", 0:" "}
+  num_seq = ""
+  for char in user_input:
+    ctr = 0
+    while ctr < len(key_pad):
+      if char in key_pad[ctr]:
+        num_seq += str(ctr)
+        break
+      ctr += 1
+  return num_seq
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_string = input("Enter your text message: ")
+  print("Press these numbers:",convKeyPad(user_string))
   print("Thank you for using this app.")
 #**************************************************************
