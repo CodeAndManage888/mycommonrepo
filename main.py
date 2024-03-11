@@ -30,6 +30,7 @@ if __name__ == "__main__":
   roll_count = [0] * 11
   for i in range(rolls):
     roll_count[rollDice() - 2] += 1
+  print(roll_count)
   print("Roll\tCount\tExpected\tActual")
   for i in range(11):
     print(f"{i + 2}\t{roll_count[i]}\t{roll_count[i] / rolls * 100:.2f}%\t{(i + 2) / 36 * 100:.2f}%")
