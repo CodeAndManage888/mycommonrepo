@@ -26,15 +26,23 @@
 #**************************************************************
 #--------------------------------------------------------------
 def convKeyPad(user_input):
-  key_pad = {1:".,?!:", 2:"abcABC", 3:"defDEF", 4:"ghiGHI",
-             5:"jklJKL",6:"mnoMNO", 7:"pqrsPQRS", 8:"tuvTUV",
-             9:"wxyzWXYZ", 0:" "}
+  key_pad = {1:".,?!:", 2:"ABCabc", 3:"DEFdef", 4:"GHIghi",
+             5:"JKLjkl",6:"MNOmno", 7:"PQRSpqrs", 8:"TUVtuv",
+             9:"WXYZwxyz", 0:" "}
   num_seq = ""
   for char in user_input:
     ctr = 0
     while ctr < len(key_pad):
+      print("Key:", ctr,"Value:", key_pad[ctr])
       if char in key_pad[ctr]:
-        num_seq += str(ctr)
+        for c in key_pad[ctr]:
+          times = 1
+          if c == char:
+            num_seq += str(ctr) * (times)
+            break
+          times += 1         
+#       num_seq += str(ctr) * (char.index(key_pad[ctr]) + 1)
+        print(num_seq)
         break
       ctr += 1
   return num_seq
