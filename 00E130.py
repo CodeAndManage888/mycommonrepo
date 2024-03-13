@@ -29,20 +29,21 @@ def convKeyPad(user_input):
   key_pad = {1:".,?!:", 2:"ABCabc", 3:"DEFdef", 4:"GHIghi",
              5:"JKLjkl",6:"MNOmno", 7:"PQRSpqrs", 8:"TUVtuv",
              9:"WXYZwxyz", 0:" "}
-  num_seq = ""
+  num_seq, times = "", 1
   for char in user_input:
     ctr = 0
     while ctr < len(key_pad):
-      print("Key:", ctr,"Value:", key_pad[ctr])
       if char in key_pad[ctr]:
         for c in key_pad[ctr]:
-          times = 1
           if c == char:
+            print("Multiply By:", times)
+            print("Char:", char, "Key:", ctr, "Value:", key_pad[ctr])
+            num_seq += "/"
             num_seq += str(ctr) * (times)
+            times = 1
             break
-          times += 1         
-#       num_seq += str(ctr) * (char.index(key_pad[ctr]) + 1)
-        print(num_seq)
+          else:
+            times += 1
         break
       ctr += 1
   return num_seq
