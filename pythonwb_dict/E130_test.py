@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 022624 (Expected Solution with 21 Lines of Code)      *
 # Title: Text Messaging                                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # On some basic cell phones, text messages can be sent using  *
 # the numeric keypad. Because each key has multiple letters   *
 # associated with it, multiple key presses are needed for     *
