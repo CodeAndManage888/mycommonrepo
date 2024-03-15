@@ -21,7 +21,6 @@
 # ..--- C-.-. L.-.. U..- 3 ...-- D-.. M-- V...- 4 ....- E.    *
 # N-. W.-- 5 ..... F..-. O--- X-..- 6 -.... G--. P.--. Y-.--  *
 # 7 --... H.... Q--.- Z--.. 8 ---.. I.. R.-. 0----- 9 ----.   *
-# This copy belongs to 'acha04'64 6 Dictionary Exercises      *
 # Morse code was originally developed in the nineteenth       *
 # century for use over telegraph wires. It is still used      *
 # today, over 160 years after it was ﬁrst created.            *

@@ -1,55 +1,36 @@
 #!/bin/bash
 #**************************************************************
-# Date: 022624 (Expected Solution with 21 Lines of Code)      *
-# Title: Text Messaging                                       *
-# Status: Testing (In Progress / Testing / Working)           *
-# On some basic cell phones, text messages can be sent using  *
-# the numeric keypad. Because each key has multiple letters   *
-# associated with it, multiple key presses are needed for     *
-# most letters. Pressing the number once generates the ﬁrst   *
-# letter on the key. Pressing the number 2, 3, 4 or 5 times   *
-# generates the second, third, fourth or ﬁfth character       *
-# listed for that key. Key Symbols 1 .,?!: 2 ABC 3 DEF 4 GHI  *
-# 5 JKL 6 MNO 7 PQRS 8 TUV 9 WXYZ 0 space. Write a program    *
-# that displays the key presses that must be made to enter a  *
-# text message read from the user. Construct a dictionary     *
-# that maps from each letter or symbol to the key presses.    *
-# Then use the dictionary to generate and display the presses *
-# for the user’s message. For example, if the user enters     *
-# Hello ,World! then your program should output               *
-# 4433555555666110966677755531111 . Ensure that your program  *
-# handles both uppercase and lowercase letters. Ignore any    *
-# characters that aren’t listed in the table above such as    *
-# semicolons and brackets.                                    *
+# Date: 022924 (Expected Solution with 15 Lines of Code)      *
+# Title: Morse Code                                           *
+# Status: In Progress (In Progress / Testing / Working)       *
+# Morse code is an encoding scheme that uses dashes and dots  *
+# to represent numbers and letters. In this exercise, you     *
+# will write a program that uses a dictionary to store the    *
+# mapping from letters and numbers to Morse code. Use a       *
+# period to represent a dot, and a hyphen to represent a      *
+# dash. The mapping from letters and numbers to dashes and    *
+# dots is shown in Table 6.1. Your program should read a      *
+# message from the user. Then it should translate each letter *
+# and number in the message to Morse code, leaving a space    *
+# between each sequence of dashes and dots. Your program      *
+# should ignore any characters that are not letters or        *
+# numbers. The Morse code for Hello, World! is shown below:   *
+# .... . .-.. .-.. --- .-- --- .-. .-.. -.. Table 6.1 Morse   *
+# Code Letters and Numbers Letter Code Letter Code Letter     *
+# Code Number Code A.- J.--- S... 1 .---- B-... K-.- T- 2     *
+# ..--- C-.-. L.-.. U..- 3 ...-- D-.. M-- V...- 4 ....- E.    *
+# N-. W.-- 5 ..... F..-. O--- X-..- 6 -.... G--. P.--. Y-.--  *
+# 7 --... H.... Q--.- Z--.. 8 ---.. I.. R.-. 0----- 9 ----.   *
+# Morse code was originally developed in the nineteenth       *
+# century for use over telegraph wires. It is still used      *
+# today, over 160 years after it was ﬁrst created.            *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def convKeyPad(user_input):
-  key_pad = {1:".,?!:", 2:"ABCabc", 3:"DEFdef", 4:"GHIghi",
-             5:"JKLjkl",6:"MNOmno", 7:"PQRSpqrs", 8:"TUVtuv",
-             9:"WXYZwxyz", 0:" "}
-  num_seq, times = "", 1
-  for char in user_input:
-    ctr = 0
-    while ctr < len(key_pad):
-      if char in key_pad[ctr]:
-        for c in key_pad[ctr]:
-          if c == char:
-            print("Multiply By:", times)
-            print("Char:", char, "Key:", ctr, "Value:", key_pad[ctr])
-            num_seq += "/"
-            num_seq += str(ctr) * (times)
-            times = 1
-            break
-          else:
-            times += 1
-        break
-      ctr += 1
-  return num_seq
+def func_name(user_in):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_string = input("Enter your text message: ")
-  print("Press these numbers:",convKeyPad(user_string))
   print("Thank you for using this app.")
 #**************************************************************
