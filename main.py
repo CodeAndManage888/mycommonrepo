@@ -28,9 +28,13 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def conv_morse(user_in):
+  morse_code = {A:
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_msg = input("Enter a message: ")
+  user_msg = user_msg.upper()
+  conv_morse(user_msg)
   print("Thank you for using this app.")
 #**************************************************************
