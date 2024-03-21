@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 022924 (Expected Solution with 15 Lines of Code)      *
 # Title: Morse Code                                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Morse code is an encoding scheme that uses dashes and dots  *
 # to represent numbers and letters. In this exercise, you     *
 # will write a program that uses a dictionary to store the    *
