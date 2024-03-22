@@ -31,9 +31,41 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def pc_check(postal_code):
+  province_dict = {'A': 'Newfoundland and Labrador', 
+                   'B': 'Prince Edward Island', 
+                   'C': 'New Brunswick', 
+                   'E': 'Quebec', 
+                   'G': 'Quebec', 
+                   'H': 'Quebec', 
+                   'J': 'Quebec', 
+                   'K': 'Ontario', 
+                   'L': 'Ontario', 
+                   'M': 'Ontario', 
+                   'N': 'Ontario', 
+                   'P': 'Ontario', 
+                   'R': 'Manitoba', 
+                   'S': 'Saskatchewan' , 
+                   'T': 'Alberta', 
+                   'V': 'British Columbia', 
+                   'X': 'Nunavut', 
+                   'Y': 'Yukon'}
+  if postal_code[1].isdigit() and postal_code[3].isdigit() and postal_code[5].isdigit() and postal_code[0].isalpha() and postal_code[2].isalpha() and postal_code[4].isalpha():
+    if postal_code[0] in province_dict:
+      if postal_code[1] == '0':
+        print("This is an rural address in", province_dict[postal_code[0]])
+      else:
+        print("This is a urban address in", province_dict[postal_code[0]])
+    else:
+      print("Invalid postal code")
+  else:
+    print("Invalid postal code")
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_postal_code = input("Please enter a postal code: ")
+  user_postal_code = user_postal_code.replace(" ", "").capitalize()
+  print(user_postal_code)
+  pc_check(user_postal_code)
   print("Thank you for using this app.")
 #**************************************************************
