@@ -65,7 +65,7 @@ def pc_check(postal_code):
 if __name__ == "__main__":
   user_postal_code = input("Please enter a postal code: ")
   user_postal_code = user_postal_code.replace(" ", "")
-  user_postal_code = user_postal_code.capitalize()
+  user_postal_code = user_postal_code.upper()
   print(user_postal_code)
   pc_check(user_postal_code)
   print("Thank you for using this app.")
