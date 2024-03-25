@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 030124 (Expected Solution with 24 Lines of Code)      *
 # Title: Postal Codes                                         *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # In a Canadian postal code, the ﬁrst, third and ﬁfth         *
 # characters are letters while the second, fourth and sixth   *
 # characters are numbers. The province can be determined from *
