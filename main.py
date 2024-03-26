@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 030124 (Expected Solution with 65 Lines of Code)      *
 # Title: Write Out Numbers in English                         *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # While the popularity of cheques as a payment method has     *
 # diminished in recent years, some companies still issue them *
 # to pay employees or vendors. The amount being paid normally *
