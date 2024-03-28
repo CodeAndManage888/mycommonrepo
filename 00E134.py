@@ -12,9 +12,12 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def unique_letter(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_in = input("Enter a string: ")
+  print("The number of unique characters in " + user_in + " is " + str(unique_letter(user_in))
+
   print("Thank you for using this app.")
 #**************************************************************
