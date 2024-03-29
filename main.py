@@ -13,10 +13,13 @@
 #**************************************************************
 #--------------------------------------------------------------
 def unique_letter(user_in):
-  return
+  unique_char = set()
+  for char in user_in:
+    unique_char.add(char)
+  return len(unique_char)
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in = input("Enter a string: ")
-  print("The number of unique characters in " + user_in + " is " + str(unique_letter(user_in))
+  user_str = input("Enter a string: ")
+  print("The number of unique characters in " + user_str + " is " + str(unique_letter(user_str)))
   print("Thank you for using this app.")
 #**************************************************************
