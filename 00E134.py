@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 032724 (Expected Solution with 14 Lines of Code)      *
 # Title: Unique Characters                                    *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Create a program that determines and displays the number of *
 # unique characters in a string entered by the user. For      *
 # example, Hello, World! has 10 unique characters whilezzz    *
