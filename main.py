@@ -8,7 +8,6 @@
 # example, Hello, World! has 10 unique characters whilezzz    *
 # has only one unique character. Use a dictionary or set to   *
 # solve this problem.                                         *
-#                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------

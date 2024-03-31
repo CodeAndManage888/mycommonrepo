@@ -8,7 +8,6 @@
 # example, Hello, World! has 10 unique characters whilezzz    *
 # has only one unique character. Use a dictionary or set to   *
 # solve this problem.                                         *
-#                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
@@ -20,6 +19,6 @@ def unique_letter(user_in):
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_str = input("Enter a string: ")
-  print("The number of unique characters in " + user_str + " is " + str(unique_letter(user_str))
+  print("The number of unique characters in " + user_str + " is " + str(unique_letter(user_str)))
   print("Thank you for using this app.")
 #**************************************************************
