@@ -13,9 +13,16 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def anagram_chk(user_str):
+  anagram_dict = {}
+  for char in user_str:
+    if char in anagram_dict:
+      anagram_dict[char] += 1
+    else:
+      anagram_dict[char] = 1
+  return anagram_dict
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_str = input("Enter a string: ") 
   print("Thank you for using this app.")
 #**************************************************************
