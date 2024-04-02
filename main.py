@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 032724 (Expected Solution with 39 Lines of Code)      *
 # Title: Anagrams                                             *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Two words are anagrams if they contain all of the same      *
 # letters, but in a different order. For example, “evil” and  *
 # “live” are anagrams because each contains one e, one i, one *
@@ -23,6 +23,11 @@ def anagram_chk(user_str):
   return anagram_dict
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_str = input("Enter a string: ") 
+  user_str1 = input("Enter a string: ")
+  user_str2 = input("Enter a string: ")
+  if anagram_chk(user_str1) == anagram_chk(user_str2):
+    print("The two strings are anagrams.")
+  else:
+    print("The two strings are not anagrams.")
   print("Thank you for using this app.")
 #**************************************************************
