@@ -23,8 +23,8 @@ def anagram_chk(user_str):
   return anagram_dict
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_str1 = input("Enter a string: ")
-  user_str2 = input("Enter a string: ")
+  user_str1 = input("Enter the first string: ")
+  user_str2 = input("Enter the second string: ")
   if anagram_chk(user_str1) == anagram_chk(user_str2):
     print("The two strings are anagrams.")
   else:

@@ -6,8 +6,7 @@
 # The notion of anagrams can be extended to multiple words.   *
 # For example, “William Shakespeare” and “I am a weakish      *
 # speller” are anagrams when capitalization and spacing are   *
-# ignored. This copy belongs to 'acha04'66 6 Dictionary       *
-# Exercises Extend your program from Exercise 135 so that it  *
+# ignored. Extend your program from Exercise 135 so that it   *
 # is able to check if two phrases are anagrams. Your program  *
 # should ignore capitalization, punctuation marks and spacing *
 # when making the determination.                              *
@@ -15,9 +14,21 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def anagram_chk(user_str):
+  anagram_dict = {}
+  for char in user_str:
+    if char in anagram_dict:
+      anagram_dict[char] += 1
+    else:
+      anagram_dict[char] = 1
+  return anagram_dict
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_str1 = input("Enter the first string: ")
+  user_str2 = input("Enter the second string: ")
+  if anagram_chk(user_str1) == anagram_chk(user_str2):
+    print("The two strings are anagrams.")
+  else:
+    print("The two strings are not anagrams.")
   print("Thank you for using this app.")
 #**************************************************************
