@@ -25,8 +25,14 @@ def anagram_chk(user_str):
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_str1 = input("Enter the first string: ")
+  clean_user_str1 = user_str1.lower()
+  clean_user_str1 = clean_user_str1.replace(" ", "")
+  print(clean_user_str1)
   user_str2 = input("Enter the second string: ")
-  if anagram_chk(user_str1) == anagram_chk(user_str2):
+  clean_user_str2 = user_str2.lower()
+  clean_user_str2 = clean_user_str2.replace(" ", "")
+  print(clean_user_str2)
+  if anagram_chk(clean_user_str1) == anagram_chk(clean_user_str2):
     print("The two strings are anagrams.")
   else:
     print("The two strings are not anagrams.")

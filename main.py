@@ -1,14 +1,15 @@
 #!/bin/bash
 #**************************************************************
-# Date: 032724 (Expected Solution with 39 Lines of Code)      *
-# Title: Anagrams                                             *
-# Status: Testing (In Progress / Testing / Working)           *
-# Two words are anagrams if they contain all of the same      *
-# letters, but in a different order. For example, “evil” and  *
-# “live” are anagrams because each contains one e, one i, one *
-# l, and one v. Create a program that reads two strings from  *
-# the user, determines whether or not they are anagrams, and  *
-# reports the result.                                         *
+# Date: 032724 (Expected Solution with 48 Lines of Code)      *
+# Title: Anagrams Again                                       *
+# Status: In Progress (In Progress / Testing / Working)       *
+# The notion of anagrams can be extended to multiple words.   *
+# For example, “William Shakespeare” and “I am a weakish      *
+# speller” are anagrams when capitalization and spacing are   *
+# ignored. Extend your program from Exercise 135 so that it   *
+# is able to check if two phrases are anagrams. Your program  *
+# should ignore capitalization, punctuation marks and spacing *
+# when making the determination.                              *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
@@ -24,8 +25,14 @@ def anagram_chk(user_str):
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_str1 = input("Enter the first string: ")
+  clean_user_str1 = user_str1.lower()
+  clean_user_str1 = clean_user_str1.replace(" ", "")
+  print(clean_user_str1)
   user_str2 = input("Enter the second string: ")
-  if anagram_chk(user_str1) == anagram_chk(user_str2):
+  clean_user_str2 = user_str2.lower()
+  clean_user_str2 = clean_user_str2.replace(" ", "")
+  print(clean_user_str2)
+  if anagram_chk(clean_user_str1) == anagram_chk(clean_user_str2):
     print("The two strings are anagrams.")
   else:
     print("The two strings are not anagrams.")
