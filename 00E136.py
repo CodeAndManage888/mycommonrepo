@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 032724 (Expected Solution with 48 Lines of Code)      *
 # Title: Anagrams Again                                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # The notion of anagrams can be extended to multiple words.   *
 # For example, “William Shakespeare” and “I am a weakish      *
 # speller” are anagrams when capitalization and spacing are   *
@@ -21,6 +21,7 @@ def anagram_chk(user_str):
       anagram_dict[char] += 1
     else:
       anagram_dict[char] = 1
+  print(anagram_dict)
   return anagram_dict
 #--------------------------------------------------------------
 if __name__ == "__main__":
