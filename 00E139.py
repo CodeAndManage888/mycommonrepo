@@ -7,8 +7,8 @@
 # all been called. Players normally mark the numbers that     *
 # have been called by crossing them out or marking them with  *
 # a Bingo dauber. In our implementation we will mark that a   *
-# number has been called by replacing it wit ha0i nt h eB     *
-# ingo card dictionary. Write a function that takes a         *
+# number has been called by replacing it with a 0 in the B    *
+# Bingo card dictionary. Write a function that takes a        *
 # dictionary representing a Bingo card as its only parameter. *
 # If the card contains a line of ﬁve zeros (vertical,         *
 # horizontal or diagonal) then your function should return    *
