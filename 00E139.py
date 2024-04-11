@@ -7,7 +7,7 @@
 # all been called. Players normally mark the numbers that     *
 # have been called by crossing them out or marking them with  *
 # a Bingo dauber. In our implementation we will mark that a   *
-# number has been called by replacing it with a 0 in the B    *
+# number has been called by replacing it with a 0 in the      *
 # Bingo card dictionary. Write a function that takes a        *
 # dictionary representing a Bingo card as its only parameter. *
 # If the card contains a line of ﬁve zeros (vertical,         *
@@ -30,9 +30,11 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def chck_bingo_card(user_in):
+  if user_in[0][0] == 0 and user_in[1][0] == 0 and user_in[2][0] == 0 and user_in[3][0] == 0 and user_in[4][0] == 0
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  
   print("Thank you for using this app.")
 #**************************************************************
