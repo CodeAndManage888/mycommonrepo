@@ -31,22 +31,7 @@
 #**************************************************************
 #--------------------------------------------------------------
 def chck_bingo_card(user_in):
-  if user_in[0][0] == 0 and user_in[1][0] == 0 and user_in[2][0] == 0 and user_in[3][0] == 0 and user_in[4][0] == 0:
-    return True
-  elif user_in[0][1] == 0 and user_in[1][1] == 0 and user_in[2][1] == 0 and user_in[3][1] == 0 and user_in[4][1] == 0:
-    return True
-  elif user_in[0][2] == 0 and user_in[1][2] == 0 and user_in[2][2] == 0 and user_in[3][2] == 0 and user_in[4][2] == 0:
-    return True
-  elif user_in[0][3] == 0 and user_in[1][3] == 0 and user_in[2][3] == 0 and user_in[3][3] == 0 and user_in[4][3] == 0:
-    return True
-  elif user_in[0][4] == 0 and user_in[1][4] == 0 and user_in[2][4] == 0 and user_in[3][4] == 0 and user_in[4][4] == 0:
-    return True
-  elif user_in[0][0] == 0 and user_in[1][1] == 0 and user_in[2][2] == 0 and user_in[3][3] == 0 and user_in[4][4] == 0:
-    return True
-  elif user_in[0][4] == 0 and user_in[1][3] == 0 and user_in[2][2] == 0 and user_in[3][1] == 0 and user_in[4][0] == 0:
-    return True
-  else:
-    return False
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   print("Thank you for using this app.")
