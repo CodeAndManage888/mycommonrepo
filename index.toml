@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Logout App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #eee;
+            margin-top: 8px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Logout Tracker</h1>
+        <div>
+            <a href="/login">Log In</a>
+            <a href="/logout">Log Out</a>
+        </div>
+        <h2>Logs</h2>
+        <ul>
+            {% for log in logs %}
+            <li>Login: {{ log.login.strftime('%Y-%m-%d %H:%M:%S') }}, Logout: {{ log.logout.strftime('%Y-%m-%d %H:%M:%S') }}, Duration: {{ log.duration }}, Fee: {{ log.fee }}</li>
+            {% else %}
+            <li>No logs yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
