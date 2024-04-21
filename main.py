@@ -30,32 +30,21 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def chck_bingo_card(user_in):
-  #----------------------------------------------------------
-  # Check for a horizontal line
-  #----------------------------------------------------------
-  for i in range(5):
-    if user_in[i][0] == 0 and user_in[i][1] == 0 and user_in[i][2] == 0 and user_in[i][3] == 0 and user_in[i][4] == 0:
-      return True
-  #----------------------------------------------------------
-  # Check for a vertical line
-  #----------------------------------------------------------
-  for i in range(5):
-    if user_in[0][i] == 0 and user_in[1][i] == 0 and user_in[2][i] == 0 and user_in[3][i] == 0 and user_in[4][i] == 0:
-      return True
-  #----------------------------------------------------------
-  # Check for a diagonal line
-  #----------------------------------------------------------
-  if user_in[0][0] == 0 and user_in[1][1] == 0 and user_in[2][2] == 0 and user_in[3][3] == 0 and user_in[4][4] == 0:
-    return True
-  if user_in[0][4] == 0 and user_in[1][3] == 0 and user_in[2][2] == 0 and user_in[3][1] == 0 and user_in[4][0] == 0:
-    return True
-  #----------------------------------------------------------
-  # No winning line found
-  #----------------------------------------------------------
-  return False
+def bingo_card_gen():
+  import random
+  bingo_card = {}
+  bingo_card["B"] = random.sample(range(1,16),5)
+  bingo_card["I"] = random.sample(range(16,31),5)
+  bingo_card["N"] = random.sample(range(31,46),5)
+  bingo_card["G"] = random.sample(range(46,61),5)
+  bingo_card["O"] = random.sample(range(61,76),5)
+  return bingo_card
 #--------------------------------------------------------------
 if __name__ == "__main__":
-
+  bingo_card = bingo_card_gen()
+  print(bingo_card)
+  print("B\tI\tN\tG\tO")
+  for i in range(5):
+    print(bingo_card["B"][i],"\t",bingo_card["I"][i],"\t",bingo_card["N"][i],"\t",bingo_card["G"][i],"\t",bingo_card["O"][i])
   print("Thank you for using this app.")
 #**************************************************************
