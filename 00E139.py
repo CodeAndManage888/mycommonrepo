@@ -30,7 +30,6 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-#--------------------------------------------------------------
 def bingo_card_gen():
   import random
   bingo_card = {}
@@ -40,11 +39,49 @@ def bingo_card_gen():
   bingo_card["G"] = random.sample(range(46,61),5)
   bingo_card["O"] = random.sample(range(61,76),5)
   return bingo_card
+def bingo_card_check(bingo_card):
+  if bingo_card["B"][0] == 0 and bingo_card["I"][1] == 0 and bingo_card["N"][2] == 0 and bingo_card["G"][3] == 0 and bingo_card["O"][4] == 0:
+    return True
+  elif bingo_card["B"][4] == 0 and bingo_card["I"][3] == 0 and bingo_card["N"][2] == 0 and bingo_card["G"][1] == 0 and bingo_card["O"][0] == 0:
+    return True
+  elif bingo_card["B"][0] == 0 and bingo_card["B"][1] == 0 and bingo_card["B"][2] == 0 and bingo_card["B"][3] == 0 and bingo_card["B"][4] == 0:
+    return True
+  elif bingo_card["I"][0] == 0 and bingo_card["I"][1] == 0 and bingo_card["I"][2] == 0 and bingo_card["I"][3] == 0 and bingo_card["I"][4] == 0 
 #--------------------------------------------------------------
 if __name__ == "__main__":
   bingo_card = bingo_card_gen()
+  print(bingo_card)
   print("B\tI\tN\tG\tO")
   for i in range(5):
     print(bingo_card["B"][i],"\t",bingo_card["I"][i],"\t",bingo_card["N"][i],"\t",bingo_card["G"][i],"\t",bingo_card["O"][i])
+  #------------------------------------------------------------
+  # Number Update:
+  #------------------------------------------------------------
+  user_input = input("Enter a list number: ")
+  if user_input in bingo_card["B"]:
+    bingo_card["B"][bingo_card["B"].index(int(user_input))] = 0
+  elif user_input in bingo_card["I"]:
+    bingo_card["I"][bingo_card["I"].index(int(user_input))] = 0
+  elif user_input in bingo_card["N"]:
+    bingo_card["N"][bingo_card["N"].index(int(user_input))] = 0
+  elif user_input in bingo_card["G"]:
+    bingo_card["G"][bingo_card["G"].index(int(user_input))] = 0
+  elif user_input in bingo_card["O"]:
+    bingo_card["O"][bingo_card["O"].index(int(user_input))] = 0
+  else:
+    print("Invalid number.")
+  #------------------------------------------------------------
+  # Print the updated Bingo card:
+  #------------------------------------------------------------
+  print("B\tI\tN\tG\tO")
+  for i in range(5):
+    print(bingo_card["B"][i],"\t",bingo_card["I"][i],"\t",bingo_card["N"][i],"\t",bingo_card["G"][i],"\t",bingo_card["O"][i])
+  #------------------------------------------------------------
+  # Check for a winning line:
+  #------------------------------------------------------------
+  if bingo_card_check(bingo_card) == False:
+    print("No winning line.")
+  else:
+    print("Winning line!")
   print("Thank you for using this app.")
 #**************************************************************
