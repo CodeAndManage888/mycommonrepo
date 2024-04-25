@@ -83,14 +83,19 @@ if __name__ == "__main__":
   for i in range(len(user_list)):
     print(i)
     if int(i) in bingo_card["B"]:
+      print("Test 1")
       bingo_card["B"][bingo_card["B"].index(int(i))] = 0
     elif int(i) in bingo_card["I"]:
+      print("Test 2")
       bingo_card["I"][bingo_card["I"].index(int(i))] = 0
     elif int(i) in bingo_card["N"]:
+      print("Test 3")
       bingo_card["N"][bingo_card["N"].index(int(i))] = 0
     elif int(i) in bingo_card["G"]:
+      print("Test 4")
       bingo_card["G"][bingo_card["G"].index(int(i))] = 0
     elif int(i) in bingo_card["O"]:
+      print("Test 5")
       bingo_card["O"][bingo_card["O"].index(int(i))] = 0
     else:
       print("Invalid number.")
