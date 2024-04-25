@@ -39,7 +39,7 @@ def bingo_card_gen():
   bingo_card["G"] = random.sample(range(46,61),5)
   bingo_card["O"] = random.sample(range(61,76),5)
   return bingo_card
-  
+
 def bingo_card_check(bingo_card):
   if bingo_card["B"][0] + bingo_card["I"][1] + bingo_card["N"][2] + bingo_card["G"][3] + bingo_card["O"][4] == 0:
     return True
@@ -79,16 +79,18 @@ if __name__ == "__main__":
   #------------------------------------------------------------
   user_input = input("Enter a list number: ")
   user_list = user_input.split()
+  print(user_list)
   for i in range(len(user_list)):
-    if i in bingo_card["B"]:
+    print(i)
+    if int(i) in bingo_card["B"]:
       bingo_card["B"][bingo_card["B"].index(int(i))] = 0
-    elif user_input in bingo_card["I"]:
+    elif int(i) in bingo_card["I"]:
       bingo_card["I"][bingo_card["I"].index(int(i))] = 0
-    elif user_input in bingo_card["N"]:
+    elif int(i) in bingo_card["N"]:
       bingo_card["N"][bingo_card["N"].index(int(i))] = 0
-    elif user_input in bingo_card["G"]:
+    elif int(i) in bingo_card["G"]:
       bingo_card["G"][bingo_card["G"].index(int(i))] = 0
-    elif user_input in bingo_card["O"]:
+    elif int(i) in bingo_card["O"]:
       bingo_card["O"][bingo_card["O"].index(int(i))] = 0
     else:
       print("Invalid number.")
