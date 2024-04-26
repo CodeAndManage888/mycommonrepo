@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 032724 (Expected Solution with 10 Lines of Code)      *
 # Title: Checking for a Winning Card                          *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # A winning Bingo card contains a line of 5 numbers that have *
 # all been called. Players normally mark the numbers that     *
 # have been called by crossing them out or marking them with  *
@@ -80,23 +80,18 @@ if __name__ == "__main__":
   user_input = input("Enter a list number: ")
   user_list = user_input.split()
   print(user_list)
-  for i in range(len(user_list)):
-    print(i)
-    if int(i) in bingo_card["B"]:
-      print("Test 1")
-      bingo_card["B"][bingo_card["B"].index(int(i))] = 0
-    elif int(i) in bingo_card["I"]:
-      print("Test 2")
-      bingo_card["I"][bingo_card["I"].index(int(i))] = 0
-    elif int(i) in bingo_card["N"]:
-      print("Test 3")
-      bingo_card["N"][bingo_card["N"].index(int(i))] = 0
-    elif int(i) in bingo_card["G"]:
-      print("Test 4")
-      bingo_card["G"][bingo_card["G"].index(int(i))] = 0
-    elif int(i) in bingo_card["O"]:
-      print("Test 5")
-      bingo_card["O"][bingo_card["O"].index(int(i))] = 0
+  for n in user_list:
+    print(n)
+    if int(n) in bingo_card["B"]:
+      bingo_card["B"][bingo_card["B"].index(int(n))] = 0
+    elif int(n) in bingo_card["I"]:
+      bingo_card["I"][bingo_card["I"].index(int(n))] = 0
+    elif int(n) in bingo_card["N"]:
+      bingo_card["N"][bingo_card["N"].index(int(n))] = 0
+    elif int(n) in bingo_card["G"]:
+      bingo_card["G"][bingo_card["G"].index(int(n))] = 0
+    elif int(n) in bingo_card["O"]:
+      bingo_card["O"][bingo_card["O"].index(int(n))] = 0
     else:
       print("Invalid number.")
   #------------------------------------------------------------
