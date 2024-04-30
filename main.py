@@ -66,11 +66,14 @@ if __name__ == "__main__":
   for i in range(5):
     print(bingo_card["B"][i],"\t",bingo_card["I"][i],"\t",bingo_card["N"][i],"\t",bingo_card["G"][i],"\t",bingo_card["O"][i])
   #------------------------------------------------------------
+  # Generate Random Number Bingo Call into a List:
+  #------------------------------------------------------------
+  import random
+  bingo_call = random.sample(range(1,76),75)
+  print(bingo_call)
+  #------------------------------------------------------------
   # Number Update:
   #------------------------------------------------------------
-  user_input = input("Enter a list number: ")
-  user_list = user_input.split()
-  print(user_list)
   for n in user_list:
     print(n)
     if int(n) in bingo_card["B"]:
