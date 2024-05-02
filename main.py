@@ -83,13 +83,13 @@ if __name__ == "__main__":
   #------------------------------------------------------------
   # Generate a Bingo Card:
   #------------------------------------------------------------
-  while ovr_ctr <= 10:
+  while ovr_ctr <= 1000:
     ovr_ctr += 1
     bingo_card = bingo_card_gen()
-    print(bingo_card)
-    print("B\tI\tN\tG\tO")
-    for i in range(5):
-      print(bingo_card["B"][i],"\t",bingo_card["I"][i],"\t",bingo_card["N"][i],"\t",bingo_card["G"][i],"\t",bingo_card["O"][i])
+  #  print(bingo_card)
+  #  print("B\tI\tN\tG\tO")
+  #  for i in range(5):
+  #    print(bingo_card["B"][i],"\t",bingo_card["I"][i],"\t",bingo_card["N"][i],"\t",bingo_card["G"][i],"\t",bingo_card["O"][i])
   #------------------------------------------------------------
   # Shuffle Bingo Numbers:
   #------------------------------------------------------------
@@ -115,19 +115,19 @@ if __name__ == "__main__":
         continue
     #------------------------------------------------------------
       if bingo_card_check(bingo_card) is False:
-    #    print("No winning line.")
+    #    print("No winning line.")a
         continue
       else:
-        print("Winning line!")
+    #    print("Winning line!")
         data_list.append(ctr)
         ctr = 0
         break
   #------------------------------------------------------------
   # Print the updated Bingo card:
   #------------------------------------------------------------
-    print("B\tI\tN\tG\tO")
-    for i in range(5):
-      print(bingo_card["B"][i],"\t",bingo_card["I"][i],"\t",bingo_card["N"][i],"\t",bingo_card["G"][i],"\t",bingo_card["O"][i])
+  #  print("B\tI\tN\tG\tO")
+  #  for i in range(5):
+  #    print(bingo_card["B"][i],"\t",bingo_card["I"][i],"\t",bingo_card["N"][i],"\t",bingo_card["G"][i],"\t",bingo_card["O"][i])
   #------------------------------------------------------------
   # Report Data:
   #------------------------------------------------------------
