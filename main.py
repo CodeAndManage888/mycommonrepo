@@ -7,7 +7,7 @@ def call_openai_api():
     response = openai.ChatCompletion.create(
       model="gpt-4",
       messages=[
-        {"role": "system", "content": "List down all the top 20 movies for 2010"},
+        {"role": "system", "content": "what is the Sanskrit of Mushroom"},
         {"role": "user", "content": ""},
         {"role": "assistant", "content": "Kamusta mundo!"}
       ],
