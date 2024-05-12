@@ -1,15 +1,14 @@
 #!/bin/bash
 #**************************************************************
-# Date: 051224 (Expected Solution with 39 Lines of Code)      *
-# Title: Find the Longest Word in a File                      *
+# Date: 051224 (Expected Solution with 23 Lines of Code)      *
+# Title: Number the Lines in a File                           *
 # Status: In Progress (In Progress / Testing / Working)       *
-# In this exercise you will create a Python program that      *
-# identiﬁes the longest word(s) in a ﬁle. Your program should *
-# output an appropriate message that includes the length of   *
-# the longest word, along with all of the words of that       *
-# length that occurred in the ﬁle. Treat any group of         *
-# non-white space characters as a word, even if it includes   *
-# numbers or punctuation marks.                               *
+# Create a program that adds line numbers to a ﬁle. The name  *
+# of the input ﬁle will be read from the user, as will the    *
+# name of the new ﬁle that your program will create. Each     *
+# line in the output ﬁle should begin with the line number,   *
+# followed by a colon and a space, followed by the line from  *
+# the input ﬁle.                                              *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
