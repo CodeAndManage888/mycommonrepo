@@ -17,5 +17,18 @@ def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  file_name = input("Enter the file name: ")
+  if not file_name:
+      print("Error: File name is required.")
+  else:
+      try:
+          with open(file_name, 'r') as file:
+              lines = file.readlines()
+              if len(lines) > 10:
+                  lines = lines[:10]
+              for line in lines:
+                  print(line.strip())
+      except FileNotFoundError:
+          print("Error: File not found.")
   print("Thank you for using this app.")
 #**************************************************************
