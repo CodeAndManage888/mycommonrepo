@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 050424 (Expected Solution with 40 Lines of Code)      *
 # Title: Display the Head of a File                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Unix-based operating systems usually include a tool named   *
 # head. It displays the ﬁrst 10 lines of a file whose name is *
 # provided as a command line parameter. Write a Python        *
