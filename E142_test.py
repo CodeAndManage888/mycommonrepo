@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 050424 (Expected Solution with 35 Lines of Code)      *
 # Title: Display the Tail of a File                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Unix-based operating systems also typically include a tool  *
 # named tail. It displays the last 10 lines of a file whose   *
 # name is provided as a command line parameter. Write a       *
