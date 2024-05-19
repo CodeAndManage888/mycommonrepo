@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 050524 (Expected Solution with 27 Lines of Code)      *
 # Title: Concatenate Multiple Files                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Unix-based operating systems typically include a tool named *
 # cat, which is short for concatenate. Its purpose is to      *
 # concatenate and display one or more files whose names are   *
