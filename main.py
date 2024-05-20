@@ -1,18 +1,14 @@
 #!/bin/bash
 #**************************************************************
-# Date: 050524 (Expected Solution with 27 Lines of Code)      *
-# Title: Concatenate Multiple Files                           *
-# Status: Testing (In Progress / Testing / Working)           *
-# Unix-based operating systems typically include a tool named *
-# cat, which is short for concatenate. Its purpose is to      *
-# concatenate and display one or more files whose names are   *
-# provided as command line parameters. The files are displayed*
-# in the same order that they appear on the command line.     *
-# Create a Python program that performs this task. It should  *
-# generate an appropriate error message for any file that     *
-# cannot be displayed, and then proceed to the next file.     *
-# Display an appropriate error message if your program is     *
-# started without any command line parameters.                *
+# Date: 051224 (Expected Solution with 23 Lines of Code)      *
+# Title: Number the Lines in a File                           *
+# Status: In Progress (In Progress / Testing / Working)       *
+# Create a program that adds line numbers to a file. The name *
+# of the input file will be read from the user, as will the   *
+# name of the new file that your program will create. Each    *
+# line in the output file should begin with the line number,  *
+# followed by a colon and a space, followed by the line from  *
+# the input ﬁle.                                              *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
