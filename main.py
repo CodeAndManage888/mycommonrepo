@@ -13,7 +13,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def func(user_in):
     return
 #--------------------------------------------------------------
 if __name__ == "__main__":
@@ -23,24 +23,27 @@ if __name__ == "__main__":
     line_num = 0
     line_header = "{:>4}: "
     # open first file for line reading
-    for file_name in file_list:
-        try:
-            file_handle = open(file_name, "r")
-            # read each line from the file
-            for line in file_handle:
-                line_num += 1
-                print(line_header.format(line_num) + line, end="")
-            file_handle.close()
-        except IOError:
-            print("File cannot be opened: ", file_name)
+    file_handle2 = open(file_list[1], "w")
+    try:
+        file_handle = open(file_list[0], "r")
+        # read each line from the file
+        for line in file_handle:
+            line_num += 1
+            print(line + line_header.format(line_num), end="")
+            file_handle2 = line + line_header.format(line_num)
+        # write line number and colon and line to second file
+        file_handle2.close()
+        file_handle.close()
+    except IOError:
+        print("File cannot be opened: ", file_name)
     # create second file for output
-    file_name = input("Enter the output file name: ")
+    #file_name = input("Enter the output file name: ")
 
     # open second file for line writing
 
     # read first file line by line
 
-    # write line number and colon and line to second file
+    
 
     # close second file
     print("Thank you for using this app.")
