@@ -22,20 +22,25 @@ if __name__ == "__main__":
     # prep line number and colon with space for the line header
     line_num = 0
     line_header = "{:>4}: "
+    # create/open output file
+    try:
+        file_out = open(file_list[1], "w")
+    except IOError:
+        print("File cannot be created/open: ", file_list[1])
+
     # open first file for line reading
-    file_handle2 = open(file_list[1], "w")
     try:
         file_handle = open(file_list[0], "r")
         # read each line from the file
         for line in file_handle:
             line_num += 1
             print(line + line_header.format(line_num), end="")
-            file_handle2 = line + line_header.format(line_num)
+            file_out = line + line_header.format(line_num)
         # write line number and colon and line to second file
-        file_handle2.close()
         file_handle.close()
     except IOError:
         print("File cannot be opened: ", file_name)
+    
     # create second file for output
     #file_name = input("Enter the output file name: ")
 
