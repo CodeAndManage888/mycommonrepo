@@ -1,18 +1,20 @@
 #!/bin/bash
-#**************************************************************
-# Date: 051324 (Expected Solution with 26 Lines of Code)      *
-# Title: Sum a List of Numbers                                *
-# Status: In Progress (In Progress / Testing / Working)       *
-# Create a program that sums all of the numbers entered by    *
-# the user while ignoring any lines entered by the user that  *
-# are not valid numbers. Your program should dis- play the    *
-# current sum after each number is entered. It should display *
-# an appropriate error message after any invalid input, and   *
-# then continue to sum any additional num- bers entered by    *
-# the user. Your program should exit when the user enters a   *
-# blank line. Ensure that your program works correctly for    *
-# both integers and ﬂoating point numbers. Hint: This         *
-# exercise requires you to use exceptions without using ﬁles. *
+#*************************************************************
+# Date: 053124 (Expected Solution with 50 Lines of Code)     *
+# Title: Names that Reached Number One                       *
+# Status: In Progress (In Progress / Testing / Working)      *
+#  The baby names data set consists of over 200 ﬁles. Each   *
+# ﬁle contains a list of 100 names, along with the number of *
+# times each name was used. There are two ﬁles for each year:*
+# one containing names used for girls and the other          *
+# containing names used for boys. The data set includes data *
+# for every year from 1900 to 2012. Write a program that     *
+# reads every ﬁle in the data set and identiﬁes all of the   *
+# names that were most popular in at least one year. Your    *
+# program should output two lists: one containing the most   *
+# popular names for boys and the other containing the most   *
+# popular names for girls. Neither of your lists should      *
+# include any repeated values.                               *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
