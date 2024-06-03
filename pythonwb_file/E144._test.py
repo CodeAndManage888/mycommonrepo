@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 051224 (Expected Solution with 23 Lines of Code)      *
 # Title: Number the Lines in a File                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Create a program that adds line numbers to a file. The name *
 # of the input file will be read from the user, as with the   *
 # name of the new file that your program will create. Each    *
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         with open(file_list[1], "w") as file_out:
             file_out.writelines(output_lines)
     except IOError:
-        print("File cannot be opened: ", file_name[0])
+        print("File Error for : ", file_name[0], file_name[1])
 
     print("Thank you for using this app.")
 #**************************************************************
