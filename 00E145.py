@@ -4,10 +4,10 @@
 # Title: Find the Longest Word in a File                      *
 # Status: In Progress (In Progress / Testing / Working)       *
 # In this exercise you will create a Python program that      *
-# identiﬁes the longest word(s) in a ﬁle. Your program should *
-# output an appropriate message that includes the length of   *
-# the longest word, along with all of the words of that       *
-# length that occurred in the ﬁle. Treat any group of         *
+# identifies the longest word(s) in a file. Your program      *
+# should output an appropriate message that includes the      *
+# length of the longest word, along with all of the words of  *
+# that length that occurred in the file. Treat any group of   *
 # non-white space characters as a word, even if it includes   *
 # numbers or punctuation marks.                               *
 #                                                             *
