@@ -1,37 +1,37 @@
 #!/bin/bash
 #**************************************************************
-# Date: 051224 (Expected Solution with 23 Lines of Code)      *
-# Title: Number the Lines in a File                           *
-# Status: Testing (In Progress / Testing / Working)           *
-# Create a program that adds line numbers to a file. The name *
-# of the input file will be read from the user, as with the   *
-# name of the new file that your program will create. Each    *
-# line in the output file should begin with the line number,  *
-# followed by a colon and a space, followed by the line from  *
-# the input ﬁle.                                              *
+# Date: 051224 (Expected Solution with 39 Lines of Code)      *
+# Title: Find the Longest Word in a File                      *
+# Status: In Progress (In Progress / Testing / Working)       *
+# In this exercise you will create a Python program that      *
+# identifies the longest word(s) in a file. Your program      *
+# should output an appropriate message that includes the      *
+# length of the longest word, along with all of the words of  *
+# that length that occurred in the file. Treat any group of   *
+# non-white space characters as a word, even if it includes   *
+# numbers or punctuation marks.                               *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
 if __name__ == "__main__":
-    file_name = input("Enter the file name: ")
-    file_list = file_name.split()
-    # prep line number and colon with space for the line header
-    line_num = 0
-    line_header = "{:>4}: "
-    output_lines = []
-    # open and read the input file
-    try:
-        with open(file_list[0], "r") as file_handle:
-            for line in file_handle:
-                line_num += 1
-                print(line_header.format(line_num) + line, end="")
-                output_lines.append(line_header.format(line_num) + line)
-            print("\n")
-        with open(file_list[1], "w") as file_out:
-            file_out.writelines(output_lines)
-    except IOError:
-        print("File Error for : ", file_name[0], file_name[1])
-    
-    print("Thank you for using this app.")
+  user_in = input("Enter the file name: ")
+  word_len = 0
+  word_list = []
+  with open(user_in, "r") as file_handle:
+    for line in file_handle:
+        print(line)
+        word_dump = line.split()
+        for word in word_dump:
+            print(word)
+            if len(word) > word_len:
+                word_len = len(word)
+                word_list.clear()
+                word_list.append(word)
+            elif len(word) == word_len:
+                word_list.append(word)
+            else:
+                continue
+  print("The longest word(s) in the file is/are:", word_list, "with a length of", word_len)
+  print("Thank you for using this app.")
 #**************************************************************
