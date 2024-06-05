@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 051224 (Expected Solution with 39 Lines of Code)      *
 # Title: Find the Longest Word in a File                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # In this exercise you will create a Python program that      *
 # identifies the longest word(s) in a file. Your program      *
 # should output an appropriate message that includes the      *
@@ -32,6 +32,7 @@ if __name__ == "__main__":
                 word_list.append(word)
             else:
                 continue
-  print("The longest word(s) in the file is/are:", word_list, "with a length of", word_len)
+  print("The longest word(s) in the file is/are:", ",".join(word_list), 
+        "with a length of", word_len)
   print("Thank you for using this app.")
 #**************************************************************
