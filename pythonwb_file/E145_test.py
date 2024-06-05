@@ -32,6 +32,7 @@ if __name__ == "__main__":
                 word_list.append(word)
             else:
                 continue
-  print("The longest word(s) in the file is/are:", word_list, "with a length of", word_len)
+  print("The longest word(s) in the file is/are:", ",".join(word_list), 
+        "with a length of", word_len)
   print("Thank you for using this app.")
 #**************************************************************
