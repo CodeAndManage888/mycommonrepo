@@ -1,38 +1,50 @@
 #!/bin/bash
 #**************************************************************
-# Date: 051224 (Expected Solution with 39 Lines of Code)      *
-# Title: Find the Longest Word in a File                      *
-# Status: Testing (In Progress / Testing / Working)           *
-# In this exercise you will create a Python program that      *
-# identifies the longest word(s) in a file. Your program      *
-# should output an appropriate message that includes the      *
-# length of the longest word, along with all of the words of  *
-# that length that occurred in the file. Treat any group of   *
-# non-white space characters as a word, even if it includes   *
-# numbers or punctuation marks.                               *
+# Date: 051324 (Expected Solution with 43 Lines of Code)      *
+# Title: Letter Frequencies                                   *
+# Status: In Progress (In Progress / Testing / Working)       *
+# One technique that can be used to help break some simple    *
+# forms of encryption is frequency analysis. This analysis    *
+# examines the encrypted text to determine which characters   *
+# are most common. Then it tries to map the most common       *
+# letters in English, such as E and T, to the most commonly   *
+# occurring characters in the encrypted text. Write a program *
+# that initiates this process by determining and displaying   *
+# the frequencies of all letters in a file. Ignore spaces,    *
+# punctuation marks, and numbers as you perform this          *
+# analysis. Your program should be case insensitive, treating *
+# a and A as equivalent. The user will provide the filename   *
+# as a command line parameter. Your program should display a  *
+# meaningful error message if the user provides the wrong     *
+# number of command line parameters, or if the program is     *
+# unable to open the ﬁle indicated by the user.               *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in = input("Enter the file name: ")
-  word_len = 0
-  word_list = []
-  with open(user_in, "r") as file_handle:
-    for line in file_handle:
-        print(line)
-        word_dump = line.split()
-        for word in word_dump:
-            print(word)
-            if len(word) > word_len:
-                word_len = len(word)
-                word_list.clear()
-                word_list.append(word)
-            elif len(word) == word_len:
-                word_list.append(word)
+  input_file = input("Enter the file name: ")
+  if input_file == "":
+    print("Error: No file name was provided.")
+  else:
+    ltr_dict = {}
+    with open(input_file, "r") as file_handle:
+      for line in file_handle:
+        #print(line)
+        for char in line:
+          #print(char)
+          if char.isalpha():
+            if char.upper() in ltr_dict:
+              ltr_dict[char.upper()] += 1
             else:
-                continue
-  print("The longest word(s) in the file is/are:", ",".join(word_list), 
-        "with a length of", word_len)
+              ltr_dict[char.upper()] = 1
+
+            #print(char)
+          else:
+            continue
+  sorted_by_keys = dict(sorted(ltr_dict.items()))
+  print("Letter Frequencies:")
+  for ltr in sorted_by_keys:
+    print(ltr, ":", sorted_by_keys[ltr])
   print("Thank you for using this app.")
 #**************************************************************

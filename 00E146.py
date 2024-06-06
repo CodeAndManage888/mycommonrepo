@@ -22,9 +22,29 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
-#--------------------------------------------------------------
 if __name__ == "__main__":
+  input_file = input("Enter the file name: ")
+  if input_file == "":
+    print("Error: No file name was provided.")
+  else:
+    ltr_dict = {}
+    with open(input_file, "r") as file_handle:
+      for line in file_handle:
+        #print(line)
+        for char in line:
+          #print(char)
+          if char.isalpha():
+            if char.upper() in ltr_dict:
+              ltr_dict[char.upper()] += 1
+            else:
+              ltr_dict[char.upper()] = 1
+    
+            #print(char)
+          else:
+            continue
+  sorted_by_keys = dict(sorted(ltr_dict.items()))
+  print("Letter Frequencies:")
+  for ltr in sorted_by_keys:
+    print(ltr, ":", sorted_by_keys[ltr])
   print("Thank you for using this app.")
 #**************************************************************
