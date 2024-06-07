@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 051324 (Expected Solution with 43 Lines of Code)      *
 # Title: Letter Frequencies                                   *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # One technique that can be used to help break some simple    *
 # forms of encryption is frequency analysis. This analysis    *
 # examines the encrypted text to determine which characters   *
@@ -38,7 +38,6 @@ if __name__ == "__main__":
               ltr_dict[char.upper()] += 1
             else:
               ltr_dict[char.upper()] = 1
-    
             #print(char)
           else:
             continue
