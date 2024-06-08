@@ -16,10 +16,22 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-#--------------------------------------------------------------
-def func_name(user_in):
-  return
+def words_func(user_str):
+  word_list = {}
+  for word in user_str.split(" "):
+    if word.strip(",.:;'\"?!").lower() in word_list:
+      word_list[word.strip(",.:;'\"?!").lower()] += 1
+    else:
+      word_list[word.strip(",.:;'\"?!").lower()] = 1
+  return word_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_infile = input("Enter the name of the file to be processed: ")
+  with open(user_infile, "r") as infile:
+    user_string = infile.read()
+  out_list = words_func(user_string)
+  print("Word Frequencies:")
+  for ltr in sorted(out_list):
+    print(ltr, ":", out_list[ltr])
   print("Thank you for using this app.")
 #**************************************************************
