@@ -18,11 +18,12 @@
 #**************************************************************
 def words_func(user_str):
   word_list = {}
-  for word in user_str.split(" "):
-    if word.strip(",.:;'\"?!").lower() in word_list:
-      word_list[word.strip(",.:;'\"?!").lower()] += 1
+  for word in user_str.split():
+    cleaned_word = word.strip(",.:;'\"?!\\").lower()
+    if cleaned_word in word_list:
+      word_list[cleaned_word] += 1
     else:
-      word_list[word.strip(",.:;'\"?!").lower()] = 1
+      word_list[cleaned_word] = 1
   return word_list
 #--------------------------------------------------------------
 if __name__ == "__main__":
