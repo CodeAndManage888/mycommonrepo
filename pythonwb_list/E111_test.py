@@ -32,7 +32,7 @@
 def words_func(user_str):
   word_list = []
   for word in user_str.split(" "):
-    word_list.append(word.strip(",.:;'\"?!"))
+    word_list.append(word.strip(",.:;'\"?!\\"))
   return word_list
 #--------------------------------------------------------------
 if __name__ == "__main__":

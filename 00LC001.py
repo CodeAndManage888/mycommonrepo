@@ -1,5 +1,5 @@
 from openai import OpenAI
-client = OpenAI(api_key = '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')
+#client = OpenAI(api_key = '')
 
 def chat_with_gpt(prompt):
     response = client.chat.completions.create(
@@ -12,7 +12,7 @@ def chat_with_gpt(prompt):
         ],
         temperature=1,
         max_tokens=256,
-        top_p=1,
+        top_p=1,`
         frequency_penalty=0,
         presence_penalty=0
     )
