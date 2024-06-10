@@ -1,6 +1,6 @@
 LC0002 (Solved) - Two Sum (Problem 1) - Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
-Palindrome Number (Problem 9) - Check if an integer is a palindrome without converting it to a string.
+LC0003 (Solved) - Palindrome Number (Problem 9) - Check if an integer is a palindrome without converting it to a string.
 
 Reverse Integer (Problem 7) - Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.
 
