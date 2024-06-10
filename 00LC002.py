@@ -10,8 +10,7 @@ def check_number(number):
         idx2 += 1
         continue
     idx1 += 1
-    
 if __name__ == "__main__":
   target_number = input("Enter a number: ")
-  print("The indices are:", check_number(int(target_number)))
+  check_number(int(target_number))
   print("Thank you for using this app.")

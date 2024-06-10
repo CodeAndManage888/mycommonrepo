@@ -1,4 +1,4 @@
-Two Sum (Problem 1) - Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+LC0002 (Solved) - Two Sum (Problem 1) - Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 Palindrome Number (Problem 9) - Check if an integer is a palindrome without converting it to a string.
 
