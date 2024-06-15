@@ -1,14 +1,25 @@
-def reverse_integer(user_in):
-  val1 = 2147483647
-  val2 = -2147483647
-  conv_bin = bin(user_in)
-  if conv_bin[::-1] > bin(val1) or conv_bin[::-1] < bin(val2) or conv_bin[::-1] == bin(val1) or conv_bin[::-1] == bin(val2):
-    conv_bin[::-1]
-    
-  else:
-    return 0
-
+#!/bin/bash
+#**************************************************************
+# Date: 051324 (Expected Solution with 26 Lines of Code)      *
+# Title: Sum a List of Numbers                                *
+# Status: In Progress (In Progress / Testing / Working)       *
+# Create a program that sums all of the numbers entered by    *
+# the user while ignoring any lines entered by the user that  *
+# are not valid numbers. Your program should dis- play the    *
+# current sum after each number is entered. It should display *
+# an appropriate error message after any invalid input, and   *
+# then continue to sum any additional num- bers entered by    *
+# the user. Your program should exit when the user enters a   *
+# blank line. Ensure that your program works correctly for    *
+# both integers and ﬂoating point numbers. Hint: This         *
+# exercise requires you to use exceptions without using ﬁles. *
+#                                                             *
+# Computed Result Validated:                                  *
+#**************************************************************
+#--------------------------------------------------------------
+def func_name(user_in):
+  return
+#--------------------------------------------------------------
 if __name__ == "__main__":
-  signed_32bit_integer = input("Enter a signed 32 bit integer: ")
-  print("The reverse of the input is:", reverse_integer(int(signed_32bit_integer)))
   print("Thank you for using this app.")
+#**************************************************************
