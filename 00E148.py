@@ -21,5 +21,13 @@ def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  input_nums = input(str("Enter a list of numbers separated by a space: "))
+  input_nums = input_nums.split()
+  sum_nums = 0
+  for i in input_nums:
+    try:
+      sum_nums += int(i)
+    except:
+      print("Invalid input")
   print("Thank you for using this app.")
 #**************************************************************
