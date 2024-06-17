@@ -17,17 +17,18 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
-#--------------------------------------------------------------
 if __name__ == "__main__":
-  input_nums = input(str("Enter a list of numbers separated by a space: "))
-  input_nums = input_nums.split()
+  input_nums = ""
   sum_nums = 0
-  for i in input_nums:
+  while input_nums != " ":
+    input_nums = input("Enter a number or blank to exit: ")
     try:
-      sum_nums += int(i)
+      sum_nums += int(input_nums)
+      print("Input Number:", input_nums, "Current Sum:", sum_nums)
     except:
+      if input_nums == " ":
+        print("Thank you for using this app.")
+        break
       print("Invalid input")
-  print("Thank you for using this app.")
+      continue
 #**************************************************************
