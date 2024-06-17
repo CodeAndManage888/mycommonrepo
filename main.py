@@ -17,9 +17,18 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
-#--------------------------------------------------------------
 if __name__ == "__main__":
-  print("Thank you for using this app.")
+  input_nums = ""
+  sum_nums = 0
+  while input_nums != " ":
+    input_nums = input("Enter a number or blank to exit: ")
+    try:
+      sum_nums += int(input_nums)
+      print("Input Number:", input_nums, "Current Sum:", sum_nums)
+    except:
+      if input_nums == " ":
+        print("Thank you for using this app.")
+        break
+      print("Invalid input")
+      continue
 #**************************************************************
