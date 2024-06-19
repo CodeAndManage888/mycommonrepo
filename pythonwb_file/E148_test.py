@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 051324 (Expected Solution with 26 Lines of Code)      *
 # Title: Sum a List of Numbers                                *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Create a program that sums all of the numbers entered by    *
 # the user while ignoring any lines entered by the user that  *
 # are not valid numbers. Your program should display the      *
