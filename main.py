@@ -13,9 +13,16 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
-#--------------------------------------------------------------
 if __name__ == "__main__":
-  print("Thank you for using this app.")
+  file_names = input("Enter the file names: ")
+  file_list = []
+  file_list = file_names.split()
+  with open(file_list[0], "r") as file:
+    line_num = 1
+    with open(file_list[1], "w") as file2:
+      for line in file:
+        print(f"{line_num}: {line}", end="")
+        file2.write(f"{line_num}: {line}")
+        line_num += 1
+  print("\n"+"Thank you for using this app.")
 #**************************************************************

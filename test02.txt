@@ -1,0 +1,9 @@
+1: the quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog,
+2: The Quick brown Fox jumps over the lazy dog. The quick brown fox jumps over the Lazy dog.
+3: The Quick brown Fox jumps over the lazy dog. The quick brown fox jumps over the Lazy dog:
+4: The Quick brown Fox jumps over the lazy dog. The quick brown fox jumps over the Lazy dog;
+5: The Quick brown Fox jumps over the lazy dog. The quick brown fox jumps over the Lazy dog'
+6: The Quick brown Fox jumps over the lazy dog. The quick brown fox jumps over the Lazy dog\
+7: The Quick brown Fox jumps over the lazy dog. The quick brown fox jumps over the Lazy dog"
+8: The Quick brown Fox jumps over the lazy dog. The quick brown fox jumps over the Lazy dog?
+9: The Quick brown Fox jumps over the lazy dog. The quick brown fox jumps over the Lazy dog!
