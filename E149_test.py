@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 050924 (Expected Solution with 23 Lines of Code)      *
 # Title: Number the Lines in a File                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Create a program that adds line numbers to a file. The name *
 # of the input file will be read from the user, as will the   *
 # name of the new file that your program will create. Each    *
