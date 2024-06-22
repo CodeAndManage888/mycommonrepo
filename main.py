@@ -7,7 +7,7 @@
 # comment. The comment ends at the end of the line containing *
 # the # character. In this exercise, you will create a program*
 # that removes all of the comments from a Python source file. *
-# Check each line in the file to determine if a #character is *
+# Check each line in the file to determine if a # character is*
 # present. If it is then your program should remove all of    *
 # the characters from the # character to the end of the line  *
 # (we’ll ignore the situation where the comment character     *
@@ -24,5 +24,17 @@ def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  input_files = input("Enter the name of the input and output file: ")
+  input_file = input_files.split(" ")[0]
+  output_file = input_files.split(" ")[1]
+  try:
+    with open(input_file, "r") as input_file:
+      with open(output_file, "w") as output_file:
+        for line in input_file:
+          if "#" in line:
+            line = line.split("#")[0]
+          output_file.write(line)
+  except:
+    print("Error: File not found.")
   print("Thank you for using this app.")
 #**************************************************************

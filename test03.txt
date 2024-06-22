@@ -1,0 +1,14 @@
+def func_name(user_in):
+  return
+if __name__ == "__main__":
+  input_files = input("Enter the name of the input and output file: ")
+  input_file = input_files.split(" ")[0]
+  output_file = input_files.split(" ")[1]
+  try:
+    with open(input_file, "r") as input_file:
+      with open(output_file, "w") as output_file:
+        for line in input_file:
+          if "            line = line.split("          output_file.write(line)
+  except:
+    print("Error: File not found.")
+  print("Thank you for using this app.")
