@@ -1,21 +1,22 @@
 #!/bin/bash
 #**************************************************************
-# Date: 051024 (Expected Solution with 46 Lines of Code)      *
-# Title: Remove Comments                                      *
+# Date: 051024 (Expected Solution with 37 Lines of Code)      *
+# Title:Two Word Random Password 73                           *
 # Status: In Progress (In Progress / Testing / Working)       *
-# Python uses the # character to mark the beginning of a      *
-# comment. The comment ends at the end of the line containing *
-# the # character. In this exercise, you will create a program*
-# that removes all of the comments from a Python source file. *
-# Check each line in the file to determine if a # character is*
-# present. If it is then your program should remove all of    *
-# the characters from the # character to the end of the line  *
-# (we’ll ignore the situation where the comment character     *
-# occurs inside of a string). Save the modiﬁed file using a   *
-# new name that will be entered by the user. The user will    *
-# also enter the name of the input file. Ensure that an        *
-# appropriate error message is displayed if a problem is      *
-# encountered while accessing the ﬁles.                       *
+# While generating a password by selecting random characters  *
+# generally gives a relatively secure password, it also       *
+# generally gives a password that is difﬁcult to memorize. As *
+# an alternative, some systems construct a password by taking *
+# two English words and concatenating them. While this        *
+# password isn’t as secure, it is much easier to memorize.    *
+# Write a program that reads a ﬁle containing a list of words,*
+# randomly selects two ofmthem, and concatenates them to      *
+# produce a new password. When producing the password ensure  *
+# that the total length is between 8 and 10 characters, and   *
+# that each word used is at least three letters long.         *
+# Capitalize each word in the password so that the user can   *
+# easily see where one word ends and the next one begins.     *
+# Display the password for the user.                          *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
@@ -24,17 +25,5 @@ def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  input_files = input("Enter the name of the input and output file: ")
-  input_file = input_files.split(" ")[0]
-  output_file = input_files.split(" ")[1]
-  try:
-    with open(input_file, "r") as input_file:
-      with open(output_file, "w") as output_file:
-        for line in input_file:
-          if "#" in line:
-            line = line.split("#")[0]
-          output_file.write(line)
-  except:
-    print("Error: File not found.")
   print("Thank you for using this app.")
 #**************************************************************
