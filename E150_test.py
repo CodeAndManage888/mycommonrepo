@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 051024 (Expected Solution with 46 Lines of Code)      *
 # Title: Remove Comments                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # Python uses the # character to mark the beginning of a      *
 # comment. The comment ends at the end of the line containing *
 # the # character. In this exercise, you will create a program*
