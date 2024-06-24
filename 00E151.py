@@ -25,5 +25,8 @@ def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  input_file = input(str("Please enter the name of the file: "))
+  with open(input_file, "r") as worddict:
+    word_list = worddict.readlines()
   print("Thank you for using this app.")
 #**************************************************************
