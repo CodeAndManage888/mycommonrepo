@@ -10,7 +10,7 @@
 # two English words and concatenating them. While this        *
 # password isn’t as secure, it is much easier to memorize.    *
 # Write a program that reads a ﬁle containing a list of words,*
-# randomly selects two ofmthem, and concatenates them to      *
+# randomly selects two of them, and concatenates them to      *
 # produce a new password. When producing the password ensure  *
 # that the total length is between 8 and 10 characters, and   *
 # that each word used is at least three letters long.         *
@@ -28,5 +28,9 @@ if __name__ == "__main__":
   input_file = input(str("Please enter the name of the file: "))
   with open(input_file, "r") as worddict:
     word_list = worddict.readlines()
+    word_concat = ""
+    for i in range(2):
+      word_concat += word_list[i]
+      
   print("Thank you for using this app.")
-#**************************************************************
+#**************************************************************be
