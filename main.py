@@ -9,7 +9,7 @@
 # an alternative, some systems construct a password by taking *
 # two English words and concatenating them. While this        *
 # password isn’t as secure, it is much easier to memorize.    *
-# Write a program that reads a ﬁle containing a list of words,*
+# Write a program that reads a file containing a list of words*
 # randomly selects two of them, and concatenates them to      *
 # produce a new password. When producing the password ensure  *
 # that the total length is between 8 and 10 characters, and   *
@@ -20,17 +20,28 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-#--------------------------------------------------------------
-def func_name(user_in):
-  return
+import random
 #--------------------------------------------------------------
 if __name__ == "__main__":
   input_file = input(str("Please enter the name of the file: "))
   with open(input_file, "r") as worddict:
-    word_list = worddict.readlines()
-    word_concat = ""
-    for i in range(2):
-      word_concat += word_list[i]
-      
+    word_record = worddict.readlines()
+    print(word_record)
+    word_list = []
+    for idx3, readline in enumerate(word_record):
+      word_list += readline.split(" ")
+    print(word_list)
+    tot_len = len(word_list)
+    word_concat, gen_ctr = "", 0
+    tot_pair = (tot_len * (tot_len - 1)) / 2
+    while len(word_concat) < 10 or len(word_concat) < 8 or gen_ctr > tot_pair :
+      rand_idx = random.randint(0, tot_len - 1)
+      if len(word_list[rand_idx]) >= 3:
+        word_concat += word_list[rand_idx].capitalize()
+      rand_idx = random.randint(0, tot_len - 1)
+      if len(word_list[rand_idx]) >= 3:
+        word_concat += word_list[rand_idx].capitalize()
+      gen_ctr += 1
+    print(word_concat)
   print("Thank you for using this app.")
 #**************************************************************be
