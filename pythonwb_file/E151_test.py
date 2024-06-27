@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 051024 (Expected Solution with 37 Lines of Code)      *
 # Title:Two Word Random Password 73                           *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 # While generating a password by selecting random characters  *
 # generally gives a relatively secure password, it also       *
 # generally gives a password that is difﬁcult to memorize. As *
@@ -26,22 +26,32 @@ if __name__ == "__main__":
   input_file = input(str("Please enter the name of the file: "))
   with open(input_file, "r") as worddict:
     word_record = worddict.readlines()
-    print(word_record)
+    #print(word_record)
     word_list = []
     for idx3, readline in enumerate(word_record):
       word_list += readline.split(" ")
-    print(word_list)
+    #print(word_list)
     tot_len = len(word_list)
     word_concat, gen_ctr = "", 0
     tot_pair = (tot_len * (tot_len - 1)) / 2
-    while len(word_concat) < 10 or len(word_concat) < 8 or gen_ctr > tot_pair :
+    while True:
       rand_idx = random.randint(0, tot_len - 1)
+      #print(rand_idx)
       if len(word_list[rand_idx]) >= 3:
         word_concat += word_list[rand_idx].capitalize()
       rand_idx = random.randint(0, tot_len - 1)
+      #print(rand_idx)
       if len(word_list[rand_idx]) >= 3:
         word_concat += word_list[rand_idx].capitalize()
       gen_ctr += 1
-    print(word_concat)
+      if len(word_concat) >= 8:
+        break
+      elif gen_ctr > tot_pair:
+        print("Max Pairs Exceeded! -", "Current Count:", gen_ctr, "Expected Pairs:", tot_pair)
+        word_concat = ""
+        break
+      else:
+        word_concat = ""       
+    print("Password Combination:", word_concat)
   print("Thank you for using this app.")
 #**************************************************************be
