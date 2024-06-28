@@ -4,8 +4,8 @@
 # Title: Two Word Random Password                             *
 # Status: In Progress (In Progress / Testing / Working)       *
 # While generating a password by selecting random characters  *
-# generally gives a rela- tively secure password, it also     *
-# generally gives a password that is difﬁcult to memorize. As *
+# generally gives a relatively secure password, it also       *
+# generally gives a password that is difficult to memorize. As*
 # an alternative, some systems construct a password by taking *
 # two English words and concatenating them. While this        *
 # password isn’t as secure, it is much easier to memorize.    *

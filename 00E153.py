@@ -3,7 +3,7 @@
 # Date: 051124 (Expected Solution with 59 Lines of Code)      *
 # Title: What’s that Element Again?                           *
 # Status: In Progress (In Progress / Testing / Working)       *
-# Write a program that reads a ﬁle containing information     *
+# Write a program that reads a file containing information    *
 # about chemical elements and stores it in one or more        *
 # appropriate data structures. Then your program should read  *
 # and process input from the user. If the user enters an      *
