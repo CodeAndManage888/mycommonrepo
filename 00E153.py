@@ -19,9 +19,17 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def read_element_info(user_data):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_input = input("Please enter the element's name, symbol or number of proton: ")
+  while user_input != "":
+    if user_input.isdigit():
+      print("The element's name and symbol is: ", read_element_info(user_input))
+    elif user_input.isalpha():
+      print("The element's number of protons is: ", read_element_info(user_input))
+    else:
+      print("Invalid Input!")
   print("Thank you for using this app.")
 #**************************************************************
