@@ -1,20 +1,21 @@
 #!/bin/bash
-#*************************************************************
-# Date: 053124 (Expected Solution with 50 Lines of Code)     *
-# Title: Names that Reached Number One                       *
-# Status: In Progress (In Progress / Testing / Working)      *
-#  The baby names data set consists of over 200 ﬁles. Each   *
-# ﬁle contains a list of 100 names, along with the number of *
-# times each name was used. There are two ﬁles for each year:*
-# one containing names used for girls and the other          *
-# containing names used for boys. The data set includes data *
-# for every year from 1900 to 2012. Write a program that     *
-# reads every ﬁle in the data set and identiﬁes all of the   *
-# names that were most popular in at least one year. Your    *
-# program should output two lists: one containing the most   *
-# popular names for boys and the other containing the most   *
-# popular names for girls. Neither of your lists should      *
-# include any repeated values.                               *
+#**************************************************************
+# Date: 070224 (Expected Solution with 49 Lines of Code)      *
+# Title: A Book with No “e” …                                   *
+# Status: In Progress (In Progress / Testing / Working)       *
+#  The novel “Gadsby” is over 50,000 words in length. While  *
+# 50,000 words isn’t nor- mally remarkable for a novel, it is*
+# in this case because none of the words in the book use the *
+# letter “e”. This is particularly noteworthy when one       *
+# considers that “e” is the most common letter in English.   *
+# Write a program that reads a list of words from a ﬁle and  *
+# determines what pro- portion of the words use each letter  *
+# of the alphabet. Display the result for all 26 letters.    *
+# Include an additional message identifying the letter that  *
+# is used in the small- est proportion of the words. Your    *
+# program should ignore any punctuation marks and it should  *
+# treat uppercase and lowercase letters as equivalent. This  *
+# copy belongs to 'acha04'74 7 File and Exception Exercises  *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
