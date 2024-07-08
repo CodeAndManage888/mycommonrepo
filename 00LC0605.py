@@ -7,16 +7,6 @@ class Solution:
             if fB[idx] == 0:
                 if fB[idx+1] == 0:
                     return True
-            
-
-
-
-                
-    
-            
-            
-        if n == 0:
-            return True
                 
 
 ans_list = Solution()
