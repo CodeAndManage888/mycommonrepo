@@ -2,18 +2,24 @@ class Solution:
     def cPF(self, fB: list[int], n: int) -> bool:
         idx = 0
         slot_ctr = 0
-        while idx < len(fB)-1 or idx + 1 < len(fB)-1 or idx + 2 < len(fB)-1 :
-            if fB[idx] == 0 and fB[idx+1] == 0 and fB[idx+2] == 0 or fB[idx] == 0 and fB[idx+1] == 0 and fB[idx+2] == 1 or fB[idx] == 1 and fB[idx+1] == 0 and fB[idx+2] == 0:
-                print(fB[idx], fB[idx+1], fB[idx+2])
+        while idx < len(fB)-1 and idx + 1 < len(fB)-1 and idx + 2 < len(fB)-1:
+            print(fB[idx], fB[idx+1], fB[idx+2])
+            if fB[idx] == 0 and fB[idx+1]==0:
                 slot_ctr += 1
-                idx += 2
+                print(slot_ctr)
+                if fB[idx + 2] == 0:
+                    idx += 2 
+                else:
+                    idx += 1
             else:
                 idx += 1
-        print(slot_ctr)
         return slot_ctr >= n
 
 ans_list = Solution()
-list1 = [0,0,1,0,1]
-num = 1
+list1 = [[1,0,0,0,1], [1,0,0,0,1], [1,0,0,0,0,0,1], [0,0,1,0,1], [1,0,0,0,0,1], [1,0,0,0,1,0,0]]
+num_list =[1, 2, 2, 1, 2, 2]
 
-print(ans_list.cPF(list1, num))
+for i in range(len(list1)):
+    print(ans_list.cPF(list1[i], num_list[i]))
+
+#next solution is to scan the content of the list. 
