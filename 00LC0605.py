@@ -3,13 +3,12 @@ class Solution:
         idx = 0
         slot_ctr = 0
         for idx, slots in enumerate(fB):
-            #print(idx, slots)
             if idx + 1 <= len(fB) - 1 and idx + 2 <= len(fB) - 1:
-                if slots == 0 and fB[idx+1]==0 and len(fB)-1 == idx+1:
+                if slots == 0 and fB[idx+1]==0:
+
+
+
                     slot_ctr += 1
-                elif slots == 0 and fB[idx+1]==0:
-                    slot_ctr += 1
-                    print(slot_ctr)
                     if fB[idx + 2] == 0:
                         idx += 2 
                     else:
