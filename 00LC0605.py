@@ -16,9 +16,10 @@ class Solution:
 
 ans_list = Solution()
 list1 = [[1,0,0,0,1], [1,0,0,0,1], [1,0,0,0,1,0,0], [1,0,0,0,0,1]]
+ans_lst = ["True", "False", "True", "False"]
 num_list =[1, 2, 2, 2]
 
 for i in range(len(list1)):
-    print(ans_list.cPF(list1[i], num_list[i]))
+    print(ans_list.cPF(list1[i], num_list[i]),"--",ans_lst[i])
 
 #next solution is to scan the content of the list.
