@@ -1,15 +1,13 @@
 class Solution:
     def cPF(self, fB: list[int], n: int) -> bool:
         idx = 0
-        slot_ctr = 0
+        slot_ctr = 0                 
         for idx, slots in enumerate(fB):
             if idx + 1 <= len(fB) - 1 and idx + 2 <= len(fB) - 1:
-                if slots == 0 and fB[idx+1]==0:                  
+                print(idx, slots, "2nd:", fB[idx+1], "3rd:", fB[idx+2])
+                if slots == 0 and fB[idx+1]==0 and fB[idx+2]==0:
                     slot_ctr += 1
-                    if fB[idx + 2] == 0:
-                        idx += 2 
-                    else:
-                        idx += 1
+                    idx += 3
                 else:
                     idx += 1
         return slot_ctr >= n
