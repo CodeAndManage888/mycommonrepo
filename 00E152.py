@@ -19,10 +19,15 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def read_element_info(user_data):
-  return
-#--------------------------------------------------------------
 if __name__ == "__main__":
+  input_file = "test05.txt"
+  element_dict = {}
+  
+  with open(input_file, "r") as chemelem:
+    element_record = chemelem.readlines()
+    
+  for idx, element in enumerate(element_record):
+    
   user_input = input("Please enter the element's name, symbol or number of proton: ")
   while user_input != "":
     if user_input.isdigit():
