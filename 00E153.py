@@ -19,9 +19,30 @@
 # Computed Result Validated:                                 *
 #*************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+alpha_list = {"a":0.00, "b":0.00, "c":0.00, "d":0.00, "e":0.00, 
+              "f":0.00, "g":0.00, "h":0.00, "i":0.00, "j":0.00, 
+              "k":0.00, "l":0.00, "m":0.00, "n":0.00, "o":0.00, 
+              "p":0.00, "q":0.00, "r":0.00, "s":0.00, "t":0.00, 
+              "u":0.00, "v":0.00, "w":0.00, "x":0.00, "y":0.00, 
+              "z":0.00}
+tot_ltr = 0
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  with open("test06.txt", "r") as wordlist:
+    word_list = wordlist.readlines()
+
+  for idx, word in enumerate(word_list):
+    word_list[idx] = word.lower()
+    for letter in word:
+      if letter in alpha_list:
+        alpha_list[letter] += 1
+    tot_ltr = len(word)
+
+  for idx, keys in enumerate(alpha_list):
+    alpha_list[keys] = alpha_list[keys] / tot_ltr
+
+  for idx, keys in enumerate(alpha_list):
+    print(f"{keys}: {alpha_list[keys]:.4f}")
+
   print("Thank you for using this app.")
 #**************************************************************
