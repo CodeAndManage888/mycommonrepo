@@ -1,48 +1,27 @@
 #!/bin/bash
 #*************************************************************
-# Date: 070224 (Expected Solution with 49 Lines of Code)     *
-# Title: A Book with No “e” …                                *
+# Date: 070324 (Expected Solution with 50 Lines of Code)     *
+# Title: Names that Reached Number One                       *
 # Status: In Progress (In Progress / Testing / Working)      *
-#  The novel “Gadsby” is over 50,000 words in length. While  *
-# 50,000 words isn’t normally remarkable for a novel, it is  *
-# in this case because none of the words in the book use the *
-# letter “e”. This is particularly noteworthy when one       *
-# considers that “e” is the most common letter in English.   *
-# Write a program that reads a list of words from a file and *
-# determines what proportion of the words use each letter    *
-# of the alphabet. Display the result for all 26 letters.    *
-# Include an additional message identifying the letter that  *
-# is used in the smallest proportion of the words. Your      *
-# program should ignore any punctuation marks and it should  *
-# treat uppercase and lowercase letters as equivalent.       *
+#  The baby names data set consists of over 200 ﬁles. Each   *
+# file contains a list of 100 names, along with the number of*
+# times each name was used. There are two files for each     *
+# year: one containing names used for girls and the other    *
+# containing names used for boys. The data set includes data *
+# for every year from 1900 to 2012. Write a program that     *
+# reads every file in the data set and identifies all of the *
+# names that were most popular in at least one year. Your    *
+# program should output two lists: one containing the most   *
+# popular names for boys and the other containing the most   *
+# popular names for girls. Neither of your lists should      *
+# include any repeated values.                               *
 #                                                            *
 # Computed Result Validated:                                 *
 #*************************************************************
-#--------------------------------------------------------------
-alpha_list = {"a":0.00, "b":0.00, "c":0.00, "d":0.00, "e":0.00, 
-              "f":0.00, "g":0.00, "h":0.00, "i":0.00, "j":0.00, 
-              "k":0.00, "l":0.00, "m":0.00, "n":0.00, "o":0.00, 
-              "p":0.00, "q":0.00, "r":0.00, "s":0.00, "t":0.00, 
-              "u":0.00, "v":0.00, "w":0.00, "x":0.00, "y":0.00, 
-              "z":0.00}
-tot_ltr = 0
-#--------------------------------------------------------------
+#-------------------------------------------------------------
+def func_name(user_in):
+  return
+#-------------------------------------------------------------
 if __name__ == "__main__":
-  with open("test06.txt", "r") as wordlist:
-    word_list = wordlist.readlines()
-  
-  for idx, word in enumerate(word_list):
-    word_list[idx] = word.lower()
-    for letter in word:
-      if letter in alpha_list:
-        alpha_list[letter] += 1
-    tot_ltr = len(word)
-
-  for idx, keys in enumerate(alpha_list):
-    alpha_list[keys] = alpha_list[keys] / tot_ltr
-
-  for idx, keys in enumerate(alpha_list):
-    print(f"{keys}: {alpha_list[keys]:.4f}")
-    
   print("Thank you for using this app.")
-#**************************************************************
+#*************************************************************
