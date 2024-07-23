@@ -2,7 +2,7 @@
 #*************************************************************
 # Date: 070224 (Expected Solution with 49 Lines of Code)     *
 # Title: A Book with No “e” …                                *
-# Status: In Progress (In Progress / Testing / Working)      *
+# Status: Testing (In Progress / Testing / Working)          *
 #  The novel “Gadsby” is over 50,000 words in length. While  *
 # 50,000 words isn’t normally remarkable for a novel, it is  *
 # in this case because none of the words in the book use the *
