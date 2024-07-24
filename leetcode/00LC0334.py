@@ -19,6 +19,24 @@ class Solution:
                           print(idx, ":", nums[idx], nums[0], nums[1])
                           return bool(nums[idx] < nums[0] and nums[0] < nums[1])
 
+#===================== Generated line of codes ==============================
+'''         if len(nums) < 3:
+                return False
+            
+            first = float('inf')
+            second = float('inf')
+            
+            for num in nums:
+                if num <= first:
+                    first = num
+                elif num <= second:
+                    second = num
+                else:
+                    return True
+            return False
+'''
+#===================== Generated line of codes ==============================
+
 ans_list = Solution()
 list1 = [[1,2,3,4,5], [5,4,3,2,1], [2,1,5,0,4,6], [20,100,10,12,5,13], [2,4,-2,-3]]
 ans_lst = ["True", "False", "True", "True", "False"]
