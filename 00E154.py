@@ -3,7 +3,7 @@
 # Date: 070324 (Expected Solution with 50 Lines of Code)     *
 # Title: Names that Reached Number One                       *
 # Status: In Progress (In Progress / Testing / Working)      *
-#  The baby names data set consists of over 200 ﬁles. Each   *
+#  The baby names data set consists of over 200 files. Each  *
 # file contains a list of 100 names, along with the number of*
 # times each name was used. There are two files for each     *
 # year: one containing names used for girls and the other    *
@@ -23,5 +23,6 @@ def func_name(user_in):
   return
 #-------------------------------------------------------------
 if __name__ == "__main__":
+  
   print("Thank you for using this app.")
 #*************************************************************
