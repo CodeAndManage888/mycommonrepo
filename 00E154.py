@@ -23,6 +23,6 @@ def func_name(user_in):
   return
 #-------------------------------------------------------------
 if __name__ == "__main__":
-  
+  file_location = input("Enter file location: ")
   print("Thank you for using this app.")
 #*************************************************************
