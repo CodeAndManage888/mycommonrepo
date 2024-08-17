@@ -24,5 +24,7 @@ def func_name(user_in):
 #-------------------------------------------------------------
 if __name__ == "__main__":
   file_location = input("Enter file location: ")
+  file_name = input("Enter file name: ")
+  file_path = f"{file_location}/{file_name}"
   print("Thank you for using this app.")
 #*************************************************************
