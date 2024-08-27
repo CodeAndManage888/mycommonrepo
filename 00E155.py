@@ -1,8 +1,8 @@
 #!/bin/bash
-#**************************************************************
-# Date: 072824 (Expected Solution with 56 Lines of Code)      *
-# Title: Gender Neutral Names                                   *
-# Status: In Progress (In Progress / Testing / Working)       *
+#*************************************************************
+# Date: 072824 (Expected Solution with 56 Lines of Code)     *
+# Title: Gender Neutral Names                                *
+# Status: In Progress (In Progress / Testing / Working)      *
 #  Some names, like Ben and Jonathan, are normally only used *
 # for boys while names like Rebbecca and Flora are normally  *
 # only used for girls. Other names, like Chris and Alex, may *
@@ -14,9 +14,9 @@
 # Display an appropriate error message if you do not have    *
 # data for the year requested by the user. Additional details*
 # about the baby names data set are included in Exercise 154.*
-#                                                             *
-# Computed Result Validated:                                  *
-#**************************************************************
+#                                                            *
+# Computed Result Validated:                                 *
+#*************************************************************
 #--------------------------------------------------------------
 def func_name(user_in):
   return
