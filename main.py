@@ -15,7 +15,7 @@ def generate_names_and_numbers(gender, year):
             number = random.randint(1, 99)
             file.write(f'{name},{number}\n')
 
-years = ['2021', '2022', '2023']
+years = ['2018', '2019', '2020']
 genders = ['female', 'male']
 
 for year in years:
