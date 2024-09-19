@@ -18,15 +18,20 @@
 #                                                            *
 # Computed Result Validated:                                 *
 #*************************************************************
+year_list = ["2018f", "2018m", "2019f", "2019m", "2020f", 
+             "2020m", "2021f", "2021m", "2022f", "2022m", 
+             "2023f", "2023m"]
 #-------------------------------------------------------------
-def func_name(user_in):
+def read_files(user_in):
+  for file_name in year_list:
+    file_path = f"{user_in}/{file_name}"
+    with open(file_path, "r") as file_handle:
+      file_data = file_handle.read()
+    print(file_data)
   return
 #-------------------------------------------------------------
 if __name__ == "__main__":
   file_location = input("Enter file location: ")
-  file_name = input("Enter file name: ")
-  file_path = f"{file_location}/{file_name}"
-  file_handle = open(file_path, "r")
-  file_data = file_handle.read()
+  read_files(file_location)
   print("Thank you for using this app.")
 #*************************************************************
