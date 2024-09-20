@@ -26,8 +26,11 @@ def read_files(user_in):
   for file_name in year_list:
     file_path = f"{user_in}/{file_name}"
     with open(file_path, "r") as file_handle:
-      file_data = file_handle.read()
-    print(file_data)
+      file_data = file_handle.readlines()
+    print(file_data) #test purposes
+    for line_item in file_data:
+      #print(file_name)
+      print(line_item) #test purposes
   return
 #-------------------------------------------------------------
 if __name__ == "__main__":
