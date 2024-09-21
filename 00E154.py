@@ -21,16 +21,31 @@
 year_list = ["2018f", "2018m", "2019f", "2019m", "2020f", 
              "2020m", "2021f", "2021m", "2022f", "2022m", 
              "2023f", "2023m"]
+temp_male = ["Name", 0]
+temp_female = ["Name", 0]
 #-------------------------------------------------------------
 def read_files(user_in):
   for file_name in year_list:
     file_path = f"{user_in}/{file_name}"
     with open(file_path, "r") as file_handle:
       file_data = file_handle.readlines()
-    print(file_data) #test purposes
+    #print(file_data) #test purposes
     for line_item in file_data:
       #print(file_name)
-      print(line_item) #test purposes
+      temp_name, temp_count = line_item.split(",")
+      #print(temp_name, temp_count)
+      temp_count = int(temp_count)
+      if file_name.endswith("f") and temp_female[len(temp_female)-1:] < temp_count:
+        temp_female.append(temp_name)
+        temp_female.append(temp_count)
+      elif file_name.endswith("m") and temp_male[len(temp_male)-1:] < temp_count:
+        temp_male.append(temp_name)
+        temp_male.append(temp_count)
+      #print(line_item) #test purposes
+    print("Record: ", temp_male, temp_female)
+  return
+
+def write_files(rec_list):
   return
 #-------------------------------------------------------------
 if __name__ == "__main__":
