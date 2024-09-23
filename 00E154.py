@@ -29,19 +29,23 @@ def read_files(user_in):
     file_path = f"{user_in}/{file_name}"
     with open(file_path, "r") as file_handle:
       file_data = file_handle.readlines()
-    #print(file_data) #test purposes
     for line_item in file_data:
-      #print(file_name)
       temp_name, temp_count = line_item.split(",")
-      #print(temp_name, temp_count)
       temp_count = int(temp_count)
-      if file_name.endswith("f") and temp_female[-1] < temp_count:
-        temp_female[0] = temp_name
-        temp_female[1] = temp_count
-      elif file_name.endswith("m") and temp_male[-1] < temp_count:
-        temp_male[0] = temp_name
-        temp_male[1] = temp_count
-      #print(line_item) #test purposes
+      if file_name.endswith("f") and temp_female[-1] < temp_count and temp_name != temp_female[-2]:
+        if temp_female[-1] == 0:
+          temp_female[0] = temp_name
+          temp_female[1] = temp_count
+        else:
+          temp_female.append(temp_name)
+          temp_female.append(temp_count)        
+      elif file_name.endswith("m") and temp_male[-1] < temp_count and temp_name != temp_male[-2]:
+        if temp_male[-1] == 0:
+          temp_male[0] = temp_name
+          temp_male[1] = temp_count
+        else:
+          temp_male.append(temp_name)
+          temp_male.append(temp_count) 
   print("Record: ", temp_male, temp_female)
   return
 
