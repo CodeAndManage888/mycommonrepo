@@ -20,7 +20,6 @@
 #*************************************************************
 from os import write
 
-
 year_list = ["2018f", "2018m", "2019f", "2019m", "2020f", 
              "2020m", "2021f", "2021m", "2022f", "2022m", 
              "2023f", "2023m"]
@@ -56,10 +55,14 @@ def read_files(user_in):
 def write_files(rec1_list, rec2_list):
   with open("boys.txt", "w") as file:
     for item in rec1_list:
-      file.write(f"{item}\n")
+      file.write(f"{item}")
+      if isinstance(item,(int,float)):
+        file.write("\n")
   with open("girls.txt", "w") as file:
     for item in rec2_list:
-      file.write(f"{item}\n")
+      file.write(f"{item}")
+      if isinstance(item,(int,float)):
+        file.write("\n")
   return
 #-------------------------------------------------------------
 if __name__ == "__main__":
