@@ -47,6 +47,7 @@ def read_files(user_in1, user_in2):
   print("Record: ", temp_male, temp_female)
   write_files(temp_male, temp_female)
   return
+  # there are still no progress with the github connection issue
 #--------------------------------------------------------------
 if __name__ == "__main__":
   file_location = input("Enter file location: ")
