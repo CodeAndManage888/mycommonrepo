@@ -22,7 +22,7 @@ input_list = []
 def read_files(user_in1, user_in2):
   input_list.append(user_in2+"f")
   input_list.append(user_in2+"m")
-  file_name = 
+  # file_name = 
   for file_name in input_list:
     file_path = f"{user_in1}/{file_name}"
     with open(file_path, "r") as file_handle:
