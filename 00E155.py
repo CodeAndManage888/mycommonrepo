@@ -47,6 +47,7 @@ def read_files(user_in1, user_in2):
   print("Record: ", temp_male, temp_female)
   write_files(temp_male, temp_female)
   #github connection was not working. This is a comment that Replit is not connected.
+  # still no response from the support request I issued
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
