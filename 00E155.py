@@ -2,7 +2,7 @@
 #*************************************************************
 # Date: 072824 (Expected Solution with 56 Lines of Code)     *
 # Title: Gender Neutral Names                                *
-# Status: In Progress (In Progress / Testing / Working)      *
+# Status: Testing (In Progress / Testing / Working)          *
 #  Some names, like Ben and Jonathan, are normally only used *
 # for boys while names like Rebbecca and Flora are normally  *
 # only used for girls. Other names, like Chris and Alex, may *
@@ -53,10 +53,10 @@ def read_files(user_in1, user_in2):
       temp_name, temp_count = line_item.split(",")
       if temp_name in non_binary_names:
         non_binary_count += 1
-        non_binary_names.append(temp_name)
+        non_binary_list.append(temp_name)
   if non_binary_count > 0:
     print("There are", non_binary_count, "non-binary names in the data set.")
-    print(non_binary_names)
+    print(non_binary_list)
   else:
     print("There are no non-binary names in the data set.")
   return
