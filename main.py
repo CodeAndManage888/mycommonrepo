@@ -13,9 +13,29 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def common_name(file_loc, yr_range):
+  boy_name_common = []
+  girl_name_common = ""
+  boy_name_count = 0
+  girl_name_count = 0
+  for year in yr_range:
+    file_name = year + "f"
+    file_path = f"{file_loc}/{file_name}"
+    with open(file_path, "r") as file_handle:
+      file_data = file_handle.readlines()
+    for line_item in file_data:
+      temp_name, temp_count = line_item.split(",")
+      if girl_name_count < int(temp_count):
+        girl_name_ = temp_name
+        girl_name_count = int(temp_count)
+
+
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  file_location = input("Please enter the file location: ")
+  year_range = input("Please enter the year range(separated by ,): ")
+  year_range = year_range.split(",")
+  common_name(file_location, year_range)
   print("Thank you for using this app.")
 #**************************************************************
