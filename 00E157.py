@@ -15,11 +15,22 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+import os
 #--------------------------------------------------------------
-def list_down_names(user_in):
+def list_down_names(file_loc, user_files):
+  for rawfile in user_files:
+    file_path = f"{file_loc}/{rawfile}"
+    print(file_path)
+    with open(file_path, "r") as file_handle:
+      file_data = file_handle.readlines()
+    for line_item in file_data:
+      temp_name, temp_count = line_item.split(",")
+      print(temp_name)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   file_location = input("Please enter the file location: ")
+  file_list = os.listdir(file_location)
+  list_down_names(file_location, file_list)
   print("Thank you for using this app.")
 #**************************************************************
