@@ -16,6 +16,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 import os
+male_names = []
 #--------------------------------------------------------------
 def list_down_names(file_loc, user_files):
   for rawfile in user_files:
@@ -26,6 +27,8 @@ def list_down_names(file_loc, user_files):
     for line_item in file_data:
       temp_name, temp_count = line_item.split(",")
       print(temp_name)
+      if temp_name == "Male":
+        male_names.append(temp_name)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
