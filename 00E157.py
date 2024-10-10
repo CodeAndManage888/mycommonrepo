@@ -26,9 +26,10 @@ def list_down_names(file_loc, user_files):
       file_data = file_handle.readlines()
     for line_item in file_data:
       temp_name, temp_count = line_item.split(",")
-      print(temp_name)
-      if temp_name == "Male":
+      #print(temp_name)
+      if temp_name not in male_names:
         male_names.append(temp_name)
+    print(male_names)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
