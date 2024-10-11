@@ -17,19 +17,27 @@
 #**************************************************************
 import os
 male_names = []
+female_names = []
 #--------------------------------------------------------------
 def list_down_names(file_loc, user_files):
   for rawfile in user_files:
+    gender_ind = rawfile[4:]
     file_path = f"{file_loc}/{rawfile}"
-    print(file_path)
+    print(file_path, gender_ind)
     with open(file_path, "r") as file_handle:
       file_data = file_handle.readlines()
-    for line_item in file_data:
-      temp_name, temp_count = line_item.split(",")
-      #print(temp_name)
-      if temp_name not in male_names:
-        male_names.append(temp_name)
-    print(male_names)
+    if gender_ind == "m":
+      for line_item in file_data:
+        temp_name, temp_count = line_item.split(",")
+        if temp_name not in male_names:
+          male_names.append(temp_name)
+    else:
+      for line_item in file_data:
+        temp_name, temp_count = line_item.split(",")
+        if temp_name not in female_names:
+          female_names.append(temp_name)
+  print(male_names)
+  print(female_names)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
