@@ -30,10 +30,35 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+spell_dict = {"the": 0,"be": 0,"to": 0,"of": 0,"and": 0,"a": 0,"in": 0, 
+              "that": 0,"have": 0,"I": 0,"it": 0,"for": 0,"not": 0,"on": 0,
+              "with": 0,"he": 0,"as": 0,"you": 0,"do": 0,"at": 0,"this": 0,
+              "but": 0,"his": 0,"by": 0,"from": 0,"they": 0,"we": 0,"say": 0,
+              "her": 0,"she": 0,"or": 0,"an": 0,"will": 0,"my": 0,"one": 0,
+              "all": 0,"would": 0,"there": 0,"their": 0,"what": 0,"so": 0,
+              "up": 0,"out": 0,"if": 0,"about": 0,"who": 0,"get": 0,"which": 0,
+              "go": 0,"me": 0}
 #--------------------------------------------------------------
-def func_name(user_in):
+def spell_check(file_loc, user_file):
+  file_path = f"{file_loc}/{user_file}"
+  with open(file_path, "r") as file_handle:
+    file_data = file_handle.readlines()
+  for word in file_data:
+    word = word.strip(" ")
+    word = word.lower()
+    value = spell_dict.get(word, 1)
+    if value == 1:
+      print(f"The word {word} is misspelled.")
+    elif value == 0:
+      print(f"The word {word} is spelled correctly.")
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  file_loc = input("Please enter the file location: ")
+  file_name = input("Please enter the file name: ")
+  if file_name == "":
+    print("Error: File name is missing.")
+  else:
+    spell_check(file_loc, file_name)
   print("Thank you for using this app.")
 #**************************************************************
