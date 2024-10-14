@@ -42,15 +42,16 @@ spell_dict = {"the": 0,"be": 0,"to": 0,"of": 0,"and": 0,"a": 0,"in": 0,
 def spell_check(file_loc, user_file):
   file_path = f"{file_loc}/{user_file}"
   with open(file_path, "r") as file_handle:
-    file_data = file_handle.readlines()
-  for word in file_data:
-    word = word.strip(" ")
+    file_data = file_handle.read()
+    word_list = file_data.split()
+  for word in word_list:
     word = word.lower()
+    word = word.strip(",.:;'\"?!\\")
     value = spell_dict.get(word, 1)
     if value == 1:
-      print(f"The word {word} is misspelled.")
+      print(f"The word '{word}' is misspelled.")
     elif value == 0:
-      print(f"The word {word} is spelled correctly.")
+      print(f"The word '{word}' is spelled correctly.")
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
