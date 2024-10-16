@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 072824 (Expected Solution with 51 Lines of Code)      *
 # Title: Spell Checker                                        *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  A spell checker can be a helpful tool for people who       *
 # struggle to spell words correctly. In this exercise, you    *
 # will write a program that reads a file and displays all of  *
