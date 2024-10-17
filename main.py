@@ -26,9 +26,36 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def dup_words(floc,fname):
+  file_path = f"{floc}/{fname}"
+  try:
+    with open(file_path, "r") as file_handle:
+      file_data = file_handle.readlines()
+  except FileNotFoundError:
+    print("Error: File not found.")
+    return
+  except PermissionError:
+    print("Error: Permission denied.")
+    return
+  except IsADirectoryError:
+    print("Error: Is a directory.")
+    return
+  except IOError as e:
+    print(f"An IO error has occured: {e}")
+    return
+
+  for line in file_data:
+    line = line.lower()
+    line = line.strip(",.:;'\"?!\\")
+    lines = line.split()
+    for word in lines:
+      if word in line:
+        print(f"Line {line}: {word}")
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  file_loc = input("Please enter the file location: ")
+  file_name = input(f"Please enter the file name: ")
+  dup_words(file_loc,file_name)
   print("Thank you for using this app.")
 #**************************************************************
