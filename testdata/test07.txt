@@ -1,4 +1,4 @@
 The quick brown fox jumps over the lazy dog.
-dog. The quick brown fox jumps over the lazy dog.
-The the quick brown fox jumps over over the lazy dog.
-The quick brown fox fox jumps over the the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.

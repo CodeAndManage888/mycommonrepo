@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 072824 (Expected Solution with 61 Lines of Code)      *
 # Title: Repeated Words                                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  Spelling mistakes are only one of many different kinds of  *
 # errors that might appear in a written work. Another error   *
 # that is common for some writers is a repeated word. For     *
@@ -27,6 +27,8 @@
 #**************************************************************
 #--------------------------------------------------------------
 def dup_words(floc,fname):
+  prev_word = ""
+  line_num = 0
   file_path = f"{floc}/{fname}"
   try:
     with open(file_path, "r") as file_handle:
@@ -43,14 +45,16 @@ def dup_words(floc,fname):
   except IOError as e:
     print(f"An IO error has occured: {e}")
     return
-
-  for line in file_data:
+  
+  for index, line in enumerate(file_data):
     line = line.lower()
     line = line.strip(",.:;'\"?!\\")
     lines = line.split()
     for word in lines:
-      if word in line:
-        print(f"Line {line}: {word}")
+      if word == prev_word:
+        print(f"Duplicate word: {word} at line {index+1}: ")
+      else:
+        prev_word = word
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
