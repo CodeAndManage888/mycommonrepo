@@ -1,65 +1,35 @@
 #!/bin/bash
 #**************************************************************
-# Date: 072824 (Expected Solution with 61 Lines of Code)      *
-# Title: Repeated Words                                       *
+# Date: 072824 (Expected Solution with 49 Lines of Code)      *
+# Title: Redacting Text in a File                             *
 # Status: In Progress (In Progress / Testing / Working)       *
-#  Spelling mistakes are only one of many different kinds of  *
-# errors that might appear in a written work. Another error   *
-# that is common for some writers is a repeated word. For     *
-# example, an author might inadvertently duplicate a word, as *
-# shown in the following sentence: At least one value must be *
-# entered entered in order to compute the average. Some word  *
-# processors will detect this error and identify it when a    *
-# spelling or grammar check is performed. In this exercise    *
-# you will write a program that detects repeated words in a   *
-# text file. When a repeated word is found your program should*
-# display a message that contains the line number and the     *
-# repeated word. Ensure that your program correctly handles   *
-# the case where the same word appears at the end of one line *
-# and the beginning of the following line, as shown in the    *
-# previous example. The name of the file to examine will be   *
-# provided as the program’s only command line parameter.      *
-# Display an appropriate error message if the user fails to   *
-# provide a command line parameter, or if an error occurs     *
-# while processing the file.                                  *
+#  Sensitive information is often removed, or redacted, from  *
+# documents before they are released to the public. When the  *
+# documents are released it is common for the redacted text   *
+# to be replaced with black bars. In this exercise you will   *
+# write a program that redacts all occurrences of sensitive   *
+# words in a text file by replacing them with asterisks. Your *
+# program should redact sensitive words wherever they occur,  *
+# even if they occur in the middle of another word. The list  *
+# of sensitive words will be provided in a separate text ﬁle. *
+# Save the redacted version of the original text in a new     *
+# file. The names of the original text file, sensitive words  *
+# file, and redacted file will all be provided by the user.   *
+# You may find the replace method for strings helpful when    *
+# completing this exercise. Information about the replace     *
+# method can either be found in your textbook or on the       *
+# internet. For an added challenge, extend your program so    *
+# that it redacts words in a case insensitive manner. For     *
+# example, if exam appears in the list of sensitive words     *
+# then redactexam ,Exam ,ExaM andEXAM , among other possible  *
+# capitalizations.                                            *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def dup_words(floc,fname):
-  prev_word = ""
-  line_num = 0
-  file_path = f"{floc}/{fname}"
-  try:
-    with open(file_path, "r") as file_handle:
-      file_data = file_handle.readlines()
-  except FileNotFoundError:
-    print("Error: File not found.")
-    return
-  except PermissionError:
-    print("Error: Permission denied.")
-    return
-  except IsADirectoryError:
-    print("Error: Is a directory.")
-    return
-  except IOError as e:
-    print(f"An IO error has occured: {e}")
-    return
-
-  for index, line in enumerate(file_data):
-    line = line.lower()
-    line = line.strip(",.:;'\"?!\\")
-    lines = line.split()
-    for word in lines:
-      if word == prev_word:
-        print(f"Duplicate word: {word} at Line {index+1}: ")
-      else:
-        prev_word = word
+def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  file_loc = input("Please enter the file location: ")
-  file_name = input(f"Please enter the file name: ")
-  dup_words(file_loc,file_name)
   print("Thank you for using this app.")
 #**************************************************************
