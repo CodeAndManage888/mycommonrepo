@@ -31,5 +31,6 @@ def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_in = input	
   print("Thank you for using this app.")
 #**************************************************************
