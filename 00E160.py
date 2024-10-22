@@ -27,7 +27,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def redact_func(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
@@ -35,5 +35,6 @@ if __name__ == "__main__":
   file_to_redact = input(str("Please enter the file name: "))
   file_with_redacted_text = input(str("Please enter the file name for the redacted text: "))
   file_with_words_to_redact = input(str("Please enter the file name for the words to redact: "))
+  redact_func(file_loc)
   print("Thank you for using this app.")
 #**************************************************************
