@@ -27,7 +27,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def redact_func(user_in):
+def redact_func(user_in1, user_in2, user_in3, user_in4):
   with open(user_in, "r") as f:
     file_data = f.read()
   return
@@ -35,8 +35,8 @@ def redact_func(user_in):
 if __name__ == "__main__":
   file_loc = input(str("Please enter the file location: "))
   file_to_redact = input(str("Please enter the file name: "))
-  file_with_redacted_text = input(str("Please enter the file name for the redacted text: "))
-  file_with_words_to_redact = input(str("Please enter the file name for the words to redact: "))
-  redact_func(file_loc)
+  redacted_file = input(str("Please enter the file name for the redacted text: "))
+  words_redact = input(str("Please enter the file name for the words to redact: "))
+  redact_func(file_loc, file_to_redact, redacted_file, words_redact)
   print("Thank you for using this app.")
 #**************************************************************
