@@ -28,8 +28,13 @@
 #**************************************************************
 #--------------------------------------------------------------
 def redact_func(user_in1, user_in2, user_in3, user_in4):
-  with open(user_in, "r") as f:
-    file_data = f.read()
+  file_in1 = user_in1 + "/" + user_in2
+  file_in2 = user_in1 + "/" + user_in3
+  file_in3 = user_in1 + "/" + user_in4
+
+  with open(file_in1, "r") as f:
+    file_data1 = f.read()
+
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
