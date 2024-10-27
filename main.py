@@ -35,6 +35,8 @@ def redact_func(user_in1, user_in2, user_in3, user_in4):
   with open(file_in1, "r") as f:
     file_data1 = f.read()
 
+  print(file_data1)
+
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
