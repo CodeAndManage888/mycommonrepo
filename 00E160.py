@@ -33,10 +33,18 @@ def redact_func(user_in1, user_in2, user_in3, user_in4):
   file_in3 = user_in1 + "/" + user_in4
 
   with open(file_in1, "r") as f:
-    file_data1 = f.read()
+    file_data1 = f.readlines()
 
-  print(file_data1)
+  with open(file_in3, "r") as f:
+    file_data2 = f.read()
 
+  for index, lines in enumerate(file_data1):
+    line = lines.lower()
+    line = lines.split()
+    for word in line:
+      if word in file_data2:
+        file_data1[index] = file_data1[index].replace(word, "*" * len(word))
+        
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
