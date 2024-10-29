@@ -26,24 +26,45 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+redact_list = []
 #--------------------------------------------------------------
 def redact_func(user_in1, user_in2, user_in3, user_in4):
   file_in1 = user_in1 + "/" + user_in2
   file_in2 = user_in1 + "/" + user_in3
   file_in3 = user_in1 + "/" + user_in4
 
-  with open(file_in1, "r") as f:
-    file_data1 = f.readlines()
-
   with open(file_in3, "r") as f:
-    file_data2 = f.read()
+    file_data2 = f.readlines()
 
-  for index, lines in enumerate(file_data1):
-    line = lines.lower()
+# Created a list of words to redact
+  for index, lines in enumerate(file_data2):
     line = lines.split()
     for word in line:
-      if word in file_data2:
-        file_data1[index] = file_data1[index].replace(word, "*" * len(word))
+      redact_list.append(word)
+  print(redact_list)
+
+  with open(file_in1, "r") as f:
+    file_data1 = f.readlines()
+    
+# Read input file and compares words to redact list
+  for idx1, line in enumerate(file_data1):
+    line_temp = line.split()
+    line = line.lower()
+    #print(line)
+    lines = line.split()
+    #print(lines)
+    for idx2, word in enumerate(lines):
+      #print(word)
+      if word in redact_list:
+        #print(line_temp[idx2])
+        word = word.strip(",.:;'\"?!\\")
+        if len(lines[idx2]) == len(word):
+          line_temp[idx2] = line_temp[idx2].replace(word, "*" * len(word))
+        else:
+          mod_word = word.replace(word, "*" * len(word) + word[len(word):])
+          line_temp[idx2] = line_temp[idx2].replace(word, mod_word)
+
+    print(line_temp)
 
   return
 #--------------------------------------------------------------

@@ -26,6 +26,7 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+redact_list = []
 #--------------------------------------------------------------
 def redact_func(user_in1, user_in2, user_in3, user_in4):
   file_in1 = user_in1 + "/" + user_in2
@@ -36,15 +37,26 @@ def redact_func(user_in1, user_in2, user_in3, user_in4):
     file_data1 = f.readlines()
 
   with open(file_in3, "r") as f:
-    file_data2 = f.read()
+    file_data2 = f.readlines()
 
-  for index, lines in enumerate(file_data1):
+  for index, lines in enumerate(file_data2):
     line = lines.lower()
     line = lines.split()
     for word in line:
-      if word in file_data2:
-        file_data1[index] = file_data1[index].replace(word, "*" * len(word))
-        
+      redact_list.append(word)
+
+  print(redact_list)
+
+  for idx1, lines in enumerate(file_data1):
+    line_temp = lines.split()
+    line = lines.lower()
+    line = lines.split()
+    for idx2, word in enumerate(line):
+      if word in redact_list:
+        line_temp[idx2] = line_temp[idx2].replace(word, "*" * len(word))
+
+    print(line_temp)
+
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
