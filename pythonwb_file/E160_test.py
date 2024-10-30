@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 072824 (Expected Solution with 49 Lines of Code)      *
 # Title: Redacting Text in a File                             *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  Sensitive information is often removed, or redacted, from  *
 # documents before they are released to the public. When the  *
 # documents are released it is common for the redacted text   *
@@ -33,29 +33,37 @@ def redact_func(user_in1, user_in2, user_in3, user_in4):
   file_in2 = user_in1 + "/" + user_in3
   file_in3 = user_in1 + "/" + user_in4
 
-  with open(file_in1, "r") as f:
-    file_data1 = f.readlines()
-
   with open(file_in3, "r") as f:
     file_data2 = f.readlines()
 
+# Created a list of words to redact
   for index, lines in enumerate(file_data2):
-    line = lines.lower()
     line = lines.split()
     for word in line:
       redact_list.append(word)
+  print(redact_list)  
 
-  print(redact_list)
+  with open(file_in1, "r") as f:
+    file_data1 = f.readlines()
 
-  for idx1, lines in enumerate(file_data1):
-    line_temp = lines.split()
-    line = lines.lower()
-    line = lines.split()
-    for idx2, word in enumerate(line):
+# Read input file and compares words to redact list
+  for idx1, line in enumerate(file_data1):
+    line = line.lower()
+    line_temp = line.split()
+    lines = line.split()
+
+    for idx2, word in enumerate(lines):
+      word = word.strip(",.:;'\"?!\\")
       if word in redact_list:
-        line_temp[idx2] = line_temp[idx2].replace(word, "*" * len(word))
+        if len(lines[idx2]) == len(word):
+          line_temp[idx2] = line_temp[idx2].replace(word, "*" * len(word))
+        else:
+          mod_word = word.replace(word, "*" * len(word) + word[len(word):])
+          line_temp[idx2] = line_temp[idx2].replace(word, mod_word)
 
-    print(line_temp)
+    with open(file_in2, "w") as f:
+      file_data1[idx1] = " ".join(line_temp) + "\n"
+      f.writelines(file_data1)
 
   return
 #--------------------------------------------------------------
