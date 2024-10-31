@@ -27,9 +27,14 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def func_chck(file_input):
+  with open(file_input, "r") as f:
+    for line in f:
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  file_loc = input(str("Please enter the file location: "))
+  file_name = input(str("Please enter the file name: "))
+  func_chck(file_loc + "/" + file_name)
   print("Thank you for using this app.")
 #**************************************************************
