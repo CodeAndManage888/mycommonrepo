@@ -29,7 +29,13 @@
 #--------------------------------------------------------------
 def func_chck(file_input):
   with open(file_input, "r") as f:
-    for line in f:
+    file_data = f.readlines()
+
+  for line in file_data:
+    print(line)
+    if line.startswith("def"):
+      print("Function Found")
+
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
