@@ -32,8 +32,8 @@ def func_chck(file_input):
     file_data = f.readlines()
   
   for line in file_data:
-    print(line)
     if line.startswith("def"):
+      print(line)
       print("Function Found")
   
   return
