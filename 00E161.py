@@ -31,10 +31,11 @@ def func_chck(file_input):
   with open(file_input, "r") as f:
     file_data = f.readlines()
   
-  for line in file_data:
+  for index, line in enumerate(file_data):
     if line.startswith("def"):
       print(line)
-      print("Function Found")
+      if file_data[index - 1].startswith("#"):
+        print("Function Found")
   
   return
 #--------------------------------------------------------------
