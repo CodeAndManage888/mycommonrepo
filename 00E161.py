@@ -35,6 +35,7 @@ def func_chck(file_input):
     if line.startswith("def"):
       print(line)
       if file_data[index - 1].startswith("#"):
+        print(file_data[index - 1])
         print("Function Found")
   
   return
