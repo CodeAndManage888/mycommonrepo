@@ -27,17 +27,22 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
+func_name_list = []
+
 def func_chck(file_input):
   with open(file_input, "r") as f:
     file_data = f.readlines()
-  
+
   for index, line in enumerate(file_data):
-    if line.startswith("def"):
-      print(line)
-      if file_data[index - 1].startswith("#"):
-        print(file_data[index - 1])
-        print("Function Found")
-  
+    if line.startswith("def") and index > 0 and not file_data[index - 1].startswith("#"):
+      nline = line.strip()
+      nline = nline[:nline.find("(")]
+      nline = nline.replace("def ", "")
+      func_name_list.append(nline)
+      func_name_list.append(index + 1)
+
+  print(func_name_list)
+
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
