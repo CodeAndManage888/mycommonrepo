@@ -27,7 +27,7 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 redact_list = []
-#--------------------------------------------------------------
+
 def redact_func(user_in1, user_in2, user_in3, user_in4):
   file_in1 = user_in1 + "/" + user_in2
   file_in2 = user_in1 + "/" + user_in3
