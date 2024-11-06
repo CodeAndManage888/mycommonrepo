@@ -29,7 +29,7 @@
 #--------------------------------------------------------------
 func_name_list = []
 
-def func_chck(file_input):
+def func_chck(file_input, file_name):
   with open(file_input, "r") as f:
     file_data = f.readlines()
 
@@ -40,14 +40,17 @@ def func_chck(file_input):
       nline = nline.replace("def ", "")
       func_name_list.append(nline)
       func_name_list.append(index + 1)
-
-  print(func_name_list)
+  
+  for index, item in enumerate(func_name_list):
+    if index + 1 == len(func_name_list):
+      break
+    print("File Name: ", file_name, "Line Number: ", func_name_list[index + 1], "Function Name: ", func_name_list[index])
 
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   file_loc = input(str("Please enter the file location: "))
   file_name = input(str("Please enter the file name: "))
-  func_chck(file_loc + "/" + file_name)
+  func_chck(file_loc + "/" + file_name, file_name)
   print("Thank you for using this app.")
 #**************************************************************
