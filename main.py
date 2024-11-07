@@ -40,11 +40,13 @@ def func_chck(file_input, file_name):
       nline = nline.replace("def ", "")
       func_name_list.append(nline)
       func_name_list.append(index + 1)
-  
+
+  print(func_name_list)
   for index, item in enumerate(func_name_list):
     if index + 1 == len(func_name_list):
       break
-    print("File Name: ", file_name, "Line Number: ", func_name_list[index + 1], "Function Name: ", func_name_list[index])
+    elif isinstance(item, str):
+      print("File Name: ", file_name, "Line Number: ", func_name_list[index + 1], "Function Name: ", func_name_list[index])
 
   return
 #--------------------------------------------------------------

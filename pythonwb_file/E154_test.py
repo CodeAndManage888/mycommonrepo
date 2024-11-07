@@ -25,7 +25,7 @@ year_list = ["2018f", "2018m", "2019f", "2019m", "2020f",
              "2023f", "2023m"]
 temp_male = ["Name", 0]
 temp_female = ["Name", 0]
-#-------------------------------------------------------------
+
 def read_files(user_in):
   for file_name in year_list:
     file_path = f"{user_in}/{file_name}"
