@@ -1,58 +1,43 @@
 #!/bin/bash
 #**************************************************************
-# Date: 072924 (Expected Solution with 44 Lines of Code)      *
-# Title: Missing Comments                                     *
+# Date: 072924 (Expected Solution with 45 Lines of Code)      *
+# Title: Consistent Line Lengths                              *
 # Status: In Progress (In Progress / Testing / Working)       *
-#  When one writes a function, it is generally a good idea to *
-# include a comment that outlines the function’s purpose, its *
-# parameters and its return value. However, sometimes         *
-# comments are forgotten, or left out by well-intentioned     *
-# programmers that plan to write them later but then never    *
-# get around to it. Create a python program that reads one or *
-# more Python source files and identifies functions that are  *
-# not immediately preceded by a comment. For the purposes of  *
-# this exercise, assume that any line that begins with def,   *
-# followed by a space, is the beginning of a function         *
-# definition. Assume that the comment character, will be the  *
-# first character on the previous line when the function has  *
-# a comment. Display the names of all of the functions that   *
-# are missing comments, along with the file name and line     *
-# number where the function deﬁnition is located. The user    *
-# will provide the names of one or more Python files as       *
-# command line parameters. If your program encounters a file  *
-# that doesn’t exist or can’t be opened then it should display*
-# an appropriate error message before moving on and processing*
-# the remaining files.                                        *
+#  While 80 characters is a common width for a terminal       *
+# window, some terminals are narrow or wider. This can        *
+# present challenges when displaying documents containing     *
+# paragraphs of text. The lines might be too long and wrap,   *
+# making them difficult to read, or they might be too short   *
+# and fail to make use of the available space. Write a        *
+# program that opens a file and displays it so that each line *
+# is filled as full as possible. If you read a line that is   *
+# too long then your program should break it up into words    *
+# and add words to the current line until it is full. Then    *
+# your program should start a new line and display the        *
+# remaining words. Similarly, if you read a line that is too  *
+# short then you will need to use words from the next line of *
+# the file to finish filling the current line of output. For  *
+# example, consider a file containing the following lines from*
+# “Alice’s Adventures in Wonderland”: Alice was beginning to  *
+# get very tired of sitting by her sister on the bank, and of *
+# having nothing to do: once or twice she had peeped into the *
+# book her sister was reading, but it had no pictures or      *
+# conversations in it,"and what is the use of a book,"        *
+# thought Alice, "without pictures or conversations?" When    *
+# formatted for a line length of 50 characters, it should be  *
+# displayed as: Alice was beginning to get very tired of      *
+# sitting by her sister on the bank, and of having nothing to *
+# do: once or twice she had peeped into the book her sister   *
+# was reading, but it had no pictures or conversations in it, *
+# "and what is the use of a book," thought Alice, "without    *
+# pictures or conversations?"                                 *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-func_name_list = []
-
-def func_chck(file_input, file_name):
-  with open(file_input, "r") as f:
-    file_data = f.readlines()
-
-  for index, line in enumerate(file_data):
-    if line.startswith("def") and index > 0 and not file_data[index - 1].startswith("#"):
-      nline = line.strip()
-      nline = nline[:nline.find("(")]
-      nline = nline.replace("def ", "")
-      func_name_list.append(nline)
-      func_name_list.append(index + 1)
-
-  print(func_name_list)
-  for index, item in enumerate(func_name_list):
-    if index + 1 == len(func_name_list):
-      break
-    elif isinstance(item, str):
-      print("File Name: ", file_name, "Line Number: ", func_name_list[index + 1], "Function Name: ", func_name_list[index])
-
+def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  file_loc = input(str("Please enter the file location: "))
-  file_name = input(str("Please enter the file name: "))
-  func_chck(file_loc + "/" + file_name, file_name)
   print("Thank you for using this app.")
 #**************************************************************
