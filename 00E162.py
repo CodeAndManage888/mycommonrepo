@@ -35,9 +35,17 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def func_justify(data_input):
+  with open(data_input, "r") as f:
+    file_data = f.readlines()
+
+  
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  file_loc = input("Please enter the file location: ")
+  file_name = input(f"Please enter the file name: ")
+  input_data = file_loc + file_name
+  func_justify(input_data)
   print("Thank you for using this app.")
 #**************************************************************
