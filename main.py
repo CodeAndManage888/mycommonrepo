@@ -43,23 +43,28 @@ def func_justify(data_input):
     line_length = len(line)
     print(line_length)
     if line_length > 80:
+      print("Cond1")
       words_list = line.split()
-      print(word_list)
+      print(words_list)
       current_line = ""
       for word in words_list:
+        print("Cond2")
         if len(current_line) + len(word) <= 80:
+          print("Cond2a")
           current_line += word + " "
         else:
+          print("Cond2b")
           print(current_line)
           current_line = ""
     else:
+      print("Cond3")
       print(line)   
 
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   file_loc = input("Please enter the file location: ")
-  file_name = input(f"Please enter the file name: ")
+  file_name = input("Please enter the file name: ")
   input_data = file_loc + file_name
   func_justify(input_data)
   print("Thank you for using this app.")
