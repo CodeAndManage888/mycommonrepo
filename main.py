@@ -41,23 +41,21 @@ def func_justify(data_input):
 
   for index, line in enumerate(file_data):
     line_length = len(line)
-    print(line_length)
+    #print(line_length)
     if line_length > 80:
-      print("Cond1")
       words_list = line.split()
-      print(words_list)
+      #print(words_list)
       current_line = ""
       for word in words_list:
-        print("Cond2")
         if len(current_line) + len(word) <= 80:
-          print("Cond2a")
           current_line += word + " "
         else:
-          print("Cond2b")
           print(current_line)
           current_line = ""
+    elif line_length < 80:
+      current_line = ""
+      print(line)
     else:
-      print("Cond3")
       print(line)   
 
   return
