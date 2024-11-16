@@ -34,6 +34,7 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+left_over_words = []
 #--------------------------------------------------------------
 def func_justify(data_input):
   with open(data_input, "r") as f:
@@ -51,13 +52,14 @@ def func_justify(data_input):
           current_line += word + " "
         else:
           print(current_line)
+          if len(words_list) == 0:
+            left_over_words = words_list
           current_line = ""
     elif line_length < 80:
       current_line = ""
       print(line)
     else:
       print(line)   
-
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
