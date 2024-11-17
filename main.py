@@ -53,7 +53,7 @@ def func_justify(data_input):
         else:
           print(current_line)
           if len(words_list) == 0:
-            left_over_words = words_list
+            left_over_words = words_list.copy()
           current_line = ""
     elif line_length < 80:
       current_line = ""
