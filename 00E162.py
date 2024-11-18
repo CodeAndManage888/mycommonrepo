@@ -47,6 +47,13 @@ def func_justify(data_input):
       words_list = line.split()
       #print(words_list)
       current_line = ""
+      if len(left_over_words) != 0:
+        for word in left_over_words:
+          if len(current_line) + len(word) <= 80:
+            current_line += word + " "
+          else:
+            print(current_line)
+            current_line = ""
       for word in words_list:
         if len(current_line) + len(word) <= 80:
           current_line += word + " "
