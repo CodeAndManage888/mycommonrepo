@@ -34,9 +34,9 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-left_over_words = []
 #--------------------------------------------------------------
 def func_justify(data_input):
+  left_over_words = []
   with open(data_input, "r") as f:
     file_data = f.readlines()
 
@@ -54,6 +54,7 @@ def func_justify(data_input):
           else:
             print(current_line)
             current_line = ""
+        left_over_words = leftover_words.clear()
       for word in words_list:
         if len(current_line) + len(word) <= 80:
           current_line += word + " "
