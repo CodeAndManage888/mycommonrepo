@@ -54,7 +54,7 @@ def func_justify(data_input):
           else:
             print(current_line)
             current_line = ""
-        left_over_words = leftover_words.clear()
+        left_over_words = left_over_words.clear()
       for word in words_list:
         if len(current_line) + len(word) <= 80:
           current_line += word + " "
