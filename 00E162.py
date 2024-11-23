@@ -61,8 +61,6 @@ def func_justify(data_input):
     elif line_length < 80:
       current_line = ""
       print(line)
-    else:
-      print(line)   
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
