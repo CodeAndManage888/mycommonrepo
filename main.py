@@ -36,31 +36,20 @@
 #**************************************************************
 #--------------------------------------------------------------
 def func_justify(data_input):
-  left_over_words = []
+  less_prev_line = ""
   with open(data_input, "r") as f:
     file_data = f.readlines()
 
   for index, line in enumerate(file_data):
     line_length = len(line)
-    #print(line_length)
-    if line_length > 80:
-      words_list = line.split()
-      #print(words_list)
-      current_line = ""
-      if len(left_over_words) != 0:
-        for word in left_over_words:
-          left_over_words = left_over_words.clear()
-      for word in words_list:
-        if len(current_line) + len(word) <= 80:
-          current_line += word + " "
-        else:
-          print(current_line)
-          if len(words_list) == 0:
-            left_over_words = words_list.copy()
-          current_line = ""
-    elif line_length < 80:
-      current_line = ""
+    #print(line_length,":",line)
+    if line_length == 80 and len(less_prev_line) == 0:
       print(line)
+    elif line_length < 80:
+      less_prev_line = line
+    else:
+      words = line.split()
+      line_length = len(words)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
