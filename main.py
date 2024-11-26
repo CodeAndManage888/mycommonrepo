@@ -47,6 +47,10 @@ def func_justify(data_input):
       print("Output:", line)
     elif line_length < 80:
       less_prev_line = line.split()
+    elif len(less_prev_line) != 0:
+      words = line.split()
+      line_length = len(words)
+      
     else:
       words = line.split()
       line_length = len(words)
