@@ -36,25 +36,15 @@
 #**************************************************************
 #--------------------------------------------------------------
 def func_justify(data_input):
-  less_prev_line = []
+  words_para = []
+  max_line_len = 80
   with open(data_input, "r") as f:
     file_data = f.readlines()
 
   for index, line in enumerate(file_data):
     line_length = len(line)
-    #print(line_length,":",line)
-    if line_length == 80 and len(less_prev_line) == 0:
-      current_line = line
-      print("Output:", current_line)
-    elif line_length < 80:
-      less_prev_line = line.split()
-    elif len(less_prev_line) != 0:
-      words = line.split()
-      line_length = len(words)
-      print("Output:", line_length)
-    else:
-      words = line.split()
-      line_length = len(words)
+    print(line_length,":",line)
+  #Change Approach: breakdown paragraph into a word list then fill out a line using this new list
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
