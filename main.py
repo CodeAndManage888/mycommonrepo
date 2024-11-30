@@ -38,13 +38,25 @@
 def func_justify(data_input):
   words_para = []
   max_line_len = 80
+  current_line = ""
   with open(data_input, "r") as f:
     file_data = f.readlines()
-
-  for index, line in enumerate(file_data):
+    
+  #print(file_data)
+  
+  for idx1, line in enumerate(file_data):
     line_length = len(line)
-    print(line_length,":",line)
-  #Change Approach: breakdown paragraph into a word list then fill out a line using this new list
+    if line != "\n":
+      #print(line_length,":",line)
+      words_para += line.split()
+    else:
+      #print(words_para)
+      for idx2, item in enumerate(words_para):
+        current_line += item + " "
+        if len(current_line) + len(words_para[idx2+1]) > max_line_len:
+          print(current_line)
+          current_line = ""
+      words_para = []
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
