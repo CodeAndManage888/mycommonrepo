@@ -42,14 +42,23 @@ def func_justify(data_input):
   with open(data_input, "r") as f:
     file_data = f.readlines()
 
-  for index, line in enumerate(file_data):
+  #print(file_data)
+
+  for idx1, line in enumerate(file_data):
     line_length = len(line)
-    print(line_length,":",line)
-    if line != "":
-      words_para = line.split()
+    if line != "\n":
+      #print(line_length,":",line)
+      words_para += line.split()
     else:
-      print(words_para)
-  #Change Approach: breakdown paragraph into a word list then fill out a line using this new list
+      #print(words_para)
+      for idx2, item in enumerate(words_para):
+        if len(current_line) + len(item) > max_line_len:
+          print(current_line)
+          current_line = ""
+          current_line += item + " "
+        else:
+          current_line += item + " "
+      words_para = []
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
