@@ -41,6 +41,7 @@ def func_justify(data_input):
   current_line = ""
   with open(data_input, "r") as f:
     file_data = f.readlines()
+    print(file_data)
   
   for idx1, line in enumerate(file_data):
     if line != "\n":
