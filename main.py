@@ -57,6 +57,7 @@ def func_justify(data_input):
       remaining_items = words_para[idx2:]
       total_length = sum(len(word + " ") for word in remaining_items)
       if total_length < max_line_len:
+        current_line = ""
         current_line = " ".join(remaining_items)
         print(current_line)
       words_para = []
