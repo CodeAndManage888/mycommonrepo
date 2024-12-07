@@ -60,7 +60,9 @@ def func_justify(data_input):
         current_line = ""
         current_line = " ".join(remaining_items)
         print(current_line)
+      print(words_para)
       words_para = []
+      print(words_para)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
