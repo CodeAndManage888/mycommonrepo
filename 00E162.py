@@ -44,7 +44,7 @@ def func_justify(data_input):
     #print(file_data)
 
   for idx1, line in enumerate(file_data):
-    if len(line) > 2:
+    if line != "\n":
       words_para += line.split()
     else:
       for idx2, item in enumerate(words_para):
