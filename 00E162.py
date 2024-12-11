@@ -48,20 +48,12 @@ def func_justify(data_input):
       words_para += line.split()
     else:
       print("Line Data: ", words_para)
-      #for idx2, item in enumerate(words_para):
-      #  if len(current_line) + len(item) > max_line_len:
-      #    print(current_line)
-      #    current_line = ""
-      #    current_line += item + " "
-      #  else:
-      #    current_line += item + " "
-      #remaining_items = words_para[idx2:]
-      #total_length = sum(len(word + " ") for word in remaining_items)
-      #if total_length < max_line_len:
-      #  current_line = ""
-        #current_line = " ".join(remaining_items)
-        #print(current_line)
-      #words_para = []
+      current_line = ""
+      for item in words_para:
+        if len(current_line) + len(item) < max_line_len:
+          current_line += words_para.pop() + " "
+        else:
+          print(current_line)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
