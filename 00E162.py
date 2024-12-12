@@ -54,6 +54,7 @@ def func_justify(data_input):
           current_line += words_para.pop() + " "
         else:
           print(current_line)
+          current_line = ""
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
