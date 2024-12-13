@@ -50,11 +50,7 @@ def func_justify(data_input):
       print("Line Data: ", words_para)
       current_line = ""
       for item in words_para:
-        if len(current_line) + len(item) < max_line_len:
-          current_line += words_para.pop() + " "
-        else:
-          print(current_line)
-          current_line = ""
+        print(item)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
