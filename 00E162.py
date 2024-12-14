@@ -44,13 +44,23 @@ def func_justify(data_input):
     print("Data File: ", file_data)
 
   for idx1, line in enumerate(file_data):
+    print("Line Item", line)
     if line != "\n":
+      print("Line Item Written ", line)
       words_para += line.split()
     else:
-      print("Line Data: ", words_para)
+      print("List of Words: ", words_para)
       current_line = ""
-      for item in words_para:
-        print(item)
+      for idx2, item in enumerate(words_para):
+        if len(current_line) + len(item) < max_line_len:
+          current_line += item + " "
+        else:
+          print("Current Index:", idx2, " : ", current_line)
+          current_line = ""
+          current_line += item + " "
+
+  if idx1 == len(file_data) - 1:
+    print("List of Words: ", words_para)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
