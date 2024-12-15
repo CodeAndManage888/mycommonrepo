@@ -41,11 +41,11 @@ def func_justify(data_input):
   current_line = ""
   with open(data_input, "r") as f:
     file_data = f.readlines()
-    print("Data File: ", file_data)
+    #print("Data File: ", file_data)
 
   for idx1, line in enumerate(file_data):
-    print("Line Item", line)
-    if line != "\n":
+    #print("Line Item", line)
+    if line != "\n" and idx1 != len(file_data) - 1:
       print("Line Item Written ", line)
       words_para += line.split()
     else:
@@ -58,6 +58,7 @@ def func_justify(data_input):
           print("Current Index:", idx2, " : ", current_line)
           current_line = ""
           current_line += item + " "
+      words_para = []
   
   if idx1 == len(file_data) - 1:
     print("List of Words: ", words_para)
