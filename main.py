@@ -41,28 +41,36 @@ def func_justify(data_input):
   current_line = ""
   with open(data_input, "r") as f:
     file_data = f.readlines()
-    #print("Data File: ", file_data)
 
   for idx1, line in enumerate(file_data):
-    #print("Line Item", line)
     if line != "\n":
-      print("Line Item Written ", line)
       words_para += line.split()
     else:
-      print("List of Words: ", words_para)
       current_line = ""
       for idx2, item in enumerate(words_para):
-        #print("Entered Loop 2")
         if len(current_line) + len(item) < max_line_len:
           current_line += item + " "
         else:
           print("Current Index:", idx2, " : ", current_line)
           current_line = ""
           current_line += item + " "
+      if len(current_line) != 0:
+        print("Current Index:", idx2, " : ", current_line)
+        current_line = ""
       words_para = []
   
   if idx1 == len(file_data) - 1:
-    print("List of Words: ", words_para)
+    for idx3, item in enumerate(words_para):
+      if len(current_line) + len(item) < max_line_len:
+        current_line += item + " "
+      else:
+        print("Current Index:", idx3, " : ", current_line)
+        current_line = ""
+        current_line += item + " "
+    if len(current_line) != 0:
+      print("Current Index:", idx2, " : ", current_line)
+      current_line = ""
+    words_para = []
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
