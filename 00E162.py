@@ -37,7 +37,7 @@
 #--------------------------------------------------------------
 def func_justify(data_input):
   words_para = []
-  max_line_len = 80
+  max_line_len = 100
   current_line = ""
   with open(data_input, "r") as f:
     file_data = f.readlines()
