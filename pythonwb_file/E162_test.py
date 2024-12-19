@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 072924 (Expected Solution with 45 Lines of Code)      *
 # Title: Consistent Line Lengths                              *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  While 80 characters is a common width for a terminal       *
 # window, some terminals are narrow or wider. This can        *
 # present challenges when displaying documents containing     *
