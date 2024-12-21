@@ -23,6 +23,6 @@ if __name__ == "__main__":
   file_loc = input("Please enter the file location: ")
   file_name = input("Please enter the file name: ")
   input_data = file_loc + file_name
-  func_justify(input_data)
+  func_letter_check(input_data)
   print("Thank you for using this app.")
 #**************************************************************
