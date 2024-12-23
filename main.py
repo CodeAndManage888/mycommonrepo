@@ -16,7 +16,12 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_letter_check(user_in):
+def func_letter_check(data_input):
+  with open(data_input, "r") as f:
+    file_data = f.readlines()
+
+  for idx1, line in enumerate(file_data):
+    print("Line:", idx1 + 1, " --> ", line)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
