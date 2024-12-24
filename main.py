@@ -17,11 +17,14 @@
 #**************************************************************
 #--------------------------------------------------------------
 def func_letter_check(data_input):
+  ltr_set = ["a", "e", "i", "o", "u", "y"]
   with open(data_input, "r") as f:
     file_data = f.readlines()
 
   for idx1, line in enumerate(file_data):
     print("Line:", idx1 + 1, " --> ", line)
+    temp_ltr_lst = list(line)
+    print("Line:", idx1 + 1, " --> ", temp_ltr_lst)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
