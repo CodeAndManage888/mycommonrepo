@@ -25,6 +25,7 @@ def func_letter_check(data_input):
     print("Line:", idx1 + 1, " --> ", line)
     temp_ltr_lst = list(line)
     print("Line:", idx1 + 1, " --> ", temp_ltr_lst)
+    
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
