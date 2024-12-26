@@ -25,6 +25,9 @@ def func_letter_check(data_input):
     print("Line:", idx1 + 1, " --> ", line)
     temp_ltr_lst = list(line)
     print("Line:", idx1 + 1, " --> ", temp_ltr_lst)
+    for idx2, ltr in enumerate(temp_ltr_lst):
+      if ltr in ltr_set:
+        temp_ltr_lst.remove(ltr)
     
   return
 #--------------------------------------------------------------
