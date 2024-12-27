@@ -28,7 +28,8 @@ def func_letter_check(data_input):
     for idx2, ltr in enumerate(temp_ltr_lst):
       if ltr in ltr_set:
         temp_ltr_lst.remove(ltr)
-    
+      else:
+        break
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
