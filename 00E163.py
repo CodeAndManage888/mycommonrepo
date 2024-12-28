@@ -22,14 +22,16 @@ def func_letter_check(data_input):
     file_data = f.readlines()
 
   for idx1, line in enumerate(file_data):
-    print("Line:", idx1 + 1, " --> ", line)
+    #print("Line:", idx1 + 1, " --> ", line)
     temp_ltr_lst = list(line)
-    print("Line:", idx1 + 1, " --> ", temp_ltr_lst)
+    #print("Line:", idx1 + 1, " --> ", temp_ltr_lst)
     for idx2, ltr in enumerate(temp_ltr_lst):
       if ltr in ltr_set:
-        temp_ltr_lst.remove(ltr)
-      else:
-        break
+        ltr_set.remove(ltr)
+    if len(ltr_set) == 0:
+      print("Line:", idx1 + 1, " --> ", line)
+    ltr_set = []
+    ltr_set = ["a", "e", "i", "o", "u", "y"]
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
