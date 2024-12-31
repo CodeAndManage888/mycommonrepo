@@ -1,39 +1,22 @@
 #!/bin/bash
 #**************************************************************
-# Date: 073024 (Expected Solution with 56 Lines of Code)      *
-# Title: Words with Six Vowels in Order                       *
-# Status: Testing (In Progress / Testing / Working)           *
-#  There is at least one word in the English language that    *
-# contains each of the vowels a,e,i,o,u and y exactly once and*
-# in order. Write a program that searches a file containing a *
-# list of words and displays all of the words that meet this  *
-# constraint. The user will provide the name of the file that *
-# will be searched. Display an appropriate error message and  *
-# exit the program if the user provides an invalid file name  *
-# or if something else goes wrong while searching for words   *
-# with six vowels in order.                                   *
+# Date: 073024 (Expected Solution with 28 Lines of Code)      *
+# Title: Total the Values                                     *
+# Status: In Progress (In Progress / Testing / Working)       *
+#  Write a program that reads values from the user until a    *
+# blank line is entered. Display the total of all of the      *
+# values entered by the user (or 0.0 if the first value       *
+# entered is a blank line). Complete this task using          *
+# recursion. Your program may not use any loops. Hint: The    *
+# body of your recursive function will need to read one value *
+# from the user, and then determine whether or not to make a  *
+# recursive call. Your function does not need to take any     *
+# parameters, but it will need to return a numeric result.    *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_letter_check(data_input):
-  ltr_set = ["a", "e", "i", "o", "u", "y"]
-  org_ltr_set = ["a", "e", "i", "o", "u", "y"]
-  tmp_ltr_set = []
-  with open(data_input, "r") as f:
-    file_data = f.readlines()
-
-  for idx1, line in enumerate(file_data):
-    temp_ltr_lst = list(line)
-    for idx2, ltr in enumerate(temp_ltr_lst):
-      if ltr in ltr_set:
-        tmp_ltr_set.append(ltr)
-        ltr_set.remove(ltr)
-    if len(ltr_set) == 0 and tmp_ltr_set == org_ltr_set:
-      print("Line:", idx1 + 1, " --> ", line)
-    ltr_set = []
-    tmp_ltr_set = []
-    ltr_set = ["a", "e", "i", "o", "u", "y"]
+def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
