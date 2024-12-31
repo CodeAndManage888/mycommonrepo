@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 073024 (Expected Solution with 56 Lines of Code)      *
 # Title: Words with Six Vowels in Order                       *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  There is at least one word in the English language that    *
 # contains each of the vowels a,e,i,o,u and y exactly once and*
 # in order. Write a program that searches a file containing a *
