@@ -16,13 +16,11 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def recur():
+  user_value = input("Please enter the data value: ")
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  file_loc = input("Please enter the file location: ")
-  file_name = input("Please enter the file name: ")
-  input_data = file_loc + file_name
-  func_letter_check(input_data)
+  recur()
   print("Thank you for using this app.")
 #**************************************************************
