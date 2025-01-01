@@ -18,7 +18,10 @@
 #--------------------------------------------------------------
 def recur():
   user_value = input("Please enter the data value: ")
-  return
+  if user_value == "":
+    return 0.0
+  else:
+    return float(user_value) + recur()
 #--------------------------------------------------------------
 if __name__ == "__main__":
   recur()
