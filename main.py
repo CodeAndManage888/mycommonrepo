@@ -24,6 +24,8 @@ def recur():
     return float(user_value) + recur()
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  recur()
+  user_val1 = input("Please enter the 1st number: ")
+  user_val2 = input("Please enter the 2nd number: ")
+  print(recur())
   print("Thank you for using this app.")
 #**************************************************************
