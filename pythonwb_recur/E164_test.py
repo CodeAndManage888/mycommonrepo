@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 073024 (Expected Solution with 28 Lines of Code)      *
 # Title: Total the Values                                     *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  Write a program that reads values from the user until a    *
 # blank line is entered. Display the total of all of the      *
 # values entered by the user (or 0.0 if the first value       *
@@ -24,6 +24,6 @@ def recur():
     return float(user_value) + recur()
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  recur()
+  print(recur())
   print("Thank you for using this app.")
 #**************************************************************
