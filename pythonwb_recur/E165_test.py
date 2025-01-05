@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 073024 (Expected Solution with 24 Lines of Code)      *
 # Title: Greatest Common Divisor                              *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testingh (In Progress / Testing / Working)          *
 #  Euclid was a Greek mathematician who lived approximately   *
 # 2,300 years ago. His algorithm for computing the greatest   *
 # common divisor of two positive integers, a and b, is both   *
