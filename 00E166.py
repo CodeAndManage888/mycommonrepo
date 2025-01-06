@@ -24,9 +24,16 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def binary(dec_num):
+  if dec_num == 0 or dec_num == 1:
+    str_bin = str(dec_num)
+    return str_bin
+  else:
+    str_bin += str(dec_num % 2)
+    return binary(num2, dec_num / 2)
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_num = int(input("Enter the decimal number: "))
+  print("The binary representation of %d is %s." % (user_num, binary(user_num)))
   print("Thank you for using this app.")
 #**************************************************************
