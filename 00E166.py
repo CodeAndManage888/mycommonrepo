@@ -25,6 +25,7 @@
 #**************************************************************
 #--------------------------------------------------------------
 def binary(dec_num):
+  str_bin = ""
   if dec_num == 0 or dec_num == 1:
     str_bin = str(dec_num)
     return str_bin
@@ -34,6 +35,6 @@ def binary(dec_num):
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_num = int(input("Enter the decimal number: "))
-  print("The binary representation of %d is %s." % (user_num, binary(user_num)))
+  print("The binary representation of %d is %s." % (int(user_num), binary(user_num)))
   print("Thank you for using this app.")
 #**************************************************************
