@@ -24,17 +24,19 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def binary(dec_num):
+def bin_func(dec_num):
   str_bin = ""
-  if dec_num == 0 or dec_num == 1:
-    str_bin = str(dec_num)
+  if dec_num // 2 == 0:
+    str_bin = str(dec_num % 2)
+    print("cond 1", str_bin)
     return str_bin
   else:
     str_bin += str(dec_num % 2)
-    return binary(num2, dec_num / 2)
+    print("cond 2", str_bin)
+    return bin_func(dec_num // 2)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_num = int(input("Enter the decimal number: "))
-  print("The binary representation of %d is %s." % (int(user_num), binary(user_num)))
+  print("The binary representation of %d is %s." % (user_num, bin_func(user_num)))
   print("Thank you for using this app.")
 #**************************************************************
