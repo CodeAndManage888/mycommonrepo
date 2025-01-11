@@ -26,12 +26,15 @@
 #--------------------------------------------------------------
 def bin_func(dec_num):
   str_bin = ""
+  bin_num = ""
   if dec_num // 2 == 0:
-    str_bin = str(dec_num % 2)
+    bin_num = str(dec_num % 2)
+    str_bin += bin_num
     print("cond 1", str_bin)
     return str_bin
   else:
-    str_bin += str(dec_num % 2)
+    bin_num += str(dec_num % 2)
+    str_bin += bin_num
     print("cond 2", str_bin)
     return bin_func(dec_num // 2)
 #--------------------------------------------------------------
