@@ -29,13 +29,13 @@ def bin_func(dec_num):
   bin_num = ""
   if dec_num // 2 == 0:
     bin_num = str(dec_num % 2)
-    print("cond 1", bin_num)
-    str_bin = str_bin + bin_num
+    str_bin += bin_num
+    print("cond 1", str_bin)
     return str_bin
   else:
     bin_num += str(dec_num % 2)
-    print("cond 2", bin_num)
-    str_bin = str_bin + bin_num
+    str_bin += bin_num
+    print("cond 2", str_bin)
     return bin_func(dec_num // 2)
 #--------------------------------------------------------------
 if __name__ == "__main__":
