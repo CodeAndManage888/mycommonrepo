@@ -25,18 +25,10 @@
 #**************************************************************
 #--------------------------------------------------------------
 def bin_func(dec_num):
-  str_bin = ""
-  bin_num = ""
   if dec_num // 2 == 0:
-    bin_num = str(dec_num % 2)
-    str_bin += bin_num
-    print("cond 1", str_bin)
-    return str_bin
+    return str(dec_num % 2)
   else:
-    bin_num += str(dec_num % 2)
-    str_bin += bin_num
-    print("cond 2", str_bin)
-    return bin_func(dec_num // 2)
+    return bin_func(dec_num // 2) + str(dec_num % 2)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_num = int(input("Enter the decimal number: "))
