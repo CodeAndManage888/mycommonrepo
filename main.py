@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 080224 (Expected Solution with 34 Lines of Code)      *
 # Title: Recursive Decimal to Binary                          *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  In Exercise 78 you wrote a program that used a loop to     *
 # convert a decimal number to its binary representation. In   *
 # this exercise you will perform the same task using          *
@@ -32,6 +32,9 @@ def bin_func(dec_num):
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_num = int(input("Enter the decimal number: "))
-  print("The binary representation of %d is %s." % (user_num, bin_func(user_num)))
+  if user_num < 0:
+    print("Error: Negative number entered.")
+  else:
+    print("The binary representation of %d is %s." % (user_num, bin_func(user_num)))
   print("Thank you for using this app.")
 #**************************************************************
