@@ -1,40 +1,27 @@
 #!/bin/bash
 #**************************************************************
-# Date: 080224 (Expected Solution with 34 Lines of Code)      *
-# Title: Recursive Decimal to Binary                          *
-# Status: Testing (In Progress / Testing / Working)           *
-#  In Exercise 78 you wrote a program that used a loop to     *
-# convert a decimal number to its binary representation. In   *
-# this exercise you will perform the same task using          *
-# recursion. Write a recursive function that converts a       *
-# non-negative decimal number to binary. Treat 0 and 1 as     *
-# base cases which return a string containing the appropriate *
-# digit. For all other positive integers, n, you should       *
-# compute the next digit using the remainder operator and     *
-# then make a recursive call to compute the digits of n//2.   *
-# Finally, you should concatenate the result of the recursive *
-# call (which will be a string) and the next digit (which you *
-# will need to convert to a string) and return this string as *
-# the result of the function. Write a main program that uses  *
-# your recursive function to convert a non-negative integer   *
-# entered by the user from decimal to binary. Your program    *
-# should display an appropriate error message if the user     *
-# enters a negative value.                                    *
+# Date: 080324 (Expected Solution with 29 Lines of Code)      *
+# Title: Recursive Palindrome                                 *
+# Status: In Progress (In Progress / Testing / Working)       *
+#  The notion of a palindrome was introduced previously in    *
+# Exercise 72. In this exercise you will write a recursive    *
+# function that determines whether or not a string is a       *
+# palindrome. The empty string is a palindrome, as is any     *
+# string containing only one character. Any longer string is  *
+# a palindrome if its first and last characters match, and if *
+# the string formed by removing the first and last characters *
+# is also a palindrome.                                       *
+# Write a main program that reads a string and from the user. *
+# Use your recursive function to determine whether or not the *
+# string is a palindrome. Then display an appropriate message *
+# for the user                                                *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def bin_func(dec_num):
-  if dec_num // 2 == 0:
-    return str(dec_num % 2)
-  else:
-    return bin_func(dec_num // 2) + str(dec_num % 2)
+def func_name(user_in):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_num = int(input("Enter the decimal number: "))
-  if user_num < 0:
-    print("Error: Negative number entered.")
-  else:
-    print("The binary representation of %d is %s." % (user_num, bin_func(user_num)))
   print("Thank you for using this app.")
 #**************************************************************
