@@ -14,14 +14,26 @@
 # Write a main program that reads a string and from the user. *
 # Use your recursive function to determine whether or not the *
 # string is a palindrome. Then display an appropriate message *
-# for the user                                                *
+# for the user.                                                *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+import string
 #--------------------------------------------------------------
-def func_name(user_in):
-  return
+def pal_chck(str_data):
+  print(str_data)
+  if len(str_data) <= 1:
+    return True
+  elif str_data[0] == str_data[-1]:
+    return pal_chck(str_data[1:-1])
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_data = input("Please enter a string: ")
+  cleaned_string = user_data.translate(str.maketrans('', '', string.punctuation)).replace(" ", "").lower()
+  print(cleaned_string)
+  if pal_chck(cleaned_string) is True:
+    print("The string %a that you entered is a palindrome." % (user_data))
+  else:
+    print("The string %a that you entered is NOT a palindrome." % (user_data))
   print("Thank you for using this app.")
 #**************************************************************
