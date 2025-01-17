@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 080324 (Expected Solution with 29 Lines of Code)      *
 # Title: Recursive Palindrome                                 *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  The notion of a palindrome was introduced previously in    *
 # Exercise 72. In this exercise you will write a recursive    *
 # function that determines whether or not a string is a       *
@@ -21,7 +21,6 @@
 import string
 #--------------------------------------------------------------
 def pal_chck(str_data):
-  print(str_data)
   if len(str_data) <= 1:
     return True
   elif str_data[0] == str_data[-1]:
@@ -30,7 +29,6 @@ def pal_chck(str_data):
 if __name__ == "__main__":
   user_data = input("Please enter a string: ")
   cleaned_string = user_data.translate(str.maketrans('', '', string.punctuation)).replace(" ", "").lower()
-  print(cleaned_string)
   if pal_chck(cleaned_string) is True:
     print("The string %a that you entered is a palindrome." % (user_data))
   else:
