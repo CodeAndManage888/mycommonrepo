@@ -30,9 +30,12 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def sqr_root(data_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_in = input("Enter a number: ")
+  c_user_in = int(user_in)
+  print("The square root of %s is %s" % (c_user_in, sqr_root(c_user_in)))
   print("Thank you for using this app.")
 #**************************************************************

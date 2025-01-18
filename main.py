@@ -1,37 +1,41 @@
 #!/bin/bash
 #**************************************************************
-# Date: 080324 (Expected Solution with 29 Lines of Code)      *
-# Title: Recursive Palindrome                                 *
-# Status: Testing (In Progress / Testing / Working)           *
-#  The notion of a palindrome was introduced previously in    *
-# Exercise 72. In this exercise you will write a recursive    *
-# function that determines whether or not a string is a       *
-# palindrome. The empty string is a palindrome, as is any     *
-# string containing only one character. Any longer string is  *
-# a palindrome if its first and last characters match, and if *
-# the string formed by removing the first and last characters *
-# is also a palindrome.                                       *
-# Write a main program that reads a string and from the user. *
-# Use your recursive function to determine whether or not the *
-# string is a palindrome. Then display an appropriate message *
-# for the user.                                                *
+# Date: 080324 (Expected Solution with 20 Lines of Code)      *
+# Title: Recursive Square Root                                *
+# Status: In Progress (In Progress / Testing / Working)       *
+#  Exercise 71 explored how iteration can be used to compute  *
+# the square root of a number. In that exercise a better      *
+# approximation of the square root was generated with each    *
+# additional iteration of a loop. In this exercise you will   *
+# use the same approximation strategy, but you will use       *
+# recursion instead of iteration. Create a square root        *
+# function that takes two parameters. The first parameter, n, *
+# will be the number for which the square root is being       *
+# computed. The second parameter, guess , will be the current *
+# guess for the square root. The guess parameter should have  *
+# a default value of 1.0. Do not provide a default value for  *
+# the first parameter. Your square root function will be      *
+# recursive. The base case occurs when guess 2 is within      *
+# 10−12 of n. In this case your function should return guess  *
+# because it is close enough to the square root of n.         *
+# Otherwise your function should return the result of calling *
+# itself recursively with n as the first parameter and guess  *
+# +n guess 2 as the second parameter. Write a main program    *
+# that demonstrate your square root function by computing the *
+# square root of several different values. When you call your *
+# square root function from the main program you should only  *
+# pass one parameter to it so that the default value for      *
+# guess is used.                                              *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-import string
 #--------------------------------------------------------------
-def pal_chck(str_data):
-  if len(str_data) <= 1:
-    return True
-  elif str_data[0] == str_data[-1]:
-    return pal_chck(str_data[1:-1])
+def sqr_root(data_in):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_data = input("Please enter a string: ")
-  cleaned_string = user_data.translate(str.maketrans('', '', string.punctuation)).replace(" ", "").lower()
-  if pal_chck(cleaned_string) is True:
-    print("The string %a that you entered is a palindrome." % (user_data))
-  else:
-    print("The string %a that you entered is NOT a palindrome." % (user_data))
+  user_in = input("Enter a number: ")
+  c_user_in = int(user_in)
+  print("The square root of %s is %s" % (c_user_in, sqr_root(c_user_in)))
   print("Thank you for using this app.")
 #**************************************************************
