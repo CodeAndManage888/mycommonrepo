@@ -29,13 +29,20 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+GuessOne = 1.000000000000
 #--------------------------------------------------------------
-def sqr_root(data_in):
-  return
+def sqr_root(data_in, GuessOne):
+  GuessTwo = (GuessOne + data_in/GuessOne) / 2
+  GuessDiff = GuessTwo - GuessOne
+  if GuessDiff == 0.000000000000:
+    return GuessDiff
+  else:
+    GuessOne = GuessTwo
+    sqr_root(GuessDiff, GuessOne)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in = input("Enter a number: ")
   c_user_in = int(user_in)
-  print("The square root of %s is %s" % (c_user_in, sqr_root(c_user_in)))
+  print("The square root of %s is %s" % (c_user_in, sqr_root(c_user_in, GuessOne)))
   print("Thank you for using this app.")
 #**************************************************************
