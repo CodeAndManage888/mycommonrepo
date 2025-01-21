@@ -31,14 +31,14 @@
 #**************************************************************
 GuessOne = 1.000000000000
 #--------------------------------------------------------------
-def sqr_root(data_in, GuessOne):
-  GuessTwo = (GuessOne + data_in/GuessOne) / 2
-  GuessDiff = GuessTwo - GuessOne
+def sqr_root(data_in, GOne):
+  GuessTwo = (GOne + data_in/GOne) / 2
+  GuessDiff = GuessTwo - GOne
   if GuessDiff == 0.000000000000:
-    return GuessDiff
+    return GuessTwo
   else:
-    GuessOne = GuessTwo
-    sqr_root(GuessDiff, GuessOne)
+    GOne = GuessTwo
+    sqr_root(GuessTwo, GOne)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in = input("Enter a number: ")
