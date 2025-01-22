@@ -32,6 +32,7 @@
 GuessOne = 1.000000000000
 #--------------------------------------------------------------
 def sqr_root(data_in, GOne):
+  print(data_in, GOne)
   GuessTwo = (GOne + data_in/GOne) / 2
   GuessDiff = GuessTwo - GOne
   if GuessDiff == 0.000000000000:
