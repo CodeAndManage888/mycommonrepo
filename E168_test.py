@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 080324 (Expected Solution with 20 Lines of Code)      *
 # Title: Recursive Square Root                                *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  Exercise 71 explored how iteration can be used to compute  *
 # the square root of a number. In that exercise a better      *
 # approximation of the square root was generated with each    *
@@ -32,18 +32,19 @@
 GuessOne = 1.000000000000
 #--------------------------------------------------------------
 def sqr_root(data_in, GOne):
-  print(data_in, GOne)
   GuessTwo = (GOne + data_in/GOne) / 2
   GuessDiff = GuessTwo - GOne
   if GuessDiff == 0.000000000000:
-    return GuessTwo
+    print("Current Data are", GuessDiff, GOne, GuessTwo, data_in)
+    print("The square root of %s is %s" % (data_in, GOne))
+    return
   else:
     GOne = GuessTwo
-    sqr_root(GuessTwo, GOne)
+    sqr_root(c_user_in, GOne)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in = input("Enter a number: ")
   c_user_in = int(user_in)
-  print("The square root of %s is %s" % (c_user_in, sqr_root(c_user_in, GuessOne)))
+  sqr_root(c_user_in, GuessOne)
   print("Thank you for using this app.")
 #**************************************************************
