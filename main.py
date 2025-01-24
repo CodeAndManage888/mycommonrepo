@@ -1,50 +1,27 @@
 #!/bin/bash
 #**************************************************************
-# Date: 080324 (Expected Solution with 20 Lines of Code)      *
-# Title: Recursive Square Root                                *
-# Status: Testing (In Progress / Testing / Working)           *
-#  Exercise 71 explored how iteration can be used to compute  *
-# the square root of a number. In that exercise a better      *
-# approximation of the square root was generated with each    *
-# additional iteration of a loop. In this exercise you will   *
-# use the same approximation strategy, but you will use       *
-# recursion instead of iteration. Create a square root        *
-# function that takes two parameters. The first parameter, n, *
-# will be the number for which the square root is being       *
-# computed. The second parameter, guess , will be the current *
-# guess for the square root. The guess parameter should have  *
-# a default value of 1.0. Do not provide a default value for  *
-# the first parameter. Your square root function will be      *
-# recursive. The base case occurs when guess 2 is within      *
-# 10−12 of n. In this case your function should return guess  *
-# because it is close enough to the square root of n.         *
-# Otherwise your function should return the result of calling *
-# itself recursively with n as the first parameter and guess  *
-# +n guess 2 as the second parameter. Write a main program    *
-# that demonstrate your square root function by computing the *
-# square root of several different values. When you call your *
-# square root function from the main program you should only  *
-# pass one parameter to it so that the default value for      *
-# guess is used.                                              *
+# Date: 080324 (Expected Solution with 42 Lines of Code)      *
+# Title: String Edit Distance                                 *
+# Status: In Progress (In Progress / Testing / Working)       *
+#  The edit distance between two strings is a measure of      *
+# their similarity—the smaller the edit distance, the more    *
+# similar the strings are with regard to the minimum number   *
+# of insert, delete and substitute operations needed to       *
+# transform one string into the other. Consider the strings   *
+# kitten and sitting . The first string can be transformed    *
+# into the second string with the following operations:       *
+# Substitute the k with an s, substitute the e with an i, and *
+# insert a g at the end of the string. This is the smallest   *
+# number of operations that can be performed to               *
+# transform kitten into sitting. As a result, the edit        *
+# distance is 3.                                              *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
-GuessOne = 1.000000000000
 #--------------------------------------------------------------
-def sqr_root(data_in, GOne):
-  GuessTwo = (GOne + data_in/GOne) / 2
-  GuessDiff = GuessTwo - GOne
-  if GuessDiff == 0.000000000000:
-    print("Current Data are", GuessDiff, GOne, GuessTwo, data_in)
-    print("The square root of %s is %s" % (data_in, GOne))
-    return
-  else:
-    GOne = GuessTwo
-    sqr_root(c_user_in, GOne)
+def func_name(user_in):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in = input("Enter a number: ")
-  c_user_in = int(user_in)
-  sqr_root(c_user_in, GuessOne)
   print("Thank you for using this app.")
 #**************************************************************
