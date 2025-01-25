@@ -19,9 +19,12 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def edit_dist(str1, str2):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_in1 = input("Enter the first string: ")
+  user_in2 = input("Enter the second string: ")
+  print("The edit distance between the two strings is: " + str(edit_dist(user_in1, user_in2)
   print("Thank you for using this app.")
 #**************************************************************
