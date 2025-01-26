@@ -20,6 +20,15 @@
 #**************************************************************
 #--------------------------------------------------------------
 def edit_dist(str1, str2):
+  if len(str1) == 0:
+    return len(str2)
+  elif len(str2) == 0:
+    return len(str1)
+  else:
+    if str1[0] == str2[0]:
+      return edit_dist(str1[1:], str2[1:])
+    else:
+      return 1 + min(edit_dist(str1, str2[1:]), edit_dist(str1[1:], str2), edit_dist(str1[1:], str2[1:]))
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
