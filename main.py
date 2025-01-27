@@ -29,11 +29,10 @@ def edit_dist(str1, str2):
       return edit_dist(str1[1:], str2[1:])
     else:
       return 1 + min(edit_dist(str1, str2[1:]), edit_dist(str1[1:], str2), edit_dist(str1[1:], str2[1:]))
-  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = input("Enter the first string: ")
   user_in2 = input("Enter the second string: ")
-  print("The edit distance between the two strings is: " + str(edit_dist(user_in1, user_in2)
+  print("The edit distance between the two strings is: " + str(edit_dist(user_in1, user_in2)))
   print("Thank you for using this app.")
 #**************************************************************
