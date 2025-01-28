@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 080324 (Expected Solution with 42 Lines of Code)      *
 # Title: String Edit Distance                                 *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  The edit distance between two strings is a measure of      *
 # their similarity—the smaller the edit distance, the more    *
 # similar the strings are with regard to the minimum number   *
