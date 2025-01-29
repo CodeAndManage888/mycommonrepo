@@ -23,9 +23,15 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def coin_count(data1, data2):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_in1 = input("Enter the dollar amount: ")
+  user_in2 = input("Enter the number of coins: ")
+  if coin_count(user_in1, user_in2) == True:
+    print("It is possible to have a total of $" + user_in1 + " using " + user_in2 + " coins.")
+  else:
+    print("It is not possible to have a total of $" + user_in1 + " using " + user_in2 + " coins.")
   print("Thank you for using this app.")
 #**************************************************************
