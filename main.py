@@ -1,39 +1,37 @@
 #!/bin/bash
 #**************************************************************
-# Date: 080324 (Expected Solution with 42 Lines of Code)      *
-# Title: String Edit Distance                                 *
+# Date: 080324 (Expected Solution with 41 Lines of Code)      *
+# Title: Possible Change                                      *
 # Status: In Progress (In Progress / Testing / Working)       *
-#  The edit distance between two strings is a measure of      *
-# their similarity—the smaller the edit distance, the more    *
-# similar the strings are with regard to the minimum number   *
-# of insert, delete and substitute operations needed to       *
-# transform one string into the other. Consider the strings   *
-# kitten and sitting . The first string can be transformed    *
-# into the second string with the following operations:       *
-# Substitute the k with an s, substitute the e with an i, and *
-# insert a g at the end of the string. This is the smallest   *
-# number of operations that can be performed to               *
-# transform kitten into sitting. As a result, the edit        *
-# distance is 3.                                              *
+#  Create a program that determines whether or not it is      *
+# possible to construct a particular total using a specific   *
+# number of coins. For example, it is possible to have a      *
+# total of $1.00 using four coins if they are all quarters.   *
+# However, there is no way to have a total of $1.00 using 5   *
+# coins. Yet it is possible to have $1.00 using 6 coins by    *
+# using 3 quarters, 2 dimes and a nickel. Similarly, a total  *
+# of $1.25 can be formed using 5 coins or 8 coins, but a      *
+# total of $1.25 can not be formed using 4, 6 or 7 coins.     *
+# Your program should read both the dollar amount and the     *
+# number of coins from the user. It should display a clear    *
+# message indicating whether or not the entered dollar amount *
+# can be formed using the number of coins indicated. Assume   *
+# the existence of quarters, dimes, nickels and pennies when  *
+# completing this problem. Your solution must use recursion.  *
+# It can not contain any loops.                               *
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def edit_dist(str1, str2):
-  print(str1, str2)
-  if len(str1) == 0:
-    return len(str2)
-  elif len(str2) == 0:
-    return len(str1)
-  else:
-    if str1[0] == str2[0]:
-      return edit_dist(str1[1:], str2[1:])
-    else:
-      return 1 + min(edit_dist(str1, str2[1:]), edit_dist(str1[1:], str2), edit_dist(str1[1:], str2[1:]))
+def coin_count(data1, data2):
+  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in1 = input("Enter the first string: ")
-  user_in2 = input("Enter the second string: ")
-  print("The edit distance between the two strings is: " + str(edit_dist(user_in1, user_in2)))
+  user_in1 = input("Enter the dollar amount: ")
+  user_in2 = input("Enter the number of coins: ")
+  if coin_count(user_in1, user_in2) == True:
+    print("It is possible to have a total of $" + user_in1 + " using " + user_in2 + " coins.")
+  else:
+    print("It is not possible to have a total of $" + user_in1 + " using " + user_in2 + " coins.")
   print("Thank you for using this app.")
 #**************************************************************
