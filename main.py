@@ -23,12 +23,16 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def coin_count(data1, data2):
-  return
+def coin_count(data1, data2, data3):
+  if data1 / data == data3:
+    return True
+  
+  
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = input("Enter the dollar amount: ")
   user_in2 = input("Enter the number of coins: ")
+  coin_count(user_in1, user_in2, .25)
   if coin_count(user_in1, user_in2) == True:
     print("It is possible to have a total of $" + user_in1 + " using " + user_in2 + " coins.")
   else:
