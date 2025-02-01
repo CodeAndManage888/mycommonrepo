@@ -24,10 +24,6 @@
 #**************************************************************
 #--------------------------------------------------------------
 def coin_count(data1, data2):
-  if data1 / .25 == data2 or data1 / .1 == data2 or data1 / .05 == data2 or data1 / .01 == data2:
-    return True
-  else:
-    return False
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = input("Enter the dollar amount: ")
