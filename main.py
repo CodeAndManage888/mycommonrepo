@@ -24,12 +24,11 @@
 #**************************************************************
 #--------------------------------------------------------------
 def coin_count(data1, data2):
-  cents = data1*100
-  if cents == 0:
+  conv_data = data1*100
+  if conv_data // 25 == data2 or conv_data // 10 == data2 or conv_data // 5 == data2 or conv_data // 1 == data2:
     return True
-  elif data2 == 0:
+  else:
     return False
-  elif cents // 25:
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = input("Enter the dollar amount: ")
