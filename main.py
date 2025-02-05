@@ -25,10 +25,11 @@
 #--------------------------------------------------------------
 def coin_count(data1, data2):
   conv_data = data1*100
-  if conv_data // 25 == data2 or conv_data // 10 == data2 or conv_data // 5 == data2 or conv_data // 1 == data2:
+  num_coin = conv_data // 25
+  if num_coin == data2:
     return True
   else:
-    return False
+    return num_coin + coin_count(conv_data % 25, data2)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = input("Enter the dollar amount: ")
