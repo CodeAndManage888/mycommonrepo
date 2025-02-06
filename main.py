@@ -26,6 +26,7 @@
 def coin_count(data1, data2):
   conv_data = data1*100
   num_coin = conv_data // 25
+  print("conv_data: " + str(conv_data)")
   if num_coin == data2:
     return True
   else:
