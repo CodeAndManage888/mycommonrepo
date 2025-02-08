@@ -25,18 +25,14 @@
 #--------------------------------------------------------------
 def coin_count(data1, data2):
   conv_data = data1*100
-  num_coin = conv_data // 25
   print("conv_data: " + str(conv_data))
-  if num_coin == data2:
-    return True
-  else:
-    return num_coin + coin_count(conv_data % 25, data2)
+  return coin_count(conv_data // 25, data2) + coin_count(conv_data // 10, data2) + coin_count(conv_data // 5, data2) + coin_count(conv_data // 1, data2)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = int(input("Enter the dollar amount: "))
   user_in2 = int(input("Enter the number of coins: "))
   total_coin = 0
-  total_coin = coin_count(user_in1, user_in2) == True
+  total_coin = coin_count(user_in1, user_in2)
   if total_coin == user_in2:
     print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
   else:
