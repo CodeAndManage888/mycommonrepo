@@ -26,7 +26,10 @@
 def coin_count(data1, data2):
   conv_data = data1*100
   print("conv_data: " + str(conv_data))
-  return coin_count(conv_data // 25, data2) + coin_count(conv_data // 10, data2) + coin_count(conv_data // 5, data2) + coin_count(conv_data // 1, data2)
+  conv_data -= 25
+  cur_count += 1
+  if cur_count == data2:
+    return 1
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = int(input("Enter the dollar amount: "))
