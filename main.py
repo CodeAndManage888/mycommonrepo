@@ -23,19 +23,21 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def coin_count(data1, data2):
-  conv_data = data1*100
-  print("conv_data: " + str(conv_data))
-  conv_data -= 25
-  cur_count += 1
-  if cur_count == data2:
-    return 1
+def coin_count(data1):
+  data1 -= 25
+  data1 -= 10
+  data1 -= 5
+  data1 -= 1
+  ctr += 1
+  if cur_count != data2:
+    return ctr + coin_count(data1)
+  else:
+    return ctr
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = int(input("Enter the dollar amount: "))
   user_in2 = int(input("Enter the number of coins: "))
-  total_coin = 0
-  total_coin = coin_count(user_in1, user_in2)
+  total_coin = coin_count(user_in1*100)
   if total_coin == user_in2:
     print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
   else:
