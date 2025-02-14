@@ -30,7 +30,6 @@ def coin_count(data1, data2, data3):
   data1 -= 1
   data3 += 1
   if data3 != data2:
-    print("Current Data: " + str(data1) + " " + str(data2) + " " + str(data3))
     return data3 + coin_count(data1,data2,data3)
   else:
     return data3
