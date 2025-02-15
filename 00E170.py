@@ -28,11 +28,13 @@ def coin_count(data1, data2, data3):
   data1 -= 10
   data1 -= 5
   data1 -= 1
+  print("current count:", data1)
   data3 += 1
   if data3 != data2:
-    print("Current Data: " + str(data1) + " " + str(data2) + " " + str(data3))
+    print(data3)
     return data3 + coin_count(data1,data2,data3)
   else:
+    print(data3)
     return data3
 #--------------------------------------------------------------
 if __name__ == "__main__":
@@ -40,6 +42,7 @@ if __name__ == "__main__":
   user_in2 = int(input("Enter the number of coins: "))
   ctr = 0
   total_coin = coin_count(user_in1*100,user_in2,ctr)
+  print("total coins: ",total_coin, "expected coins: ",user_in2)
   if total_coin == user_in2:
     print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
   else:
