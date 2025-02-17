@@ -25,14 +25,11 @@
 #--------------------------------------------------------------
 def coin_count(data1, data2, data3):
   data1 -= 25
-  data1 -= 10
-  data1 -= 5
-  data1 -= 1
   print("current count:", data1)
   data3 += 1
   if data3 != data2:
     print(data3)
-    return data3 + coin_count(data1,data2,data3)
+    return coin_count(data1,data2,data3)
   else:
     print(data3)
     return data3
