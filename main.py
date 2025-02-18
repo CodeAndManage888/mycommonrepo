@@ -35,8 +35,8 @@ def coin_count(data1, data2, data3):
     return data3
 #--------------------------------------------------------------
 if __name__ == "__main__":
-  user_in1 = int(input("Enter the dollar amount: "))
-  user_in2 = int(input("Enter the number of coins: "))
+  user_in1 = float(input("Enter the dollar amount: "))
+  user_in2 = float(input("Enter the number of coins: "))
   ctr = 0
   total_coin = coin_count(user_in1*100,user_in2,ctr)
   print("total coins: ",total_coin, "expected coins: ",user_in2)
