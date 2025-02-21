@@ -27,12 +27,7 @@ def coin_count(data1, data2, data3):
   data1 -= 25
   print("current count:", data1)
   data3 += 1
-  if data3 != data2:
-    print(data3)
-    return coin_count(data1,data2,data3)
-  else:
-    print(data3)
-    return data3
+  return coin_count(data1,data2,data3)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = float(input("Enter the dollar amount: "))
