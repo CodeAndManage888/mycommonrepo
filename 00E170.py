@@ -24,9 +24,10 @@
 #**************************************************************
 #--------------------------------------------------------------
 def coin_count(data1, data2, data3):
-  data1 -= 25
-  print("current count:", data1)
-  data3 += 1
+  qtrs = data1 // 25
+  dimes = data1 // 10
+  nickels = data1 // 5
+  pennies = data1
   return coin_count(data1,data2,data3)
 #--------------------------------------------------------------
 if __name__ == "__main__":
