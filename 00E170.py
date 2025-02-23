@@ -6,7 +6,7 @@
 #  Create a program that determines whether or not it is      *
 # possible to construct a particular total using a specific   *
 # number of coins. For example, it is possible to have a      *
-# total of $1.00 using four coins if they are all quarters.   *
+# total of $1.00 using four coins if they are all quarters.   * 
 # However, there is no way to have a total of $1.00 using 5   *
 # coins. Yet it is possible to have $1.00 using 6 coins by    *
 # using 3 quarters, 2 dimes and a nickel. Similarly, a total  *
@@ -23,18 +23,23 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def coin_count(data1, data2, data3):
-  qtrs = data1 // 25
-  dimes = data1 // 10
-  nickels = data1 // 5
-  pennies = data1
-  return coin_count(data1,data2,data3)
+def coin_count(data1, data2, data3, data4, data5):
+  if data1 == data5 or data2 == data5 or data3 == data5 or data4 == data5:
+    return 1
+  else:
+    if data1 < data5 or data2 < data5 or data3 < data5 or data4 < data5:
+      return 0
+    else:
+      return coin_count(data1-25,data2,data3,data4,data5)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = float(input("Enter the dollar amount: "))
   user_in2 = float(input("Enter the number of coins: "))
-  ctr = 0
-  total_coin = coin_count(user_in1*100,user_in2,ctr)
+  qtrs = user_in1*100 // 25
+  dimes = user_in1*100 // 10
+  nickels = user_in1*100 // 5
+  pennies = user_in1*100
+  total_coin = coin_count(qtrs,dimes,nickels,pennies,user_in2)
   print("total coins: ",total_coin, "expected coins: ",user_in2)
   if total_coin == user_in2:
     print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
