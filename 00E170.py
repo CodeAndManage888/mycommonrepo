@@ -27,9 +27,6 @@ def coin_count(data1, data2, data3, data4, data5):
   if data1 == data5 or data2 == data5 or data3 == data5 or data4 == data5:
     return 1
   else:
-    if data1 < data5 or data2 < data5 or data3 < data5 or data4 < data5:
-      return 0
-    else:
       return coin_count(data1-25,data2-10,data3-5,data4-1,data5)
 #--------------------------------------------------------------
 if __name__ == "__main__":
