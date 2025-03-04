@@ -6,7 +6,7 @@
 #  Create a program that determines whether or not it is      *
 # possible to construct a particular total using a specific   *
 # number of coins. For example, it is possible to have a      *
-# total of $1.00 using four coins if they are all quarters.   * 
+# total of $1.00 using four coins if they are all quarters.   *
 # However, there is no way to have a total of $1.00 using 5   *
 # coins. Yet it is possible to have $1.00 using 6 coins by    *
 # using 3 quarters, 2 dimes and a nickel. Similarly, a total  *
@@ -24,20 +24,16 @@
 #**************************************************************
 #--------------------------------------------------------------
 def coin_count(data1, data2, data3, data4, data5):
-  print(data1, data2, data3, data4, data5)
   if data1 == data5 or data2 == data5 or data3 == data5 or data4 == data5:
     return True
+  elif data1 + data2 + data3 + data4 == data5:
+    return True
+  elif data1 + data2 + data3 == data5 or data1 + data2 + data4 == data5 or data1 + data3 + data4 == data5 or data2 + data3 + data4 == data5:
+    return True
+  elif data1 + data2 == data5 or data1 + data3 == data5 or data1 + data4 == data5 or data2 + data3 == data5 or data2 + data4 == data5 or data3 + data4 == data5:
+    return True
   else:
-    if data1 + data2 + data3 + data4 == data5:
-      return True
-    elif data1 + data2 + data3 == data5 or data1 + data2 + data4 == data5 or data1 + data3 + data4 == data5 or data2 + data3 + data4 == data5:
-      return True
-    elif data1 + data2 == data5 or data1 + data3 == data5 or data1 + data4 == data5 or data2 + data3 == data5 or data2 + data4 == data5 or data3 + data4 == data5:
-      return True
-    elif data1 + data2 + data3 + data4 == 0:
-      return False
-    else:
-      return coin_count(data1-1,data2-1,data3-1,data4-1,data5)
+    return coin_count(data1-25,data2-10,data3-5,data4-1,data5)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = float(input("Enter the dollar amount: "))
