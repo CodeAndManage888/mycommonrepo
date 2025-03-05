@@ -20,7 +20,7 @@
 # completing this problem. Your solution must use recursion.  *
 # It can not contain any loops.                               *
 #                                                             *
-# Computed Result Validated:                                  *
+# Computed Result Validated:                                  *a
 #**************************************************************
 #--------------------------------------------------------------
 def coin_count(data1, data2, data3, data4, data5):
@@ -33,7 +33,7 @@ def coin_count(data1, data2, data3, data4, data5):
   elif data1 + data2 == data5 or data1 + data3 == data5 or data1 + data4 == data5 or data2 + data3 == data5 or data2 + data4 == data5 or data3 + data4 == data5:
     return True
   else:
-    return coin_count(data1-25,data2-10,data3-5,data4-1,data5)
+    return coin_count(data1-1,data2-1,data3-1,data4-1,data5)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = float(input("Enter the dollar amount: "))
