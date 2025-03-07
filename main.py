@@ -23,14 +23,14 @@
 # Computed Result Validated:                                  *a
 #**************************************************************
 #--------------------------------------------------------------
-def coin_count(data1, data2, data3, data4, data5):
-  print(data1, data2, data3, data4, data5)
-  if (data1 + data2 + data3 + data4 == data5) or (data1 + data2 + data3 == data5) or (data1 + data2 + data4 == data5) or (data1 + data3 + data4 == data5) or (data2 + data3 + data4 == data5) or (data1 + data2 == data5) or (data1 + data3 == data5) or (data1 + data4 == data5) or (data2 + data3 == data5) or (data2 + data4 == data5) or (data3 + data4 == data5):
+def coin_count(data1, data2, data3, data4, data5, data6):
+  print(data1, data2, data3, data4, data5, data6)
+  if (data1*25 + data2*10 + data3*5 + data4 == data6) or (data1*25  + data2*10 + data3*5 == data6) or (data1*25  + data2*10 + data4 == data6) or (data1*25  + data3*5 + data4 == data6) or (data2*10 + data3*5 + data4 == data6) or (data1*25  + data2*10 == data6) or (data1*25  + data3*5 == data6) or (data1*25  + data4 == data6) or (data2*10 + data3*5 == data6) or (data2*10 + data4 == data6) or (data3*5 + data4 == data6):
     return True
-  elif (data1 == 0 and data2 == 0 and data3 == 0 and data4 == 0) or (data1 == 0 and data2 == 0 and data3 == 0 and data4 < data5):
+  elif (data1 == 0 and data2 == 0 and data3 == 0 and data4 == 0):
     return False
   else:
-    return coin_count(max(data1-1,0),max(data2-1,0),max(data3-1,0),max(data4-1,0),data5)
+    return coin_count(max(data1-1,0),max(data2-1,0),max(data3-1,0),max(data4-1,0),data5,data6)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_in1 = float(input("Enter the dollar amount: "))
@@ -40,11 +40,11 @@ if __name__ == "__main__":
   nickels = user_in1*100 // 5
   pennies = user_in1*100
   if (qtrs == user_in2) or (dimes == user_in2) or (nickels == user_in2) or (pennies == user_in2):
-    print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
+    print("It is possible to have a total of $" +str(user_in1) + ") or (data1 == 0 and data2 == 0 and data3 == 0 and data4 < data5) using " + str(user_in2) + " coins.")
   else:
-    if coin_count(qtrs,dimes,nickels,pennies,user_in2):
+    if coin_count(qtrs,dimes,nickels,pennies,user_in2,pennies):
       print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
     else:
       print("It is not possible to have a total of $" + str(user_in1) + " using " + str(user_in2) + " coins.")
   print("Thank you for using this app.")
-#**************************************************************
+#**************************************************************coin_count(max(data1-1,0),max(data2-1,0),max(data3-1,0),max(data4-1,0),data5)
