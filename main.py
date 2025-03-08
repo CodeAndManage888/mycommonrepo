@@ -47,4 +47,4 @@ if __name__ == "__main__":
     else:
       print("It is not possible to have a total of $" + str(user_in1) + " using " + str(user_in2) + " coins.")
   print("Thank you for using this app.")
-#**************************************************************coin_count(max(data1-1,0),max(data2-1,0),max(data3-1,0),max(data4-1,0),data5)
+#**************************************************************
