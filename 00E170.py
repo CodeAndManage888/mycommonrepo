@@ -40,7 +40,7 @@ if __name__ == "__main__":
   nickels = user_in1*100 // 5
   pennies = user_in1*100
   if (qtrs == user_in2) or (dimes == user_in2) or (nickels == user_in2) or (pennies == user_in2):
-    print("It is possible to have a total of $" +str(user_in1) + ") or (data1 == 0 and data2 == 0 and data3 == 0 and data4 < data5) using " + str(user_in2) + " coins.")
+    print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
   else:
     if coin_count(qtrs,dimes,nickels,pennies,user_in2,pennies):
       print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
