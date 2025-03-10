@@ -23,28 +23,39 @@
 # Computed Result Validated:                                  *a
 #**************************************************************
 #--------------------------------------------------------------
-def coin_count(data1, data2, data3, data4, data5, data6):
-  print(data1, data2, data3, data4, data5, data6)
-  if (data1*25 + data2*10 + data3*5 + data4 == data6) or (data1*25  + data2*10 + data3*5 == data6) or (data1*25  + data2*10 + data4 == data6) or (data1*25  + data3*5 + data4 == data6) or (data2*10 + data3*5 + data4 == data6) or (data1*25  + data2*10 == data6) or (data1*25  + data3*5 == data6) or (data1*25  + data4 == data6) or (data2*10 + data3*5 == data6) or (data2*10 + data4 == data6) or (data3*5 + data4 == data6):
-    return True
-  elif (data1 == 0 and data2 == 0 and data3 == 0 and data4 == 0):
-    return False
-  else:
-    return coin_count(max(data1-1,0),max(data2-1,0),max(data3-1,0),max(data4-1,0),data5,data6)
-#--------------------------------------------------------------
-if __name__ == "__main__":
-  user_in1 = float(input("Enter the dollar amount: "))
-  user_in2 = float(input("Enter the number of coins: "))
-  qtrs = user_in1*100 // 25
-  dimes = user_in1*100 // 10
-  nickels = user_in1*100 // 5
-  pennies = user_in1*100
-  if (qtrs == user_in2) or (dimes == user_in2) or (nickels == user_in2) or (pennies == user_in2):
-    print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
-  else:
-    if coin_count(qtrs,dimes,nickels,pennies,user_in2,pennies):
-      print("It is possible to have a total of $" +str(user_in1) + " using " + str(user_in2) + " coins.")
+  def can_make_amount(amount, num_coins, coin_types):
+    # Base cases
+    if amount == 0 and num_coins == 0:
+        return True  # Exact match
+    if amount < 0 or num_coins <= 0:
+        return False  # Exceeded constraints
+
+    # Recursive case: Try using each coin and see if a valid combination exists
+    for coin in coin_types:
+        if can_make_amount(amount - coin, num_coins - 1, coin_types):
+            return True  # Found a valid combination
+
+    return False  # No valid combination found
+
+
+  def main():
+    # Read user input
+    dollar_amount = float(input("Enter the dollar amount (e.g., 1.25): "))
+    num_coins = int(input("Enter the number of coins: "))
+
+    # Convert dollar amount to cents to work with integers
+    amount_in_cents = int(round(dollar_amount * 100))
+
+    # Define available coin denominations in cents
+    coin_types = [25, 10, 5, 1]  # Quarters, dimes, nickels, pennies
+
+    # Check if it's possible to form the amount with the given number of coins
+    if can_make_amount(amount_in_cents, num_coins, coin_types):
+        print(f"Yes, it is possible to form ${dollar_amount:.2f} using {num_coins} coins.")
     else:
-      print("It is not possible to have a total of $" + str(user_in1) + " using " + str(user_in2) + " coins.")
-  print("Thank you for using this app.")
+        print(f"No, it is not possible to form ${dollar_amount:.2f} using {num_coins} coins.")
+
+
+  if __name__ == "__main__":
+    main()
 #**************************************************************
