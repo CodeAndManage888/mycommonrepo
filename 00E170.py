@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 080324 (Expected Solution with 41 Lines of Code)      *
 # Title: Possible Change                                      *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  Create a program that determines whether or not it is      *
 # possible to construct a particular total using a specific   *
 # number of coins. For example, it is possible to have a      *
