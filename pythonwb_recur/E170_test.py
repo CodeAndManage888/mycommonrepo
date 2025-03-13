@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 080324 (Expected Solution with 41 Lines of Code)      *
 # Title: Possible Change                                      *
-# Status: Testing (In Progress / Testing / Working)           *
+# Status: Failed: Testing (In Progress / Testing / Working)   *
 #  Create a program that determines whether or not it is      *
 # possible to construct a particular total using a specific   *
 # number of coins. For example, it is possible to have a      *
@@ -23,22 +23,23 @@
 # Computed Result Validated:                                  *a
 #**************************************************************
 #--------------------------------------------------------------
-  def can_make_amount(amount, num_coins, coin_types):
+def can_make_amount(amount, num_coins, coin_types, index=0):
     # Base cases
     if amount == 0 and num_coins == 0:
         return True  # Exact match
-    if amount < 0 or num_coins <= 0:
+    if amount < 0 or num_coins <= 0 or index >= len(coin_types):
         return False  # Exceeded constraints
 
-    # Recursive case: Try using each coin and see if a valid combination exists
-    for coin in coin_types:
-        if can_make_amount(amount - coin, num_coins - 1, coin_types):
-            return True  # Found a valid combination
+    # Recursive case: Either use the current coin or move to the next one
+    # Try using one more of the current coin
+    if can_make_amount(amount - coin_types[index], num_coins - 1, coin_types, index):
+        return True
 
-    return False  # No valid combination found
+    # Try skipping the current coin and moving to the next one
+    return can_make_amount(amount, num_coins, coin_types, index + 1)
 
 
-  def main():
+def main():
     # Read user input
     dollar_amount = float(input("Enter the dollar amount (e.g., 1.25): "))
     num_coins = int(input("Enter the number of coins: "))
@@ -56,6 +57,5 @@
         print(f"No, it is not possible to form ${dollar_amount:.2f} using {num_coins} coins.")
 
 
-  if __name__ == "__main__":
+if __name__ == "__main__":
     main()
-#**************************************************************
