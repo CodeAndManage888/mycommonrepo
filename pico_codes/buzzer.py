@@ -18,7 +18,7 @@ for pin in led_pins:
     leds.append(led)
 
 # Initialize the buzzer as a digital output (NO PWM)
-buzzer = digitalio.DigitalInOut(board.GP22)  # Try GP22 or change if needed
+buzzer = digitalio.DigitalInOut(board.GP16)  # Try GP22 or change if needed
 buzzer.direction = digitalio.Direction.OUTPUT
 
 def beep(duration=0.3):
@@ -35,10 +35,10 @@ def run_sequence():
     for i in range(3):  # Repeat the sequence 3 times
         for led in leds:
             led.value = True  # Turn ON LED
-            beep(0.3)  # Beep the active buzzer for 0.3 seconds
-            time.sleep(0.3)
+            beep(0.5)  # Beep the active buzzer for 0.3 seconds
+            time.sleep(0.5)
             led.value = False  # Turn OFF LED
-            time.sleep(0.3)
+            time.sleep(0.5)
 
     print("Sequence complete. Waiting for next press...")
 
