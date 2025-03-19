@@ -45,7 +45,13 @@ elem_syms = [
   "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"]
 #--------------------------------------------------------------
 def elem_check(word, elist):
-  return
+  if len(word) == 0:
+    return True
+  else:
+    for i in range(len(elist)):
+      if word[0] == elist[i]:
+        return elem_check(word[1:], elist)
+    return False
 #--------------------------------------------------------------
 if __name__ == "__main__":
   check_word = input("Enter a word to check: ")
