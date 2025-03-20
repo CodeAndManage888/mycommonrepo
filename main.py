@@ -56,6 +56,9 @@ def elem_check(word, elist):
 if __name__ == "__main__":
   check_word = input("Enter a word to check: ")
   check_word = check_word.lower()
-  if elem_check(check_word, elem_syms)
+  if elem_check(check_word, elem_syms):
+    print("Word can be spelled using only element symbols.")
+  else:
+    print("Word cannot be spelled using only element symbols.")
   print("Thank you for using this app.")
 #**************************************************************
