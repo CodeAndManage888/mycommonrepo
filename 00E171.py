@@ -49,7 +49,7 @@ def elem_check(word, elist):
     return True
   else:
     for i in range(len(elist)):
-      if word[0] == elist[i]:
+      if word[0].lower == elist[i].lower():
         return elem_check(word[1:], elist)
     return False
 #--------------------------------------------------------------
