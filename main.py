@@ -60,5 +60,6 @@ if __name__ == "__main__":
     print("Word can be spelled using only element symbols.")
   else:
     print("Word cannot be spelled using only element symbols.")
+    
   print("Thank you for using this app.")
 #**************************************************************
