@@ -49,7 +49,8 @@ def elem_check(word, elist):
     return True
   else:
     for i in range(len(elist)):
-      if word[0].lower == elist[i].lower():
+      if word[0].lower == elist[i].lower() or word[:2].lower() == elist[i].lower():
+        print(word[0].lower, elist[i].lower, word[:2].lower)
         return elem_check(word[1:], elist)
     return False
 #--------------------------------------------------------------
@@ -60,6 +61,5 @@ if __name__ == "__main__":
     print("Word can be spelled using only element symbols.")
   else:
     print("Word cannot be spelled using only element symbols.")
-
   print("Thank you for using this app.")
 #**************************************************************
