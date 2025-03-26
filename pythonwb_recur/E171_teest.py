@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 082124 (Expected Solution with 68 Lines of Code)      *
 # Title: Spelling with Element Symbols                        *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Tesing (In Progress / Testing / Working)            *
 #  Each chemical element has a standard symbol that is one,   *
 # two or three letters long. One game that some people like   *
 # to play is to determine whether or not a word can be        *
@@ -31,33 +31,36 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 elem_syms = [
-  "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne",
-  "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca",
-  "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn",
-  "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr",
-  "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn",
-  "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd",
-  "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb",
-  "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg",
-  "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th",
-  "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm",
-  "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds",
-  "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"]
+    "He", "Li", "Be", "Ne", "Na", "Mg", "Al", "Si", "Cl", "Ar",
+    "Ca", "Sc", "Ti", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", 
+    "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Zr", "Nb",
+    "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", 
+    "Te", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", 
+    "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Hf",
+    "Ta", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", 
+    "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "Np", "Pu", 
+    "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf",
+    "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", 
+    "Mc", "Lv", "Ts", "Og", "H", "B", "C", "N", "O", "F", "K", 
+    "V", "W", "U", "Y"]
 #--------------------------------------------------------------
 def elem_check(word, elist):
   if len(word) == 0:
     return True
   else:
     for i in range(len(elist)):
-      if word[0].lower == elist[i].lower() or word[:2].lower() == elist[i].lower():
-        print(word[0].lower, elist[i].lower, word[:2].lower)
+      if word[:2].lower() == elist[i].lower():
+        print(word[:2], elist[i].lower())
+        return elem_check(word[2:], elist)
+      elif word[0] == elist[i].lower():
+        print(word[0], elist[i].lower())
         return elem_check(word[1:], elist)
     return False
 #--------------------------------------------------------------
 if __name__ == "__main__":
   check_word = input("Enter a word to check: ")
   check_word = check_word.lower()
-  if elem_check(check_word, elem_syms):
+  if elem_check(check_word.lower(), elem_syms):
     print("Word can be spelled using only element symbols.")
   else:
     print("Word cannot be spelled using only element symbols.")
