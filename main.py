@@ -53,17 +53,20 @@ element_list = ['Zinc', 'Arsenic', 'Gold', 'Lead', 'Fluorine',
                 'Iron', 'Krypton', 'Tin', 'Xenon', 'Tungsten', 'Radon', 
                 'Oganesson', 'Sulfur', 'Copper', 'Silver', 'Phosphorus', 
                 'Cobalt', 'Antimony', 'Mercury']
+final_list = []
 #--------------------------------------------------------------
-def long_seq(user_in):
+def long_seq(user_in, flist):
   for i in range(len(element_list)):
     if user_in == element_list[i]:
-      return element_list[i]
+      flist.append(element_list[i])
+      element_list.pop(i)
+    else:
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   element_name = input("Enter an element name: ")
   if element_name.isalpha() and element_name.capitalize() in element_list:
-    print("The longest sequence of elements that begins with", element_name, "is", long_seq(element_name))
+    print("The longest sequence of elements that begins with", element_name, "is", long_seq(element_name, final_list))
   else:
     print("Invalid element name.")
   print("Thank you for using this app.")
