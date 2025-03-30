@@ -53,15 +53,18 @@ element_list = ['Zinc', 'Arsenic', 'Gold', 'Lead', 'Fluorine',
                 'Iron', 'Krypton', 'Tin', 'Xenon', 'Tungsten', 'Radon', 
                 'Oganesson', 'Sulfur', 'Copper', 'Silver', 'Phosphorus', 
                 'Cobalt', 'Antimony', 'Mercury']
-final_list = []
+flist = []
 #--------------------------------------------------------------
 def long_seq(user_in, flist):
+  flist.append(user_in)
+  element_list.pop(element_list.index(user_in))
   for i in range(len(element_list)):
-    if user_in == element_list[i]:
+    if user_in[-1] == element_list[i][-1]:
       flist.append(element_list[i])
       element_list.pop(i)
-    else:
-  return
+      long_seq(element_list[i], flist)
+      break
+  return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
   element_name = input("Enter an element name: ")
