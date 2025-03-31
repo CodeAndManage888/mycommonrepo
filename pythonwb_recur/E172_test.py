@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 082224 (Expected Solution with 83 Lines of Code)      *
 # Title: Element Sequences                                    *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  Another game that some people play with the names of       *
 # chemical elements involves constructing a sequence of       *
 # elements where each element in the sequence begins with the *
@@ -53,16 +53,21 @@ element_list = ['Zinc', 'Arsenic', 'Gold', 'Lead', 'Fluorine',
                 'Iron', 'Krypton', 'Tin', 'Xenon', 'Tungsten', 'Radon', 
                 'Oganesson', 'Sulfur', 'Copper', 'Silver', 'Phosphorus', 
                 'Cobalt', 'Antimony', 'Mercury']
-flist = []
+final_list = n Progress (In Progress / Testing / Working)       *
+#  Another game that some pe[]
 #--------------------------------------------------------------
 def long_seq(user_in, flist):
-  flist.append(user_in)
-  element_list.pop(element_list.index(user_in))
+  if user_in.capitalize() in element_list:
+    flist.append(user_in)
+    element_list.pop(element_list.index(user_in))
   for i in range(len(element_list)):
-    if user_in[-1] == element_list[i][-1]:
+    #print(element_list[i])
+    #print("Before Cond 1 Entered:", user_in[-1], element_list[i][0])
+    if user_in[-1] == element_list[i][0].lower():
+      print("Cond 1 Entered:", user_in[-1], element_list[i][0])
       flist.append(element_list[i])
       element_list.pop(i)
-      long_seq(element_list[i], flist)
+      long_seq(flist[-1], flist)
       break
   return flist
 #--------------------------------------------------------------
