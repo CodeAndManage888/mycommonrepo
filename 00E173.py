@@ -23,9 +23,17 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 #--------------------------------------------------------------
-def func_name(user_in):
+def decode_func(user_list):
+  if len(user_list) == 0:
+    return []
+  else:
+    if user_list[0] == user_list[1]:
+      return [user_list[0]] + [user_list[1]] + decode_func(user_list[2:])
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  encoded_list = ["A", 12, "B", 4, "A", 6, "B", 1]
+  print("The encoded list is", encoded_list)
+  print("The decoded list is", decode_func(encoded_list))
   print("Thank you for using this app.")
 #**************************************************************
