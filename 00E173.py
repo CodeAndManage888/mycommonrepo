@@ -27,7 +27,11 @@ def decode_func(user_list):
   if len(user_list) == 0:
     return []
   else:
+    for i in range(len(user_list)):
+      if user_list[i] == user_list[i+1]:
+
     if user_list[0] == user_list[1]:
+
       return [user_list[0]] + [user_list[1]] + decode_func(user_list[2:])
   return
 #--------------------------------------------------------------
