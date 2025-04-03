@@ -22,22 +22,31 @@
 #                                                             *
 # Computed Result Validated:                                  *
 #**************************************************************
+final_list = []
 #--------------------------------------------------------------
-def decode_func(user_list):
+def decode_func(user_list, flist):
+  print("Entering New Loop:", len(user_list))
   if len(user_list) == 0:
-    return []
+    print("Exiting Function:", flist)
+    return flist
   else:
-    for i in range(len(user_list)):
-      if user_list[i] == user_list[i+1]:
-
-    if user_list[0] == user_list[1]:
-
-      return [user_list[0]] + [user_list[1]] + decode_func(user_list[2:])
+    for i in range(user_list[1]):
+      flist.append(user_list[0])
+      print(i, "Current Value:", flist)
+    print("Before Reduction:", len(user_list))
+    if len(user_list) != 0:
+      user_list.remove(user_list[0])
+    if len(user_list) == 1:
+      user_list.remove(user_list[0])
+    else:
+      user_list.remove(user_list[1])
+    print("Remaining list is", len(user_list))
+    decode_func(user_list, flist)
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   encoded_list = ["A", 12, "B", 4, "A", 6, "B", 1]
   print("The encoded list is", encoded_list)
-  print("The decoded list is", decode_func(encoded_list))
+  print("The decoded list is", decode_func(encoded_list, final_list))
   print("Thank you for using this app.")
 #**************************************************************
