@@ -2,7 +2,7 @@
 #**************************************************************
 # Date: 091324 (Expected Solution with 33 Lines of Code)      *
 # Title: Run-Length Decoding                                  *
-# Status: In Progress (In Progress / Testing / Working)       *
+# Status: Testing (In Progress / Testing / Working)           *
 #  Run-length encoding is a simple data compression technique *
 # that can be effective when repeated values occur at         *
 # adjacent positions within a list. Compression is achieved by*
@@ -25,24 +25,19 @@
 final_list = []
 #--------------------------------------------------------------
 def decode_func(user_list, flist):
-  print("Entering New Loop:", len(user_list))
+  #print("Entering New Loop:", len(user_list))
   if len(user_list) == 0:
     print("Exiting Function:", flist)
     return flist
   else:
     for i in range(user_list[1]):
       flist.append(user_list[0])
-      print(i, "Current Value:", flist)
-    print("Before Reduction:", len(user_list))
-    if len(user_list) != 0:
+      #print(i, "Current Value:", flist)
+    #print("Before Reduction:", len(user_list))
+    for j in range(2):
       user_list.remove(user_list[0])
-    if len(user_list) == 1:
-      user_list.remove(user_list[0])
-    else:
-      user_list.remove(user_list[1])
-    print("Remaining list is", len(user_list))
+    #print("Remaining list is", len(user_list))
     decode_func(user_list, flist)
-  return
 #--------------------------------------------------------------
 if __name__ == "__main__":
   encoded_list = ["A", 12, "B", 4, "A", 6, "B", 1]
