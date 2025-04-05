@@ -19,5 +19,8 @@ def func_name(user_in):
   return
 #--------------------------------------------------------------
 if __name__ == "__main__":
+  user_input_lst = input("Enter a charater list: ")
+  print(user_input_lst)
+  
   print("Thank you for using this app.")
 #**************************************************************
