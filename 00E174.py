@@ -21,6 +21,6 @@ def func_name(user_in):
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
   print(user_input_lst)
-  
+  in_list = [item.strip() for item in user_input_lst.split(',')]
   print("Thank you for using this app.")
 #**************************************************************
