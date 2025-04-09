@@ -33,7 +33,6 @@ if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
   print(user_input_lst)
   in_list = [item.strip() for item in user_input_lst.split(',')] 
-  #in_list = [int(item.strip()) if item.strip().isdigit() else item.strip() for item in user_input_lst.split(',')]
   print(in_list)
   print("The uncompressed list is: ", exp_list(in_list, fin_list))
   print("Thank you for using this app.")
