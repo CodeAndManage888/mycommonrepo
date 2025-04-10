@@ -36,4 +36,3 @@ if __name__ == "__main__":
   print(in_list)
   print("The uncompressed list is: ", exp_list(in_list, fin_list))
   print("Thank you for using this app.")
-#**************************************************************
