@@ -17,17 +17,19 @@
 fin_list = []
 #--------------------------------------------------------------
 def exp_list(input_lst, flist):
-  count = 0
+  count = 1
+  print(len(input_lst))
   if len(input_lst) == 0:
-    return []
+    return flist
   elif input_lst[0] == input_lst[1]:
-    for i in range(len(input_lst)):
+    for i in range(len(input_lst) - 1):
       if input_lst[i] == input_lst[i+1]:
         count += 1
       else:
         flist.append(input_lst[0])
         flist.append(count)
-        exp_list(input_lst[count:], flist)
+        print(flist)
+        return [input_lst[0], count, exp_list(input_lst[count:], flist)]
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
