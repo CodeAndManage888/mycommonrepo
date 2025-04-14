@@ -20,21 +20,22 @@ def exp_list(input_lst, flist):
   count = 1
   print(len(input_lst))
   if len(input_lst) == 0 or len(input_lst) == 1:
-    return flist
+    return
   elif input_lst[0] == input_lst[1]:
     for i in range(len(input_lst) - 1):
       if input_lst[i] == input_lst[i+1]:
         count += 1
       else:
-        flist.append(input_lst[0])
+        flist.append(input_lst[count - 1])
         flist.append(count)
         print(flist)
-        return [input_lst[0], count, exp_list(input_lst[count:], flist)]
+        exp_list(input_lst[count:], flist)
+    return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
   print(user_input_lst)
   in_list = [item.strip() for item in user_input_lst.split(',')] 
   print(in_list)
-  print("The uncompressed list is: ", exp_list(in_list, fin_list))
+  print("The compressed list is: ", exp_list(in_list, fin_list))
   print("Thank you for using this app.")
