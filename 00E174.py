@@ -29,7 +29,8 @@ def exp_list(input_lst, flist):
         flist.append(input_lst[count - 1])
         flist.append(count)
         print(flist)
-        exp_list(input_lst[count:], flist)
+        print(input_lst[count - 1:])
+        exp_list(input_lst[count - 1:], flist)
     return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
