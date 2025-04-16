@@ -26,11 +26,11 @@ def exp_list(input_lst, flist):
       if input_lst[i] == input_lst[i+1]:
         count += 1
       else:
-        flist.append(input_lst[count - 1])
+        flist.append(input_lst[count-1])
         flist.append(count)
         print(flist)
-        print(input_lst[count - 1:])
-        exp_list(input_lst[count - 1:], flist)
+        print(input_lst[count-1:])
+        exp_list(input_lst[count-1:], flist)
     return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
