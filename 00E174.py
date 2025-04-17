@@ -20,7 +20,7 @@ def exp_list(input_lst, flist):
   count = 1
   print(len(input_lst))
   if len(input_lst) == 0 or len(input_lst) == 1:
-    return
+    return flist
   elif input_lst[0] == input_lst[1]:
     for i in range(len(input_lst) - 1):
       if input_lst[i] == input_lst[i+1]:
@@ -31,7 +31,6 @@ def exp_list(input_lst, flist):
         print(flist)
         print(input_lst[count-1:])
         exp_list(input_lst[count-1:], flist)
-    return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
