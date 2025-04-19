@@ -27,13 +27,13 @@ def exp_list(input_lst, flist):
         count += 1
       else:
         print("flist Before Append:", flist)
-        print("ilist Before Append:",input_lst[count-1:])
+        print("input_lst Before Append:",input_lst[count:])
         flist.append(input_lst[count-1])
         flist.append(count)
         print("flist Before Recursion:", flist)
-        print("ilist Before Recursion:",input_lst[count-1:])
-        exp_list(input_lst[count-1:], flist)
-#--------------------------------------------------------------
+        print("input_lst Before Recursion:",input_lst[count:])
+        exp_list(input_lst[count:], flist)
+
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
   print(user_input_lst)
