@@ -19,7 +19,11 @@ fin_list = []
 def exp_list(input_lst, flist):
   count = 1
   print("Start Length:", len(input_lst))
-  if len(input_lst) == 0 or len(input_lst) == 1:
+  if len(input_lst) == 0:
+    return flist
+  elif len(input_lst) == 1:
+    flist.append(input_lst[0])
+    flist.append(count)
     return flist
   elif input_lst[0] == input_lst[1]:
     for i in range(len(input_lst) - 1):
@@ -27,13 +31,13 @@ def exp_list(input_lst, flist):
         count += 1
       else:
         print("flist Before Append:", flist)
-        print("input_lst Before Append:",input_lst[count:])
+        print("input_lst Before Append:",input_lst[count-1:])
         flist.append(input_lst[count-1])
         flist.append(count)
         print("flist Before Recursion:", flist)
         print("input_lst Before Recursion:",input_lst[count:])
         exp_list(input_lst[count:], flist)
-
+#--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
   print(user_input_lst)
