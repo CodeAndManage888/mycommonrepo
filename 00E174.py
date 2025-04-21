@@ -35,8 +35,8 @@ def exp_list(input_lst, flist):
         flist.append(input_lst[count-1])
         flist.append(count)
         print("flist Before Recursion:", flist)
-        print("input_lst Before Recursion:",input_lst[count:])
-        exp_list(input_lst[count:], flist)
+        print("input_lst Before Recursion:",input_lst[count-1:])
+        exp_list(input_lst[count-1:], flist)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")

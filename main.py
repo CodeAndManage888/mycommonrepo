@@ -31,7 +31,7 @@ def exp_list(input_lst, flist):
         count += 1
       else:
         print("flist Before Append:", flist)
-        print("input_lst Before Append:",input_lst[count-1:])
+        print("input_lst Before Append:",input_lst[count:])
         flist.append(input_lst[count-1])
         flist.append(count)
         print("flist Before Recursion:", flist)
