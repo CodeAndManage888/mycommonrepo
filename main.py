@@ -22,21 +22,25 @@ def exp_list(input_lst, flist):
   if len(input_lst) == 0:
     return flist
   elif len(input_lst) == 1:
+    print("entered 2nd elif")
     flist.append(input_lst[0])
     flist.append(count)
+    print("2nd elif Check Value:", flist)
+    print("2nd elif Check Value:",input_lst[count:])
     return flist
   elif input_lst[0] == input_lst[1]:
+    print("entered last elif")
     for i in range(len(input_lst) - 1):
       if input_lst[i] == input_lst[i+1]:
         count += 1
       else:
-        print("flist Before Append:", flist)
-        print("input_lst Before Append:",input_lst[count:])
+        print("Before Append:", flist)
+        print("Before Append:",input_lst[count:])
         flist.append(input_lst[count-1])
         flist.append(count)
-        print("flist Before Recursion:", flist)
-        print("input_lst Before Recursion:",input_lst[count:])
-        exp_list(input_lst[count:], flist)
+        print("Before Recursion:", flist)
+        print("Before Recursion:",input_lst[count:])
+        return exp_list(input_lst[count:], flist)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
