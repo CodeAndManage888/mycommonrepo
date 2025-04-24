@@ -31,6 +31,7 @@ def exp_list(input_lst, flist):
   elif input_lst[0] == input_lst[1]:
     print("entered last elif")
     for i in range(len(input_lst) - 1):
+      print("Entered for loop:", len(input_lst) - 1)
       if input_lst[i] == input_lst[i+1]:
         count += 1
       else:
