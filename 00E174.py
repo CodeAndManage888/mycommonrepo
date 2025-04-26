@@ -33,6 +33,7 @@ def exp_list(input_lst, flist):
     for i in range(len(input_lst) - 1):
       print("Entered for loop:", len(input_lst) - 1)
       if input_lst[i] == input_lst[i+1]:
+        print("Before Append:", flist, "Current Count:", count)
         count += 1
       else:
         print("Before Append:", flist)
@@ -41,8 +42,8 @@ def exp_list(input_lst, flist):
         flist.append(count)
         print("Before Recursion:", flist)
         print("Before Recursion:",input_lst[count:])
-        return exp_list(input_lst[count:], flist)
-    #return flist
+        exp_list(input_lst[count:], flist)
+    return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
