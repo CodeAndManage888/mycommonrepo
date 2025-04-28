@@ -16,6 +16,7 @@
 #**************************************************************
 fin_list = []
 #--------------------------------------------------------------
+#--------------------------------------------------------------
 def exp_list(input_lst, flist):
   count = 1
   print("Start Length:", len(input_lst))
@@ -44,6 +45,7 @@ def exp_list(input_lst, flist):
         print("Before Recursion:",input_lst[count:])
         exp_list(input_lst[count:], flist)
     return flist
+#--------------------------------------------------------------
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
