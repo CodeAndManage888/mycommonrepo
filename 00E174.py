@@ -22,27 +22,27 @@ def exp_list(input_lst, flist):
   if len(input_lst) == 0:
     return flist
   elif len(input_lst) == 1:
-    print("entered 2nd elif")
-    flist.append(input_lst[-1])
+    #print("entered 2nd elif")
+    flist.append(input_lst[-1:])
     flist.append(count)
-    print("2nd elif Check Value:", flist)
-    print("2nd elif Check Value:",input_lst[count:])
+    #print("2nd elif Check Value:", flist)
+    #print("2nd elif Check Value:",input_lst[count:])
     return flist
   elif input_lst[0] == input_lst[1]:
-    print("entered last elif")
+    #print("entered last elif")
     for i in range(len(input_lst) - 1):
-      print("Entered for loop:", len(input_lst) - 1)
+      #print("Entered for loop:", len(input_lst) - 1)
       if input_lst[i] == input_lst[i+1]:
-        print("Before Append:", flist, "Current Count:", count)
+        #print("Before Append:", flist, "Current Count:", count)
         count += 1
       else:
-        print("Before Append:", flist)
-        print("Before Append:",input_lst[count-1:])
-        flist.append(input_lst[count-1])
+        #print("Before Append:", flist)
+        #print("Before Append:",input_lst[count:])
+        flist.append(input_lst[count-1:])
         flist.append(count)
-        print("Before Recursion:", flist)
-        print("Before Recursion:",input_lst[count-1:])
-        exp_list(input_lst[(-1*count):], flist)
+        #print("Before Recursion:", flist)
+        #print("Before Recursion:",input_lst[count:])
+        exp_list(input_lst[count-1:], flist)
     return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
