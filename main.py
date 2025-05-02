@@ -22,7 +22,6 @@ def exp_list(input_lst, flist):
   if len(input_lst) == 0:
     return flist
   elif len(input_lst) == 1:
-    #print("entered 2nd elif")
     flist.append(input_lst[-1:])
     flist.append(count)
     #print("2nd elif Check Value:", flist)
