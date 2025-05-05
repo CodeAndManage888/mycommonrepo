@@ -18,19 +18,19 @@ fin_list = []
 #--------------------------------------------------------------
 def exp_list(input_lst, flist):
   count = 1
-  print("Start Length:", len(input_lst))
   if len(input_lst) == 0:
     return flist
   elif len(input_lst) == 1:
-    flist.append(input_lst[-1:])
+    flist.append(input_lst[-1])
     flist.append(count)
     return flist
   elif input_lst[0] == input_lst[1]:
     for i in range(len(input_lst) - 1):
+      print("Where Are You:", count)
       if input_lst[i] == input_lst[i+1]:
         count += 1
       else:
-        flist.append(input_lst[count-1:])
+        flist.append(input_lst[count-1])
         flist.append(count)
         exp_list(input_lst[count-1:], flist)
     return flist
