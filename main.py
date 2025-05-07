@@ -18,13 +18,7 @@ fin_list = []
 #--------------------------------------------------------------
 def exp_list(input_lst, flist):
   count = 1
-  if len(input_lst) == 0:
-    return flist
-  elif len(input_lst) == 1:
-    flist.append(input_lst[-1])
-    flist.append(count)
-    return flist
-  elif input_lst[0] == input_lst[1]:
+  if input_lst[0] == input_lst[1]:
     print("What is the input:", input_lst)
     for i in range(len(input_lst) - 1):
       print("Where Are You:", count)
