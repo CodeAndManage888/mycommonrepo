@@ -21,7 +21,7 @@ def exp_list(input_lst, flist):
   if input_lst[0] == input_lst[1]:
     print("What is the input:", input_lst)
     for i in range(len(input_lst) - 1):
-      print("Where Are You:", count)
+      print("loop counter:", i)
       if input_lst[i] == input_lst[i+1]:
         count += 1
       else:
