@@ -19,6 +19,7 @@ fin_list = []
 def exp_list(input_lst, flist):
   count = 1
   for i in range(len(input_lst) - 1):
+    print("i:", i, "input_lst[i]:", input_lst[i], "input_lst[i+1]:",)
     if input_lst[i] == input_lst[i+1]:
       count += 1
     else:
