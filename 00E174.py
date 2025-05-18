@@ -18,14 +18,14 @@ fin_list = []
 #--------------------------------------------------------------
 def exp_list(input_lst, flist):
   count = 1
-  for item in input_lst:
+  for index, item in enumerate(input_lst):
     print("item:", item)
-    if item == input_lst[count-1]:
+    if item == input_lst[index+1]:
       count += 1
     else:
-      flist.append(input_lst[count-1])
+      flist.append(item)
       flist.append(count)
-      return flist + exp_list(input_lst[count:], flist)
+      return flist + exp_list(input_lst[index+1:], flist)
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
