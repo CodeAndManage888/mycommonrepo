@@ -20,12 +20,17 @@ def exp_list(input_lst, flist):
   count = 1
   for index, item in enumerate(input_lst):
     print("item:", item)
-    if item == input_lst[index+1]:
-      count += 1
+    if index != len(input_lst)-1:
+      if item == input_lst[index+1]:
+        count += 1
+      else:
+        flist.append(item)
+        flist.append(count)
+        exp_list(input_lst[index+1:], flist)
     else:
       flist.append(item)
       flist.append(count)
-      return flist + exp_list(input_lst[index+1:], flist)
+  return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
