@@ -28,9 +28,7 @@ def exp_list(input_lst, flist):
         flist.append(count)
         exp_list(input_lst[index+1:], flist)
     else:
-      flist.append(item)
-      flist.append(count)
-  return flist
+      return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
