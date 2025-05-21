@@ -17,8 +17,8 @@
 fin_list = []
 #--------------------------------------------------------------
 def exp_list(input_lst, flist):
-  count = 1
-  for index, item in enumerate(input_lst):
+  count = 0
+  for index, item in enumerate(input_lst): #update code
     print("item:", item)
     if index != len(input_lst)-1:
       if item == input_lst[index+1]:
