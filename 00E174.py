@@ -23,6 +23,10 @@ def exp_list(input_lst, flist):
     if index <= len(input_lst)-1:
       if item == input_lst[index+1]:
         count += 1
+        if count == len(input_lst):
+          flist.append(item)
+          flist.append(count)
+          return flist
       else:
         flist.append(item)
         flist.append(count)
