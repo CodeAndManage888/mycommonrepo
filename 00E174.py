@@ -20,24 +20,7 @@ def exp_list(input_lst, flist):
   print("input_lst:", input_lst)
   count = 1
   idx = 0
-  while idx != len(input_lst):
-    if idx + 1 != len(input_lst):
-      if input_lst[idx] == input_lst[idx+1]:
-        count += 1
-        idx += 1
-        if count == len(input_lst):
-          flist.append(input_lst[idx])
-          flist.append(count)
-          return flist
-      else:
-        flist.append(input_lst[idx])
-        flist.append(count)
-        idx += 1
-        exp_list(input_lst[count:], flist)
-    else:
-      flist.append(input_lst[idx])
-      flist.append(count)
-      return flist
+
 #--------------------------------------------------------------
 if __name__ == "__main__":
   user_input_lst = input("Enter a charater list: ")
