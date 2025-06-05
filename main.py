@@ -17,9 +17,8 @@
 fin_list = []
 #--------------------------------------------------------------
 def exp_list(input_lst, flist):
-  print("input_lst:", input_lst)
-  count = 1
-  idx = 0
+  for item in input_lst:
+    print("item:", item)
 
 #--------------------------------------------------------------
 if __name__ == "__main__":
