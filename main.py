@@ -24,7 +24,6 @@ def exp_list(input_lst, flist):
     else:
       flist.append(item)
       flist.append(flist.count(item))
-      flist.remove(item)
   return flist
 #--------------------------------------------------------------
 if __name__ == "__main__":
