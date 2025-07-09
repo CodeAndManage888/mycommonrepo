@@ -32,11 +32,11 @@ drugs = get_drugs_for_disease(disease)
 for drug in drugs:
     print(f"Drug: {drug['Brand Name']}")
 #-----------------------------------------------------------------------------------
-#import array as arr
-#from array import *
-#special_nums = arr.array('d', [0.577, 1.618, 2.718, 3.14, 6, 37, 1729])
-#for i in special_nums:
-#  print(i)
+import array as arr
+from array import *
+special_nums = arr.array('d', [0.577, 1.618, 2.718, 3.14, 6, 37, 1729])
+for i in special_nums:
+  print(i)
 '''
 #-----------------------------------------------------------------------------------
 def my_func(f, arg):
