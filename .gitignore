@@ -2,12 +2,15 @@
 venv/
 .pythonlibs/
 
+# Python bytecode
+__pycache__/
+*.pyc
+
 # Ignore Replit-specific files
-.replit
+# NOTE: .replit and replit.nix are intentionally NOT ignored -- they hold the
+# Repl's environment and run configuration and must round-trip through git for
+# Replit <-> local sync to survive a re-import.
 .breakpoints
-replit.nix
-pyproject.toml
-.pyc
 
 # Ignore Other files
 poetry.lock
