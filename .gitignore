@@ -13,6 +13,7 @@ __pycache__/
 .breakpoints
 
 # Ignore Other files
+# NOTE: requirements.txt is intentionally NOT ignored -- Replit and any fresh
+# clone need it to know which packages to install.
 poetry.lock
 settings.json
-requirements.txt
