@@ -7,8 +7,12 @@
 #     used by pico_codes/. They exist only on the microcontroller and are not
 #     pip-installable; adding them would make `pip install` fail.
 #
-# Note: pyautogui and pygame need a display server and will not run headless
-# (e.g. in a Repl), though they install without error.
+# Note: pyautogui installs fine but `import pyautogui` RAISES KeyError: 'DISPLAY'
+# when no X display is present -- verified 2026-08-09. In a headless environment
+# such as a Repl, any file importing it crashes on the import line, not later.
+# pygame degrades gracefully instead: with no display, SDL falls back to its
+# "offscreen" video driver, so import and set_mode() both succeed and nothing
+# crashes -- you simply see no window.
 #
 # Note: PyPDF2 is deprecated upstream in favour of pypdf, but the code here does
 # `import PyPDF2`. Switching requires editing those files, so it stays as-is.
