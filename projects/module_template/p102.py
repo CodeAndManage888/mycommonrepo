@@ -2,6 +2,8 @@ import PyPDF2
 import os
 import datetime
 
+BASE = os.path.dirname(os.path.abspath(__file__))
+
 def read_pdf(file_path, page_exer_nostr):
     target_list = page_exer_nostr.split()
     pages_to_read = [int(page) for page in target_list[1:]]
@@ -29,7 +31,7 @@ def extract_exercise_text(text, exercise_number):
     return []
 
 def format_then_write(textdata):
-    file_path = "/home/runner/mycommonrepo/projects/module_template/outfile_cloud/gen_template.py"
+    file_path = os.path.join(BASE, "outfile_cloud/gen_template.py")
     current_date = datetime.datetime.now().strftime("%m%d%y")
     title = textdata[0]
     line_code = textdata[1]
@@ -86,6 +88,6 @@ def format_lines(words, line_length):
 
 if __name__ == "__main__":
     UserPageIn = input("Enter the exercise number & target page(s) - EEE PPP PPP: ")
-    pdf_file_path = "/home/runner/mycommonrepo/projects/module_template/infile_cloud/The Python Workbook.pdf"
+    pdf_file_path = os.path.join(BASE, "infile_cloud/The Python Workbook.pdf")
     tmp_data = read_pdf(pdf_file_path, UserPageIn)
     format_then_write(tmp_data)

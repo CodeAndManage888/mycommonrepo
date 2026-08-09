@@ -14,7 +14,8 @@
 # Computed Result Validated:                                  *
 #**************************************************************
 import sys
-sys.path.append('/home/runner/mycommonrepo/pythonwb_func')
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import E094_test
 #import E094
 import E096_test
